@@ -1,0 +1,28 @@
+#ifndef GAME_H
+#define GAME_H
+#include "spaceship.h"
+
+#include <QGraphicsView>
+#include <QGraphicsScene>
+
+
+class initGame: public QGraphicsView{
+public:
+    initGame();
+    ~initGame();
+
+    QGraphicsScene * scene;
+    Spaceship * player;
+    //Score * score;
+    //Health * health;
+
+    struct dimensions {
+        int screenWidth = 800;
+        int screenHeight = 600;
+    };
+
+
+};
+
+#endif // GAME_H
+
