@@ -1,4 +1,4 @@
-#include "basicProjectile.h"
+#include "basicprojectile.h"
 
 
 #include <QTimer>

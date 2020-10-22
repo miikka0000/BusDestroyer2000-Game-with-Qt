@@ -1,6 +1,6 @@
 #include "spaceship.h"
-#include "basicProjectile.h"
-#include "initGame.h"
+#include "basicprojectile.h"
+#include "initgame.h"
 
 #include <QTimer>
 #include <QGraphicsTextItem>

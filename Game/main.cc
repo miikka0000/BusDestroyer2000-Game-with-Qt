@@ -1,5 +1,5 @@
 #include "spaceship.h"
-#include "initGame.h"
+#include "initgame.h"
 
 #include <QApplication>
 #include <QGraphicsScene>

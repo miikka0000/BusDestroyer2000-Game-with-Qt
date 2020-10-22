@@ -6,8 +6,8 @@ QT += core gui widgets network multimedia
 CONFIG += c++14
 
 SOURCES += \
-    basicProjectile.cpp \
-    initGame.cpp \
+    basicprojectile.cpp \
+    initgame.cpp \
     main.cc \
     spaceship.cpp
 
@@ -36,8 +36,8 @@ else:unix: PRE_TARGETDEPS += \
     $$OUT_PWD/../Course/CourseLib/libCourseLib.a
 
 HEADERS += \
-    basicProjectile.h \
-    initGame.h \
+    basicprojectile.h \
+    initgame.h \
     spaceship.h
 
 RESOURCES += \

@@ -1,5 +1,5 @@
 #include "spaceship.h"
-#include "basicProjectile.h"
+#include "basicprojectile.h"
 
 #include <QKeyEvent>
 #include <QGraphicsScene>
