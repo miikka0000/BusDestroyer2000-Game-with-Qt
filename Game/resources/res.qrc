@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>explosion_spritesheet.png</file>
+        <file>fireball.png</file>
+        <file>spaceship.png</file>
+    </qresource>
+    <qresource prefix="/sounds">
+        <file>blaster_sound.wav</file>
+    </qresource>
+</RCC>
