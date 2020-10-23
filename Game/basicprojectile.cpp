@@ -17,6 +17,11 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
     connect(timer, &QTimer::timeout, this, &basicProjectile::move);
     timer->start(50);
 
+    this->setDimensions();
+    qDebug() << "projectile height:"<<this->projectileHeight_;
+    qDebug() << "proejctile width:"<<this->projectileWidth_;
+
+
 
 
 }
@@ -29,8 +34,8 @@ basicProjectile::~basicProjectile()
 void basicProjectile::setDimensions()
 {
     QImage *fireball= new QImage(":/images/fireball.png");
-    bulletHeight_ = fireball->height();
-    bulletWidth_ = fireball->width();
+    projectileHeight_ = fireball->height();
+    projectileWidth_ = fireball->width();
     //qDebug() << "fireball height: "<<bulletHeight_;
     //qDebug() << "fireball width: "<<bulletWidth_;
     delete fireball;
@@ -41,9 +46,9 @@ void basicProjectile::setDimensions()
 void basicProjectile::move()
 {
 
-    setPos(x(), y() - bulletVelocity_);
+    setPos(x(), y() - projectileVelocity_);
 
-    if(pos().y() + bulletHeight_ < 0){
+    if(pos().y() + projectileHeight_ < 0){
         scene()->removeItem(this);
         delete this;
     }

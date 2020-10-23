@@ -13,6 +13,8 @@ public:
     ~Spaceship();
 
     void keyPressEvent(QKeyEvent *event);
+    void keyReleaseEvent(QKeyEvent * event);
+    void moveSpaceship();
     void setDimensions();
 
     int spaceshipHeight_;
@@ -23,10 +25,22 @@ public:
         int screenHeight_ = 600;
 
     };
+
+    //bool keyLeft, keyRight, keySpace, keyUp, keyDown;
+
+
 private:
     int spaceshipVelocity_ = 50;
     int projectileVelocity_ = 20;
     QSoundEffect *projectileSound;
+
+    bool keyLeft=false;
+    bool keyRight=false;
+    bool keyUp=false;
+    bool keyDown=false;
+    bool keySpace=false;
+
+
 
 
 };
