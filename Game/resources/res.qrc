@@ -3,6 +3,8 @@
         <file>explosion_spritesheet.png</file>
         <file>fireball.png</file>
         <file>spaceship.png</file>
+        <file>souds_off.png</file>
+        <file>souds_on.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>
