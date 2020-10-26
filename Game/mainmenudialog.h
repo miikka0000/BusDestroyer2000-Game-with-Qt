@@ -3,6 +3,7 @@
 
 #include <QDialog>
 
+
 namespace Ui {
 class MainMenuDialog;
 }
@@ -15,8 +16,11 @@ public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
 
+
 private:
     Ui::MainMenuDialog *ui;
+
+
 };
 
 #endif // MAINMENUDIALOG_H

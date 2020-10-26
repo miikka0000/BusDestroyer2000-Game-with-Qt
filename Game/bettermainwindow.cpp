@@ -11,30 +11,42 @@
 #include <QGraphicsView>
 #include "bettermainwindow.h"
 #include "ui_bettermainwindow.h"
-
+const int PADDING = 10;
 BetterMainWindow::BetterMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::BetterMainWindow)
 {
     ui->setupUi(this);
 
-    ui->graphicsView->setFixedSize(800, 600);    //struct, joka kuvaa peliruudun kokoa.
-    dimensions screenSize;
+    dimensions size;
+
+    ui->graphicsView->setFixedSize(size.width_, size.height_);    //struct, joka kuvaa peliruudun kokoa.
+    ui->centralwidget->setFixedSize(size.width_ + PADDING, size.height_ + PADDING);
+
+
 
 
     // create the scene
     QGraphicsScene *scene = new QGraphicsScene();
-    scene->setSceneRect(0,0, screenSize.screenWidth, screenSize.screenHeight);
-
     ui->graphicsView->setScene(scene);
+
+    scene->setSceneRect(0,0, size.width_, size.height_);
+
+    resize(minimumSizeHint());
+    //ui->gameView->fitInView(0,0, MAPWIDTH, MAPHEIGHT, Qt::KeepAspectRatio);
+
+    timer = new QTimer(this);
+    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
+    timer->start(interval);
+
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //setFixedSize(800,600);
+
 
     player_ = new Spaceship();
     //player_->setDimensions();
 
-    player_->setPos(screenSize.screenWidth / 2, screenSize.screenHeight - player_->spaceshipHeight_);
+    player_->setPos(size.width_ / 2, size.height_ - player_->spaceshipHeight_);
 
 
     player_->setFlag(QGraphicsItem::ItemIsFocusable);

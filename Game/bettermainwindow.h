@@ -7,6 +7,7 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QMainWindow>
+#include <QTimer>
 
 namespace Ui {
 class BetterMainWindow;
@@ -27,12 +28,14 @@ public:
     //Health * health;
 
     struct dimensions {
-        int screenWidth = 800;
-        int screenHeight = 600;
+        int width_ = 800;
+        int height_ = 600;
     };
+    int interval = 500; //ms
 
 private:
     Ui::BetterMainWindow *ui;
+    QTimer *timer;
 };
 
 #endif // BETTERMAINWINDOW_H
