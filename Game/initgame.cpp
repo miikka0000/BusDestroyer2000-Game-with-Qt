@@ -13,23 +13,19 @@
 
 initGame::initGame(){
 
-
+    setSize(200,200);
     //struct, joka kuvaa peliruudun kokoa.
     dimensions screenSize;
-    //basicProjectile *p = new basicProjectile();
-    //p->setDimensions();
-    //delete p;
 
 
     // create the scene
     QGraphicsScene *scene = new QGraphicsScene();
     scene->setSceneRect(0,0, screenSize.screenWidth, screenSize.screenHeight);
-    //setBackgroundBrush(QBrush(QImage(":/images/bg.png")));
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    setFixedSize(800,600);
+    //setFixedSize(800,600);
 
     player_ = new Spaceship();
     //player_->setDimensions();

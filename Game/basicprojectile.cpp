@@ -21,9 +21,6 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
     qDebug() << "projectile height:"<<this->projectileHeight_;
     qDebug() << "proejctile width:"<<this->projectileWidth_;
 
-
-
-
 }
 
 basicProjectile::~basicProjectile()

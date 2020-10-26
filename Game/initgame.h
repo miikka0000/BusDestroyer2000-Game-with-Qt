@@ -2,12 +2,13 @@
 #define GAME_H
 #include "spaceship.h"
 #include "basicprojectile.h"
+#include "graphics/simplemainwindow.hh"
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
 
 
-class initGame: public QGraphicsView{
+class initGame: public QGraphicsView, CourseSide::SimpleMainWindow, public QWidget{
 
 public:
     initGame();

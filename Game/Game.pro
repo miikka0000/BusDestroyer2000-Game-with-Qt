@@ -7,8 +7,10 @@ CONFIG += c++14
 
 SOURCES += \
     basicprojectile.cpp \
+    bettermainwindow.cpp \
     initgame.cpp \
     main.cc \
+    mainmenudialog.cpp \
     spaceship.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
@@ -37,8 +39,14 @@ else:unix: PRE_TARGETDEPS += \
 
 HEADERS += \
     basicprojectile.h \
+    bettermainwindow.h \
     initgame.h \
+    mainmenudialog.h \
     spaceship.h
 
 RESOURCES += \
     resources/res.qrc
+
+FORMS += \
+    bettermainwindow.ui \
+    mainmenudialog.ui
