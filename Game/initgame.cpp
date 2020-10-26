@@ -13,7 +13,7 @@
 
 initGame::initGame(){
 
-    setSize(200,200);
+    setFixedSize(200,200);
     //struct, joka kuvaa peliruudun kokoa.
     dimensions screenSize;
 

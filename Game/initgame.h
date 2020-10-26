@@ -8,7 +8,7 @@
 #include <QGraphicsScene>
 
 
-class initGame: public QGraphicsView, CourseSide::SimpleMainWindow, public QWidget{
+class initGame: public QGraphicsView{
 
 public:
     initGame();

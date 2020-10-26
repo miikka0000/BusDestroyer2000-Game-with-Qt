@@ -9,6 +9,7 @@
 #include <QMainWindow>
 #include <QTimer>
 
+
 namespace Ui {
 class BetterMainWindow;
 }
@@ -21,6 +22,10 @@ public:
     explicit BetterMainWindow(QWidget *parent = nullptr);
     ~BetterMainWindow();
 
+    //void resizeEvent(QResizeEvent * event);
+
+    void getCenter();
+
     QGraphicsScene * scene_;
     Spaceship * player_;
     basicProjectile *projectile_;
@@ -32,6 +37,9 @@ public:
         int height_ = 600;
     };
     int interval = 500; //ms
+
+    int viewWidth = 400;
+    int viewHeight = 300;
 
 private:
     Ui::BetterMainWindow *ui;
