@@ -1,5 +1,7 @@
 #include "spaceship.h"
 #include "basicprojectile.h"
+#include "bettermainwindow.h"
+
 
 #include <QKeyEvent>
 #include <QGraphicsScene>
@@ -18,15 +20,19 @@ Spaceship::Spaceship(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
     setPixmap(QPixmap(":/images/spaceship.png"));
     projectileSound = new QSoundEffect(this);
     projectileSound->setSource(QUrl("qrc:/sounds/blaster_sound.wav"));
+    BetterMainWindow *temp = new BetterMainWindow();
 
 
-    QTimer * move_timer = new QTimer();
-    connect(move_timer, &QTimer::timeout,this, &Spaceship::moveSpaceship);
-    move_timer->start(50);
+
+    moveTimer = new QTimer();
+    connect(moveTimer, &QTimer::timeout, this, &Spaceship::moveSpaceship);
+    connect(temp, &BetterMainWindow::emitDimensions, this, &Spaceship::setLimits);
+    moveTimer->start(50);
 
     this->setDimensions();
     qDebug() << "player height:"<<this->spaceshipHeight_;
     qDebug() << "player width:"<<this->spaceshipWidth_;
+    delete temp;
 
 
 }
@@ -42,19 +48,19 @@ void Spaceship::keyPressEvent(QKeyEvent *event)
 
 
     if(event->key() == Qt::Key_Left){
-        qDebug() << "key left pressed";
+        //qDebug() << "key left pressed";
         keyLeft = true;
 
     }  else if(event->key() == Qt::Key_Right){
 
-        qDebug() << "key right pressed";
+        //qDebug() << "key right pressed";
         keyRight = true;
     } else if(event->key() == Qt::Key_Up){
-        qDebug() << "key up pressed";
+        //qDebug() << "key up pressed";
         keyUp = true;
 
     } else if(event->key() == Qt::Key_Down){
-        qDebug() << "key down pressed";
+        //qDebug() << "key down pressed";
         keyDown = true;
     }  else if(event->key() == Qt::Key_Space){
 
@@ -71,7 +77,7 @@ void Spaceship::keyPressEvent(QKeyEvent *event)
             projectileSound->setVolume(0.25f);
             projectileSound->play();
         }
-        qDebug() << "space pressed";
+        //qDebug() << "space pressed";
         keySpace = true;
     }
     return;
@@ -87,22 +93,22 @@ void Spaceship::keyReleaseEvent(QKeyEvent * event)
     {
 
         if(event->key() == Qt::Key_Left){
-            qDebug() << "Left key relased.";
+            //qDebug() << "Left key relased.";
             keyLeft = false;
 
         } else if(event->key() == Qt::Key_Right){
 
-            qDebug() << "Right key relased.";
+            //qDebug() << "Right key relased.";
             keyRight = false;
 
         } else if(event->key() == Qt::Key_Up){
-            qDebug() << "Up key relased.";
+            //qDebug() << "Up key relased.";
             keyUp = false;
         } else if(event->key() == Qt::Key_Down){
-            qDebug() << "Down key relased.";
+            //qDebug() << "Down key relased.";
             keyDown = false;
         }  else if(event->key() == Qt::Key_Space){
-            qDebug() << "Space key relased.";
+            //qDebug() << "Space key relased.";
             keySpace = false;
 
         }
@@ -116,14 +122,14 @@ void Spaceship::keyReleaseEvent(QKeyEvent * event)
 
 
 void Spaceship::moveSpaceship(){
-    dimensions size;
+
 
     if(keyLeft){
         if(pos().x() > 0){
             setPos(x() - spaceshipVelocity_, y());
         }
     } else if(keyRight){
-        if(pos().x() + 50 < size.screenWidth_){
+        if(pos().x() + 50 <screenWidth_){
             setPos(x() + spaceshipVelocity_, y());
         }
     } else if(keyUp){
@@ -132,7 +138,7 @@ void Spaceship::moveSpaceship(){
         }
     } else if(keyDown){
 
-        if(pos().y() + spaceshipHeight_ < size.screenHeight_){
+        if(pos().y() + spaceshipHeight_ < screenHeight_){
             setPos(x(), y() + spaceshipVelocity_);
         }
 
@@ -145,14 +151,25 @@ void Spaceship::moveSpaceship(){
 void Spaceship::setDimensions()
 {
     QImage *spaceship= new QImage(":/images/spaceship.png");
-
-
-
     spaceshipHeight_ = spaceship->height();
     spaceshipWidth_ = spaceship->width();
     //qDebug() << "ship height: "<< playerHeight_;
     //qDebug() << "ship width: "<< playerWidth_;
     delete spaceship;
+
+}
+
+void Spaceship::setLimits(int w, int h)
+{
+
+
+
+    qDebug() << "mainwindow height: "<< h;
+    qDebug() << "mainwindow width: "<< w;
+
+    screenWidth_ = w;
+    screenHeight_ = h;
+
 
 }
 

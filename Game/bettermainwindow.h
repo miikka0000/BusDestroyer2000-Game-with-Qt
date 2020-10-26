@@ -24,7 +24,8 @@ public:
 
     //void resizeEvent(QResizeEvent * event);
 
-    void getCenter();
+    void getCenterCoord();
+
 
     QGraphicsScene * scene_;
     Spaceship * player_;
@@ -41,9 +42,13 @@ public:
     int viewWidth = 400;
     int viewHeight = 300;
 
+signals:
+    void emitDimensions(int w, int h);
+
 private:
     Ui::BetterMainWindow *ui;
     QTimer *timer;
+
 };
 
 #endif // BETTERMAINWINDOW_H

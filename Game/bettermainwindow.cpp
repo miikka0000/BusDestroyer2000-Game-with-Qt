@@ -43,7 +43,7 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     timer->start(interval);
     QTimer *timer2 = new QTimer(this);
     timer2->start(100);
-    connect(timer2, &QTimer::timeout, this, &BetterMainWindow::getCenter);
+    connect(timer2, &QTimer::timeout, this, &BetterMainWindow::getCenterCoord);
 
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -80,13 +80,16 @@ BetterMainWindow::~BetterMainWindow()
 
 }*/
 
-void BetterMainWindow::getCenter()
+void BetterMainWindow::getCenterCoord()
 {
     int w = ui->centralwidget->width() / 2;
     int h = ui->graphicsView->height() / 2;
 
     viewWidth = w;
     viewHeight = h;
+
+    emit emitDimensions(viewWidth, viewHeight);
+    qDebug()<<"signal emitted";
 
 
 }

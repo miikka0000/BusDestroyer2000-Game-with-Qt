@@ -4,6 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
 #include <QSoundEffect>
+#include <QTimer>
 
 
 class Spaceship:  public QObject, public QGraphicsPixmapItem{
@@ -17,22 +18,27 @@ public:
     void moveSpaceship();
     void setDimensions();
 
+
     int spaceshipHeight_;
     int spaceshipWidth_;
 
-    struct dimensions {
-        int screenWidth_ = 800;
-        int screenHeight_ = 600;
+    int screenWidth_;
+    int screenHeight_;
 
-    };
+
 
     //bool keyLeft, keyRight, keySpace, keyUp, keyDown;
+public slots:
+    void setLimits(int w, int h);
 
 
 private:
     int spaceshipVelocity_ = 50;
     int projectileVelocity_ = 20;
     QSoundEffect *projectileSound;
+    QTimer *moveTimer;
+
+
 
     bool keyLeft=false;
     bool keyRight=false;
