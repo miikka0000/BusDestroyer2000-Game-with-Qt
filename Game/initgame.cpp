@@ -38,6 +38,7 @@ initGame::initGame(){
 
     scene->addItem(player_);
 
+
 }
 
 initGame::~initGame()

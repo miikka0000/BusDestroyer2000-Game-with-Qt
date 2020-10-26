@@ -6,6 +6,7 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui(new Ui::MainMenuDialog)
 {
     ui->setupUi(this);
+
 }
 
 MainMenuDialog::~MainMenuDialog()
