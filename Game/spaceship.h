@@ -19,14 +19,19 @@ public:
     void keyReleaseEvent(QKeyEvent * event);
     void moveSpaceship();
     void setDimensions();
+    void changePlayerSpeed(int delta);
 
 
     int spaceshipHeight_;
     int spaceshipWidth_;
 
     int screenWidth_ = 800;
-    int screenHeight_= 570;
+    int screenHeight_= 600;
     const QPixmap shipPic = QPixmap(":/images/spaceship.png");
+     int interval = 25;
+
+     int x_;
+     int y_;
 
 
 
@@ -38,10 +43,11 @@ public:
 
 
 private:
-    int spaceshipVelocity_ = 50;
-    int projectileVelocity_ = 20;
+    double spaceshipVelocity_ = 20.0;
+    double projectileVelocity_ = 8.0;
     QSoundEffect *projectileSound;
     QTimer *moveTimer;
+
 
 
 

@@ -29,9 +29,10 @@ Spaceship::Spaceship(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
     moveTimer = new QTimer();
     connect(moveTimer, &QTimer::timeout, this, &Spaceship::moveSpaceship);
     //connect(temp, &BetterMainWindow::emitDimensions, this, &Spaceship::setLimits);
-    moveTimer->start(50);
+    moveTimer->start(interval);
 
     this->setDimensions();
+    setPos(mapToParent(pos().x(), pos().y()));
     //qDebug() << "player height:"<<this->spaceshipHeight_;
     //qDebug() << "player width:"<<this->spaceshipWidth_;
     //delete temp;
@@ -82,6 +83,11 @@ void Spaceship::keyPressEvent(QKeyEvent *event)
         }
         //qDebug() << "space pressed";
         keySpace = true;
+    } else if(event->key() == Qt::Key_Plus){
+        changePlayerSpeed(1);
+    } else if(event->key() == Qt::Key_Minus){
+        changePlayerSpeed(0);
+        qDebug()<<"minuse pressed";
     }
     return;
 
@@ -125,30 +131,30 @@ void Spaceship::keyReleaseEvent(QKeyEvent * event)
 
 
 void Spaceship::moveSpaceship(){
-    qDebug() << "from player: mainWindow width:"<<this->screenWidth_;
-    qDebug() << "from player: mainWindow height:"<<this->screenHeight_;
+    //qDebug() << "from player: mainWindow width:"<<this->screenWidth_;
+    //qDebug() << "from player: mainWindow height:"<<this->screenHeight_;
 
 
     if(keyLeft){
-        if(pos().x() > 0){
+        if(pos().x() - 10 > 0){
             setPos(x() - spaceshipVelocity_, y());
         }
     } else if(keyRight){
-        if(pos().x() + 100 < screenWidth_){
+        if(pos().x() +85  < screenWidth_){
             setPos(x() + spaceshipVelocity_, y());
         }
     } else if(keyUp){
-        if(pos().y()- 65 > 0){
+        if(pos().y()- 25 > 0){
             setPos(x(), y() - spaceshipVelocity_);
         }
     } else if(keyDown){
 
-        if(pos().y() + 90 < screenHeight_){
+        if(pos().y() + 105 < screenHeight_){
             setPos(x(), y() + spaceshipVelocity_);
         }
 
     }
-    qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
+    //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
 }
 
 
@@ -162,6 +168,24 @@ void Spaceship::setDimensions()
     //qDebug() << "ship height: "<< playerHeight_;
     //qDebug() << "ship width: "<< playerWidth_;
     delete spaceship;
+
+}
+
+void Spaceship::changePlayerSpeed(int delta)
+{
+    // 10 % increase when player presses '+' -key
+    double increaseMultiplier = 1.05;
+    double decreaseMultiplier = 0.95;
+    if(delta == 1 && spaceshipVelocity_ < 25.0){
+        spaceshipVelocity_ = spaceshipVelocity_*increaseMultiplier;
+        projectileVelocity_ = projectileVelocity_*increaseMultiplier;
+        //interval = interval*increaseMultiplier;
+
+    } else if(delta == 0 && spaceshipVelocity_ > 21.0){
+        spaceshipVelocity_ = spaceshipVelocity_*decreaseMultiplier;
+         projectileVelocity_ = projectileVelocity_*decreaseMultiplier;
+         //interval = interval*decreaseMultiplier;
+    }
 
 }
 

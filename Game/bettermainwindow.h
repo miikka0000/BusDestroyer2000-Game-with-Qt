@@ -10,6 +10,8 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QPalette>
+#include <QImage>
+#include <QBrush>
 
 
 namespace Ui {
@@ -24,9 +26,10 @@ public:
     explicit BetterMainWindow(QWidget *parent = nullptr);
     ~BetterMainWindow();
 
-    //void resizeEvent(QResizeEvent * event);
+    void resizeEvent(QResizeEvent * event);
 
-    void getWindowSize();
+    //void getWindowSize();
+    void setPicture(QImage img);
 
 
 
@@ -40,13 +43,13 @@ public:
         int width_ = 800;
         int height_ = 600;
     };
-    int interval = 500; //ms
+    int interval_ = 500; //ms
 
     //int viewWidth_ = 800;
     //int viewHeight_ = 600;
-     const QPixmap bkgndSmall = QPixmap(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
-     const QPixmap bkgndBig = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
-     QPalette palette;
+     QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
+     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
+     //QPalette palette;
 
 /*signals:
     void emitDimensions(int w, int h);*/
@@ -54,6 +57,7 @@ public:
 private:
     Ui::BetterMainWindow *ui;
     QTimer *timer;
+    bool largeMode = false;
 
 };
 
