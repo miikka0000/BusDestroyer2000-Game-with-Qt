@@ -12,6 +12,8 @@
 #include <QPalette>
 #include <QImage>
 #include <QBrush>
+#include <QPaintEvent>
+#include <vector>
 
 
 namespace Ui {
@@ -30,6 +32,8 @@ public:
 
     //void getWindowSize();
     void setPicture(QImage img);
+    //void paintEvent(QPaintEvent *pe);
+    std::vector<int> getAvailableSize();
 
 
 
@@ -49,7 +53,7 @@ public:
     //int viewHeight_ = 600;
      QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
      QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
-     //QPalette palette;
+
 
 /*signals:
     void emitDimensions(int w, int h);*/
@@ -57,6 +61,9 @@ public:
 private:
     Ui::BetterMainWindow *ui;
     QTimer *timer;
+
+    QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
+
     bool largeMode = false;
 
 };

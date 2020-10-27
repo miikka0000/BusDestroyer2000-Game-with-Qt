@@ -155,6 +155,8 @@ void Spaceship::moveSpaceship(){
 
     }
     //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
+    x_ = pos().x();
+    y_ = pos().y();
 }
 
 
