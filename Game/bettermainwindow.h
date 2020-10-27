@@ -8,6 +8,8 @@
 #include <QGraphicsScene>
 #include <QMainWindow>
 #include <QTimer>
+#include <QPixmap>
+#include <QPalette>
 
 
 namespace Ui {
@@ -24,7 +26,8 @@ public:
 
     //void resizeEvent(QResizeEvent * event);
 
-    void getCenterCoord();
+    void getWindowSize();
+
 
 
     QGraphicsScene * scene_;
@@ -39,11 +42,14 @@ public:
     };
     int interval = 500; //ms
 
-    int viewWidth = 400;
-    int viewHeight = 300;
+    //int viewWidth_ = 800;
+    //int viewHeight_ = 600;
+     const QPixmap bkgndSmall = QPixmap(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
+     const QPixmap bkgndBig = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
+     QPalette palette;
 
-signals:
-    void emitDimensions(int w, int h);
+/*signals:
+    void emitDimensions(int w, int h);*/
 
 private:
     Ui::BetterMainWindow *ui;

@@ -11,16 +11,22 @@
 #include <QGraphicsView>
 #include "bettermainwindow.h"
 #include "ui_bettermainwindow.h"
+#include <QPalette>
+#include <QPixmap>
 
 
-const int PADDING = 10;
+//const int PADDING = 10;
 
 BetterMainWindow::BetterMainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::BetterMainWindow)
 {
     ui->setupUi(this);
-     //struct, joka kuvaa peliruudun kokoa.
+
+   // bkgndSmall.scaled(this->size(), Qt::IgnoreAspectRatio);
+
+    //ui->graphicsView->DrawWindowBackground();
+    //struct, joka kuvaa peliruudun kokoa.
     dimensions size;
 
     //ui->graphicsView->setFixedSize(size.width_, size.height_);
@@ -30,35 +36,37 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
 
 
     // create the scene
-    QGraphicsScene *scene = new QGraphicsScene();
-    ui->graphicsView->setScene(scene);
+    scene_ = new QGraphicsScene();
+    ui->graphicsView->setScene(scene_);
 
-    scene->setSceneRect(0,0, size.width_, size.height_);
+    scene_->setSceneRect(0,0, size.width_, size.height_);
+
 
     //resize(minimumSizeHint());
     //ui->graphicsView->fitInView(0,0, width(), height(), Qt::KeepAspectRatio);
 
     timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, scene, &QGraphicsScene::advance);
+    connect(timer, &QTimer::timeout, scene_, &QGraphicsScene::advance);
     timer->start(interval);
     QTimer *timer2 = new QTimer(this);
     timer2->start(100);
-    connect(timer2, &QTimer::timeout, this, &BetterMainWindow::getCenterCoord);
+    connect(timer2, &QTimer::timeout, this, &BetterMainWindow::getWindowSize);
 
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
+
     player_ = new Spaceship();
     //player_->setDimensions();
 
-    player_->setPos(viewWidth, viewHeight - player_->spaceshipHeight_);
+    player_->setPos(size.width_ / 2, (size.height_ - player_->spaceshipHeight_) / 2);
 
 
     player_->setFlag(QGraphicsItem::ItemIsFocusable);
     player_->setFocus();
 
-    scene->addItem(player_);
+    scene_->addItem(player_);
 
 }
 
@@ -80,16 +88,22 @@ BetterMainWindow::~BetterMainWindow()
 
 }*/
 
-void BetterMainWindow::getCenterCoord()
+void BetterMainWindow::getWindowSize()
 {
-    int w = ui->centralwidget->width() / 2;
-    int h = ui->graphicsView->height() / 2;
+    dimensions size;
+    int w = ui->centralwidget->width();
+    int h = ui->centralwidget->height();
 
-    viewWidth = w;
-    viewHeight = h;
+    size.width_ = w;
+    size.height_ = h;
+    player_->screenWidth_ = w;
+    player_->screenHeight_ = h;
+    scene_->setSceneRect(0,0, size.width_, size.height_);
 
-    emit emitDimensions(viewWidth, viewHeight);
-    qDebug()<<"signal emitted";
+
+    //emit emitDimensions(viewWidth, viewHeight);
+    //qDebug()<<"Window width: " << w;
+    //qDebug()<<"Window height: " << h;
 
 
 }

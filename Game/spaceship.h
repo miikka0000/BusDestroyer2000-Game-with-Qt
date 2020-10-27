@@ -5,6 +5,8 @@
 #include <QKeyEvent>
 #include <QSoundEffect>
 #include <QTimer>
+#include <QPixmap>
+#include <QUrl>
 
 
 class Spaceship:  public QObject, public QGraphicsPixmapItem{
@@ -22,14 +24,17 @@ public:
     int spaceshipHeight_;
     int spaceshipWidth_;
 
-    int screenWidth_;
-    int screenHeight_;
+    int screenWidth_ = 800;
+    int screenHeight_= 570;
+    const QPixmap shipPic = QPixmap(":/images/spaceship.png");
+
+
 
 
 
     //bool keyLeft, keyRight, keySpace, keyUp, keyDown;
-public slots:
-    void setLimits(int w, int h);
+/*public slots:
+    void setLimits(int w, int h);*/
 
 
 private:

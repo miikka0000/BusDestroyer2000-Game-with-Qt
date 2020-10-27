@@ -17,22 +17,25 @@
 
 Spaceship::Spaceship(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    setPixmap(QPixmap(":/images/spaceship.png"));
+
+    setPixmap(shipPic);
     projectileSound = new QSoundEffect(this);
     projectileSound->setSource(QUrl("qrc:/sounds/blaster_sound.wav"));
-    BetterMainWindow *temp = new BetterMainWindow();
+
+    //BetterMainWindow *temp = new BetterMainWindow();
 
 
 
     moveTimer = new QTimer();
     connect(moveTimer, &QTimer::timeout, this, &Spaceship::moveSpaceship);
-    connect(temp, &BetterMainWindow::emitDimensions, this, &Spaceship::setLimits);
+    //connect(temp, &BetterMainWindow::emitDimensions, this, &Spaceship::setLimits);
     moveTimer->start(50);
 
     this->setDimensions();
-    qDebug() << "player height:"<<this->spaceshipHeight_;
-    qDebug() << "player width:"<<this->spaceshipWidth_;
-    delete temp;
+    //qDebug() << "player height:"<<this->spaceshipHeight_;
+    //qDebug() << "player width:"<<this->spaceshipWidth_;
+    //delete temp;
+
 
 
 }
@@ -122,6 +125,8 @@ void Spaceship::keyReleaseEvent(QKeyEvent * event)
 
 
 void Spaceship::moveSpaceship(){
+    qDebug() << "from player: mainWindow width:"<<this->screenWidth_;
+    qDebug() << "from player: mainWindow height:"<<this->screenHeight_;
 
 
     if(keyLeft){
@@ -129,20 +134,21 @@ void Spaceship::moveSpaceship(){
             setPos(x() - spaceshipVelocity_, y());
         }
     } else if(keyRight){
-        if(pos().x() + 50 <screenWidth_){
+        if(pos().x() + 100 < screenWidth_){
             setPos(x() + spaceshipVelocity_, y());
         }
     } else if(keyUp){
-        if(pos().y() - spaceshipHeight_ > 0){
+        if(pos().y()- 65 > 0){
             setPos(x(), y() - spaceshipVelocity_);
         }
     } else if(keyDown){
 
-        if(pos().y() + spaceshipHeight_ < screenHeight_){
+        if(pos().y() + 90 < screenHeight_){
             setPos(x(), y() + spaceshipVelocity_);
         }
 
     }
+    qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
 }
 
 
@@ -159,7 +165,7 @@ void Spaceship::setDimensions()
 
 }
 
-void Spaceship::setLimits(int w, int h)
+/*void Spaceship::setLimits(int w, int h)
 {
 
 
@@ -171,6 +177,6 @@ void Spaceship::setLimits(int w, int h)
     screenHeight_ = h;
 
 
-}
+}*/
 
 
