@@ -27,10 +27,10 @@ initGame::initGame(){
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     //setFixedSize(800,600);
 
-    player_ = new Spaceship();
+    player_ = new Player();
     //player_->setDimensions();
 
-    player_->setPos(screenSize.screenWidth / 2, screenSize.screenHeight - player_->spaceshipHeight_);
+    player_->setPos(screenSize.screenWidth / 2, screenSize.screenHeight - player_->playerHeight);
 
 
     player_->setFlag(QGraphicsItem::ItemIsFocusable);

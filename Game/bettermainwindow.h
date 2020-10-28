@@ -38,7 +38,7 @@ public:
 
 
     QGraphicsScene * scene_;
-    Spaceship * player_;
+    Player * player_;
     basicProjectile *projectile_;
     //Score * score;
     //Health * health;

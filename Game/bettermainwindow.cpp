@@ -46,7 +46,7 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
-    player_ = new Spaceship();
+    player_ = new Player();
 
 
     player_->setPos(size.width_ / 2, size.height_ - 100);
