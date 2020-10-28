@@ -9,21 +9,21 @@
 #include <QUrl>
 
 
-class Spaceship:  public QObject, public QGraphicsPixmapItem{
+class Player:  public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
-    Spaceship(QGraphicsItem *parent= 0);
-    ~Spaceship();
+    Player(QGraphicsItem *parent= 0);
+    ~Player();
 
     void keyPressEvent(QKeyEvent *event);
     void keyReleaseEvent(QKeyEvent * event);
-    void moveSpaceship();
+    void movePlayer();
     void setDimensions();
     void changePlayerSpeed(int delta);
 
 
-    int spaceshipHeight_;
-    int spaceshipWidth_;
+    int playerHeight;
+    int playerWidth;
 
     int screenWidth_ = 800;
     int screenHeight_= 600;

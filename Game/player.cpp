@@ -1,4 +1,4 @@
-#include "spaceship.h"
+#include "player.h"
 #include "basicprojectile.h"
 #include "bettermainwindow.h"
 
@@ -15,7 +15,7 @@
 #include <memory>
 
 
-Spaceship::Spaceship(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
+Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
     setPixmap(shipPic);
@@ -27,7 +27,7 @@ Spaceship::Spaceship(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
 
 
     moveTimer = new QTimer();
-    connect(moveTimer, &QTimer::timeout, this, &Spaceship::moveSpaceship);
+    connect(moveTimer, &QTimer::timeout, this, &Player::movePlayer);
     //connect(temp, &BetterMainWindow::emitDimensions, this, &Spaceship::setLimits);
     moveTimer->start(interval);
 
@@ -41,13 +41,13 @@ Spaceship::Spaceship(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
 
 }
 
-Spaceship::~Spaceship()
+Player::~Player()
 {
 
 }
 
 
-void Spaceship::keyPressEvent(QKeyEvent *event)
+void Player::keyPressEvent(QKeyEvent *event)
 {
 
 
@@ -97,7 +97,7 @@ void Spaceship::keyPressEvent(QKeyEvent *event)
 }
 
 
-void Spaceship::keyReleaseEvent(QKeyEvent * event)
+void Player::keyReleaseEvent(QKeyEvent * event)
 {
 
     if (!event->isAutoRepeat())
@@ -132,7 +132,7 @@ void Spaceship::keyReleaseEvent(QKeyEvent * event)
 
 
 
-void Spaceship::moveSpaceship(){
+void Player::movePlayer(){
     //qDebug() << "from player: mainWindow width:"<<this->screenWidth_;
     //qDebug() << "from player: mainWindow height:"<<this->screenHeight_;
 
@@ -164,18 +164,18 @@ void Spaceship::moveSpaceship(){
 
 
 
-void Spaceship::setDimensions()
+void Player::setDimensions()
 {
     QImage *spaceship= new QImage(":/images/spaceship.png");
-    spaceshipHeight_ = spaceship->height();
-    spaceshipWidth_ = spaceship->width();
+    playerHeight = spaceship->height();
+    playerWidth = spaceship->width();
     //qDebug() << "ship height: "<< playerHeight_;
     //qDebug() << "ship width: "<< playerWidth_;
     delete spaceship;
 
 }
 
-void Spaceship::changePlayerSpeed(int delta)
+void Player::changePlayerSpeed(int delta)
 {
     // 10 % increase when player presses '+' -key
     double increaseMultiplier = 1.05;
@@ -193,7 +193,7 @@ void Spaceship::changePlayerSpeed(int delta)
 
 }
 
-/*void Spaceship::setLimits(int w, int h)
+/*void Player::setLimits(int w, int h)
 {
 
 

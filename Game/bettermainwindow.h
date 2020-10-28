@@ -1,6 +1,6 @@
 #ifndef BETTERMAINWINDOW_H
 #define BETTERMAINWINDOW_H
-#include "spaceship.h"
+#include "player.h"
 #include "basicprojectile.h"
 #include "graphics/simplemainwindow.hh"
 
