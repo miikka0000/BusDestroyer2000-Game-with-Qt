@@ -6,6 +6,12 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui(new Ui::MainMenuDialog)
 {
     ui->setupUi(this);
+    connect(ui->startButton, &QPushButton::clicked,
+            this, &QDialog::accept);
+    connect(ui->exitButton, &QPushButton::clicked,
+            this, &QDialog::reject);
+    connect(ui->exitButton, &QPushButton::clicked,
+                this, &MainMenuDialog::close);
 
 }
 
