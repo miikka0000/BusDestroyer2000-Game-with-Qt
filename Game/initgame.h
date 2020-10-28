@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-#include "spaceship.h"
+#include "player.h"
 #include "basicprojectile.h"
 #include "graphics/simplemainwindow.hh"
 

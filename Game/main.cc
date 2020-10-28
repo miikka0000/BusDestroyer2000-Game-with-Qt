@@ -1,4 +1,4 @@
-#include "spaceship.h"
+#include "player.h"
 #include "initgame.h"
 #include <bettermainwindow.h>
 
