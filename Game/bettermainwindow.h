@@ -3,6 +3,7 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "graphics/simplemainwindow.hh"
+#include "mainmenudialog.h"
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -37,6 +38,7 @@ public:
 
 
 
+
     QGraphicsScene * scene_;
     Player * player_;
     basicProjectile *projectile_;
@@ -57,6 +59,7 @@ public:
 
 /*signals:
     void emitDimensions(int w, int h);*/
+
 
 private:
     Ui::BetterMainWindow *ui;
