@@ -1,6 +1,7 @@
 #include "player.h"
 #include "initgame.h"
 #include <bettermainwindow.h>
+#include "mainmenudialog.h"
 
 #include <QApplication>
 #include <QGraphicsScene>
@@ -21,10 +22,10 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     Q_INIT_RESOURCE(offlinedata);
     initGame * game = new initGame();
-    BetterMainWindow * mainUi = new BetterMainWindow();
-    mainUi->show();
 
+    MainMenuDialog * menuUi = new MainMenuDialog();
 
+    menuUi->show();
 
     return a.exec();
 }

@@ -3,6 +3,7 @@
 #include "initgame.h"
 #include "bettermainwindow.h"
 #include "ui_bettermainwindow.h"
+#include <mainmenudialog.h>
 
 #include <QTimer>
 #include <QTimer>
@@ -17,6 +18,7 @@
 #include <QGraphicsPixmapItem>
 #include <QDesktopWidget>
 #include <vector>
+
 
 
 
@@ -56,6 +58,8 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     player_->setFocus();
 
     scene_->addItem(player_);
+
+
 
 }
 
@@ -120,6 +124,7 @@ std::vector<int> BetterMainWindow::getAvailableSize()
     return {availableWidth, availableHeight};
 
 }
+
 
 
 

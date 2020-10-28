@@ -1,6 +1,5 @@
 #ifndef MAINMENUDIALOG_H
 #define MAINMENUDIALOG_H
-
 #include <QDialog>
 
 
@@ -16,6 +15,12 @@ public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
 
+
+
+private slots:
+    void on_startButton_clicked();
+
+    void on_exitButton_clicked();
 
 private:
     Ui::MainMenuDialog *ui;

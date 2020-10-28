@@ -218,4 +218,22 @@ void Player::initMusic(QUrl blasterSoundEffect)
 
 }*/
 
+/*
+void MyDialog::on_ok_button_clicked()
+{
+    //stringValue = ui->inputbox->text();
+    //o_type = ui->type_input->text();
+    o_amount = ui->inputbox->text().toInt();
+    //ui->testlabel->setText("you chose "+ QString::number(o_amount) + " objects");
+    if(ui->optionBox->currentIndex() == 0){
+        emit setValue(o_amount, FASTBALL);
+    } else if(ui->optionBox->currentIndex() == 1){
+        emit setValue(o_amount, ODDBALL);
+    } else if (ui->optionBox->currentIndex() == 2){
+        emit setValue(o_amount, END);
+    }
+
+
+}
+*/
 
