@@ -75,11 +75,13 @@ void Spaceship::keyPressEvent(QKeyEvent *event)
             scene()->addItem(fireball);
 
             //Äänet asetetaan tässä alla. HUOM. aiheuttaa latenssia!
+            /*
             if (projectileSound->isPlaying()){
                 projectileSound->stop();
             }
             projectileSound->setVolume(0.25f);
             projectileSound->play();
+            */
         }
         //qDebug() << "space pressed";
         keySpace = true;
@@ -136,11 +138,11 @@ void Spaceship::moveSpaceship(){
 
 
     if(keyLeft){
-        if(pos().x() - 10 > 0){
+        if(pos().x()  > 0){
             setPos(x() - spaceshipVelocity_, y());
         }
     } else if(keyRight){
-        if(pos().x() +85  < screenWidth_){
+        if(pos().x() + 55  < screenWidth_){
             setPos(x() + spaceshipVelocity_, y());
         }
     } else if(keyUp){
@@ -149,7 +151,7 @@ void Spaceship::moveSpaceship(){
         }
     } else if(keyDown){
 
-        if(pos().y() + 105 < screenHeight_){
+        if(pos().y() +60 < screenHeight_){
             setPos(x(), y() + spaceshipVelocity_);
         }
 

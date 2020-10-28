@@ -31,7 +31,7 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     dimensions size;
 
     scene_ = new QGraphicsScene();
-    scene_->setSceneRect(0,0, size.width_, size.height_);
+    //scene_->setSceneRect(0,0, size.width_, size.height_);
     setPicture(bkgndBig);
     ui->graphicsView->setScene(scene_);
     scene_->setSceneRect(0,0, size.width_, size.height_);
@@ -74,8 +74,8 @@ void BetterMainWindow::resizeEvent(QResizeEvent *event)
 
     size.width_ = newWidth;
     size.height_ = newHeight;
-    player_->screenWidth_ = newWidth;
-    player_->screenHeight_ = newHeight;
+    //player_->screenWidth_ = newWidth;
+    //player_->screenHeight_ = newHeight;
 
     player_->x_ = player_->pos().x();
     player_->y_ = player_->pos().y();
