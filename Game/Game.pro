@@ -11,7 +11,10 @@ SOURCES += \
     initgame.cpp \
     main.cc \
     mainmenudialog.cpp \
-    player.cpp
+    player.cpp \
+    spaceship.cpp \
+    tank.cpp \
+    ufo.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -42,7 +45,10 @@ HEADERS += \
     bettermainwindow.h \
     initgame.h \
     mainmenudialog.h \
-    player.h
+    player.h \
+    spaceship.h \
+    tank.h \
+    ufo.h
 
 RESOURCES += \
     resources/res.qrc

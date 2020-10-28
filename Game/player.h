@@ -20,6 +20,8 @@ public:
     void movePlayer();
     void setDimensions();
     void changePlayerSpeed(int delta);
+    void addPlayerSprite(QPixmap img);
+    void initMusic(QUrl blasterSoundEffect);
 
 
     int playerHeight;
@@ -27,7 +29,12 @@ public:
 
     int screenWidth_ = 800;
     int screenHeight_= 600;
-    const QPixmap shipPic = QPixmap(":/images/spaceship.png");
+    const QPixmap spaceshipPic = QPixmap(":/images/spaceship.png");
+    const QPixmap tankPic = QPixmap(":/images/spaceship.png");
+    const QPixmap tankpPic = QPixmap(":/images/spaceship.png");
+
+    const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
+
      int interval = 25;
 
      int x_;

@@ -2,9 +2,11 @@
     <qresource prefix="/images">
         <file>explosion_spritesheet.png</file>
         <file>fireball.png</file>
-        <file>spaceship.png</file>
+        <file>spaceship_45x31.png</file>
         <file>souds_off.png</file>
         <file>souds_on.png</file>
+        <file>tank_sprite_26x50.png</file>
+        <file>ufo_sprite_50x50.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>

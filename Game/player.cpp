@@ -17,12 +17,11 @@
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
+    addPlayerSprite(spaceshipPic);
+    initMusic(blasterSound);
 
-    setPixmap(shipPic);
-    projectileSound = new QSoundEffect(this);
-    projectileSound->setSource(QUrl("qrc:/sounds/blaster_sound.wav"));
 
-    //BetterMainWindow *temp = new BetterMainWindow();
+
 
 
 
@@ -75,13 +74,13 @@ void Player::keyPressEvent(QKeyEvent *event)
             scene()->addItem(fireball);
 
             //Äänet asetetaan tässä alla. HUOM. aiheuttaa latenssia!
-            /*
+
             if (projectileSound->isPlaying()){
                 projectileSound->stop();
             }
             projectileSound->setVolume(0.25f);
             projectileSound->play();
-            */
+
         }
         //qDebug() << "space pressed";
         keySpace = true;
@@ -191,6 +190,18 @@ void Player::changePlayerSpeed(int delta)
          //interval = interval*decreaseMultiplier;
     }
 
+}
+
+void Player::addPlayerSprite(QPixmap img)
+{
+    setPixmap(img);
+
+}
+
+void Player::initMusic(QUrl blasterSoundEffect)
+{
+    projectileSound = new QSoundEffect(this);
+    projectileSound->setSource(blasterSoundEffect);
 }
 
 /*void Player::setLimits(int w, int h)
