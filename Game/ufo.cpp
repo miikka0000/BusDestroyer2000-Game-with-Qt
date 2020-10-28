@@ -2,5 +2,10 @@
 
 Ufo::Ufo()
 {
+    addPlayerSprite(ufoPic);
+}
+
+Ufo::~Ufo()
+{
 
 }

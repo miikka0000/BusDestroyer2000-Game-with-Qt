@@ -29,9 +29,9 @@ public:
 
     int screenWidth_ = 800;
     int screenHeight_= 600;
-    const QPixmap spaceshipPic = QPixmap(":/images/spaceship.png");
-    const QPixmap tankPic = QPixmap(":/images/spaceship.png");
-    const QPixmap tankpPic = QPixmap(":/images/spaceship.png");
+    const QPixmap spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
+    const QPixmap tankPic = QPixmap(":/images/tank_sprite_26x50.png");
+    const QPixmap ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
 
@@ -39,6 +39,7 @@ public:
 
      int x_;
      int y_;
+
 
 
 

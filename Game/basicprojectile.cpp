@@ -10,7 +10,7 @@
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    setPixmap(QPixmap(":/images/fireball.png"));
+    setPixmap(QPixmap(":/images/fireball_16x16.png"));
     setTransformOriginPoint(5, 10);
     setRotation(-90);
     QTimer *timer = new QTimer(this);

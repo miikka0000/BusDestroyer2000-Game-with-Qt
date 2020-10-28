@@ -20,21 +20,13 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     addPlayerSprite(spaceshipPic);
     initMusic(blasterSound);
 
-
-
-
-
-
     moveTimer = new QTimer();
     connect(moveTimer, &QTimer::timeout, this, &Player::movePlayer);
-    //connect(temp, &BetterMainWindow::emitDimensions, this, &Spaceship::setLimits);
+
     moveTimer->start(interval);
 
     this->setDimensions();
     setPos(mapToParent(pos().x(), pos().y()));
-    //qDebug() << "player height:"<<this->spaceshipHeight_;
-    //qDebug() << "player width:"<<this->spaceshipWidth_;
-    //delete temp;
 
 
 
@@ -155,7 +147,7 @@ void Player::movePlayer(){
         }
 
     }
-    //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
+    qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
     x_ = pos().x();
     y_ = pos().y();
 }

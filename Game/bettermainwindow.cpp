@@ -4,6 +4,9 @@
 #include "bettermainwindow.h"
 #include "ui_bettermainwindow.h"
 #include <mainmenudialog.h>
+#include <ufo.h>
+#include <tank.h>
+#include <spaceship.h>
 
 #include <QTimer>
 #include <QTimer>
@@ -18,8 +21,6 @@
 #include <QGraphicsPixmapItem>
 #include <QDesktopWidget>
 #include <vector>
-
-
 
 
 
@@ -51,6 +52,7 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     player_ = new Player();
 
 
+
     player_->setPos(size.width_ / 2, size.height_ - 100);
 
 
@@ -72,36 +74,36 @@ void BetterMainWindow::resizeEvent(QResizeEvent *event)
 {
     if(largeMode){
 
-    int newWidth = event->size().width();
-    int newHeight = event->size().height();
-    dimensions size;
+        int newWidth = event->size().width();
+        int newHeight = event->size().height();
+        dimensions size;
 
-    size.width_ = newWidth;
-    size.height_ = newHeight;
-    //player_->screenWidth_ = newWidth;
-    //player_->screenHeight_ = newHeight;
+        size.width_ = newWidth;
+        size.height_ = newHeight;
+        //player_->screenWidth_ = newWidth;
+        //player_->screenHeight_ = newHeight;
 
-    player_->x_ = player_->pos().x();
-    player_->y_ = player_->pos().y();
-    qDebug() << player_->x_;
-    qDebug() << player_->y_;
+        player_->x_ = player_->pos().x();
+        player_->y_ = player_->pos().y();
+        qDebug() << player_->x_;
+        qDebug() << player_->y_;
 
 
-    if(ui->graphicsView->width() > 800){
-        std::vector<int> screen = getAvailableSize();
-        player_->setPos(screen.at(0) / 5, screen.at(1) / 2 );}
-    else{
-        player_->setPos(400,500);
+        if(ui->graphicsView->width() > 800){
+            std::vector<int> screen = getAvailableSize();
+            player_->setPos(screen.at(0) / 5, screen.at(1) / 2 );}
+        else{
+            player_->setPos(400,500);
+        }
+
+        qDebug()<<"resize Window width: " << newWidth;
+        qDebug()<<"resize Window width: " << newHeight;
+
+        setPicture(bkgndBig);
+        ui->graphicsView->fitInView(scene_->sceneRect(), Qt::IgnoreAspectRatio);
+
+
     }
-
-    qDebug()<<"resize Window width: " << newWidth;
-    qDebug()<<"resize Window width: " << newHeight;
-
-    setPicture(bkgndBig);
-     ui->graphicsView->fitInView(scene_->sceneRect(), Qt::IgnoreAspectRatio);
-
-
-}
     largeMode = true;
 
 }
