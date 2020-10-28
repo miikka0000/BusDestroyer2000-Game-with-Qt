@@ -129,11 +129,11 @@ void Player::movePlayer(){
 
 
     if(keyLeft){
-        if(pos().x()  > 0){
+        if(pos().x() + 10  > 0){
             setPos(x() - spaceshipVelocity_, y());
         }
     } else if(keyRight){
-        if(pos().x() + 55  < screenWidth_){
+        if(pos().x() + 37  < screenWidth_){
             setPos(x() + spaceshipVelocity_, y());
         }
     } else if(keyUp){
@@ -142,7 +142,7 @@ void Player::movePlayer(){
         }
     } else if(keyDown){
 
-        if(pos().y() +60 < screenHeight_){
+        if(pos().y() + 30 < screenHeight_){
             setPos(x(), y() + spaceshipVelocity_);
         }
 
