@@ -59,6 +59,7 @@ public slots:
     void setPlayerNick(QString name);
     void setPlayerIcon(int type);
 
+
 private:
     Ui::BetterMainWindow *ui;
     QTimer *timer;

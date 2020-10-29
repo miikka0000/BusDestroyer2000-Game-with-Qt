@@ -20,17 +20,22 @@ public:
     ~MainMenuDialog();
 
     void sendChosenPlayer();
-    void addProjectileTypes();
+
 
     enum playerType {
         tankOption, spaceshipOption, ufoOption
     };
+    enum projectileType {
+        fireballOption, missileOption, laserOption
+    };
+
     QString playerAlias;
 
 
 signals:
     void setPlayerName(QString name);
     void setPlayerType(int type);
+    void setProjectileType(int projectileType);
 
 
 private slots:
@@ -46,12 +51,22 @@ private slots:
 
     void on_ufoButton_clicked();
 
+    void on_fireballButton_clicked();
+
+    void on_missileButton_clicked();
+
+    void on_laserButton_clicked();
+
 private:
     Ui::MainMenuDialog *ui;
 
     bool _tank = false;
     bool _spaceShip = false;
     bool _ufo = false;
+
+    bool _fireball = false;
+    bool _missile = false;
+    bool _laser = false;
 
     QSize menuDialogSize;
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");

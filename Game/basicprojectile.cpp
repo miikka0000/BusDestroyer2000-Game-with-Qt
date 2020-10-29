@@ -25,7 +25,15 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
 
 basicProjectile::~basicProjectile()
 {
+    if(fireballChosen){
+        setPixmap(_fireballPic);
 
+    } else if(missileChosen){
+        setPixmap(_missilePic);
+
+    } else if(laserChosen){
+        setPixmap(_laserPic);
+    }
 }
 
 void basicProjectile::setDimensions()
@@ -36,6 +44,11 @@ void basicProjectile::setDimensions()
     //qDebug() << "fireball height: "<<bulletHeight_;
     //qDebug() << "fireball width: "<<bulletWidth_;
     delete fireball;
+}
+
+void basicProjectile::setProjectilePicture()
+{
+
 }
 
 void basicProjectile::move()
