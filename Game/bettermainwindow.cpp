@@ -22,6 +22,8 @@
 #include <QDesktopWidget>
 #include <vector>
 #include <QString>
+#include <QList>
+#include <QScreen>
 
 
 
@@ -31,39 +33,36 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //struct, joka sisältää peliruudun koon.
     dimensions size;
 
-    scene_ = new QGraphicsScene();
-    //scene_->setSceneRect(0,0, size.width_, size.height_);
+    _scene = new QGraphicsScene();
+
     setPicture(bkgndBig);
-    ui->graphicsView->setScene(scene_);
-    scene_->setSceneRect(0,0, size.width_, size.height_);
+    ui->graphicsView->setScene(_scene);
+    _scene->setSceneRect(0,0, size.width, size.height);
 
 
     timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, scene_, &QGraphicsScene::advance);
-    timer->start(interval_);
+    connect(timer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
+    timer->start(interval);
 
 
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
-    player_ = new Player();
-    mainMenu = new MainMenuDialog();
-    connect(mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
-    connect(mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
+    _player = new Player();
 
-    qDebug() << "player name: "<< player_->playerName;
+    _mainMenu = new MainMenuDialog();
+    connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
+    connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
 
-    player_->setPos(size.width_ / 2, size.height_ - 100);
+    _player->setPos(size.width / 2, size.height - 100);
 
+    _player->setFlag(QGraphicsItem::ItemIsFocusable);
+    _player->setFocus();
 
-    player_->setFlag(QGraphicsItem::ItemIsFocusable);
-    player_->setFocus();
-
-    scene_->addItem(player_);
+    _scene->addItem(_player);
 
 
 
@@ -76,54 +75,56 @@ BetterMainWindow::~BetterMainWindow()
 
 void BetterMainWindow::resizeEvent(QResizeEvent *event)
 {
-    if(largeMode){
+    if(_largeMode){
 
         int newWidth = event->size().width();
         int newHeight = event->size().height();
         dimensions size;
 
-        size.width_ = newWidth;
-        size.height_ = newHeight;
+        size.width = newWidth;
+        size.height = newHeight;
         //player_->screenWidth_ = newWidth;
         //player_->screenHeight_ = newHeight;
 
-        player_->x_ = player_->pos().x();
-        player_->y_ = player_->pos().y();
-        qDebug() << player_->x_;
-        qDebug() << player_->y_;
+        _player->xCoord = _player->pos().x();
+        _player->yCoord = _player->pos().y();
+        qDebug() << _player->xCoord;
+        qDebug() << _player->yCoord;
 
 
         if(ui->graphicsView->width() > 800){
             std::vector<int> screen = getAvailableSize();
-            player_->setPos(screen.at(0) / 5, screen.at(1) / 2 );}
+            _player->setPos(screen.at(0) / 5, screen.at(1) / 2 );}
         else{
-            player_->setPos(400,500);
+            _player->setPos(400,500);
         }
 
         qDebug()<<"resize Window width: " << newWidth;
         qDebug()<<"resize Window width: " << newHeight;
 
         setPicture(bkgndBig);
-        ui->graphicsView->fitInView(scene_->sceneRect(), Qt::IgnoreAspectRatio);
+        ui->graphicsView->fitInView(_scene->sceneRect(), Qt::IgnoreAspectRatio);
 
 
     }
-    largeMode = true;
+    _largeMode = true;
 
 }
 
 void BetterMainWindow::setPicture(QImage img)
 {
 
-    scene_->setBackgroundBrush(QBrush(img));
+    _scene->setBackgroundBrush(QBrush(img));
 }
 
 std::vector<int> BetterMainWindow::getAvailableSize()
 {
 
-    QRect rec = QApplication::desktop()->screenGeometry();
-    int availableHeight = rec.height();
-    int availableWidth = rec.width();
+    QList<QScreen *> rec = QGuiApplication::screens();
+    QRect availableGeometry = rec.at(0)->geometry();
+    int availableHeight = availableGeometry.height();
+
+    int availableWidth = availableGeometry.width();
 
     qDebug() << "available w: " << availableWidth;
     qDebug() << "available h: " << availableHeight;
@@ -133,8 +134,9 @@ std::vector<int> BetterMainWindow::getAvailableSize()
 
 void BetterMainWindow::setPlayerNick(QString name)
 {
-     qDebug() << "setPlayerName signal received";
-    player_->playerName = name;
+    qDebug() << "setPlayerName signal received";
+    _player->playerName = name;
+    qDebug() << "player name: "<< _player->playerName;
 
 }
 
@@ -142,14 +144,14 @@ void BetterMainWindow::setPlayerIcon(int type)
 {
     qDebug() << "setPlayerIcon signal received";
     if(type == MainMenuDialog::tankOption){
-        player_->tankChosen = true;
+        _player->tankChosen = true;
     } else if(type == MainMenuDialog::spaceshipOption){
-        player_->spaceshipChosen = true;
+        _player->spaceshipChosen = true;
     } else if(type == MainMenuDialog::ufoOption){
-        player_->ufoChosen = true;
+        _player->ufoChosen = true;
     }
-    player_->addPlayerSprite();
-    player_->setDimensions();
+    _player->addPlayerSprite();
+    _player->setDimensions();
 
 }
 

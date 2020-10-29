@@ -26,12 +26,11 @@ public:
     void initMusic(QUrl blasterSoundEffect);
 
 
-
     int playerHeight;
     int playerWidth;
 
-    int screenWidth_ = 800;
-    int screenHeight_= 600;
+    int screenWidth = 800;
+    int screenHeight = 600;
     const QPixmap spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
     const QPixmap tankPic = QPixmap(":/images/tank_sprite_26x50.png");
     const QPixmap ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
@@ -40,31 +39,28 @@ public:
 
     int interval = 25;
 
-    int x_;
-    int y_;
+    int xCoord;
+    int yCoord;
 
     QString playerName;
     bool tankChosen = false;
     bool spaceshipChosen = false;
     bool ufoChosen = false;
-
-public slots:
-    void setPlayerNick(QString name);
-    void setPlayerIcon(int type);
+    bool musicsOn = false;
 
 
 private:
 
-    double spaceshipVelocity_ = 20.0;
-    double projectileVelocity_ = 8.0;
-    QSoundEffect *projectileSound;
-    QTimer *moveTimer;
+    double _spaceshipVelocity = 20.0;
+    double _projectileVelocity = 8.0;
+    QSoundEffect *_projectileSound;
+    QTimer *_moveTimer;
 
-    bool keyLeft=false;
-    bool keyRight=false;
-    bool keyUp=false;
-    bool keyDown=false;
-    bool keySpace=false;
+    bool _keyLeft = false;
+    bool _keyRight = false;
+    bool _keyUp = false;
+    bool _keyDown = false;
+    bool _keySpace = false;
 
 
 

@@ -35,33 +35,25 @@ public:
     void setPicture(QImage img);
     //void paintEvent(QPaintEvent *pe);
     std::vector<int> getAvailableSize();
-    MainMenuDialog *giveDialog() {return mainMenu;};
+    MainMenuDialog *giveDialog() {return _mainMenu;};
 
 
 
 
-    QGraphicsScene * scene_;
-    Player * player_;
-    basicProjectile *projectile_;
+
     //Score * score;
     //Health * health;
 
     struct dimensions {
-        int width_ = 800;
-        int height_ = 600;
+        int width = 800;
+        int height = 600;
     };
-    int interval_ = 500; //ms
+    int interval = 500; //ms
 
-    //int viewWidth_ = 800;
-    //int viewHeight_ = 600;
+
     QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
-
-
-
-    /*signals:
-    void emitDimensions(int w, int h);*/
 
 public slots:
     void setPlayerNick(QString name);
@@ -71,10 +63,14 @@ private:
     Ui::BetterMainWindow *ui;
     QTimer *timer;
 
+    QGraphicsScene * _scene;
+    Player * _player;
+    basicProjectile *_projectile;
+
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
-    bool largeMode = false;
-    MainMenuDialog *mainMenu;
+    bool _largeMode = false;
+    MainMenuDialog *_mainMenu;
 
 };
 

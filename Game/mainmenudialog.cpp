@@ -43,7 +43,6 @@ void MainMenuDialog::on_playerNameEdit_editingFinished()
 {
     playerAlias = ui->playerNameEdit->text();
     qDebug() <<playerAlias;
-    //emit setPlayerName(playerAlias);
 }
 
 void MainMenuDialog::on_spaceshipButton_clicked()
