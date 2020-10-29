@@ -57,6 +57,8 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     _mainMenu = new MainMenuDialog();
     connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
     connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
+     connect(_mainMenu, &MainMenuDialog::setMusicState, this, &BetterMainWindow::setMusicChoice);
+
 
     //connect(_mainMenu, &MainMenuDialog::setProjectileType, this, &BetterMainWindow::setProjectileIcon);
 
@@ -158,7 +160,16 @@ void BetterMainWindow::setPlayerIcon(int type)
 
 }
 
-/*void BetterMainWindow::setProjectileIcon(int projectileType)
+void BetterMainWindow::setMusicChoice(int choice)
+{
+    qDebug() << "setMusicChoice signal received";
+    if(choice == MainMenuDialog::musicStateOn){
+        _player->musicsOn = true;
+    } else if(choice == MainMenuDialog::musicStateOff){
+        _player->musicsOn = false;
+    }
+
+    /*void BetterMainWindow::setProjectileIcon(int projectileType)
 {
 
     qDebug() << "setProjectileIcon signal received, you chose: "<<projectileType;
@@ -178,6 +189,6 @@ void BetterMainWindow::setPlayerIcon(int type)
 
 
 
-
+}
 
 

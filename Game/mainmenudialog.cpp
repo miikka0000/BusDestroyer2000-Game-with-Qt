@@ -27,6 +27,7 @@ void MainMenuDialog::on_startButton_clicked()
 
         sendChosenPlayer();
         sendChosenProjectile();
+        sendChosenMusicState();
         this->close();
 
     } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
@@ -124,6 +125,15 @@ void MainMenuDialog::sendChosenProjectile()
         emit setProjectileType(laserOption);
     }
 
+}
+
+void MainMenuDialog::sendChosenMusicState()
+{
+    if(_musicsOn){
+        emit setMusicState(musicStateOn);
+    } else{
+        emit setMusicState(musicStateOff);
+    }
 }
 
 

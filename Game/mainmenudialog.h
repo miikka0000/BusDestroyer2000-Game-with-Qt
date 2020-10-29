@@ -21,6 +21,7 @@ public:
 
     void sendChosenPlayer();
     void sendChosenProjectile();
+    void sendChosenMusicState();
 
 
     enum playerType {
@@ -41,7 +42,7 @@ signals:
     void setPlayerName(QString name);
     void setPlayerType(int type);
     void setProjectileType(int projectileType);
-    void setMusicState();
+    void setMusicState(int musicChoice);
 
 
 private slots:

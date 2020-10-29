@@ -54,6 +54,7 @@ public:
 public slots:
     void setPlayerNick(QString name);
     void setPlayerIcon(int type);
+    void setMusicChoice(int choice);
 
     //void setProjectileIcon(int projectileType);
 
