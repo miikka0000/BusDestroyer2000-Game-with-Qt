@@ -49,9 +49,9 @@ private:
 
 
 
-    bool tank_ = false;
-    bool spaceShip_ = false;
-    bool ufo_ = false;
+    bool _tank = false;
+    bool _spaceShip = false;
+    bool _ufo = false;
 
 
 };

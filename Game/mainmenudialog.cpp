@@ -19,17 +19,17 @@ MainMenuDialog::~MainMenuDialog()
 
 void MainMenuDialog::on_startButton_clicked()
 {
-    if((tank_ || spaceShip_  || ufo_) && playerAlias != NULL){
+    if((_tank || _spaceShip  || _ufo) && playerAlias != NULL){
 
         sendChosenPlayer();
         this->close();
-    } else if(playerAlias == NULL && (tank_ || spaceShip_ || ufo_)){
+    } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo)){
 
         ui->erronousInputLabel->setText("Remember to set player name!");
     }
-    else if(!(tank_ && spaceShip_ && ufo_) && playerAlias != NULL){
+    else if(!(_tank && _spaceShip && _ufo) && playerAlias != NULL){
         ui->erronousInputLabel->setText("Remember to set player type!");
-    }else if(playerAlias == NULL || !(tank_ && spaceShip_ && ufo_)){
+    }else if(playerAlias == NULL || !(_tank && _spaceShip && _ufo)){
         ui->erronousInputLabel->setText("Remember to set player name and type!");
     }
 }
@@ -47,34 +47,34 @@ void MainMenuDialog::on_playerNameEdit_editingFinished()
 
 void MainMenuDialog::on_spaceshipButton_clicked()
 {
-    spaceShip_ = true;
-    tank_ = false;
-    ufo_ = false;
+    _spaceShip = true;
+    _tank = false;
+    _ufo = false;
 }
 
 void MainMenuDialog::on_tankButton_clicked()
 {
-    tank_ = true;
-    spaceShip_ = false;
-    ufo_ = false;
+    _tank = true;
+    _spaceShip = false;
+    _ufo = false;
 }
 
 void MainMenuDialog::on_ufoButton_clicked()
 {    
-    ufo_ = true;
-    tank_ = false;
-    spaceShip_ = false;
+    _ufo = true;
+    _tank = false;
+    _spaceShip = false;
 }
 
 void MainMenuDialog::sendChosenPlayer()
 {
-    if(tank_){
+    if(_tank){
         qDebug() <<"tank chosen, tank-signal emitted";
         emit setPlayerType(tankOption);
-    } else if(spaceShip_){
+    } else if(_spaceShip){
         qDebug() <<"spaceship chosen, spaceship-signal emitted";
         emit setPlayerType(spaceshipOption);
-    } else if(ufo_){
+    } else if(_ufo){
         qDebug() <<"ufo chosen, ufo-signal emitted";
         emit setPlayerType(ufoOption);
     }

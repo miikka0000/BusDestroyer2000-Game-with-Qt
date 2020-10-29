@@ -11,9 +11,9 @@ public:
     void setDimensions();
 
 private:
-    int projectileVelocity_ = 25;
-    int projectileHeight_;
-    int projectileWidth_;
+    int _projectileVelocity = 25;
+    int _projectileHeight;
+    int _projectileWidth;
 
 
 public slots:
