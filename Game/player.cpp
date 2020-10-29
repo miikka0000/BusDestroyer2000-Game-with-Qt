@@ -14,6 +14,7 @@
 #include <QTimer>
 #include <QString>
 #include <memory>
+#include <vector>
 
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
@@ -23,7 +24,7 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     _moveTimer = new QTimer(this);
     connect(_moveTimer, &QTimer::timeout, this, &Player::movePlayer);
 
-    _moveTimer->start(interval);
+    _moveTimer->start(_interval);
     setPos(mapToParent(pos().x(), pos().y()));
 }
 
@@ -56,17 +57,15 @@ void Player::keyPressEvent(QKeyEvent *event)
 
     }  else if(event->key() == Qt::Key_Space){
         if ( !event->isAutoRepeat() ){
-            basicProjectile *projectile = new basicProjectile();
-            projectile->setProjectilePicture();
-            projectile->setPos(x() + 20, y() - 10);
-            scene()->addItem(projectile);
 
-            //Äänet asetetaan tässä alla. HUOM. aiheuttaa latenssia!
+            std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);
+            basicProjectile *projectile = new basicProjectile();           
+            projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
+            scene()->addItem(projectile);
 
             if (musicsOn){
                setMusic();
             }
-
         }
         //qDebug() << "space pressed";
         _keySpace = true;
@@ -98,9 +97,11 @@ void Player::keyReleaseEvent(QKeyEvent * event)
         } else if(event->key() == Qt::Key_Up){
             //qDebug() << "Up key relased.";
             _keyUp = false;
+
         } else if(event->key() == Qt::Key_Down){
             //qDebug() << "Down key relased.";
             _keyDown = false;
+
         }  else if(event->key() == Qt::Key_Space){
             //qDebug() << "Space key relased.";
             _keySpace = false;
@@ -159,11 +160,15 @@ void Player::changePlayerSpeed(int delta)
     // 5 % increase in velocity when player presses '+' -key
     double increaseMultiplier = 1.05;
     double decreaseMultiplier = 0.95;
+
     if(delta == 1 && _spaceshipVelocity < 25.0){
+
         _spaceshipVelocity = _spaceshipVelocity*increaseMultiplier;
         _projectileVelocity = _projectileVelocity*increaseMultiplier;
+
         // 5 % decrease in velocity when player presses '+' -key
     } else if(delta == 0 && _spaceshipVelocity > 21.0){
+
         _spaceshipVelocity = _spaceshipVelocity*decreaseMultiplier;
         _projectileVelocity = _projectileVelocity*decreaseMultiplier;
     }
@@ -197,6 +202,17 @@ void Player::setMusic()
     }
     _projectileSound->setVolume(0.25f);
     _projectileSound->play();
+}
+
+std::vector<int> Player::getPlayerOrigin(int width, int height)
+{
+    std::vector<int> playerDimensions;
+    int centerWidth = width / 2;
+    int centerHeight = height / 2;
+    playerDimensions.push_back(centerWidth);
+    playerDimensions.push_back(centerHeight);
+
+    return playerDimensions;
 }
 
 

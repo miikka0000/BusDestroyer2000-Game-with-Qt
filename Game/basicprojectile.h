@@ -3,7 +3,7 @@
 
 #include <QGraphicsRectItem>
 #include <QPixmap>
-
+#include <QTimer>
 class basicProjectile: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
@@ -21,6 +21,9 @@ private:
     int _projectileVelocity = 25;
     int _projectileHeight;
     int _projectileWidth;
+
+    QTimer *_projectileTimer;
+    int _fireRate = 50;
 
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");

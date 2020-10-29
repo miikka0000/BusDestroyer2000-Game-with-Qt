@@ -12,16 +12,15 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
 
     //setProjectilePicture();
     setPixmap(_fireballPic);
+    setDimensions();
 
     setTransformOriginPoint(5, 10);
     setRotation(-90);
 
+    _projectileTimer = new QTimer(this);
+    connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
+    _projectileTimer->start(_fireRate);
 
-    QTimer *timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, this, &basicProjectile::move);
-    timer->start(50);
-
-    this->setDimensions();
     qDebug() << "projectile height:"<<this->_projectileHeight;
     qDebug() << "proejctile width:"<<this->_projectileWidth;
 

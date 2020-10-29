@@ -9,6 +9,7 @@
 #include <QPixmap>
 #include <QUrl>
 #include <QString>
+#include <vector>
 
 
 
@@ -24,9 +25,9 @@ public:
     void setDimensions();
     void changePlayerSpeed(int delta);
     void addPlayerSprite();
-
     void initMusic(QUrl blasterSoundEffect);
     void setMusic();
+    std::vector<int> getPlayerOrigin(int width, int height);
 
 
     int playerHeight;
@@ -40,8 +41,6 @@ public:
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
 
-
-    int interval = 25;
 
     int xCoord;
     int yCoord;
@@ -64,6 +63,7 @@ private:
     double _projectileVelocity = 8.0;
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;
+    int _interval = 25;
 
 
     bool _keyLeft = false;
