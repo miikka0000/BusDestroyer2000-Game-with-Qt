@@ -30,7 +30,7 @@ basicProjectile::~basicProjectile()
 
 void basicProjectile::setDimensions()
 {
-    QImage *fireball= new QImage(":/images/fireball.png");
+    QImage *fireball= new QImage(":/images/fireball_16x16.png");
     projectileHeight_ = fireball->height();
     projectileWidth_ = fireball->width();
     //qDebug() << "fireball height: "<<bulletHeight_;

@@ -7,7 +7,7 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QUrl>
-#include <string>
+#include <QString>
 
 
 class Player:  public QObject, public QGraphicsPixmapItem{
@@ -21,7 +21,7 @@ public:
     void movePlayer();
     void setDimensions();
     void changePlayerSpeed(int delta);
-    void addPlayerSprite(QPixmap img);
+    void addPlayerSprite();
     void initMusic(QUrl blasterSoundEffect);
 
 
@@ -42,16 +42,13 @@ public:
     int y_;
 
     QString playerName;
-    bool tankChosen;
-    bool spaceshipChosen;
-    bool ufoChosen;
+    bool tankChosen = false;
+    bool spaceshipChosen = false;
+    bool ufoChosen = false;
 
-
-
-
-    //bool keyLeft, keyRight, keySpace, keyUp, keyDown;
-    /*public slots:
-    void setLimits(int w, int h);*/
+public slots:
+    void setPlayerNick(QString name);
+    void setPlayerIcon(int type);
 
 
 private:
@@ -59,9 +56,6 @@ private:
     double projectileVelocity_ = 8.0;
     QSoundEffect *projectileSound;
     QTimer *moveTimer;
-
-
-
 
     bool keyLeft=false;
     bool keyRight=false;

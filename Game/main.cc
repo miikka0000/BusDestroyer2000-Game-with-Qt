@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Q_INIT_RESOURCE(offlinedata);
-    initGame * game = new initGame();
+    //initGame * game = new initGame();
 
     MainMenuDialog * menuUi = new MainMenuDialog();
 

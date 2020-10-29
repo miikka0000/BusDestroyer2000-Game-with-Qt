@@ -53,11 +53,11 @@ public:
 
     //int viewWidth_ = 800;
     //int viewHeight_ = 600;
-     QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
-     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
+    QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
+    QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
 
-/*signals:
+    /*signals:
     void emitDimensions(int w, int h);*/
 
 

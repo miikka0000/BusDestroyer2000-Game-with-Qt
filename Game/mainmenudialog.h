@@ -3,6 +3,7 @@
 
 #include "player.h"
 #include <QDialog>
+#include <QString>
 
 
 namespace Ui {
@@ -17,8 +18,17 @@ public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
 
-    void setPlayerName(QString playerNickName);
+    void sendChosenPlayer();
 
+    enum playerTypes {
+        tankOption, spaceshipOption, ufoOption
+    };
+    QString playerAlias;
+
+
+signals:
+    void setPlayerName(QString name);
+    void setPlayerType(int type);
 
 
 private slots:
@@ -26,17 +36,22 @@ private slots:
 
     void on_exitButton_clicked();
 
-    void on_lineEdit_editingFinished();
+    void on_playerNameEdit_editingFinished();
 
-    void on_spaceshipButton_clicked(bool checked);
+    void on_spaceshipButton_clicked();
 
-    void on_tankButton_clicked(bool checked);
+    void on_tankButton_clicked();
 
-    void on_ufoButton_clicked(bool checked);
+    void on_ufoButton_clicked();
 
 private:
     Ui::MainMenuDialog *ui;
-    Player* chosenPlayer = new Player();
+
+
+
+    bool tank_ = false;
+    bool spaceShip_ = false;
+    bool ufo_ = false;
 
 
 };

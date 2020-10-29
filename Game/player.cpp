@@ -1,6 +1,7 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "bettermainwindow.h"
+#include "mainmenudialog.h"
 
 
 #include <QKeyEvent>
@@ -11,13 +12,19 @@
 #include <QSoundEffect>
 #include <QUrl>
 #include <QTimer>
-
+#include <QString>
 #include <memory>
 
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    addPlayerSprite(spaceshipPic);
+
+    MainMenuDialog *mainMenu = new MainMenuDialog();
+
+    connect(mainMenu, &MainMenuDialog::setPlayerName, this, &Player::setPlayerNick);
+    connect(mainMenu, &MainMenuDialog::setPlayerType, this, &Player::setPlayerIcon);
+
+    setPixmap(tankPic);
     initMusic(blasterSound);
 
     moveTimer = new QTimer();
@@ -25,7 +32,7 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     moveTimer->start(interval);
 
-    this->setDimensions();
+
     setPos(mapToParent(pos().x(), pos().y()));
 
 
@@ -157,12 +164,21 @@ void Player::movePlayer(){
 
 void Player::setDimensions()
 {
-    QImage *spaceship= new QImage(":/images/spaceship.png");
-    playerHeight = spaceship->height();
-    playerWidth = spaceship->width();
-    //qDebug() << "ship height: "<< playerHeight_;
-    //qDebug() << "ship width: "<< playerWidth_;
-    delete spaceship;
+    if(tankChosen){
+        playerHeight = tankPic.height();
+        playerWidth = tankPic.width();
+    } else if(spaceshipChosen){
+        playerHeight = spaceshipPic.height();
+        playerWidth = spaceshipPic.width();
+    } else if(ufoChosen){
+        playerHeight = ufoPic.height();
+        playerWidth = ufoPic.width();
+    }
+    //QImage *spaceship= new QImage(":/images/spaceship.png");
+
+    qDebug() << "ship height: "<< playerHeight;
+    qDebug() << "ship width: "<< playerWidth;
+
 
 }
 
@@ -178,15 +194,24 @@ void Player::changePlayerSpeed(int delta)
 
     } else if(delta == 0 && spaceshipVelocity_ > 21.0){
         spaceshipVelocity_ = spaceshipVelocity_*decreaseMultiplier;
-         projectileVelocity_ = projectileVelocity_*decreaseMultiplier;
-         //interval = interval*decreaseMultiplier;
+        projectileVelocity_ = projectileVelocity_*decreaseMultiplier;
+        //interval = interval*decreaseMultiplier;
     }
 
 }
 
-void Player::addPlayerSprite(QPixmap img)
+void Player::addPlayerSprite()
 {
-    setPixmap(img);
+
+    if(spaceshipChosen){
+        setPixmap(spaceshipPic);
+
+    } else if(tankChosen){
+        setPixmap(tankPic);
+
+    } else if(ufoChosen){
+        setPixmap(ufoPic);
+    }
 
 }
 
@@ -194,6 +219,28 @@ void Player::initMusic(QUrl blasterSoundEffect)
 {
     projectileSound = new QSoundEffect(this);
     projectileSound->setSource(blasterSoundEffect);
+}
+
+void Player::setPlayerNick(QString name)
+{
+     qDebug() << "setPlayerName signal received";
+    playerName = name;
+
+}
+
+void Player::setPlayerIcon(int type)
+{
+    qDebug() << "setPlayerIcon signal received";
+    if(type == MainMenuDialog::tankOption){
+        tankChosen = true;
+    } else if(type == MainMenuDialog::spaceshipOption){
+        spaceshipChosen = true;
+    } else if(type == MainMenuDialog::ufoOption){
+        ufoChosen = true;
+    }
+    addPlayerSprite();
+    this->setDimensions();
+
 }
 
 /*void Player::setLimits(int w, int h)

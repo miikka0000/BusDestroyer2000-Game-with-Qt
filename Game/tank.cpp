@@ -2,7 +2,7 @@
 
 Tank::Tank()
 {
-    addPlayerSprite(tankPic);
+
 }
 
 Tank::~Tank()

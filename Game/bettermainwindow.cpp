@@ -21,6 +21,7 @@
 #include <QGraphicsPixmapItem>
 #include <QDesktopWidget>
 #include <vector>
+#include <QString>
 
 
 
@@ -51,7 +52,7 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
 
     player_ = new Player();
 
-    qDebug() << player_->playerName;
+    qDebug() << "player name: "<< player_->playerName;
 
     player_->setPos(size.width_ / 2, size.height_ - 100);
 

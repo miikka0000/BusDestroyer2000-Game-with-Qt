@@ -2,7 +2,7 @@
 
 Spaceship::Spaceship()
 {
-    addPlayerSprite(spaceshipPic);
+
 }
 
 Spaceship::~Spaceship()
