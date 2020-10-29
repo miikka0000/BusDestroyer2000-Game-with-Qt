@@ -20,13 +20,18 @@ public:
     ~MainMenuDialog();
 
     void sendChosenPlayer();
+    void sendChosenProjectile();
 
 
     enum playerType {
         tankOption, spaceshipOption, ufoOption
+
     };
     enum projectileType {
         fireballOption, missileOption, laserOption
+    };
+    enum musicState {
+        musicStateOn, musicStateOff
     };
 
     QString playerAlias;
@@ -36,6 +41,7 @@ signals:
     void setPlayerName(QString name);
     void setPlayerType(int type);
     void setProjectileType(int projectileType);
+    void setMusicState();
 
 
 private slots:
@@ -57,6 +63,8 @@ private slots:
 
     void on_laserButton_clicked();
 
+    void on_musicsOn_clicked();
+
 private:
     Ui::MainMenuDialog *ui;
 
@@ -67,6 +75,8 @@ private:
     bool _fireball = false;
     bool _missile = false;
     bool _laser = false;
+
+    bool _musicsOn = false;
 
     QSize menuDialogSize;
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");

@@ -2,7 +2,6 @@
 #define BETTERMAINWINDOW_H
 #include "player.h"
 #include "basicprojectile.h"
-#include "graphics/simplemainwindow.hh"
 #include "mainmenudialog.h"
 
 #include <QGraphicsView>
@@ -31,14 +30,11 @@ public:
 
     void resizeEvent(QResizeEvent * event);
 
-    //void getWindowSize();
+
     void setPicture(QImage img);
-    //void paintEvent(QPaintEvent *pe);
+
     std::vector<int> getAvailableSize();
     MainMenuDialog *giveDialog() {return _mainMenu;};
-
-
-
 
 
     //Score * score;
@@ -59,6 +55,8 @@ public slots:
     void setPlayerNick(QString name);
     void setPlayerIcon(int type);
 
+    //void setProjectileIcon(int projectileType);
+
 
 private:
     Ui::BetterMainWindow *ui;
@@ -66,7 +64,7 @@ private:
 
     QGraphicsScene * _scene;
     Player * _player;
-    basicProjectile *_projectile;
+    //basicProjectile *_projectile;
 
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 

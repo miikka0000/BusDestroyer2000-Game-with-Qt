@@ -1,6 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "mainmenudialog.h"
+#include <basicprojectile.h>
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
 #include <QSoundEffect>
@@ -23,6 +24,7 @@ public:
     void setDimensions();
     void changePlayerSpeed(int delta);
     void addPlayerSprite();
+
     void initMusic(QUrl blasterSoundEffect);
     void setMusic();
 
@@ -38,6 +40,7 @@ public:
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
 
+
     int interval = 25;
 
     int xCoord;
@@ -47,6 +50,11 @@ public:
     bool tankChosen = false;
     bool spaceshipChosen = false;
     bool ufoChosen = false;
+
+    bool fireballChosen = false;
+    bool missileChosen = true;
+    bool laserChosen = false;
+
     bool musicsOn = false;
 
 
@@ -56,6 +64,7 @@ private:
     double _projectileVelocity = 8.0;
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;
+
 
     bool _keyLeft = false;
     bool _keyRight = false;

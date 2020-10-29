@@ -10,9 +10,13 @@
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    setPixmap(QPixmap(":/images/fireball_16x16.png"));
+    //setProjectilePicture();
+    setPixmap(_fireballPic);
+
     setTransformOriginPoint(5, 10);
     setRotation(-90);
+
+
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &basicProjectile::move);
     timer->start(50);
@@ -25,6 +29,30 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
 
 basicProjectile::~basicProjectile()
 {
+
+}
+
+void basicProjectile::setDimensions()
+{
+    if(fireballChosen){
+        _projectileHeight = _fireballPic.height();
+        _projectileWidth = _fireballPic.width();
+
+    } else if(missileChosen){
+        _projectileHeight = _missilePic.height();
+        _projectileWidth = _missilePic.width();
+
+    } else if(laserChosen){
+        _projectileHeight = _laserPic.height();
+        _projectileWidth = _laserPic.width();
+    }
+
+    qDebug() << "projectile height: "<< _projectileHeight;
+    qDebug() << "projectile width: "<< _projectileWidth;
+}
+
+void basicProjectile::setProjectilePicture()
+{
     if(fireballChosen){
         setPixmap(_fireballPic);
 
@@ -34,21 +62,8 @@ basicProjectile::~basicProjectile()
     } else if(laserChosen){
         setPixmap(_laserPic);
     }
-}
-
-void basicProjectile::setDimensions()
-{
-    QImage *fireball= new QImage(":/images/fireball_16x16.png");
-    _projectileHeight = fireball->height();
-    _projectileWidth = fireball->width();
-    //qDebug() << "fireball height: "<<bulletHeight_;
-    //qDebug() << "fireball width: "<<bulletWidth_;
-    delete fireball;
-}
-
-void basicProjectile::setProjectilePicture()
-{
-
+    setTransformOriginPoint(5, 10);
+    setRotation(-90);
 }
 
 void basicProjectile::move()

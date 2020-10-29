@@ -53,9 +53,12 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
 
     _player = new Player();
 
+
     _mainMenu = new MainMenuDialog();
     connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
     connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
+
+    //connect(_mainMenu, &MainMenuDialog::setProjectileType, this, &BetterMainWindow::setProjectileIcon);
 
     _player->setPos(size.width / 2, size.height - 100);
 
@@ -154,6 +157,24 @@ void BetterMainWindow::setPlayerIcon(int type)
     _player->setDimensions();
 
 }
+
+/*void BetterMainWindow::setProjectileIcon(int projectileType)
+{
+
+    qDebug() << "setProjectileIcon signal received, you chose: "<<projectileType;
+    //_projectile = new basicProjectile();
+    if(projectileType == MainMenuDialog::fireballOption){
+        _player->projectile->fireballChosen = true;
+
+    } else if(projectileType == MainMenuDialog::missileOption){
+        _player->projectile->missileChosen = true;
+
+    } else if(projectileType == MainMenuDialog::laserOption){
+        _player->projectile->laserChosen = true;
+    }
+    _player->projectile->setProjectilePicture();
+    _player->projectile->setDimensions();
+}*/
 
 
 

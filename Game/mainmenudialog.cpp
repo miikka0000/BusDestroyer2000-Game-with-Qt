@@ -26,6 +26,7 @@ void MainMenuDialog::on_startButton_clicked()
             && playerAlias != NULL){
 
         sendChosenPlayer();
+        sendChosenProjectile();
         this->close();
 
     } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
@@ -34,19 +35,31 @@ void MainMenuDialog::on_startButton_clicked()
         ui->erronousInputLabel->setText("Remember to set player name!");
     }
     else if(!(_tank && _spaceShip && _ufo) && (_fireball || _missile || _laser)
-           && playerAlias != NULL){
+            && playerAlias != NULL){
 
         ui->erronousInputLabel->setText("Remember to set player type!");
 
     }else if(playerAlias == NULL && !(_tank && _spaceShip && _ufo) &&
              !(_fireball && _missile && _laser)){
 
-        ui->erronousInputLabel->setText("Remember to set projectile type, player name and type!");
+        ui->erronousInputLabel->setText("Remember to set projectile type, player name and player type!");
 
     } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
               && playerAlias != NULL){
 
         ui->erronousInputLabel->setText("Remember to set projectile type!");
+
+    } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
+              && playerAlias == NULL){
+        ui->erronousInputLabel->setText("Remember to set projectile type and player name!");
+
+    } else if(!(_tank && _spaceShip && _ufo) && !(_fireball && _missile && _laser)
+              && playerAlias != NULL){
+        ui->erronousInputLabel->setText("Remember to set projectile and player type!");
+
+    }else if(!(_tank && _spaceShip && _ufo) && (_fireball || _missile || _laser)
+             && playerAlias == NULL){
+        ui->erronousInputLabel->setText("Remember to set player type and player name!");
     }
 }
 
@@ -98,10 +111,25 @@ void MainMenuDialog::sendChosenPlayer()
     emit setPlayerName(playerAlias);
 }
 
+void MainMenuDialog::sendChosenProjectile()
+{
+    if(_fireball){
+        qDebug() <<"fireball chosen, fireball-signal emitted";
+        emit setProjectileType(fireballOption);
+    } else if(_missile){
+        qDebug() <<"missile chosen, missile-signal emitted";
+        emit setProjectileType(missileOption);
+    } else if(_laser){
+        qDebug() <<"laser chosen, laser-signal emitted";
+        emit setProjectileType(laserOption);
+    }
+
+}
 
 
 void MainMenuDialog::on_fireballButton_clicked()
 {
+    qDebug()<< "fireball clicked";
     _fireball = true;
     _missile = false;
     _laser = false;
@@ -109,6 +137,7 @@ void MainMenuDialog::on_fireballButton_clicked()
 
 void MainMenuDialog::on_missileButton_clicked()
 {
+    qDebug()<< "missile clicked";
     _fireball = false;
     _missile = true;
     _laser = false;
@@ -116,7 +145,19 @@ void MainMenuDialog::on_missileButton_clicked()
 
 void MainMenuDialog::on_laserButton_clicked()
 {
+    qDebug()<< "laser clicked";
     _fireball = false;
     _missile = false;
     _laser = true;
+}
+
+void MainMenuDialog::on_musicsOn_clicked()
+{
+    if(ui->musicsOn->checkState() == 2){
+        qDebug()<<"musics on";
+        _musicsOn = true;
+    }else{
+        _musicsOn = false;
+        qDebug()<<"musics off";
+    }
 }

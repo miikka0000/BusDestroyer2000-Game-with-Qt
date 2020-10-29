@@ -18,8 +18,9 @@
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
+
     initMusic(blasterSound);
-    _moveTimer = new QTimer();
+    _moveTimer = new QTimer(this);
     connect(_moveTimer, &QTimer::timeout, this, &Player::movePlayer);
 
     _moveTimer->start(interval);
@@ -55,9 +56,10 @@ void Player::keyPressEvent(QKeyEvent *event)
 
     }  else if(event->key() == Qt::Key_Space){
         if ( !event->isAutoRepeat() ){
-            basicProjectile *fireball = new basicProjectile();
-            fireball->setPos(x() + 20, y() - 10);
-            scene()->addItem(fireball);
+            basicProjectile *projectile = new basicProjectile();
+            projectile->setProjectilePicture();
+            projectile->setPos(x() + 20, y() - 10);
+            scene()->addItem(projectile);
 
             //Äänet asetetaan tässä alla. HUOM. aiheuttaa latenssia!
 
