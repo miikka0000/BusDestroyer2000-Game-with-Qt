@@ -8,14 +8,6 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QScreen>
-/*
-//checking available screen size
-QScreen* screen = QGuiApplication::primaryScreen();
-QRect  screenGeometry = screen->geometry();
-int height = screenGeometry.height();
-int width = screenGeometry.width();
-
-*/
 
 int main(int argc, char *argv[])
 {
@@ -28,7 +20,6 @@ int main(int argc, char *argv[])
     mainWindow.show();
     //mainWindow.giveDialog()->setModal(true);
     mainWindow.giveDialog()->exec();
-
 
     //menuUi->show();
 

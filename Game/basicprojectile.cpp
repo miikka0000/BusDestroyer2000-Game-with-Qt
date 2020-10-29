@@ -33,7 +33,7 @@ basicProjectile::~basicProjectile()
 
 void basicProjectile::setDimensions()
 {
-    if(fireballChosen){
+    /*if(fireballChosen){
         _projectileHeight = _fireballPic.height();
         _projectileWidth = _fireballPic.width();
 
@@ -44,7 +44,9 @@ void basicProjectile::setDimensions()
     } else if(laserChosen){
         _projectileHeight = _laserPic.height();
         _projectileWidth = _laserPic.width();
-    }
+    }*/
+    _projectileHeight = _fireballPic.height();
+    _projectileWidth = _fireballPic.width();
 
     qDebug() << "projectile height: "<< _projectileHeight;
     qDebug() << "projectile width: "<< _projectileWidth;
@@ -68,7 +70,6 @@ void basicProjectile::setProjectilePicture()
 void basicProjectile::move()
 {
     setPos(x(), y() - _projectileVelocity);
-
     if(pos().y() + _projectileHeight < 0){
         scene()->removeItem(this);
         delete this;

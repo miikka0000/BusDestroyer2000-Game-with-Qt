@@ -29,7 +29,6 @@ public:
     void setMusic();
     std::vector<int> getPlayerOrigin(int width, int height);
 
-
     int playerHeight;
     int playerWidth;
 
@@ -41,7 +40,6 @@ public:
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
 
-
     int xCoord;
     int yCoord;
 
@@ -49,13 +47,11 @@ public:
     bool tankChosen = false;
     bool spaceshipChosen = false;
     bool ufoChosen = false;
-
     bool fireballChosen = false;
     bool missileChosen = true;
     bool laserChosen = false;
 
     bool musicsOn = false;
-
 
 private:
 
@@ -64,16 +60,11 @@ private:
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;
     int _interval = 25;
-
-
     bool _keyLeft = false;
     bool _keyRight = false;
     bool _keyUp = false;
     bool _keyDown = false;
     bool _keySpace = false;
-
-
-
 
 };
 

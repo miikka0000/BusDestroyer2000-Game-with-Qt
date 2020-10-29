@@ -33,7 +33,6 @@ Player::~Player()
 
 }
 
-
 void Player::keyPressEvent(QKeyEvent *event)
 {
 
@@ -59,12 +58,12 @@ void Player::keyPressEvent(QKeyEvent *event)
         if ( !event->isAutoRepeat() ){
 
             std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);
-            basicProjectile *projectile = new basicProjectile();           
+            basicProjectile *projectile = new basicProjectile();
             projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
             scene()->addItem(projectile);
 
             if (musicsOn){
-               setMusic();
+                setMusic();
             }
         }
         //qDebug() << "space pressed";
@@ -130,7 +129,6 @@ void Player::movePlayer(){
         if(pos().y() + 30 < screenHeight){
             setPos(x(), y() + _spaceshipVelocity);
         }
-
     }
     //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
     xCoord = pos().x();

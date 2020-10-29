@@ -4,6 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QPixmap>
 #include <QTimer>
+
 class basicProjectile: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
 public:
@@ -11,7 +12,6 @@ public:
     ~basicProjectile();
     void setDimensions();
     void setProjectilePicture();
-
 
     bool fireballChosen = false;
     bool missileChosen = false;
@@ -29,10 +29,8 @@ private:
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
     QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
 
-
 public slots:
     void move();
-
 
 };
 

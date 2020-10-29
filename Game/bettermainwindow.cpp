@@ -41,32 +41,25 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     ui->graphicsView->setScene(_scene);
     _scene->setSceneRect(0,0, size.width, size.height);
 
-
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
     timer->start(interval);
 
-
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-
     _player = new Player();
-
 
     _mainMenu = new MainMenuDialog();
     connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
     connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
-     connect(_mainMenu, &MainMenuDialog::setMusicState, this, &BetterMainWindow::setMusicChoice);
-
+    connect(_mainMenu, &MainMenuDialog::setMusicState, this, &BetterMainWindow::setMusicChoice);
 
     //connect(_mainMenu, &MainMenuDialog::setProjectileType, this, &BetterMainWindow::setProjectileIcon);
 
     _player->setPos(size.width / 2, size.height - 100);
-
     _player->setFlag(QGraphicsItem::ItemIsFocusable);
     _player->setFocus();
-
     _scene->addItem(_player);
 
 
@@ -109,7 +102,6 @@ void BetterMainWindow::resizeEvent(QResizeEvent *event)
 
         setPicture(bkgndBig);
         ui->graphicsView->fitInView(_scene->sceneRect(), Qt::IgnoreAspectRatio);
-
 
     }
     _largeMode = true;
@@ -157,7 +149,6 @@ void BetterMainWindow::setPlayerIcon(int type)
     }
     _player->addPlayerSprite();
     _player->setDimensions();
-
 }
 
 void BetterMainWindow::setMusicChoice(int choice)
@@ -186,7 +177,6 @@ void BetterMainWindow::setMusicChoice(int choice)
     _player->projectile->setProjectilePicture();
     _player->projectile->setDimensions();
 }*/
-
 
 
 }
