@@ -114,6 +114,18 @@ void BetterMainWindow::setPicture(QImage img)
     _scene->setBackgroundBrush(QBrush(img));
 }
 
+/*void BetterMainWindow::keyReleaseEvent(QKeyEvent *keyEvent)
+{
+    if(keyEvent->key() == Qt::Key_Escape){
+        qDebug()<<"esc pressed";
+        if(this->width() > 800 && this->height() > 600){
+            this->resize(800,600);
+        }
+
+
+    }
+}*/
+
 std::vector<int> BetterMainWindow::getAvailableSize()
 {
 

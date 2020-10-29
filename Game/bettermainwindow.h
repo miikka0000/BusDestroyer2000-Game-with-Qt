@@ -29,6 +29,7 @@ public:
 
     void resizeEvent(QResizeEvent * event);
     void setPicture(QImage img);
+    //void keyReleaseEvent(QKeyEvent * keyEvent);
 
     std::vector<int> getAvailableSize();
     MainMenuDialog *giveDialog() {return _mainMenu;};
