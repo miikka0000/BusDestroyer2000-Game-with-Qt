@@ -113,20 +113,20 @@ void Player::keyReleaseEvent(QKeyEvent * event)
 void Player::movePlayer(){
 
     if(_keyLeft){
-        if(pos().x() + 10  > 0){
+        if(pos().x()  > 0){
             setPos(x() - _spaceshipVelocity, y());
         }
     } else if(_keyRight){
-        if(pos().x() + 37  < screenWidth){
+        if(pos().x() + playerWidth  < screenWidth){
             setPos(x() + _spaceshipVelocity, y());
         }
     } else if(_keyUp){
-        if(pos().y()- 25 > 0){
+        if(pos().y() > 0){
             setPos(x(), y() - _spaceshipVelocity);
         }
     } else if(_keyDown){
 
-        if(pos().y() + 30 < screenHeight){
+        if(pos().y() + playerHeight < screenHeight){
             setPos(x(), y() + _spaceshipVelocity);
         }
     }
