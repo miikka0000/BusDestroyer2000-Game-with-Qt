@@ -1,6 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#include "mainmenudialog.h"
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
 #include <QSoundEffect>
@@ -8,6 +8,7 @@
 #include <QPixmap>
 #include <QUrl>
 #include <QString>
+
 
 
 class Player:  public QObject, public QGraphicsPixmapItem{
@@ -23,6 +24,7 @@ public:
     void changePlayerSpeed(int delta);
     void addPlayerSprite();
     void initMusic(QUrl blasterSoundEffect);
+
 
 
     int playerHeight;
@@ -52,6 +54,7 @@ public slots:
 
 
 private:
+
     double spaceshipVelocity_ = 20.0;
     double projectileVelocity_ = 8.0;
     QSoundEffect *projectileSound;

@@ -24,7 +24,7 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
     connect(mainMenu, &MainMenuDialog::setPlayerName, this, &Player::setPlayerNick);
     connect(mainMenu, &MainMenuDialog::setPlayerType, this, &Player::setPlayerIcon);
 
-    setPixmap(tankPic);
+    //setPixmap(tankPic);
     initMusic(blasterSound);
 
     moveTimer = new QTimer();

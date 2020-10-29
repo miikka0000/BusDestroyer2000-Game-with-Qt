@@ -20,7 +20,7 @@ public:
 
     void sendChosenPlayer();
 
-    enum playerTypes {
+    enum playerType {
         tankOption, spaceshipOption, ufoOption
     };
     QString playerAlias;
