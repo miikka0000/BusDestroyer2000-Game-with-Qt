@@ -61,11 +61,10 @@ void Player::keyPressEvent(QKeyEvent *event)
 
             //Äänet asetetaan tässä alla. HUOM. aiheuttaa latenssia!
 
-            if (_projectileSound->isPlaying()){
-                _projectileSound->stop();
+            if (musicsOn){
+               setMusic();
             }
-            _projectileSound->setVolume(0.25f);
-            _projectileSound->play();
+
         }
         //qDebug() << "space pressed";
         _keySpace = true;
@@ -187,6 +186,15 @@ void Player::initMusic(QUrl blasterSoundEffect)
 {
     _projectileSound = new QSoundEffect(this);
     _projectileSound->setSource(blasterSoundEffect);
+}
+
+void Player::setMusic()
+{
+    if (_projectileSound->isPlaying()){
+        _projectileSound->stop();
+    }
+    _projectileSound->setVolume(0.25f);
+    _projectileSound->play();
 }
 
 

@@ -3,6 +3,7 @@
 #include "bettermainwindow.h"
 #include <QDebug>
 #include <QString>
+#include <QSize>
 
 
 MainMenuDialog::MainMenuDialog(QWidget *parent) :
@@ -10,6 +11,8 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui(new Ui::MainMenuDialog)
 {
     ui->setupUi(this);
+    menuDialogSize = QSize(800, 600);
+    this->setFixedSize(menuDialogSize);
 }
 
 MainMenuDialog::~MainMenuDialog()

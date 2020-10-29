@@ -4,6 +4,7 @@
 #include "player.h"
 #include <QDialog>
 #include <QString>
+#include <QSize>
 
 
 namespace Ui {
@@ -47,11 +48,11 @@ private slots:
 private:
     Ui::MainMenuDialog *ui;
 
-
-
     bool _tank = false;
     bool _spaceShip = false;
     bool _ufo = false;
+
+    QSize menuDialogSize;
 
 
 };

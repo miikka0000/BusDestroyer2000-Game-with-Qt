@@ -24,6 +24,7 @@ public:
     void changePlayerSpeed(int delta);
     void addPlayerSprite();
     void initMusic(QUrl blasterSoundEffect);
+    void setMusic();
 
 
     int playerHeight;
