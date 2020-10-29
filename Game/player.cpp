@@ -147,7 +147,7 @@ void Player::movePlayer(){
         }
 
     }
-    qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
+    //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
     x_ = pos().x();
     y_ = pos().y();
 }

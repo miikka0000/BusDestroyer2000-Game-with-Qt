@@ -1,5 +1,7 @@
 #ifndef MAINMENUDIALOG_H
 #define MAINMENUDIALOG_H
+
+#include "player.h"
 #include <QDialog>
 
 
@@ -15,6 +17,8 @@ public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
 
+    void setPlayerName(QString playerNickName);
+
 
 
 private slots:
@@ -22,8 +26,17 @@ private slots:
 
     void on_exitButton_clicked();
 
+    void on_lineEdit_editingFinished();
+
+    void on_spaceshipButton_clicked(bool checked);
+
+    void on_tankButton_clicked(bool checked);
+
+    void on_ufoButton_clicked(bool checked);
+
 private:
     Ui::MainMenuDialog *ui;
+    Player* chosenPlayer = new Player();
 
 
 };

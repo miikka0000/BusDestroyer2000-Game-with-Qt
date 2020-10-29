@@ -7,6 +7,7 @@
 #include <QTimer>
 #include <QPixmap>
 #include <QUrl>
+#include <string>
 
 
 class Player:  public QObject, public QGraphicsPixmapItem{
@@ -35,18 +36,21 @@ public:
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
 
-     int interval = 25;
+    int interval = 25;
 
-     int x_;
-     int y_;
+    int x_;
+    int y_;
 
-
+    QString playerName;
+    bool tankChosen;
+    bool spaceshipChosen;
+    bool ufoChosen;
 
 
 
 
     //bool keyLeft, keyRight, keySpace, keyUp, keyDown;
-/*public slots:
+    /*public slots:
     void setLimits(int w, int h);*/
 
 
