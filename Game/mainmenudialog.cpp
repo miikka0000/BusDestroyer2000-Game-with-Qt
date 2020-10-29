@@ -84,3 +84,26 @@ void MainMenuDialog::sendChosenPlayer()
     qDebug() << "player Name signal emitted";
     emit setPlayerName(playerAlias);
 }
+
+
+
+void MainMenuDialog::on_fireballButton_clicked()
+{
+    _fireball = true;
+    _missile = false;
+    _laser = false;
+}
+
+void MainMenuDialog::on_missileButton_clicked()
+{
+    _fireball = false;
+    _missile = true;
+    _laser = false;
+}
+
+void MainMenuDialog::on_laserButton_clicked()
+{
+    _fireball = false;
+    _missile = false;
+    _laser = true;
+}

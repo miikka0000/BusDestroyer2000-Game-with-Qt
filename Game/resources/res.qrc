@@ -7,6 +7,8 @@
         <file>souds_on.png</file>
         <file>tank_sprite_26x50.png</file>
         <file>ufo_sprite_50x50.png</file>
+        <file>missile_23x10.png</file>
+        <file>laser_32x32.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>

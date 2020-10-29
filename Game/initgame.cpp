@@ -14,30 +14,25 @@
 initGame::initGame(){
 
     setFixedSize(200,200);
-    //struct, joka kuvaa peliruudun kokoa.
+
     dimensions screenSize;
 
 
-    // create the scene
     QGraphicsScene *scene = new QGraphicsScene();
     scene->setSceneRect(0,0, screenSize.screenWidth, screenSize.screenHeight);
 
     setScene(scene);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    //setFixedSize(800,600);
 
     player_ = new Player();
-    //player_->setDimensions();
 
     player_->setPos(screenSize.screenWidth / 2, screenSize.screenHeight - player_->playerHeight);
-
 
     player_->setFlag(QGraphicsItem::ItemIsFocusable);
     player_->setFocus();
 
     scene->addItem(player_);
-
 
 }
 

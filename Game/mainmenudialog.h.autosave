@@ -20,11 +20,12 @@ public:
     ~MainMenuDialog();
 
     void sendChosenPlayer();
-    void addProjectileTypes();
+   
 
     enum playerType {
         tankOption, spaceshipOption, ufoOption
     };
+    enum 
     QString playerAlias;
 
 

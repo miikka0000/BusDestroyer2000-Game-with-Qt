@@ -139,46 +139,43 @@
     <string>Exit</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="fireballLabel">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>350</y>
-     <width>31</width>
-     <height>31</height>
+     <x>10</x>
+     <y>360</y>
+     <width>61</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
-   <property name="pixmap">
-    <pixmap resource="resources/res.qrc">:/images/fireball_16x16.png</pixmap>
-   </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="missileLabel">
    <property name="geometry">
     <rect>
      <x>80</x>
      <y>360</y>
-     <width>47</width>
-     <height>14</height>
+     <width>41</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="laserLabel">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>140</x>
      <y>360</y>
      <width>47</width>
      <height>14</height>
     </rect>
    </property>
    <property name="text">
-    <string>TextLabel</string>
+    <string/>
    </property>
   </widget>
   <widget class="QWidget" name="">
@@ -242,7 +239,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QLabel" name="spaceShipPic">
+       <widget class="QLabel" name="spaceShipLabel">
         <property name="text">
          <string/>
         </property>
@@ -252,7 +249,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="tankPic">
+       <widget class="QLabel" name="tankLabel">
         <property name="text">
          <string/>
         </property>
@@ -262,7 +259,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="ufoPic">
+       <widget class="QLabel" name="ufoLabel">
         <property name="text">
          <string/>
         </property>
