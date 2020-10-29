@@ -22,18 +22,31 @@ MainMenuDialog::~MainMenuDialog()
 
 void MainMenuDialog::on_startButton_clicked()
 {
-    if((_tank || _spaceShip  || _ufo) && playerAlias != NULL){
+    if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
+            && playerAlias != NULL){
 
         sendChosenPlayer();
         this->close();
-    } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo)){
+
+    } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
+              (_fireball || _missile || _laser)){
 
         ui->erronousInputLabel->setText("Remember to set player name!");
     }
-    else if(!(_tank && _spaceShip && _ufo) && playerAlias != NULL){
+    else if(!(_tank && _spaceShip && _ufo) && (_fireball || _missile || _laser)
+           && playerAlias != NULL){
+
         ui->erronousInputLabel->setText("Remember to set player type!");
-    }else if(playerAlias == NULL || !(_tank && _spaceShip && _ufo)){
-        ui->erronousInputLabel->setText("Remember to set player name and type!");
+
+    }else if(playerAlias == NULL && !(_tank && _spaceShip && _ufo) &&
+             !(_fireball && _missile && _laser)){
+
+        ui->erronousInputLabel->setText("Remember to set projectile type, player name and type!");
+
+    } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
+              && playerAlias != NULL){
+
+        ui->erronousInputLabel->setText("Remember to set projectile type!");
     }
 }
 

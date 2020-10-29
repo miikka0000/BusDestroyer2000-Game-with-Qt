@@ -28,18 +28,8 @@
   <property name="windowTitle">
    <string>Main Menu</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_7">
-   <item>
-    <widget class="QLabel" name="erronousInputLabel">
-     <property name="styleSheet">
-      <string notr="true">color : red </string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="0" colspan="2">
     <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
       <widget class="QLabel" name="infoLabel1">
@@ -92,7 +82,25 @@
      </item>
     </layout>
    </item>
-   <item>
+   <item row="6" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_7">
+     <item>
+      <widget class="QPushButton" name="startButton">
+       <property name="text">
+        <string>Start</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="exitButton">
+       <property name="text">
+        <string>Exit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
@@ -116,6 +124,9 @@
            <property name="text">
             <string>Spaceship</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">playerButtonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -126,6 +137,9 @@
            <property name="text">
             <string>Tank</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">playerButtonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -136,6 +150,9 @@
            <property name="text">
             <string>UFO</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">playerButtonGroup</string>
+           </attribute>
           </widget>
          </item>
         </layout>
@@ -178,7 +195,7 @@
      </item>
     </layout>
    </item>
-   <item>
+   <item row="5" column="0">
     <layout class="QVBoxLayout" name="verticalLayout_6">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -196,6 +213,9 @@
            <property name="text">
             <string>Fireball</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">proctileButtonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -203,6 +223,9 @@
            <property name="text">
             <string>Missile</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">proctileButtonGroup</string>
+           </attribute>
           </widget>
          </item>
          <item>
@@ -210,6 +233,9 @@
            <property name="text">
             <string>Laser</string>
            </property>
+           <attribute name="buttonGroup">
+            <string notr="true">proctileButtonGroup</string>
+           </attribute>
           </widget>
          </item>
         </layout>
@@ -252,17 +278,13 @@
      </item>
     </layout>
    </item>
-   <item>
-    <widget class="QPushButton" name="startButton">
-     <property name="text">
-      <string>Start</string>
+   <item row="6" column="0">
+    <widget class="QLabel" name="erronousInputLabel">
+     <property name="styleSheet">
+      <string notr="true">color : red </string>
      </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="exitButton">
      <property name="text">
-      <string>Exit</string>
+      <string/>
      </property>
     </widget>
    </item>
@@ -272,4 +294,8 @@
   <include location="resources/res.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="proctileButtonGroup"/>
+  <buttongroup name="playerButtonGroup"/>
+ </buttongroups>
 </ui>
