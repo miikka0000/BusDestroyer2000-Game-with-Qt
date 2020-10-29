@@ -22,9 +22,6 @@ void MainMenuDialog::on_startButton_clicked()
     if((tank_ || spaceShip_  || ufo_) && playerAlias != NULL){
 
         sendChosenPlayer();
-        BetterMainWindow *mainUi = new BetterMainWindow();
-
-        mainUi->show();
         this->close();
     } else if(playerAlias == NULL && (tank_ || spaceShip_ || ufo_)){
 
@@ -37,7 +34,6 @@ void MainMenuDialog::on_startButton_clicked()
     }
 }
 
-
 void MainMenuDialog::on_exitButton_clicked()
 {
     this->close();
@@ -45,39 +41,30 @@ void MainMenuDialog::on_exitButton_clicked()
 
 void MainMenuDialog::on_playerNameEdit_editingFinished()
 {
-
     playerAlias = ui->playerNameEdit->text();
     qDebug() <<playerAlias;
     //emit setPlayerName(playerAlias);
 }
 
-
 void MainMenuDialog::on_spaceshipButton_clicked()
 {
-
     spaceShip_ = true;
     tank_ = false;
     ufo_ = false;
-
-
 }
 
 void MainMenuDialog::on_tankButton_clicked()
 {
-    //qDebug() <<"tank chosen";
     tank_ = true;
     spaceShip_ = false;
     ufo_ = false;
-
 }
 
 void MainMenuDialog::on_ufoButton_clicked()
-{
-    //qDebug() <<"ufo chosen";
+{    
     ufo_ = true;
     tank_ = false;
     spaceShip_ = false;
-
 }
 
 void MainMenuDialog::sendChosenPlayer()

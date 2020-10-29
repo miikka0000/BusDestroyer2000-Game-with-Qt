@@ -19,10 +19,11 @@
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
-    MainMenuDialog *mainMenu = new MainMenuDialog();
+    /*MainMenuDialog *mainMenu = new MainMenuDialog();
 
     connect(mainMenu, &MainMenuDialog::setPlayerName, this, &Player::setPlayerNick);
-    connect(mainMenu, &MainMenuDialog::setPlayerType, this, &Player::setPlayerIcon);
+    connect(mainMenu, &MainMenuDialog::setPlayerType, this, &Player::setPlayerIcon);*/
+
 
     //setPixmap(tankPic);
     initMusic(blasterSound);

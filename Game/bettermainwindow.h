@@ -35,6 +35,7 @@ public:
     void setPicture(QImage img);
     //void paintEvent(QPaintEvent *pe);
     std::vector<int> getAvailableSize();
+    MainMenuDialog *giveDialog() {return mainMenu;};
 
 
 
@@ -57,9 +58,14 @@ public:
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
 
+
+
     /*signals:
     void emitDimensions(int w, int h);*/
 
+public slots:
+    void setPlayerNick(QString name);
+    void setPlayerIcon(int type);
 
 private:
     Ui::BetterMainWindow *ui;
@@ -68,6 +74,7 @@ private:
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
     bool largeMode = false;
+    MainMenuDialog *mainMenu;
 
 };
 

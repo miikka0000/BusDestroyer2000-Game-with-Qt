@@ -51,6 +51,9 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
 
 
     player_ = new Player();
+    mainMenu = new MainMenuDialog();
+    connect(mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
+    connect(mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
 
     qDebug() << "player name: "<< player_->playerName;
 
@@ -125,6 +128,28 @@ std::vector<int> BetterMainWindow::getAvailableSize()
     qDebug() << "available w: " << availableWidth;
     qDebug() << "available h: " << availableHeight;
     return {availableWidth, availableHeight};
+
+}
+
+void BetterMainWindow::setPlayerNick(QString name)
+{
+     qDebug() << "setPlayerName signal received";
+    player_->playerName = name;
+
+}
+
+void BetterMainWindow::setPlayerIcon(int type)
+{
+    qDebug() << "setPlayerIcon signal received";
+    if(type == MainMenuDialog::tankOption){
+        player_->tankChosen = true;
+    } else if(type == MainMenuDialog::spaceshipOption){
+        player_->spaceshipChosen = true;
+    } else if(type == MainMenuDialog::ufoOption){
+        player_->ufoChosen = true;
+    }
+    player_->addPlayerSprite();
+    player_->setDimensions();
 
 }
 
