@@ -1,5 +1,5 @@
 #include "basicprojectile.h"
-#include "gamesetupdata.h"
+
 
 
 #include <QTimer>
@@ -13,8 +13,7 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
 
 
     setProjectilePicture();
-    //setPixmap(_fireballPic);
-    //setDimensions();
+
 
     _projectileTimer = new QTimer(this);
     connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
@@ -33,15 +32,13 @@ basicProjectile::~basicProjectile()
 void basicProjectile::setDimensions()
 {
 
-    if(setUp::gameSetUpData().fireballChosen){
+    if(fireballChosen){
         _projectileHeight = _fireballPic.height();
         _projectileWidth = _fireballPic.width();
-
-    } else if(setUp::gameSetUpData().missileChosen){
+    } else if(missileChosen){
         _projectileHeight = _missilePic.height();
         _projectileWidth = _missilePic.width();
-
-    } else if(setUp::gameSetUpData().laserChosen){
+    } else if(laserChosen){
         _projectileHeight = _laserPic.height();
         _projectileWidth = _laserPic.width();
     }
@@ -50,19 +47,27 @@ void basicProjectile::setDimensions()
 
 void basicProjectile::setProjectilePicture()
 {
+    QSettings settings;
+    int chosenProjectile = settings.value("projectile type setting").toInt();
+    //qDebug()<< chosenProjectile;
 
-    if(setUp::gameSetUpData().fireballChosen){
+    if(chosenProjectile == MainMenuDialog::fireballOption){
+        qDebug()<<"you chose spaceship";
+        fireballChosen = true;
         setPixmap(_fireballPic);
 
-    } else if(setUp::gameSetUpData().missileChosen){
+    } else if(chosenProjectile == MainMenuDialog::missileOption){
+        qDebug()<<"you chose tank";
+        missileChosen = true;
         setPixmap(_missilePic);
 
-    } else if(setUp::gameSetUpData().laserChosen){
+    } else if(chosenProjectile == MainMenuDialog::laserOption){
+        qDebug()<<"you chose ufo";
+        laserChosen = true;
         setPixmap(_laserPic);
     }
-    //qDebug() << _playerData->fireballChosen;
     setTransformOriginPoint(5, 10);
-    setRotation(-90);   
+    setRotation(-90);
     setDimensions();
 }
 

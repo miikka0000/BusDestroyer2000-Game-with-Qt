@@ -1,7 +1,7 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "mainmenudialog.h"
-#include "gamesetupdata.h"
+
 #include "basicprojectile.h"
 
 #include <QGraphicsRectItem>
@@ -12,6 +12,7 @@
 #include <QUrl>
 #include <QString>
 #include <vector>
+#include <QSettings>
 
 
 
@@ -58,7 +59,7 @@ public:
 
 private:
 
-    setUp::gameSetUpData *_playerData;
+
     double _spaceshipVelocity = 20.0;
     double _projectileVelocity = 8.0;
     QSoundEffect *_projectileSound;

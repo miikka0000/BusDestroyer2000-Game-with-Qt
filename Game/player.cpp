@@ -15,6 +15,7 @@
 #include <QString>
 #include <memory>
 #include <vector>
+#include <QSettings>
 
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
@@ -63,7 +64,6 @@ void Player::keyPressEvent(QKeyEvent *event)
             basicProjectile *projectile = new basicProjectile();
             projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
             scene()->addItem(projectile);
-
             setMusicChoice();
         }
         //qDebug() << "space pressed";
@@ -138,14 +138,14 @@ void Player::movePlayer(){
 
 void Player::setDimensions()
 {
-     _playerData = new setUp::gameSetUpData();
-    if(_playerData->tankChosen){
+
+    if(tankChosen){
         playerHeight = tankPic.height();
         playerWidth = tankPic.width();
-    } else if(_playerData->spaceshipChosen){
+    } else if(spaceshipChosen){
         playerHeight = spaceshipPic.height();
         playerWidth = spaceshipPic.width();
-    } else if(_playerData->ufoChosen){
+    } else if(ufoChosen){
         playerHeight = ufoPic.height();
         playerWidth = ufoPic.width();
     }
@@ -177,24 +177,26 @@ void Player::changePlayerSpeed(int delta)
 void Player::addPlayerSprite()
 {
 
-    qDebug()<<setUp::gameSetUpData().tankChosen<<"tank";
-    qDebug()<<setUp::gameSetUpData().spaceshipChosen<<"spaceship";
-    qDebug()<<setUp::gameSetUpData().ufoChosen<<"ufo";
+    QSettings settings;
+    int chosenSkin = settings.value("player type setting").toInt();
+    //qDebug()<< chosenSkin;
 
-
-    if(setUp::gameSetUpData().spaceshipChosen == true){
+    if(chosenSkin == MainMenuDialog::spaceshipOption){
         qDebug()<<"you chose spaceship";
+        spaceshipChosen = true;
         setPixmap(spaceshipPic);
 
-    } else if(setUp::gameSetUpData().tankChosen == true ){
+    } else if(chosenSkin == MainMenuDialog::tankOption){
         qDebug()<<"you chose tank";
+        tankChosen = true;
         setPixmap(tankPic);
 
-    } else if(setUp::gameSetUpData().ufoChosen == true){
+    } else if(chosenSkin == MainMenuDialog::ufoOption){
         qDebug()<<"you chose ufo";
+        ufoChosen = true;
         setPixmap(ufoPic);
     }
-    //qDebug() << _playerData->tankChosen;
+
     setDimensions();
 
 }
@@ -216,12 +218,16 @@ void Player::configureMusic()
 
 void Player::setMusicChoice()
 {
+    QSettings musicSettings;
+    int musicOpt = musicSettings.value("music setting").toInt();
 
-     if( setUp::gameSetUpData().musicsOn){
+    if(musicOpt == MainMenuDialog::musicStateOn){
         this->musicsOn = true;
         configureMusic();
-    } else {
+
+    } else if(musicOpt == MainMenuDialog::musicStateOff){
         this->musicsOn = false;
+        return;
     }
 
 }

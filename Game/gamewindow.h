@@ -3,7 +3,7 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "mainmenudialog.h"
-#include "gamesetupdata.h"
+
 
 #include <QGraphicsView>
 #include <QGraphicsScene>

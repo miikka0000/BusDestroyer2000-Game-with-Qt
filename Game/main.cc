@@ -8,20 +8,26 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include <QScreen>
+#include <QCoreApplication>
+#include <QSettings>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    QCoreApplication::setOrganizationName("Tampere University");
+    QCoreApplication::setApplicationName("BusDestroyer");
+    QSettings mySettings;
+
     Q_INIT_RESOURCE(offlinedata);
-    //initGame * game = new initGame();
 
     MainMenuDialog * menuUi = new MainMenuDialog();
-    //GameWindow mainWindow;
-    //mainWindow.show();
-    //mainWindow.giveDialog()->setModal(true);
-    //mainWindow.giveDialog()->exec();
+
 
     menuUi->exec();
+    //mySettings.clear();
+
+
 
     return a.exec();
 }

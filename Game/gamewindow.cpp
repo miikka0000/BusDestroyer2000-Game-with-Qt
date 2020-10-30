@@ -48,6 +48,7 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+
     _player = new Player();
 
     _player->setPos(size.width / 2, size.height - 100);
@@ -61,6 +62,8 @@ GameWindow::GameWindow(QWidget *parent) :
 GameWindow::~GameWindow()
 {
     delete ui;
+    QSettings settings;
+    settings.clear();
 }
 
 void GameWindow::resizeEvent(QResizeEvent *event)

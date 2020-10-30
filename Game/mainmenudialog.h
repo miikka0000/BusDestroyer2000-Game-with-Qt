@@ -1,10 +1,11 @@
 #ifndef MAINMENUDIALOG_H
 #define MAINMENUDIALOG_H
-#include "gamesetupdata.h"
+
 #include "player.h"
 #include <QDialog>
 #include <QString>
 #include <QSize>
+#include <string>
 
 
 namespace Ui {
@@ -19,22 +20,16 @@ public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
 
-    void sendChosenPlayer();
-    void sendChosenProjectile();
-    void sendChosenMusicState();
-    void savePlayerChoices();
+
 
 
     enum playerType {
-        tankOption, spaceshipOption, ufoOption
+        spaceshipOption, tankOption, ufoOption,
+        fireballOption, missileOption, laserOption,
+        musicStateOn, musicStateOff
 
     };
-    enum projectileType {
-        fireballOption, missileOption, laserOption
-    };
-    enum musicState {
-        musicStateOn, musicStateOff
-    };
+
 
     bool _tank = false;
     bool _spaceShip = false;
@@ -45,6 +40,9 @@ public:
     bool _laser = false;
 
     bool _musicsOn = false;
+
+
+    QString playerAlias;
 
 
 
@@ -73,12 +71,8 @@ private slots:
 
 private:
     Ui::MainMenuDialog *ui;
-    setUp::gameSetUpData *_playerData;
 
-    QString playerAlias;
-
-
-    QSize menuDialogSize;
+    QSize _menuDialogSize;
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
     QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
