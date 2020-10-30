@@ -30,10 +30,10 @@ void MainMenuDialog::setCorrectMusicState()
 {
     QSettings setting;
 
-    if(ui->musicsOn->isChecked()){
-        setting.setValue("music option", musicStateOn);
+    if(ui->musicsOn->isChecked() || _musicsOn){
+        setting.setValue("music setting", musicStateOn);
     }else{
-        setting.setValue("music option", musicStateOff);
+        setting.setValue("music setting", musicStateOff);
     }
 }
 
