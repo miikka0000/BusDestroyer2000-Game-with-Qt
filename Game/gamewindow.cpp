@@ -109,13 +109,11 @@ void GameWindow::setPicture(QImage img)
     _scene->setBackgroundBrush(QBrush(img));
 }
 
-/*void BetterMainWindow::keyReleaseEvent(QKeyEvent *keyEvent)
+/*void GameWindow::keyReleaseEvent(QKeyEvent *keyEvent)
 {
     if(keyEvent->key() == Qt::Key_Escape){
         qDebug()<<"esc pressed";
-        if(this->width() > 800 && this->height() > 600){
-            this->resize(800,600);
-        }
+        _player->musicsOn = false;
 
 
     }
