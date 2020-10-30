@@ -1,6 +1,8 @@
 #ifndef PROJECTILE_H
 #define PROJECTILE_H
 
+#include "gamesetupdata.h"
+
 #include <QGraphicsRectItem>
 #include <QPixmap>
 #include <QTimer>
@@ -13,11 +15,13 @@ public:
     void setDimensions();
     void setProjectilePicture();
 
-    bool fireballChosen = false;
-    bool missileChosen = false;
-    bool laserChosen = false;
+    bool fireballChosen;
+    bool missileChosen;
+    bool laserChosen;
 
 private:
+
+    setUp::gameSetUpData *_playerData;
     int _projectileVelocity = 25;
     int _projectileHeight;
     int _projectileWidth;

@@ -1,6 +1,6 @@
 #ifndef MAINMENUDIALOG_H
 #define MAINMENUDIALOG_H
-
+#include "gamesetupdata.h"
 #include "player.h"
 #include <QDialog>
 #include <QString>
@@ -22,6 +22,7 @@ public:
     void sendChosenPlayer();
     void sendChosenProjectile();
     void sendChosenMusicState();
+    void savePlayerChoices();
 
 
     enum playerType {
@@ -35,14 +36,18 @@ public:
         musicStateOn, musicStateOff
     };
 
-    QString playerAlias;
+    bool _tank = false;
+    bool _spaceShip = false;
+    bool _ufo = false;
+
+    bool _fireball = false;
+    bool _missile = false;
+    bool _laser = false;
+
+    bool _musicsOn = false;
 
 
-signals:
-    void setPlayerName(QString name);
-    void setPlayerType(int type);
-    void setProjectileType(int projectileType);
-    void setMusicState(int musicChoice);
+
 
 
 private slots:
@@ -68,16 +73,10 @@ private slots:
 
 private:
     Ui::MainMenuDialog *ui;
+    setUp::gameSetUpData *_playerData;
 
-    bool _tank = false;
-    bool _spaceShip = false;
-    bool _ufo = false;
+    QString playerAlias;
 
-    bool _fireball = false;
-    bool _missile = false;
-    bool _laser = false;
-
-    bool _musicsOn = false;
 
     QSize menuDialogSize;
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");

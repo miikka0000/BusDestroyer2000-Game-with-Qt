@@ -1,4 +1,5 @@
 #include "basicprojectile.h"
+#include "gamesetupdata.h"
 
 
 #include <QTimer>
@@ -10,19 +11,17 @@
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    //setProjectilePicture();
-    setPixmap(_fireballPic);
-    setDimensions();
 
-    setTransformOriginPoint(5, 10);
-    setRotation(-90);
+    setProjectilePicture();
+    //setPixmap(_fireballPic);
+    //setDimensions();
 
     _projectileTimer = new QTimer(this);
     connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
     _projectileTimer->start(_fireRate);
 
-    qDebug() << "projectile height:"<<this->_projectileHeight;
-    qDebug() << "proejctile width:"<<this->_projectileWidth;
+    //qDebug() << "projectile height:"<<this->_projectileHeight;
+    //qDebug() << "proejctile width:"<<this->_projectileWidth;
 
 }
 
@@ -33,38 +32,38 @@ basicProjectile::~basicProjectile()
 
 void basicProjectile::setDimensions()
 {
-    /*if(fireballChosen){
+
+    if(setUp::gameSetUpData().fireballChosen){
         _projectileHeight = _fireballPic.height();
         _projectileWidth = _fireballPic.width();
 
-    } else if(missileChosen){
+    } else if(setUp::gameSetUpData().missileChosen){
         _projectileHeight = _missilePic.height();
         _projectileWidth = _missilePic.width();
 
-    } else if(laserChosen){
+    } else if(setUp::gameSetUpData().laserChosen){
         _projectileHeight = _laserPic.height();
         _projectileWidth = _laserPic.width();
-    }*/
-    _projectileHeight = _fireballPic.height();
-    _projectileWidth = _fireballPic.width();
+    }
 
-    qDebug() << "projectile height: "<< _projectileHeight;
-    qDebug() << "projectile width: "<< _projectileWidth;
 }
 
 void basicProjectile::setProjectilePicture()
 {
-    if(fireballChosen){
+
+    if(setUp::gameSetUpData().fireballChosen){
         setPixmap(_fireballPic);
 
-    } else if(missileChosen){
+    } else if(setUp::gameSetUpData().missileChosen){
         setPixmap(_missilePic);
 
-    } else if(laserChosen){
+    } else if(setUp::gameSetUpData().laserChosen){
         setPixmap(_laserPic);
     }
+    //qDebug() << _playerData->fireballChosen;
     setTransformOriginPoint(5, 10);
-    setRotation(-90);
+    setRotation(-90);   
+    setDimensions();
 }
 
 void basicProjectile::move()

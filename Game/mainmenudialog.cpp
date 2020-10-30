@@ -1,5 +1,6 @@
 #include "mainmenudialog.h"
 #include "ui_mainmenudialog.h"
+#include "gamesetupdata.h"
 #include "gamewindow.h"
 #include <QDebug>
 #include <QString>
@@ -13,6 +14,7 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui->setupUi(this);
     menuDialogSize = QSize(800, 600);
     this->setFixedSize(menuDialogSize);
+     _playerData = new setUp::gameSetUpData();
 }
 
 MainMenuDialog::~MainMenuDialog()
@@ -24,10 +26,17 @@ void MainMenuDialog::on_startButton_clicked()
 {
     if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
             && playerAlias != NULL){
+        GameWindow *mainWin = new GameWindow();
 
-        sendChosenPlayer();
-        sendChosenProjectile();
-        sendChosenMusicState();
+
+
+        //savePlayerChoices();
+        //qDebug()<<_playerData->playerName;
+        //qDebug()<<_playerData->tankChosen;
+        //savePlayerChoices();
+        mainWin->show();
+
+
         this->close();
 
     } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
@@ -77,63 +86,70 @@ void MainMenuDialog::on_playerNameEdit_editingFinished()
 
 void MainMenuDialog::on_spaceshipButton_clicked()
 {
+    qDebug() <<"spaceship chosen";
     _spaceShip = true;
     _tank = false;
     _ufo = false;
+
+    _playerData->setTrue(_playerData->spaceshipChosen);
+    _playerData->setFalse(_playerData->ufoChosen);
+    _playerData->setFalse(_playerData->tankChosen);
 }
 
 void MainMenuDialog::on_tankButton_clicked()
 {
+    qDebug() <<"tank chosen";
     _tank = true;
     _spaceShip = false;
     _ufo = false;
+
+    setUp::gameSetUpData().setTrue(setUp::gameSetUpData().tankChosen);
+    setUp::gameSetUpData().setFalse(setUp::gameSetUpData().ufoChosen);
+    setUp::gameSetUpData().setFalse(setUp::gameSetUpData().spaceshipChosen);
 }
 
 void MainMenuDialog::on_ufoButton_clicked()
-{    
+{
+    qDebug() <<"ufo chosen";
     _ufo = true;
     _tank = false;
     _spaceShip = false;
+
+    setUp::gameSetUpData().setTrue(setUp::gameSetUpData().ufoChosen);
+    setUp::gameSetUpData().setFalse(setUp::gameSetUpData().tankChosen);
+    setUp::gameSetUpData().setFalse(setUp::gameSetUpData().spaceshipChosen);
 }
 
-void MainMenuDialog::sendChosenPlayer()
+void MainMenuDialog::savePlayerChoices()
 {
+
+
     if(_tank){
-        qDebug() <<"tank chosen, tank-signal emitted";
-        emit setPlayerType(tankOption);
-    } else if(_spaceShip){
-        qDebug() <<"spaceship chosen, spaceship-signal emitted";
-        emit setPlayerType(spaceshipOption);
-    } else if(_ufo){
-        qDebug() <<"ufo chosen, ufo-signal emitted";
-        emit setPlayerType(ufoOption);
-    }
-    qDebug() << "player Name signal emitted";
-    emit setPlayerName(playerAlias);
-}
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().tankChosen);
 
-void MainMenuDialog::sendChosenProjectile()
-{
+    }else if(_spaceShip){
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().spaceshipChosen);
+
+    }else if(_ufo){
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().ufoChosen);
+    }
     if(_fireball){
-        qDebug() <<"fireball chosen, fireball-signal emitted";
-        emit setProjectileType(fireballOption);
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().fireballChosen);
+
     } else if(_missile){
-        qDebug() <<"missile chosen, missile-signal emitted";
-        emit setProjectileType(missileOption);
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().missileChosen);
+
     } else if(_laser){
-        qDebug() <<"laser chosen, laser-signal emitted";
-        emit setProjectileType(laserOption);
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().laserChosen);
+
     }
-
-}
-
-void MainMenuDialog::sendChosenMusicState()
-{
     if(_musicsOn){
-        emit setMusicState(musicStateOn);
-    } else{
-        emit setMusicState(musicStateOff);
-    }
+        setUp::gameSetUpData().setTrue(setUp::gameSetUpData().musicsOn);
+
+    } /*if(playerAlias != NULL){
+        _playerData->playerName = playerAlias;}*/
+
+
 }
 
 

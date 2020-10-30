@@ -50,18 +50,10 @@ GameWindow::GameWindow(QWidget *parent) :
 
     _player = new Player();
 
-    _mainMenu = new MainMenuDialog();
-    connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &GameWindow::setPlayerNick);
-    connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &GameWindow::setPlayerIcon);
-    connect(_mainMenu, &MainMenuDialog::setMusicState, this, &GameWindow::setMusicChoice);
-
-    //connect(_mainMenu, &MainMenuDialog::setProjectileType, this, &BetterMainWindow::setProjectileIcon);
-
     _player->setPos(size.width / 2, size.height - 100);
     _player->setFlag(QGraphicsItem::ItemIsFocusable);
     _player->setFocus();
     _scene->addItem(_player);
-
 
 
 }
@@ -141,56 +133,10 @@ std::vector<int> GameWindow::getAvailableSize()
 
 }
 
-void GameWindow::setPlayerNick(QString name)
-{
-    qDebug() << "setPlayerName signal received";
-    _player->playerName = name;
-    qDebug() << "player name: "<< _player->playerName;
-
-}
-
-void GameWindow::setPlayerIcon(int type)
-{
-    qDebug() << "setPlayerIcon signal received";
-    if(type == MainMenuDialog::tankOption){
-        _player->tankChosen = true;
-    } else if(type == MainMenuDialog::spaceshipOption){
-        _player->spaceshipChosen = true;
-    } else if(type == MainMenuDialog::ufoOption){
-        _player->ufoChosen = true;
-    }
-    _player->addPlayerSprite();
-    _player->setDimensions();
-}
-
-void GameWindow::setMusicChoice(int choice)
-{
-    qDebug() << "setMusicChoice signal received";
-    if(choice == MainMenuDialog::musicStateOn){
-        _player->musicsOn = true;
-    } else if(choice == MainMenuDialog::musicStateOff){
-        _player->musicsOn = false;
-    }
-
-    /*void BetterMainWindow::setProjectileIcon(int projectileType)
-{
-
-    qDebug() << "setProjectileIcon signal received, you chose: "<<projectileType;
-    //_projectile = new basicProjectile();
-    if(projectileType == MainMenuDialog::fireballOption){
-        _player->projectile->fireballChosen = true;
-
-    } else if(projectileType == MainMenuDialog::missileOption){
-        _player->projectile->missileChosen = true;
-
-    } else if(projectileType == MainMenuDialog::laserOption){
-        _player->projectile->laserChosen = true;
-    }
-    _player->projectile->setProjectilePicture();
-    _player->projectile->setDimensions();
-}*/
 
 
-}
+
+
+
 
 

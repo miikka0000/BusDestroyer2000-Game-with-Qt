@@ -1,7 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "mainmenudialog.h"
-#include <basicprojectile.h>
+#include "gamesetupdata.h"
+#include "basicprojectile.h"
+
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
 #include <QSoundEffect>
@@ -26,7 +28,8 @@ public:
     void changePlayerSpeed(int delta);
     void addPlayerSprite();
     void initMusic(QUrl blasterSoundEffect);
-    void setMusic();
+    void configureMusic();
+    void setMusicChoice();
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
@@ -34,9 +37,9 @@ public:
 
     int screenWidth = 800;
     int screenHeight = 600;
-    const QPixmap spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
-    const QPixmap tankPic = QPixmap(":/images/tank_sprite_26x50.png");
-    const QPixmap ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
+    QPixmap spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
+    QPixmap tankPic = QPixmap(":/images/tank_sprite_26x50.png");
+    QPixmap ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
 
@@ -44,17 +47,18 @@ public:
     int yCoord;
 
     QString playerName;
-    bool tankChosen = false;
-    bool spaceshipChosen = false;
-    bool ufoChosen = false;
-    bool fireballChosen = false;
-    bool missileChosen = true;
-    bool laserChosen = false;
+    bool tankChosen;
+    bool spaceshipChosen;
+    bool ufoChosen;
+    bool fireballChosen;
+    bool missileChosen;
+    bool laserChosen;
 
-    bool musicsOn = false;
+    bool musicsOn;
 
 private:
 
+    setUp::gameSetUpData *_playerData;
     double _spaceshipVelocity = 20.0;
     double _projectileVelocity = 8.0;
     QSoundEffect *_projectileSound;

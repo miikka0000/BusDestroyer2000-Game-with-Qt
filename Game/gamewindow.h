@@ -3,6 +3,7 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "mainmenudialog.h"
+#include "gamesetupdata.h"
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -46,12 +47,7 @@ public:
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
 
-public slots:
-    void setPlayerNick(QString name);
-    void setPlayerIcon(int type);
-    void setMusicChoice(int choice);
 
-    //void setProjectileIcon(int projectileType);
 
 private:
     Ui::GameWindow *ui;

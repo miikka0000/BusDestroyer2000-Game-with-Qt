@@ -20,6 +20,8 @@
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
+
+    addPlayerSprite();
     initMusic(blasterSound);
     _moveTimer = new QTimer(this);
     connect(_moveTimer, &QTimer::timeout, this, &Player::movePlayer);
@@ -62,9 +64,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
             scene()->addItem(projectile);
 
-            if (musicsOn){
-                setMusic();
-            }
+            setMusicChoice();
         }
         //qDebug() << "space pressed";
         _keySpace = true;
@@ -138,16 +138,18 @@ void Player::movePlayer(){
 
 void Player::setDimensions()
 {
-    if(tankChosen){
+     _playerData = new setUp::gameSetUpData();
+    if(_playerData->tankChosen){
         playerHeight = tankPic.height();
         playerWidth = tankPic.width();
-    } else if(spaceshipChosen){
+    } else if(_playerData->spaceshipChosen){
         playerHeight = spaceshipPic.height();
         playerWidth = spaceshipPic.width();
-    } else if(ufoChosen){
+    } else if(_playerData->ufoChosen){
         playerHeight = ufoPic.height();
         playerWidth = ufoPic.width();
     }
+
 
     qDebug() << "ship height: "<< playerHeight;
     qDebug() << "ship width: "<< playerWidth;
@@ -175,15 +177,25 @@ void Player::changePlayerSpeed(int delta)
 void Player::addPlayerSprite()
 {
 
-    if(spaceshipChosen){
+    qDebug()<<setUp::gameSetUpData().tankChosen<<"tank";
+    qDebug()<<setUp::gameSetUpData().spaceshipChosen<<"spaceship";
+    qDebug()<<setUp::gameSetUpData().ufoChosen<<"ufo";
+
+
+    if(setUp::gameSetUpData().spaceshipChosen == true){
+        qDebug()<<"you chose spaceship";
         setPixmap(spaceshipPic);
 
-    } else if(tankChosen){
+    } else if(setUp::gameSetUpData().tankChosen == true ){
+        qDebug()<<"you chose tank";
         setPixmap(tankPic);
 
-    } else if(ufoChosen){
+    } else if(setUp::gameSetUpData().ufoChosen == true){
+        qDebug()<<"you chose ufo";
         setPixmap(ufoPic);
     }
+    //qDebug() << _playerData->tankChosen;
+    setDimensions();
 
 }
 
@@ -193,13 +205,25 @@ void Player::initMusic(QUrl blasterSoundEffect)
     _projectileSound->setSource(blasterSoundEffect);
 }
 
-void Player::setMusic()
+void Player::configureMusic()
 {
     if (_projectileSound->isPlaying()){
         _projectileSound->stop();
     }
     _projectileSound->setVolume(0.25f);
     _projectileSound->play();
+}
+
+void Player::setMusicChoice()
+{
+
+     if( setUp::gameSetUpData().musicsOn){
+        this->musicsOn = true;
+        configureMusic();
+    } else {
+        this->musicsOn = false;
+    }
+
 }
 
 std::vector<int> Player::getPlayerOrigin(int width, int height)
