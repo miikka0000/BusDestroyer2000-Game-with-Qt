@@ -19,6 +19,7 @@ class MainMenuDialog : public QDialog
 public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
+    void setCorrectMusicState();
 
 
     enum playerConfig {

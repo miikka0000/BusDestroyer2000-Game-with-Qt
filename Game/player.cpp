@@ -22,7 +22,8 @@
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
-
+    QSettings s;
+    qDebug()<<s.value("music setting").toInt();
     addPlayerSprite();
     savePlayerName();
     initMusic();

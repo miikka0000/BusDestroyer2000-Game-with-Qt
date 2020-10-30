@@ -16,7 +16,7 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui->setupUi(this);
     _menuDialogSize = QSize(800, 600);
     this->setFixedSize(_menuDialogSize);
-    ui->musicsOn->setChecked(false);
+
 
 
 }
@@ -26,13 +26,26 @@ MainMenuDialog::~MainMenuDialog()
     delete ui;
 }
 
+void MainMenuDialog::setCorrectMusicState()
+{
+    QSettings setting;
+
+    if(ui->musicsOn->isChecked()){
+        setting.setValue("music option", musicStateOn);
+    }else{
+        setting.setValue("music option", musicStateOff);
+    }
+}
+
 void MainMenuDialog::on_startButton_clicked()
 {
     if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
             && playerAlias != NULL){
 
+        setCorrectMusicState();
         GameWindow *mainWin = new GameWindow();
         mainWin->show();
+
         this->close();
 
     } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
