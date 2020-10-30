@@ -1,7 +1,7 @@
 #include "mainmenudialog.h"
 #include "ui_mainmenudialog.h"
-#include "gamesetupdata.h"
 #include "gamewindow.h"
+
 #include <QDebug>
 #include <QString>
 #include <QSize>
@@ -16,7 +16,6 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui->setupUi(this);
     _menuDialogSize = QSize(800, 600);
     this->setFixedSize(_menuDialogSize);
-
 
 
 }
@@ -187,8 +186,14 @@ void MainMenuDialog::on_musicsOn_clicked()
     }
 }
 
+void MainMenuDialog::on_settingsButton_clicked()
+{
+    settingsDialog *mainSettingsDialog = new settingsDialog(this);
+    mainSettingsDialog->exec();
+}
 
-
-
-
-
+void MainMenuDialog::on_helpButton_clicked()
+{
+    helpDialog *gameHelpDialog = new helpDialog(this);
+    gameHelpDialog->exec();
+}

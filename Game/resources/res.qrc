@@ -9,6 +9,8 @@
         <file>ufo_sprite_50x50.png</file>
         <file>missile_23x10.png</file>
         <file>laser_32x32.png</file>
+        <file>controlsPicture.png</file>
+        <file>exitButton.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>

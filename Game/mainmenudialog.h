@@ -2,6 +2,9 @@
 #define MAINMENUDIALOG_H
 
 #include "player.h"
+#include "settingsdialog.h"
+#include "helpdialog.h"
+
 #include <QDialog>
 #include <QString>
 #include <QSize>
@@ -28,9 +31,7 @@ public:
         musicStateOn, musicStateOff, fireballSound,
         missileSound, blasterSound
 
-
     };
-
 
     bool _tank = false;
     bool _spaceShip = false;
@@ -44,9 +45,6 @@ public:
 
 
     QString playerAlias;
-
-
-
 
 
 private slots:
@@ -69,6 +67,14 @@ private slots:
     void on_laserButton_clicked();
 
     void on_musicsOn_clicked();
+
+
+
+
+
+    void on_settingsButton_clicked();
+
+    void on_helpButton_clicked();
 
 private:
     Ui::MainMenuDialog *ui;

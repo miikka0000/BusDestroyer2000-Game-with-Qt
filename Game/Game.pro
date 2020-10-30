@@ -8,10 +8,12 @@ CONFIG += c++14
 SOURCES += \
     basicprojectile.cpp \
     gamewindow.cpp \
+    helpdialog.cpp \
     initgame.cpp \
     main.cc \
     mainmenudialog.cpp \
     player.cpp \
+    settingsdialog.cpp \
     spaceship.cpp \
     tank.cpp \
     ufo.cpp
@@ -43,9 +45,11 @@ else:unix: PRE_TARGETDEPS += \
 HEADERS += \
     basicprojectile.h \
     gamewindow.h \
+    helpdialog.h \
     initgame.h \
     mainmenudialog.h \
     player.h \
+    settingsdialog.h \
     spaceship.h \
     tank.h \
     ufo.h
@@ -55,4 +59,6 @@ RESOURCES += \
 
 FORMS += \
     gamewindow.ui \
-    mainmenudialog.ui
+    helpdialog.ui \
+    mainmenudialog.ui \
+    settingsdialog.ui
