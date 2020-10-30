@@ -1,5 +1,5 @@
-#ifndef BETTERMAINWINDOW_H
-#define BETTERMAINWINDOW_H
+#ifndef GAMEWINDOW_H
+#define GAMEWINDOW_H
 #include "player.h"
 #include "basicprojectile.h"
 #include "mainmenudialog.h"
@@ -16,16 +16,16 @@
 #include <vector>
 
 namespace Ui {
-class BetterMainWindow;
+class GameWindow;
 }
 
-class BetterMainWindow : public QMainWindow
+class GameWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit BetterMainWindow(QWidget *parent = nullptr);
-    ~BetterMainWindow();
+    explicit GameWindow(QWidget *parent = nullptr);
+    ~GameWindow();
 
     void resizeEvent(QResizeEvent * event);
     void setPicture(QImage img);
@@ -54,7 +54,7 @@ public slots:
     //void setProjectileIcon(int projectileType);
 
 private:
-    Ui::BetterMainWindow *ui;
+    Ui::GameWindow *ui;
     QTimer *timer;
     QGraphicsScene * _scene;
     Player * _player;
@@ -65,4 +65,4 @@ private:
 
 };
 
-#endif // BETTERMAINWINDOW_H
+#endif // GAMEWINDOW_H

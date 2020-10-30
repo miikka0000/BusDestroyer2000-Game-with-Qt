@@ -1,6 +1,6 @@
 #include "player.h"
 #include "initgame.h"
-#include "bettermainwindow.h"
+#include "gamewindow.h"
 #include "mainmenudialog.h"
 
 #include <QApplication>
@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     //initGame * game = new initGame();
 
     //MainMenuDialog * menuUi = new MainMenuDialog();
-    BetterMainWindow mainWindow;
+    GameWindow mainWindow;
     mainWindow.show();
     //mainWindow.giveDialog()->setModal(true);
     mainWindow.giveDialog()->exec();

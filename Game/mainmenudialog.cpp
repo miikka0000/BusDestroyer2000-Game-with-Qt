@@ -1,6 +1,6 @@
 #include "mainmenudialog.h"
 #include "ui_mainmenudialog.h"
-#include "bettermainwindow.h"
+#include "gamewindow.h"
 #include <QDebug>
 #include <QString>
 #include <QSize>

@@ -1,8 +1,8 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "initgame.h"
-#include "bettermainwindow.h"
-#include "ui_bettermainwindow.h"
+#include "gamewindow.h"
+#include "ui_gamewindow.h"
 #include <mainmenudialog.h>
 #include <ufo.h>
 #include <tank.h>
@@ -27,9 +27,9 @@
 
 
 
-BetterMainWindow::BetterMainWindow(QWidget *parent) :
+GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::BetterMainWindow)
+    ui(new Ui::GameWindow)
 {
     ui->setupUi(this);
 
@@ -51,9 +51,9 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
     _player = new Player();
 
     _mainMenu = new MainMenuDialog();
-    connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &BetterMainWindow::setPlayerNick);
-    connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &BetterMainWindow::setPlayerIcon);
-    connect(_mainMenu, &MainMenuDialog::setMusicState, this, &BetterMainWindow::setMusicChoice);
+    connect(_mainMenu, &MainMenuDialog::setPlayerName, this, &GameWindow::setPlayerNick);
+    connect(_mainMenu, &MainMenuDialog::setPlayerType, this, &GameWindow::setPlayerIcon);
+    connect(_mainMenu, &MainMenuDialog::setMusicState, this, &GameWindow::setMusicChoice);
 
     //connect(_mainMenu, &MainMenuDialog::setProjectileType, this, &BetterMainWindow::setProjectileIcon);
 
@@ -66,12 +66,12 @@ BetterMainWindow::BetterMainWindow(QWidget *parent) :
 
 }
 
-BetterMainWindow::~BetterMainWindow()
+GameWindow::~GameWindow()
 {
     delete ui;
 }
 
-void BetterMainWindow::resizeEvent(QResizeEvent *event)
+void GameWindow::resizeEvent(QResizeEvent *event)
 {
     if(_largeMode){
 
@@ -108,7 +108,7 @@ void BetterMainWindow::resizeEvent(QResizeEvent *event)
 
 }
 
-void BetterMainWindow::setPicture(QImage img)
+void GameWindow::setPicture(QImage img)
 {
 
     _scene->setBackgroundBrush(QBrush(img));
@@ -126,7 +126,7 @@ void BetterMainWindow::setPicture(QImage img)
     }
 }*/
 
-std::vector<int> BetterMainWindow::getAvailableSize()
+std::vector<int> GameWindow::getAvailableSize()
 {
 
     QList<QScreen *> rec = QGuiApplication::screens();
@@ -141,7 +141,7 @@ std::vector<int> BetterMainWindow::getAvailableSize()
 
 }
 
-void BetterMainWindow::setPlayerNick(QString name)
+void GameWindow::setPlayerNick(QString name)
 {
     qDebug() << "setPlayerName signal received";
     _player->playerName = name;
@@ -149,7 +149,7 @@ void BetterMainWindow::setPlayerNick(QString name)
 
 }
 
-void BetterMainWindow::setPlayerIcon(int type)
+void GameWindow::setPlayerIcon(int type)
 {
     qDebug() << "setPlayerIcon signal received";
     if(type == MainMenuDialog::tankOption){
@@ -163,7 +163,7 @@ void BetterMainWindow::setPlayerIcon(int type)
     _player->setDimensions();
 }
 
-void BetterMainWindow::setMusicChoice(int choice)
+void GameWindow::setMusicChoice(int choice)
 {
     qDebug() << "setMusicChoice signal received";
     if(choice == MainMenuDialog::musicStateOn){

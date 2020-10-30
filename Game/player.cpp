@@ -1,6 +1,6 @@
 #include "player.h"
 #include "basicprojectile.h"
-#include "bettermainwindow.h"
+#include "gamewindow.h"
 #include "mainmenudialog.h"
 
 

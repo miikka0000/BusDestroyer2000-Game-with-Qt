@@ -7,7 +7,7 @@ CONFIG += c++14
 
 SOURCES += \
     basicprojectile.cpp \
-    bettermainwindow.cpp \
+    gamewindow.cpp \
     initgame.cpp \
     main.cc \
     mainmenudialog.cpp \
@@ -42,7 +42,7 @@ else:unix: PRE_TARGETDEPS += \
 
 HEADERS += \
     basicprojectile.h \
-    bettermainwindow.h \
+    gamewindow.h \
     initgame.h \
     mainmenudialog.h \
     player.h \
@@ -54,5 +54,5 @@ RESOURCES += \
     resources/res.qrc
 
 FORMS += \
-    bettermainwindow.ui \
+    gamewindow.ui \
     mainmenudialog.ui
