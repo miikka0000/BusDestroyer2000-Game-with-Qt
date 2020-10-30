@@ -21,12 +21,12 @@ public:
     ~MainMenuDialog();
 
 
-
-
-    enum playerType {
+    enum playerConfig {
         spaceshipOption, tankOption, ufoOption,
         fireballOption, missileOption, laserOption,
-        musicStateOn, musicStateOff
+        musicStateOn, musicStateOff, fireballSound,
+        missileSound, blasterSound
+
 
     };
 

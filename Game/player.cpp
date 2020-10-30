@@ -25,7 +25,7 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     addPlayerSprite();
     savePlayerName();
-    initMusic(blasterSound);
+    initMusic();
 
     _moveTimer = new QTimer(this);
     connect(_moveTimer, &QTimer::timeout, this, &Player::movePlayer);
@@ -202,10 +202,22 @@ void Player::addPlayerSprite()
 
 }
 
-void Player::initMusic(QUrl blasterSoundEffect)
+void Player::initMusic()
 {
     _projectileSound = new QSoundEffect(this);
-    _projectileSound->setSource(blasterSoundEffect);
+    QSettings musicSetting;
+    qDebug()<<musicSetting.value("music setting").toInt();
+    int soundEffect = musicSetting.value("projectile soundeffect setting").toInt();
+    if(soundEffect == MainMenuDialog::fireballSound){
+        _projectileSound->setSource(fireballSound);
+
+    }else if(soundEffect == MainMenuDialog::missileSound){
+        _projectileSound->setSource(missileSound);
+
+    }else if(soundEffect == MainMenuDialog::blasterSound){
+        _projectileSound->setSource(blasterSound);
+    }
+
 }
 
 void Player::configureMusic()

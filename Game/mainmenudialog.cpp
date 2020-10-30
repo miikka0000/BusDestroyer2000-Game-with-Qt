@@ -16,6 +16,8 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui->setupUi(this);
     _menuDialogSize = QSize(800, 600);
     this->setFixedSize(_menuDialogSize);
+    ui->musicsOn->setChecked(false);
+
 
 }
 
@@ -119,7 +121,6 @@ void MainMenuDialog::on_ufoButton_clicked()
     QSettings playerSettings;
     playerSettings.setValue("player type setting", ufoOption);
 
-
 }
 
 
@@ -132,6 +133,7 @@ void MainMenuDialog::on_fireballButton_clicked()
 
     QSettings playerSettings;
     playerSettings.setValue("projectile type setting", fireballOption);
+    playerSettings.setValue("projectile soundeffect setting", fireballSound);
 }
 
 void MainMenuDialog::on_missileButton_clicked()
@@ -143,6 +145,7 @@ void MainMenuDialog::on_missileButton_clicked()
 
     QSettings playerSettings;
     playerSettings.setValue("projectile type setting", missileOption);
+    playerSettings.setValue("projectile soundeffect setting", missileSound);
 }
 
 void MainMenuDialog::on_laserButton_clicked()
@@ -154,18 +157,19 @@ void MainMenuDialog::on_laserButton_clicked()
 
     QSettings playerSettings;
     playerSettings.setValue("projectile type setting", laserOption);
+    playerSettings.setValue("projectile soundeffect setting", blasterSound);
 }
 
 void MainMenuDialog::on_musicsOn_clicked()
 {
     QSettings playerSettings;
-    if(ui->musicsOn->checkState() == 2){
-        //qDebug()<<"musics on";
+    if(ui->musicsOn->isChecked()){
+        qDebug()<<"musics on";
         _musicsOn = true;
         playerSettings.setValue("music setting", musicStateOn);
-    }else {
+    }else if(!ui->musicsOn->isChecked()){
         _musicsOn = false;
-        //qDebug()<<"musics off";
+        qDebug()<<"musics off";
         playerSettings.setValue("music setting", musicStateOff);
     }
 }

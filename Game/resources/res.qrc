@@ -12,5 +12,7 @@
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>
+        <file>missileSound.wav</file>
+        <file>fireballSound.wav</file>
     </qresource>
 </RCC>

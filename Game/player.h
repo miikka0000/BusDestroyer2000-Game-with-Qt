@@ -29,7 +29,7 @@ public:
     void setDimensions();
     void changePlayerSpeed(int delta);
     void addPlayerSprite();
-    void initMusic(QUrl blasterSoundEffect);
+    void initMusic();
     void configureMusic();
     void setMusicChoice();
     void savePlayerName();
@@ -45,6 +45,9 @@ public:
     QPixmap ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
 
     const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
+    const QUrl fireballSound = QUrl("qrc:/sounds/fireballSound.wav");
+    const QUrl missileSound = QUrl("qrc:/sounds/missileSound.wav");
+
 
     int xCoord;
     int yCoord;
