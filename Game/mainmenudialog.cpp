@@ -80,7 +80,7 @@ void MainMenuDialog::on_playerNameEdit_editingFinished()
     QSettings playerSettings;
     playerSettings.setValue("player name setting", playerAlias);
 
-    //qDebug() <<playerAlias;
+
 }
 
 void MainMenuDialog::on_spaceshipButton_clicked()

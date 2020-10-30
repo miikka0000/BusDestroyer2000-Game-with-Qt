@@ -16,6 +16,7 @@
 #include <memory>
 #include <vector>
 #include <QSettings>
+#include <string>
 
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
@@ -23,10 +24,11 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
     addPlayerSprite();
+    savePlayerName();
     initMusic(blasterSound);
+
     _moveTimer = new QTimer(this);
     connect(_moveTimer, &QTimer::timeout, this, &Player::movePlayer);
-
     _moveTimer->start(_interval);
     setPos(mapToParent(pos().x(), pos().y()));
 }
@@ -78,7 +80,6 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
     return;
 }
-
 
 void Player::keyReleaseEvent(QKeyEvent * event)
 { 
@@ -229,7 +230,14 @@ void Player::setMusicChoice()
         this->musicsOn = false;
         return;
     }
+}
 
+void Player::savePlayerName()
+{
+    QSettings settings;
+    QString playerNickname = settings.value("player name setting").toString();
+    playerName = playerNickname.toStdString();
+    //qDebug()<<QString::fromStdString(playerName);
 }
 
 std::vector<int> Player::getPlayerOrigin(int width, int height)

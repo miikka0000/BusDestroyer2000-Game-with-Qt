@@ -13,6 +13,7 @@
 #include <QString>
 #include <vector>
 #include <QSettings>
+#include <string>
 
 
 
@@ -31,6 +32,7 @@ public:
     void initMusic(QUrl blasterSoundEffect);
     void configureMusic();
     void setMusicChoice();
+    void savePlayerName();
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
@@ -47,7 +49,7 @@ public:
     int xCoord;
     int yCoord;
 
-    QString playerName;
+    std::string playerName;
     bool tankChosen;
     bool spaceshipChosen;
     bool ufoChosen;
