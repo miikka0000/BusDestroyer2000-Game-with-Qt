@@ -52,7 +52,7 @@ void settingsDialog::on_musicsOn_clicked()
 void settingsDialog::setCorrectMusicState()
 {
 
-    if(ui->musicsOnCheckBox->isChecked() || _musicsOn){
+    if(ui->musicsOnCheckBox->isChecked()){
         _playerSettings.setValue("music setting", musicStateOn);
     }else{
         _playerSettings.setValue("music setting", musicStateOff);
