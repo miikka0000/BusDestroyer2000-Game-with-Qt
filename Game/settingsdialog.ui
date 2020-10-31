@@ -42,7 +42,7 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>220</x>
+     <x>230</x>
      <y>270</y>
      <width>168</width>
      <height>24</height>
@@ -51,27 +51,138 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QPushButton" name="saveSettingsButton">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(240, 240, 240);</string>
       </property>
       <property name="text">
-       <string>Save Settings</string>
+       <string>Save</string>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QPushButton" name="backToMainButton">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(240, 240, 240);</string>
       </property>
       <property name="text">
-       <string>Back to Menu</string>
+       <string>Back</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>361</width>
+     <height>88</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="chooseTimeLabel">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Game Duration (in minutes):</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="timeComboBox">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(240, 240, 240);</string>
+        </property>
+        <item>
+         <property name="text">
+          <string>1 min</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>2 min</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>3 min</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QCheckBox" name="musicsOnCheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Musics ON/OFF</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="musicsOnLabel">
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources/res.qrc">:/images/souds_on.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="musicsOffLabel">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="resources/res.qrc">:/images/souds_off.png</pixmap>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources/res.qrc"/>
+ </resources>
  <connections/>
 </ui>

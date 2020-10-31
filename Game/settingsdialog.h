@@ -14,14 +14,25 @@ class settingsDialog : public QDialog
 public:
     explicit settingsDialog(QWidget *parent = nullptr);
     ~settingsDialog();
+    void setActionToolTips();
+    void setCorrectMusicState();
+
+    enum musicState {
+        musicStateOn, musicStateOff
+    };
 
 private slots:
 
 
     void on_backToMainButton_clicked();
 
+    void on_musicsOn_clicked();
+
+    void on_saveSettingsButton_clicked();
+
 private:
     Ui::settingsDialog *ui;
+    bool _musicsOn;
 };
 
 #endif // SETTINGSDIALOG_H

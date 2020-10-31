@@ -7,8 +7,6 @@
 #include <QSize>
 #include <QSettings>
 
-
-
 MainMenuDialog::MainMenuDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainMenuDialog)
@@ -16,8 +14,7 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui->setupUi(this);
     _menuDialogSize = QSize(800, 600);
     this->setFixedSize(_menuDialogSize);
-
-
+    setToolTips();
 }
 
 MainMenuDialog::~MainMenuDialog()
@@ -25,55 +22,62 @@ MainMenuDialog::~MainMenuDialog()
     delete ui;
 }
 
-void MainMenuDialog::setCorrectMusicState()
+void MainMenuDialog::setToolTips()
 {
-    QSettings setting;
+    ui->exitButton->setToolTip("Exit Game");
+    ui->startButton->setToolTip("Start Game");
+    ui->settingsButton->setToolTip("Go to Settings");
+    ui->helpButton->setToolTip("About the Game");
+    ui->playerNameEdit->setToolTip("Set player name here");
 
-    if(ui->musicsOn->isChecked() || _musicsOn){
-        setting.setValue("music setting", musicStateOn);
-    }else{
-        setting.setValue("music setting", musicStateOff);
-    }
+    ui->spaceshipButton->setToolTip("Choose Spaceship");
+    ui->tankButton->setToolTip("Choose Tank");
+    ui->ufoButton->setToolTip("Choose UFO");
+
+    ui->fireballButton->setToolTip("Choose Fireball");
+    ui->missileButton->setToolTip("Choose Missile");
+    ui->laserButton->setToolTip("Choose Laser");
+
 }
 
 void MainMenuDialog::on_startButton_clicked()
 {
     if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
-            && playerAlias != NULL){
+            && _playerAlias != NULL){
 
-        setCorrectMusicState();
+
         GameWindow *mainWin = new GameWindow();
         mainWin->show();
 
         this->close();
 
-    } else if(playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
+    } else if(_playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
               (_fireball || _missile || _laser)){
 
         ui->erronousInputLabel->setText("Remember to set player name!");
     }
     else if(!(_tank && _spaceShip && _ufo) && (_fireball || _missile || _laser)
-            && playerAlias != NULL){
+            && _playerAlias != NULL){
 
         ui->erronousInputLabel->setText("Remember to set player type!");
 
     }else if((_fireball || _missile || _laser) && !(_tank && _spaceShip && _ufo)
-             && playerAlias == NULL){
+             && _playerAlias == NULL){
         ui->erronousInputLabel->setText("Remember to set player type and"
                                         " player name!");
 
     } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
-              && playerAlias != NULL){
+              && _playerAlias != NULL){
 
         ui->erronousInputLabel->setText("Remember to set projectile type!");
 
     } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
-              && playerAlias == NULL){
+              && _playerAlias == NULL){
         ui->erronousInputLabel->setText("Remember to set projectile type"
                                         " and player name!");
 
     } else if(!(_tank && _spaceShip && _ufo) && !(_fireball && _missile && _laser)
-              && playerAlias != NULL){
+              && _playerAlias != NULL){
         ui->erronousInputLabel->setText("Remember to set projectile"
                                         " and player type!");
 
@@ -90,10 +94,9 @@ void MainMenuDialog::on_exitButton_clicked()
 
 void MainMenuDialog::on_playerNameEdit_editingFinished()
 {
-    playerAlias = ui->playerNameEdit->text();
+    _playerAlias = ui->playerNameEdit->text();
     QSettings playerSettings;
-    playerSettings.setValue("player name setting", playerAlias);
-
+    playerSettings.setValue("player name setting", _playerAlias);
 
 }
 
@@ -107,7 +110,6 @@ void MainMenuDialog::on_spaceshipButton_clicked()
 
     QSettings playerSettings;
     playerSettings.setValue("player type setting", spaceshipOption);
-
 }
 
 void MainMenuDialog::on_tankButton_clicked()
@@ -119,8 +121,6 @@ void MainMenuDialog::on_tankButton_clicked()
 
     QSettings playerSettings;
     playerSettings.setValue("player type setting", tankOption);
-
-
 }
 
 void MainMenuDialog::on_ufoButton_clicked()
@@ -132,7 +132,6 @@ void MainMenuDialog::on_ufoButton_clicked()
 
     QSettings playerSettings;
     playerSettings.setValue("player type setting", ufoOption);
-
 }
 
 
@@ -170,20 +169,6 @@ void MainMenuDialog::on_laserButton_clicked()
     QSettings playerSettings;
     playerSettings.setValue("projectile type setting", laserOption);
     playerSettings.setValue("projectile soundeffect setting", blasterSound);
-}
-
-void MainMenuDialog::on_musicsOn_clicked()
-{
-    QSettings playerSettings;
-    if(ui->musicsOn->isChecked()){
-        qDebug()<<"musics on";
-        _musicsOn = true;
-        playerSettings.setValue("music setting", musicStateOn);
-    }else if(!ui->musicsOn->isChecked()){
-        _musicsOn = false;
-        qDebug()<<"musics off";
-        playerSettings.setValue("music setting", musicStateOff);
-    }
 }
 
 void MainMenuDialog::on_settingsButton_clicked()

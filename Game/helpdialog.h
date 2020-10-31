@@ -14,6 +14,7 @@ class helpDialog : public QDialog
 public:
     explicit helpDialog(QWidget *parent = nullptr);
     ~helpDialog();
+    void setActionTips();
 
 private slots:
     void on_closeHelpButton_clicked();

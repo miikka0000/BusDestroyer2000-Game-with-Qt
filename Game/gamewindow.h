@@ -47,8 +47,6 @@ public:
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
 
-
-
 private:
     Ui::GameWindow *ui;
     QTimer *timer;

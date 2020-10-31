@@ -22,8 +22,7 @@ class MainMenuDialog : public QDialog
 public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
-    void setCorrectMusicState();
-
+    void setToolTips();
 
     enum playerConfig {
         spaceshipOption, tankOption, ufoOption,
@@ -32,20 +31,6 @@ public:
         missileSound, blasterSound
 
     };
-
-    bool _tank = false;
-    bool _spaceShip = false;
-    bool _ufo = false;
-
-    bool _fireball = false;
-    bool _missile = false;
-    bool _laser = false;
-
-    bool _musicsOn = false;
-
-
-    QString playerAlias;
-
 
 private slots:
     void on_startButton_clicked();
@@ -66,12 +51,6 @@ private slots:
 
     void on_laserButton_clicked();
 
-    void on_musicsOn_clicked();
-
-
-
-
-
     void on_settingsButton_clicked();
 
     void on_helpButton_clicked();
@@ -83,6 +62,19 @@ private:
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
     QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
+
+    bool _tank = false;
+    bool _spaceShip = false;
+    bool _ufo = false;
+
+    bool _fireball = false;
+    bool _missile = false;
+    bool _laser = false;
+
+    bool _musicsOn = false;
+
+
+    QString _playerAlias;
 
 
 };

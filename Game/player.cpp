@@ -235,11 +235,11 @@ void Player::setMusicChoice()
     QSettings musicSettings;
     int musicOpt = musicSettings.value("music setting").toInt();
 
-    if(musicOpt == MainMenuDialog::musicStateOn){
+    if(musicOpt == settingsDialog::musicStateOn){
         this->musicsOn = true;
         configureMusic();
 
-    } else if(musicOpt == MainMenuDialog::musicStateOff){
+    } else if(musicOpt == settingsDialog::musicStateOff){
         this->musicsOn = false;
         return;
     }
