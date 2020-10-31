@@ -14,6 +14,7 @@ SOURCES += \
     main.cc \
     mainmenudialog.cpp \
     player.cpp \
+    playergamescore.cpp \
     settingsdialog.cpp \
     spaceship.cpp \
     tank.cpp \
@@ -51,6 +52,7 @@ HEADERS += \
     initgame.h \
     mainmenudialog.h \
     player.h \
+    playergamescore.h \
     settingsdialog.h \
     spaceship.h \
     tank.h \

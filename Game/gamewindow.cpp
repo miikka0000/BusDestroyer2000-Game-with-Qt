@@ -8,6 +8,7 @@
 #include "tank.h"
 #include "spaceship.h"
 #include "bonusitem.h"
+#include "playergamescore.h"
 
 #include <QTimer>
 #include <QTimer>
@@ -28,7 +29,10 @@
 #include <QColor>
 #include <QGraphicsRectItem>
 #include <QBrush>
+#include <memory>
 
+
+extern std::shared_ptr<playerGameScore> smartPlayerScore;
 
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -51,7 +55,7 @@ GameWindow::GameWindow(QWidget *parent) :
     mainTimer = new QTimer(this);
     connect(mainTimer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
     // adding player score by 10 if gem is picked
-    connect(mainTimer, &QTimer::timeout, this, &GameWindow::addPlayerPoints);
+    connect(mainTimer, &QTimer::timeout, this, &GameWindow::addDataToLCD);
     mainTimer->start(interval);
 
     bonusTimer = new QTimer(this);
@@ -68,7 +72,7 @@ GameWindow::GameWindow(QWidget *parent) :
     _player->setFlag(QGraphicsItem::ItemIsFocusable);
     _player->setFocus();
     _scene->addItem(_player);
-    addPlayerPoints();
+    addDataToLCD();
 
     //drawPanel(0, 0, this->width(), 0.10 * this->height(), Qt::lightGray, 1);
 
@@ -78,7 +82,7 @@ GameWindow::GameWindow(QWidget *parent) :
 GameWindow::~GameWindow()
 {
     delete ui;
-    _playerSettings.clear();
+    _playerSettings->clear();
 }
 
 void GameWindow::resizeEvent(QResizeEvent *event)
@@ -93,14 +97,6 @@ void GameWindow::resizeEvent(QResizeEvent *event)
         screenHeight = newHeight;
         //player_->screenWidth_ = newWidth;
         //player_->screenHeight_ = newHeight;
-
-
-
-        _player->xCoord = _player->pos().x();
-        _player->yCoord = _player->pos().y();
-        qDebug() << _player->xCoord;
-        qDebug() << _player->yCoord;
-
 
         if(ui->graphicsView->width() > 800){
             std::vector<int> screen = getAvailableSize();
@@ -165,7 +161,7 @@ void GameWindow::drawPanel(int x, int y, int width, int height, QColor color, do
 
 void GameWindow::setLCDStyle()
 {
-    ui->healthLCD->setPalette(Qt::black);
+    ui->healthLCD->setPalette(Qt::red);
     ui->pointsLCD->setPalette(Qt::black);
     ui->clockLCD->setPalette(Qt::black);
 }
@@ -179,10 +175,13 @@ void GameWindow::spawnBonusItem()
     _scene->addItem(bonusGem);
 }
 
-void GameWindow::addPlayerPoints()
+void GameWindow::addDataToLCD()
 {
 
-    ui->pointsLCD->display(_player->getPoints());
+    //ui->pointsLCD->display(_player->getScore());
+    ui->pointsLCD->display(smartPlayerScore->getPlayerScore());
+
+    ui->healthLCD->display(_player->getHealthPoints());
 
 }
 

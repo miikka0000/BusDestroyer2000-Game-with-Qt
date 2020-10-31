@@ -3,7 +3,6 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "mainmenudialog.h"
-
 #include "bonusitem.h"
 
 
@@ -19,6 +18,7 @@
 #include <vector>
 #include <QColor>
 #include <QSettings>
+#include <memory>
 
 namespace Ui {
 class GameWindow;
@@ -37,8 +37,9 @@ public:
     void drawPanel(int x, int y, int width, int height, QColor color, double opacity);
     void setLCDStyle();
     void spawnBonusItem();
-    void addPlayerPoints();
+    void addDataToLCD();
     //void keyReleaseEvent(QKeyEvent * keyEvent);
+
     std::vector<int> getAvailableSize();
     MainMenuDialog *giveDialog() {return _mainMenu;};
 
@@ -63,7 +64,7 @@ private:
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     bool _largeMode = false;
     MainMenuDialog *_mainMenu;
-    QSettings _playerSettings;
+    std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 
 
 };

@@ -3,6 +3,7 @@
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 #include "bonusitem.h"
+#include "playergamescore.h"
 
 
 #include <QKeyEvent>
@@ -20,13 +21,13 @@
 #include <string>
 #include <QList>
 #include <QGraphicsItem>
+#include <memory>
 
-
-
+extern std::shared_ptr<playerGameScore> smartPlayerScore;
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
-    qDebug()<<_playerSettings.value("music setting").toInt();
+    qDebug()<<_playerSettings->value("music setting").toInt();
     addPlayerSprite();
     savePlayerName();
     initMusic();
@@ -75,13 +76,8 @@ void Player::keyPressEvent(QKeyEvent *event)
         //qDebug() << "space pressed";
         _keySpace = true;
 
-    } else if(event->key() == Qt::Key_Plus){
-        changePlayerSpeed(1);
+    } changePlayerSpeed(event);
 
-    } else if(event->key() == Qt::Key_Minus){
-        changePlayerSpeed(0);
-        qDebug()<<"minuse pressed";
-    }
     return;
 }
 
@@ -117,6 +113,7 @@ void Player::keyReleaseEvent(QKeyEvent * event)
 
 void Player::movePlayer(){
 
+    removeCollidingItem();
     if(_keyLeft){
         if(pos().x()  > 0){
             setPos(x() - _spaceshipVelocity, y());
@@ -135,10 +132,8 @@ void Player::movePlayer(){
             setPos(x(), y() + _spaceshipVelocity);
         }
     }
-    //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
-    xCoord = pos().x();
-    yCoord = pos().y();
-    removeCollidingGem();
+
+
 }
 
 
@@ -161,19 +156,19 @@ void Player::setDimensions()
     qDebug() << "ship width: "<< playerWidth;
 }
 
-void Player::changePlayerSpeed(int delta)
+void Player::changePlayerSpeed(QKeyEvent *speedEvent)
 {
     // 5 % increase in velocity when player presses '+' -key
     double increaseMultiplier = 1.05;
+    // 5 % decrease in velocity when player presses '+' -key
     double decreaseMultiplier = 0.95;
 
-    if(delta == 1 && _spaceshipVelocity < 25.0){
+    if(speedEvent->key() == Qt::Key_Plus && _spaceshipVelocity < 25.0){
 
         _spaceshipVelocity = _spaceshipVelocity*increaseMultiplier;
         _projectileVelocity = _projectileVelocity*increaseMultiplier;
 
-        // 5 % decrease in velocity when player presses '+' -key
-    } else if(delta == 0 && _spaceshipVelocity > 21.0){
+    } else if(speedEvent->key() == Qt::Key_Minus && _spaceshipVelocity > 21.0){
 
         _spaceshipVelocity = _spaceshipVelocity*decreaseMultiplier;
         _projectileVelocity = _projectileVelocity*decreaseMultiplier;
@@ -183,8 +178,7 @@ void Player::changePlayerSpeed(int delta)
 void Player::addPlayerSprite()
 {
 
-
-    int chosenSkin = _playerSettings.value("player type setting").toInt();
+    int chosenSkin = _playerSettings->value("player type setting").toInt();
     //qDebug()<< chosenSkin;
 
     if(chosenSkin == MainMenuDialog::spaceshipOption){
@@ -211,8 +205,8 @@ void Player::initMusic()
 {
     _projectileSound = new QSoundEffect(this);
 
-    qDebug()<<_playerSettings.value("music setting").toInt();
-    int soundEffect = _playerSettings.value("projectile soundeffect setting").toInt();
+    qDebug()<<_playerSettings->value("music setting").toInt();
+    int soundEffect = _playerSettings->value("projectile soundeffect setting").toInt();
     if(soundEffect == MainMenuDialog::fireballSound){
         _projectileSound->setSource(fireballSound);
 
@@ -237,7 +231,7 @@ void Player::configureMusic()
 void Player::setMusicChoice()
 {
 
-    int musicOpt = _playerSettings.value("music setting").toInt();
+    int musicOpt = _playerSettings->value("music setting").toInt();
 
     if(musicOpt == settingsDialog::musicStateOn){
         this->musicsOn = true;
@@ -252,19 +246,21 @@ void Player::setMusicChoice()
 void Player::savePlayerName()
 {
 
-    QString playerNickname = _playerSettings.value("player name setting").toString();
+    QString playerNickname = _playerSettings->value("player name setting").toString();
     playerName = playerNickname.toStdString();
     //qDebug()<<QString::fromStdString(playerName);
 }
 
-void Player::removeCollidingGem()
+void Player::removeCollidingItem()
 {
     QList<QGraphicsItem *> collidingObjects = collidingItems();
 
     for (int i = 0, n = collidingObjects.size(); i < n; ++i){
         if (typeid(*(collidingObjects.at(i))) == typeid(BonusItem)){
 
-            playerScore += 10;
+            this->increasePoints();
+
+            smartPlayerScore->increasePoints();
 
             scene()->removeItem(collidingObjects.at(i));
 

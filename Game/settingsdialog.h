@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QSettings>
+#include <memory>
 
 namespace Ui {
 class settingsDialog;
@@ -34,7 +35,7 @@ private slots:
 private:
     Ui::settingsDialog *ui;
     bool _musicsOn;
-     QSettings _playerSettings;
+     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 };
 
 #endif // SETTINGSDIALOG_H

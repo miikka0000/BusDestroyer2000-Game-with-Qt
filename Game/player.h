@@ -14,6 +14,7 @@
 #include <vector>
 #include <QSettings>
 #include <string>
+#include <memory>
 
 
 
@@ -27,15 +28,16 @@ public:
     void keyReleaseEvent(QKeyEvent * event);
     void movePlayer();
     void setDimensions();
-    void changePlayerSpeed(int delta);
+    void changePlayerSpeed(QKeyEvent *speedEvent);
     void addPlayerSprite();
     void initMusic();
     void configureMusic();
     void setMusicChoice();
     void savePlayerName();
-    void removeCollidingGem();
+    void removeCollidingItem();
     void increasePoints() {playerScore += 10;};
-    int getPoints() {return playerScore;};
+    int getScore() {return playerScore;};
+    int getHealthPoints() {return playerHealth;};
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
@@ -50,10 +52,6 @@ public:
     const QUrl fireballSound = QUrl("qrc:/sounds/fireballSound.wav");
     const QUrl missileSound = QUrl("qrc:/sounds/missileSound.wav");
 
-
-    int xCoord;
-    int yCoord;
-
     std::string playerName;
     bool tankChosen;
     bool spaceshipChosen;
@@ -64,7 +62,8 @@ public:
 
     bool musicsOn;
 
-    int playerScore;
+    int playerScore = 0;
+    int playerHealth = 3;
 
 
 
@@ -82,7 +81,7 @@ private:
     bool _keyDown = false;
     bool _keySpace = false;
 
-    QSettings _playerSettings;
+    std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 
 };
 

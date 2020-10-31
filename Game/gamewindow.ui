@@ -51,6 +51,13 @@
         </item>
         <item>
          <widget class="QLCDNumber" name="healthLCD">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(224, 222, 255);</string>
           </property>
@@ -80,6 +87,11 @@
         </item>
         <item>
          <widget class="QLCDNumber" name="pointsLCD">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(224, 222, 255);</string>
           </property>
@@ -115,6 +127,11 @@
         </item>
         <item>
          <widget class="QLCDNumber" name="clockLCD">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">background-color: rgb(224, 222, 255);</string>
           </property>

@@ -1,5 +1,5 @@
 #include "player.h"
-#include "initgame.h"
+#include "playergamescore.h"
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 
@@ -10,11 +10,13 @@
 #include <QScreen>
 #include <QCoreApplication>
 #include <QSettings>
+#include <memory>
 
-
-
+std::shared_ptr<playerGameScore> smartPlayerScore =
+        std::make_shared<playerGameScore>();
 int main(int argc, char *argv[])
 {
+    using std::shared_ptr;
     QApplication a(argc, argv);
     QCoreApplication::setOrganizationName("Tampere University");
     QCoreApplication::setApplicationName("BusDestroyer");
@@ -23,6 +25,7 @@ int main(int argc, char *argv[])
     Q_INIT_RESOURCE(offlinedata);
 
     MainMenuDialog * menuUi = new MainMenuDialog();
+
 
 
     menuUi->exec();

@@ -41,11 +41,11 @@ void settingsDialog::on_musicsOn_clicked()
     if(ui->musicsOnCheckBox->isChecked()){
         qDebug()<<"musics on";
         _musicsOn = true;
-        _playerSettings.setValue("music setting", musicStateOn);
+        _playerSettings->setValue("music setting", musicStateOn);
     }else if(!ui->musicsOnCheckBox->isChecked()){
         _musicsOn = false;
         qDebug()<<"musics off";
-        _playerSettings.setValue("music setting", musicStateOff);
+        _playerSettings->setValue("music setting", musicStateOff);
     }
 }
 
@@ -53,9 +53,9 @@ void settingsDialog::setCorrectMusicState()
 {
 
     if(ui->musicsOnCheckBox->isChecked()){
-        _playerSettings.setValue("music setting", musicStateOn);
+        _playerSettings->setValue("music setting", musicStateOn);
     }else{
-        _playerSettings.setValue("music setting", musicStateOff);
+        _playerSettings->setValue("music setting", musicStateOff);
     }
 }
 
