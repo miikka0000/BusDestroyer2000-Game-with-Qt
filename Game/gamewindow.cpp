@@ -3,10 +3,11 @@
 #include "initgame.h"
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
-#include <mainmenudialog.h>
-#include <ufo.h>
-#include <tank.h>
-#include <spaceship.h>
+#include "mainmenudialog.h"
+#include "ufo.h"
+#include "tank.h"
+#include "spaceship.h"
+#include "bonusitem.h"
 
 #include <QTimer>
 #include <QTimer>
@@ -35,6 +36,8 @@ GameWindow::GameWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->centralwidget->layout()->setContentsMargins(0, 0, 0, this->height() * 0.03);
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setLCDStyle();
 
     dimensions size;
@@ -45,12 +48,16 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->graphicsView->setScene(_scene);
     _scene->setSceneRect(0,0, size.width, size.height);
 
-    timer = new QTimer(this);
-    connect(timer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
-    timer->start(interval);
+    mainTimer = new QTimer(this);
+    connect(mainTimer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
+    mainTimer->start(interval);
 
-    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    bonusTimer = new QTimer(this);
+    connect(bonusTimer,&QTimer::timeout, this, &GameWindow::spawnBonusItem);
+    // Spawning bonus gems every 10 seconds
+    bonusTimer->start(10000);
+
+
 
 
     _player = new Player();
@@ -156,6 +163,15 @@ void GameWindow::setLCDStyle()
     ui->healthLCD->setPalette(Qt::black);
     ui->pointsLCD->setPalette(Qt::black);
     ui->clockLCD->setPalette(Qt::black);
+}
+
+void GameWindow::spawnBonusItem()
+{
+
+
+    BonusItem * bonusGem = new BonusItem();
+    _scene->addItem(bonusGem);
+
 }
 
 

@@ -11,6 +11,7 @@
         <file>laser_32x32.png</file>
         <file>controlsPicture.png</file>
         <file>exitButton.png</file>
+        <file>bonusGem_30x15.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>

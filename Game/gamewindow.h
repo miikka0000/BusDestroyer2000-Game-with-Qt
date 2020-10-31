@@ -3,6 +3,8 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "mainmenudialog.h"
+#include "playerpoints.h"
+#include "playerhealth.h"
 
 
 #include <QGraphicsView>
@@ -34,13 +36,13 @@ public:
     void setPicture(QImage img);
     void drawPanel(int x, int y, int width, int height, QColor color, double opacity);
     void setLCDStyle();
+    void spawnBonusItem();
     //void keyReleaseEvent(QKeyEvent * keyEvent);
-
     std::vector<int> getAvailableSize();
     MainMenuDialog *giveDialog() {return _mainMenu;};
 
-    //Score * score;
-    //Health * health;
+    playerPoints * score;
+    playerHealth * health;
 
     struct dimensions {
         int width = 800;
@@ -53,7 +55,8 @@ public:
 
 private:
     Ui::GameWindow *ui;
-    QTimer *timer;
+    QTimer *mainTimer;
+    QTimer *bonusTimer;
     QGraphicsScene * _scene;
     Player * _player;
     //basicProjectile *_projectile;

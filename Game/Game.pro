@@ -14,6 +14,8 @@ SOURCES += \
     main.cc \
     mainmenudialog.cpp \
     player.cpp \
+    playerhealth.cpp \
+    playerpoints.cpp \
     settingsdialog.cpp \
     spaceship.cpp \
     tank.cpp \
@@ -51,6 +53,8 @@ HEADERS += \
     initgame.h \
     mainmenudialog.h \
     player.h \
+    playerhealth.h \
+    playerpoints.h \
     settingsdialog.h \
     spaceship.h \
     tank.h \
