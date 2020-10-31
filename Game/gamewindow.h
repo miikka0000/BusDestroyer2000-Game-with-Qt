@@ -3,8 +3,7 @@
 #include "player.h"
 #include "basicprojectile.h"
 #include "mainmenudialog.h"
-#include "playerpoints.h"
-#include "playerhealth.h"
+
 #include "bonusitem.h"
 
 
@@ -38,12 +37,12 @@ public:
     void drawPanel(int x, int y, int width, int height, QColor color, double opacity);
     void setLCDStyle();
     void spawnBonusItem();
+    void addPlayerPoints();
     //void keyReleaseEvent(QKeyEvent * keyEvent);
     std::vector<int> getAvailableSize();
     MainMenuDialog *giveDialog() {return _mainMenu;};
 
-    playerPoints * score;
-    playerHealth * health;
+
     BonusItem *bonusObject;
 
 

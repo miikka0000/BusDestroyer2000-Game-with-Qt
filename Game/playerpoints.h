@@ -8,10 +8,11 @@ class playerPoints: public QGraphicsTextItem{
 public:
     playerPoints(QGraphicsItem * parent=0);
     void increasePoints();
-    int getPlayerScore();
+
+    int playerScore;
 
 private:
-    int _playerScore;
+
 };
 
 #endif // PLAYERPOINTS_H

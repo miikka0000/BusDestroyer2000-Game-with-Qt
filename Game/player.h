@@ -1,8 +1,8 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 #include "mainmenudialog.h"
-
 #include "basicprojectile.h"
+
 
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
@@ -33,11 +33,13 @@ public:
     void configureMusic();
     void setMusicChoice();
     void savePlayerName();
+    void removeCollidingGem();
+    void increasePoints() {playerScore += 10;};
+    int getPoints() {return playerScore;};
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
     int playerWidth;
-
     int screenWidth = 800;
     int screenHeight = 600;
     QPixmap spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
@@ -61,6 +63,10 @@ public:
     bool laserChosen;
 
     bool musicsOn;
+
+    int playerScore;
+
+
 
 private:
 

@@ -13,9 +13,7 @@ BonusItem::BonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
 
     int randXCoord = rand() % currentWidth;
 
-
     setPos(randXCoord, 0);
-
     setPixmap(gemPic);
 
     _bonusTimer = new QTimer(this);

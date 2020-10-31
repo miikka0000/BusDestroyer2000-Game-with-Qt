@@ -2,6 +2,7 @@
 #include "basicprojectile.h"
 #include "gamewindow.h"
 #include "mainmenudialog.h"
+#include "bonusitem.h"
 
 
 #include <QKeyEvent>
@@ -17,10 +18,12 @@
 #include <vector>
 #include <QSettings>
 #include <string>
+#include <QList>
+#include <QGraphicsItem>
+
 
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
-
 
 
     qDebug()<<_playerSettings.value("music setting").toInt();
@@ -135,6 +138,7 @@ void Player::movePlayer(){
     //qDebug() << "x-koord: "<<pos().x()<<"and y-koord: "<<pos().y();
     xCoord = pos().x();
     yCoord = pos().y();
+    removeCollidingGem();
 }
 
 
@@ -251,6 +255,24 @@ void Player::savePlayerName()
     QString playerNickname = _playerSettings.value("player name setting").toString();
     playerName = playerNickname.toStdString();
     //qDebug()<<QString::fromStdString(playerName);
+}
+
+void Player::removeCollidingGem()
+{
+    QList<QGraphicsItem *> collidingObjects = collidingItems();
+
+    for (int i = 0, n = collidingObjects.size(); i < n; ++i){
+        if (typeid(*(collidingObjects.at(i))) == typeid(BonusItem)){
+
+            playerScore += 10;
+
+            scene()->removeItem(collidingObjects.at(i));
+
+            delete collidingObjects[i];
+
+            return;
+        }
+    }
 }
 
 std::vector<int> Player::getPlayerOrigin(int width, int height)

@@ -50,12 +50,16 @@ GameWindow::GameWindow(QWidget *parent) :
 
     mainTimer = new QTimer(this);
     connect(mainTimer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
+    // adding player score by 10 if gem is picked
+    connect(mainTimer, &QTimer::timeout, this, &GameWindow::addPlayerPoints);
     mainTimer->start(interval);
 
     bonusTimer = new QTimer(this);
     connect(bonusTimer,&QTimer::timeout, this, &GameWindow::spawnBonusItem);
+
+
     // Spawning bonus gems every 4 seconds
-    bonusTimer->start(100);
+    bonusTimer->start(4000);
 
 
     _player = new Player();
@@ -64,6 +68,7 @@ GameWindow::GameWindow(QWidget *parent) :
     _player->setFlag(QGraphicsItem::ItemIsFocusable);
     _player->setFocus();
     _scene->addItem(_player);
+    addPlayerPoints();
 
     //drawPanel(0, 0, this->width(), 0.10 * this->height(), Qt::lightGray, 1);
 
@@ -172,11 +177,14 @@ void GameWindow::spawnBonusItem()
     bonusGem->currentWidth = this->width();
     bonusGem->currentHeight = this->height();
     _scene->addItem(bonusGem);
-
 }
 
+void GameWindow::addPlayerPoints()
+{
 
+    ui->pointsLCD->display(_player->getPoints());
 
+}
 
 
 
