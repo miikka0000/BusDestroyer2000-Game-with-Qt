@@ -34,6 +34,7 @@ GameWindow::GameWindow(QWidget *parent) :
     ui(new Ui::GameWindow)
 {
     ui->setupUi(this);
+    ui->centralwidget->layout()->setContentsMargins(0, this->height() * 0.1, 0, 0);
 
     dimensions size;
 
@@ -99,7 +100,7 @@ void GameWindow::resizeEvent(QResizeEvent *event)
         qDebug()<<"resize Window width: " << newWidth;
         qDebug()<<"resize Window width: " << newHeight;
 
-        setPicture(bkgndBig);
+        //setPicture(bkgndBig);
         ui->graphicsView->fitInView(_scene->sceneRect(), Qt::IgnoreAspectRatio);
 
     }
@@ -110,7 +111,8 @@ void GameWindow::resizeEvent(QResizeEvent *event)
 void GameWindow::setPicture(QImage img)
 {
 
-    _scene->setBackgroundBrush(QBrush(img));
+    _scene->addPixmap(QPixmap::fromImage(img.scaled(this->width(), this->height(),
+                                                    Qt::IgnoreAspectRatio)));
 }
 
 /*void GameWindow::keyReleaseEvent(QKeyEvent *keyEvent)
