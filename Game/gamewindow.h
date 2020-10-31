@@ -16,6 +16,7 @@
 #include <QPaintEvent>
 #include <vector>
 #include <QColor>
+#include <QSettings>
 
 namespace Ui {
 class GameWindow;
@@ -58,6 +59,7 @@ private:
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     bool _largeMode = false;
     MainMenuDialog *_mainMenu;
+    QSettings _playerSettings;
 
 };
 

@@ -67,8 +67,7 @@ GameWindow::GameWindow(QWidget *parent) :
 GameWindow::~GameWindow()
 {
     delete ui;
-    QSettings settings;
-    settings.clear();
+    _playerSettings.clear();
 }
 
 void GameWindow::resizeEvent(QResizeEvent *event)

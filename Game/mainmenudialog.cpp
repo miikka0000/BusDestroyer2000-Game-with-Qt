@@ -1,6 +1,7 @@
 #include "mainmenudialog.h"
 #include "ui_mainmenudialog.h"
 #include "gamewindow.h"
+#include "settingsdialog.h"
 
 #include <QDebug>
 #include <QString>
@@ -15,6 +16,9 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     _menuDialogSize = QSize(800, 600);
     this->setFixedSize(_menuDialogSize);
     setToolTips();
+
+
+    _playerSettings.setValue("music setting", settingsDialog::musicStateOff);
 }
 
 MainMenuDialog::~MainMenuDialog()
@@ -95,8 +99,8 @@ void MainMenuDialog::on_exitButton_clicked()
 void MainMenuDialog::on_playerNameEdit_editingFinished()
 {
     _playerAlias = ui->playerNameEdit->text();
-    QSettings playerSettings;
-    playerSettings.setValue("player name setting", _playerAlias);
+
+    _playerSettings.setValue("player name setting", _playerAlias);
 
 }
 
@@ -108,8 +112,8 @@ void MainMenuDialog::on_spaceshipButton_clicked()
     _ufo = false;
 
 
-    QSettings playerSettings;
-    playerSettings.setValue("player type setting", spaceshipOption);
+
+    _playerSettings.setValue("player type setting", spaceshipOption);
 }
 
 void MainMenuDialog::on_tankButton_clicked()
@@ -119,8 +123,8 @@ void MainMenuDialog::on_tankButton_clicked()
     _spaceShip = false;
     _ufo = false;
 
-    QSettings playerSettings;
-    playerSettings.setValue("player type setting", tankOption);
+
+    _playerSettings.setValue("player type setting", tankOption);
 }
 
 void MainMenuDialog::on_ufoButton_clicked()
@@ -130,8 +134,8 @@ void MainMenuDialog::on_ufoButton_clicked()
     _tank = false;
     _spaceShip = false;
 
-    QSettings playerSettings;
-    playerSettings.setValue("player type setting", ufoOption);
+
+    _playerSettings.setValue("player type setting", ufoOption);
 }
 
 
@@ -142,9 +146,9 @@ void MainMenuDialog::on_fireballButton_clicked()
     _missile = false;
     _laser = false;
 
-    QSettings playerSettings;
-    playerSettings.setValue("projectile type setting", fireballOption);
-    playerSettings.setValue("projectile soundeffect setting", fireballSound);
+
+    _playerSettings.setValue("projectile type setting", fireballOption);
+    _playerSettings.setValue("projectile soundeffect setting", fireballSound);
 }
 
 void MainMenuDialog::on_missileButton_clicked()
@@ -154,9 +158,9 @@ void MainMenuDialog::on_missileButton_clicked()
     _missile = true;
     _laser = false;
 
-    QSettings playerSettings;
-    playerSettings.setValue("projectile type setting", missileOption);
-    playerSettings.setValue("projectile soundeffect setting", missileSound);
+
+    _playerSettings.setValue("projectile type setting", missileOption);
+    _playerSettings.setValue("projectile soundeffect setting", missileSound);
 }
 
 void MainMenuDialog::on_laserButton_clicked()
@@ -166,9 +170,9 @@ void MainMenuDialog::on_laserButton_clicked()
     _missile = false;
     _laser = true;
 
-    QSettings playerSettings;
-    playerSettings.setValue("projectile type setting", laserOption);
-    playerSettings.setValue("projectile soundeffect setting", blasterSound);
+
+    _playerSettings.setValue("projectile type setting", laserOption);
+    _playerSettings.setValue("projectile soundeffect setting", blasterSound);
 }
 
 void MainMenuDialog::on_settingsButton_clicked()

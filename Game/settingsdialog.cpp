@@ -12,6 +12,7 @@ settingsDialog::settingsDialog(QWidget *parent) :
     ui->setupUi(this);
     this->setFixedSize(QSize(800,600));
     setActionToolTips();
+    ui->musicsOnCheckBox->setChecked(false);
 }
 
 settingsDialog::~settingsDialog()
@@ -36,26 +37,25 @@ void settingsDialog::on_backToMainButton_clicked()
 
 void settingsDialog::on_musicsOn_clicked()
 {
-    QSettings playerSettings;
+
     if(ui->musicsOnCheckBox->isChecked()){
         qDebug()<<"musics on";
         _musicsOn = true;
-        playerSettings.setValue("music setting", musicStateOn);
+        _playerSettings.setValue("music setting", musicStateOn);
     }else if(!ui->musicsOnCheckBox->isChecked()){
         _musicsOn = false;
         qDebug()<<"musics off";
-        playerSettings.setValue("music setting", musicStateOff);
+        _playerSettings.setValue("music setting", musicStateOff);
     }
 }
 
 void settingsDialog::setCorrectMusicState()
 {
-    QSettings setting;
 
     if(ui->musicsOnCheckBox->isChecked() || _musicsOn){
-        setting.setValue("music setting", musicStateOn);
+        _playerSettings.setValue("music setting", musicStateOn);
     }else{
-        setting.setValue("music setting", musicStateOff);
+        _playerSettings.setValue("music setting", musicStateOff);
     }
 }
 

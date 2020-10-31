@@ -2,6 +2,7 @@
 #define SETTINGSDIALOG_H
 
 #include <QDialog>
+#include <QSettings>
 
 namespace Ui {
 class settingsDialog;
@@ -33,6 +34,7 @@ private slots:
 private:
     Ui::settingsDialog *ui;
     bool _musicsOn;
+     QSettings _playerSettings;
 };
 
 #endif // SETTINGSDIALOG_H

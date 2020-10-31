@@ -22,8 +22,8 @@
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
-    QSettings s;
-    qDebug()<<s.value("music setting").toInt();
+
+    qDebug()<<_playerSettings.value("music setting").toInt();
     addPlayerSprite();
     savePlayerName();
     initMusic();
@@ -179,8 +179,8 @@ void Player::changePlayerSpeed(int delta)
 void Player::addPlayerSprite()
 {
 
-    QSettings settings;
-    int chosenSkin = settings.value("player type setting").toInt();
+
+    int chosenSkin = _playerSettings.value("player type setting").toInt();
     //qDebug()<< chosenSkin;
 
     if(chosenSkin == MainMenuDialog::spaceshipOption){
@@ -206,9 +206,9 @@ void Player::addPlayerSprite()
 void Player::initMusic()
 {
     _projectileSound = new QSoundEffect(this);
-    QSettings musicSetting;
-    qDebug()<<musicSetting.value("music setting").toInt();
-    int soundEffect = musicSetting.value("projectile soundeffect setting").toInt();
+
+    qDebug()<<_playerSettings.value("music setting").toInt();
+    int soundEffect = _playerSettings.value("projectile soundeffect setting").toInt();
     if(soundEffect == MainMenuDialog::fireballSound){
         _projectileSound->setSource(fireballSound);
 
@@ -232,8 +232,8 @@ void Player::configureMusic()
 
 void Player::setMusicChoice()
 {
-    QSettings musicSettings;
-    int musicOpt = musicSettings.value("music setting").toInt();
+
+    int musicOpt = _playerSettings.value("music setting").toInt();
 
     if(musicOpt == settingsDialog::musicStateOn){
         this->musicsOn = true;
@@ -247,8 +247,8 @@ void Player::setMusicChoice()
 
 void Player::savePlayerName()
 {
-    QSettings settings;
-    QString playerNickname = settings.value("player name setting").toString();
+
+    QString playerNickname = _playerSettings.value("player name setting").toString();
     playerName = playerNickname.toStdString();
     //qDebug()<<QString::fromStdString(playerName);
 }

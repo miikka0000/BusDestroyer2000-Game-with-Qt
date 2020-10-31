@@ -9,6 +9,7 @@
 #include <QString>
 #include <QSize>
 #include <string>
+#include <QSettings>
 
 
 namespace Ui {
@@ -62,6 +63,7 @@ private:
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
     QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
+    QSettings _playerSettings;
 
     bool _tank = false;
     bool _spaceShip = false;

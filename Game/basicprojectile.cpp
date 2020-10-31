@@ -11,16 +11,10 @@
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-
     setProjectilePicture();
-
-
     _projectileTimer = new QTimer(this);
     connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
     _projectileTimer->start(_fireRate);
-
-    //qDebug() << "projectile height:"<<this->_projectileHeight;
-    //qDebug() << "proejctile width:"<<this->_projectileWidth;
 
 }
 
@@ -47,8 +41,8 @@ void basicProjectile::setDimensions()
 
 void basicProjectile::setProjectilePicture()
 {
-    QSettings settings;
-    int chosenProjectile = settings.value("projectile type setting").toInt();
+
+    int chosenProjectile = _playerSettings.value("projectile type setting").toInt();
     //qDebug()<< chosenProjectile;
 
     if(chosenProjectile == MainMenuDialog::fireballOption){

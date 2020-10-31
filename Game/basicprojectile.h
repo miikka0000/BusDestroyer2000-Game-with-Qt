@@ -35,6 +35,7 @@ private:
 
     QTimer *_projectileTimer;
     int _fireRate = 50;
+    QSettings _playerSettings;
 
 
 public slots:

@@ -76,6 +76,8 @@ private:
     bool _keyDown = false;
     bool _keySpace = false;
 
+    QSettings _playerSettings;
+
 };
 
 #endif // PLAYER_H
