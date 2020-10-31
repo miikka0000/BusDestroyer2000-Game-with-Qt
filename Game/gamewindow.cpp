@@ -24,7 +24,9 @@
 #include <QString>
 #include <QList>
 #include <QScreen>
-
+#include <QColor>
+#include <QGraphicsRectItem>
+#include <QBrush>
 
 
 GameWindow::GameWindow(QWidget *parent) :
@@ -55,6 +57,8 @@ GameWindow::GameWindow(QWidget *parent) :
     _player->setFlag(QGraphicsItem::ItemIsFocusable);
     _player->setFocus();
     _scene->addItem(_player);
+
+    //drawPanel(0, 0, this->width(), 0.10 * this->height(), Qt::lightGray, 1);
 
 
 }
@@ -132,6 +136,17 @@ std::vector<int> GameWindow::getAvailableSize()
     qDebug() << "available h: " << availableHeight;
     return {availableWidth, availableHeight};
 
+}
+
+void GameWindow::drawPanel(int x, int y, int width, int height, QColor color, double opacity){
+
+    QGraphicsRectItem* topPanel = new QGraphicsRectItem(x, y, width, height);
+    QBrush brush;
+    brush.setStyle(Qt::SolidPattern);
+    brush.setColor(color);
+    topPanel->setBrush(brush);
+    topPanel->setOpacity(opacity);
+    _scene->addItem(topPanel);
 }
 
 

@@ -15,6 +15,7 @@
 #include <QBrush>
 #include <QPaintEvent>
 #include <vector>
+#include <QColor>
 
 namespace Ui {
 class GameWindow;
@@ -30,6 +31,7 @@ public:
 
     void resizeEvent(QResizeEvent * event);
     void setPicture(QImage img);
+    void drawPanel(int x, int y, int width, int height, QColor color, double opacity);
     //void keyReleaseEvent(QKeyEvent * keyEvent);
 
     std::vector<int> getAvailableSize();
