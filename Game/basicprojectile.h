@@ -18,7 +18,7 @@ public:
     ~basicProjectile();
     void setDimensions();
     void setProjectilePicture();
-    void removeCollidingItem();
+
 
     bool fireballChosen;
     bool missileChosen;

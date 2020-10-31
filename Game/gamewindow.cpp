@@ -40,8 +40,7 @@ GameWindow::GameWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->centralwidget->layout()->setContentsMargins(0, 0, 0, this->height() * 0.03);
-    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
     setLCDStyle();
 
 
@@ -75,6 +74,8 @@ GameWindow::GameWindow(QWidget *parent) :
     addDataToLCD();
 
     //drawPanel(0, 0, this->width(), 0.10 * this->height(), Qt::lightGray, 1);
+    ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
 }

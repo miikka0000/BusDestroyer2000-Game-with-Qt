@@ -68,6 +68,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         if ( !event->isAutoRepeat() ){
 
             std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);
+            //std::unique_ptr<basicProjectile> projectile = std::make_unique<basicProjectile>();
             basicProjectile *projectile = new basicProjectile();
             projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
             scene()->addItem(projectile);
