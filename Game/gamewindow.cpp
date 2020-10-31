@@ -34,7 +34,8 @@ GameWindow::GameWindow(QWidget *parent) :
     ui(new Ui::GameWindow)
 {
     ui->setupUi(this);
-    ui->centralwidget->layout()->setContentsMargins(0, this->height() * 0.1, 0, 0);
+    ui->centralwidget->layout()->setContentsMargins(0, 0, 0, this->height() * 0.03);
+    setLCDStyle();
 
     dimensions size;
 
@@ -148,6 +149,13 @@ void GameWindow::drawPanel(int x, int y, int width, int height, QColor color, do
     topPanel->setBrush(brush);
     topPanel->setOpacity(opacity);
     _scene->addItem(topPanel);
+}
+
+void GameWindow::setLCDStyle()
+{
+    ui->healthLCD->setPalette(Qt::black);
+    ui->pointsLCD->setPalette(Qt::black);
+    ui->clockLCD->setPalette(Qt::black);
 }
 
 

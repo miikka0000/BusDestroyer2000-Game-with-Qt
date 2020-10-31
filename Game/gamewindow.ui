@@ -20,26 +20,42 @@
    <property name="mouseTracking">
     <bool>false</bool>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <property name="spacing">
-     <number>10</number>
-    </property>
-    <property name="sizeConstraint">
-     <enum>QLayout::SetDefaultConstraint</enum>
-    </property>
-    <property name="leftMargin">
-     <number>10</number>
-    </property>
-    <property name="topMargin">
-     <number>10</number>
-    </property>
-    <property name="rightMargin">
-     <number>10</number>
-    </property>
-    <property name="bottomMargin">
-     <number>20</number>
-    </property>
-    <item>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLCDNumber" name="healthLCD">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(224, 222, 255);</string>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="pointsLCD">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(224, 222, 255);</string>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="clockLCD">
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(224, 222, 255);</string>
+        </property>
+        <property name="smallDecimalPoint">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
      <widget class="QGraphicsView" name="graphicsView">
       <property name="maximumSize">
        <size>
