@@ -5,6 +5,7 @@
 #include "mainmenudialog.h"
 #include "playerpoints.h"
 #include "playerhealth.h"
+#include "bonusitem.h"
 
 
 #include <QGraphicsView>
@@ -43,11 +44,12 @@ public:
 
     playerPoints * score;
     playerHealth * health;
+    BonusItem *bonusObject;
 
-    struct dimensions {
-        int width = 800;
-        int height = 600;
-    };
+
+    int screenWidth = 800;
+    int screenHeight = 600;
+
     int interval = 500;
     QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
@@ -59,11 +61,11 @@ private:
     QTimer *bonusTimer;
     QGraphicsScene * _scene;
     Player * _player;
-    //basicProjectile *_projectile;
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     bool _largeMode = false;
     MainMenuDialog *_mainMenu;
     QSettings _playerSettings;
+
 
 };
 

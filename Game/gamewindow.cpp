@@ -54,10 +54,8 @@ GameWindow::GameWindow(QWidget *parent) :
 
     bonusTimer = new QTimer(this);
     connect(bonusTimer,&QTimer::timeout, this, &GameWindow::spawnBonusItem);
-    // Spawning bonus gems every 10 seconds
-    bonusTimer->start(10000);
-
-
+    // Spawning bonus gems every 4 seconds
+    bonusTimer->start(100);
 
 
     _player = new Player();
@@ -90,6 +88,8 @@ void GameWindow::resizeEvent(QResizeEvent *event)
         screenHeight = newHeight;
         //player_->screenWidth_ = newWidth;
         //player_->screenHeight_ = newHeight;
+
+
 
         _player->xCoord = _player->pos().x();
         _player->yCoord = _player->pos().y();
@@ -168,8 +168,9 @@ void GameWindow::setLCDStyle()
 void GameWindow::spawnBonusItem()
 {
 
-
     BonusItem * bonusGem = new BonusItem();
+    bonusGem->currentWidth = this->width();
+    bonusGem->currentHeight = this->height();
     _scene->addItem(bonusGem);
 
 }

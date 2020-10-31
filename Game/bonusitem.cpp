@@ -1,5 +1,5 @@
 #include "bonusitem.h"
-#include "gamewindow.h"
+
 
 #include <QTimer>
 #include <QGraphicsScene>
@@ -10,10 +10,11 @@
 
 BonusItem::BonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-    // here we generate a random x position
-    int random_number = rand() % 700;
 
-    setPos(random_number,0);
+    int randXCoord = rand() % currentWidth;
+
+
+    setPos(randXCoord, 0);
 
     setPixmap(gemPic);
 
@@ -26,10 +27,7 @@ void BonusItem::move(){
 
     setPos(this->x(), this->y() + 5);
 
-
-
-    if (pos().y() > 600){
-
+    if (pos().y() > currentHeight){
 
         scene()->removeItem(this);
         delete this;

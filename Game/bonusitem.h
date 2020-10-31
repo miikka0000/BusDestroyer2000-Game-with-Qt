@@ -1,7 +1,7 @@
 #ifndef BONUSITEM_H
 #define BONUSITEM_H
 
-#include "gamewindow.h"
+
 
 #include <QObject>
 #include <QGraphicsPixmapItem>
@@ -17,11 +17,10 @@ class BonusItem: public QObject,public QGraphicsPixmapItem{
 public:
     BonusItem(QGraphicsItem * parent=0);
 
-    GameWindow *game;
+
     QPixmap gemPic = QPixmap(":/images/bonusGem_30x15.png");
-
-
-
+    int currentWidth = 800;
+    int currentHeight = 600;
 
 
 public slots:
@@ -31,6 +30,7 @@ public slots:
 private:
     QTimer * _bonusTimer;
     int _bonusInterval = 50;
+
 };
 
 
