@@ -16,6 +16,7 @@ public:
     ~GameOverDialog();
 
     void setToolTips();
+    void setPlayerPoints();
 
 private slots:
     void on_gameOverCloseButton_clicked();

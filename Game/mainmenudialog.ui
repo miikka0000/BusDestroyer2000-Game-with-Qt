@@ -46,6 +46,12 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="styleSheet">
     <string notr="true">color: rgb(255, 133, 26);
 font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
@@ -84,6 +90,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QRadioButton" name="fireballButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <weight>50</weight>
@@ -100,6 +112,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </item>
         <item>
          <widget class="QRadioButton" name="missileButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <weight>50</weight>
@@ -116,6 +134,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </item>
         <item>
          <widget class="QRadioButton" name="laserButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <weight>50</weight>
@@ -138,6 +162,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <layout class="QHBoxLayout" name="horizontalLayout_4">
       <item>
        <widget class="QLabel" name="fireballLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -148,6 +178,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </item>
       <item>
        <widget class="QLabel" name="missileLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -158,6 +194,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </item>
       <item>
        <widget class="QLabel" name="laserLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -184,6 +226,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <widget class="QLabel" name="playerTypeLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="font">
          <font>
           <pointsize>10</pointsize>
@@ -203,6 +251,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
          <widget class="QRadioButton" name="spaceshipButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <weight>50</weight>
@@ -222,6 +276,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </item>
         <item>
          <widget class="QRadioButton" name="tankButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <weight>50</weight>
@@ -241,6 +301,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
         </item>
         <item>
          <widget class="QRadioButton" name="ufoButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="font">
            <font>
             <weight>50</weight>
@@ -266,6 +332,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QLabel" name="spaceShipLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -276,6 +348,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </item>
       <item>
        <widget class="QLabel" name="tankLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -286,6 +364,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </item>
       <item>
        <widget class="QLabel" name="ufoLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -310,6 +394,12 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QLabel" name="playerNameLabel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="font">
        <font>
         <pointsize>10</pointsize>
@@ -444,7 +534,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     <item>
      <widget class="QLabel" name="infoLabel1">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -467,7 +557,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     <item>
      <widget class="QLabel" name="infoLabel2">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -488,6 +578,25 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>450</y>
+     <width>80</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>GameOver</string>
+   </property>
   </widget>
  </widget>
  <resources>

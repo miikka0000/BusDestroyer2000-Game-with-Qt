@@ -2,6 +2,7 @@
 #include "ui_mainmenudialog.h"
 #include "gamewindow.h"
 #include "settingsdialog.h"
+#include "gameoverdialog.h"
 
 
 #include <QDebug>
@@ -180,3 +181,9 @@ void MainMenuDialog::on_helpButton_clicked()
 }
 
 
+
+void MainMenuDialog::on_pushButton_clicked()
+{
+    GameOverDialog *t = new GameOverDialog();
+    t->exec();
+}
