@@ -35,6 +35,7 @@
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
+QTime gameTime;
 
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -45,10 +46,7 @@ GameWindow::GameWindow(QWidget *parent) :
 
     setLCDStyle();
 
-    setGameTime();
-    gameTimer = new QTimer(this);
-    connect(gameTimer,SIGNAL(&QTimer::timeout), this, SLOT(&GameWindow::showTime()));
-    gameTimer->start(_gameDuration);
+
 
 
     _scene = new QGraphicsScene();
@@ -88,6 +86,11 @@ GameWindow::GameWindow(QWidget *parent) :
     gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
     gameLogic->finalizeGameStart();*/
 
+
+    setGameTime();
+    gameTimer = new QTimer(this);
+    connect(gameTimer, SIGNAL(timeout()), this, SLOT(updateCountDown()));
+    gameTimer->start(1000);
 
 }
 
@@ -192,6 +195,7 @@ void GameWindow::addDataToLCD()
 
     ui->pointsLCD->display(smartPlayerScore->getPlayerScore());
     ui->healthLCD->display(smartPlayerHealth->getPlayerHealth());
+    ui->clockLCD->display(gameTime.toString("m:ss"));
 
 }
 
@@ -200,25 +204,23 @@ void GameWindow::setGameTime()
 {
     int timeOpt = _playerSettings->value("time setting").toInt();
     if(timeOpt == settingsDialog::gameTime1) {
-        _gameDuration = 60000;
+        _gameDuration = 1; //min
     }
     else if(timeOpt == settingsDialog::gameTime2) {
-        _gameDuration = 120000;
+        _gameDuration = 2;
     }
     else if(timeOpt == settingsDialog::gameTime3) {
-        _gameDuration = 180000;
-    }
+        _gameDuration = 3;
+    } 
+    gameTime.setHMS(0,_gameDuration,0);
+
 }
 
+void GameWindow::updateCountDown() {
+    if (gameTime.second() > 0 || gameTime.minute() > 0) {
+        gameTime = gameTime.addSecs(-1);
+    }
 
-
-
-void GameWindow::showTime() {
-    QTime time = QTime(0,0,_gameDuration);
-    QString text = time.toString("m:ss");
-    //if ((time.second() % 2) == 0)
-     //   text[2] = ' ';
-    ui->clockLCD->display(text);
 }
 
 std::shared_ptr<Interface::ICity> GameWindow::createGame()

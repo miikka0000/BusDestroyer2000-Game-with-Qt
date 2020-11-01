@@ -43,9 +43,14 @@ public:
     void spawnBonusItem();
     void addDataToLCD();
     void setGameTime();
+
     void showTime();
 
     std::shared_ptr<Interface::ICity> createGame();
+
+
+
+
     //void keyReleaseEvent(QKeyEvent * keyEvent);
 
     std::vector<int> getAvailableSize();
@@ -53,7 +58,7 @@ public:
 
 
     BonusItem *bonusObject;
-
+    //QTime gameTime(0,0,0);
 
     int screenWidth = 800;
     int screenHeight = 600;
@@ -62,12 +67,14 @@ public:
     QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
-
+public slots:
+    void updateCountDown();
 private:
     Ui::GameWindow *ui;
     QTimer *mainTimer;
     QTimer *bonusTimer;
     QTimer *gameTimer;
+    //QTime *gameTime;
     int _gameDuration;
     QGraphicsScene * _scene;
     Player * _player;
