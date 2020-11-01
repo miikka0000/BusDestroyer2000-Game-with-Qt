@@ -3,13 +3,12 @@
 #include "initgame.h"
 #include "gamewindow.h"
 #include "ui_gamewindow.h"
-#include "mainmenudialog.h"
-#include "ufo.h"
-#include "tank.h"
-#include "spaceship.h"
+#include "gamecity.h"
 #include "bonusitem.h"
 #include "playergamescore.h"
 #include "playerhealth.h"
+
+
 
 #include <QTimer>
 #include <QTime>
@@ -33,6 +32,7 @@
 #include <memory>
 
 
+
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
 
@@ -49,6 +49,7 @@ GameWindow::GameWindow(QWidget *parent) :
     gameTimer = new QTimer(this);
     connect(gameTimer,SIGNAL(&QTimer::timeout), this, SLOT(&GameWindow::showTime()));
     gameTimer->start(_gameDuration);
+
 
     _scene = new QGraphicsScene();
 
@@ -81,6 +82,11 @@ GameWindow::GameWindow(QWidget *parent) :
     //drawPanel(0, 0, this->width(), 0.10 * this->height(), Qt::lightGray, 1);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+    /*createGame();
+    CourseSide::Logic *gameLogic =  new CourseSide::Logic();
+    gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
+    gameLogic->finalizeGameStart();*/
 
 
 }
@@ -213,5 +219,11 @@ void GameWindow::showTime() {
     //if ((time.second() % 2) == 0)
      //   text[2] = ' ';
     ui->clockLCD->display(text);
+}
+
+std::shared_ptr<Interface::ICity> GameWindow::createGame()
+{
+    std::shared_ptr<Interface::gameCity> newGameCity = std::make_shared<Interface::gameCity>();
+    return newGameCity;
 }
 

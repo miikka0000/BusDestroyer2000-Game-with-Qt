@@ -2,8 +2,12 @@
 #define GAMEWINDOW_H
 #include "player.h"
 #include "basicprojectile.h"
-#include "mainmenudialog.h"
+
 #include "bonusitem.h"
+
+#include "gamecity.h"
+#include "interfaces/icity.hh"
+#include "core/logic.hh"
 
 
 #include <QGraphicsView>
@@ -40,6 +44,8 @@ public:
     void addDataToLCD();
     void setGameTime();
     void showTime();
+
+    std::shared_ptr<Interface::ICity> createGame();
     //void keyReleaseEvent(QKeyEvent * keyEvent);
 
     std::vector<int> getAvailableSize();
