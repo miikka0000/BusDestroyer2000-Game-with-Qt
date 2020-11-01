@@ -12,7 +12,7 @@
 #include "playerhealth.h"
 
 #include <QTimer>
-#include <QTimer>
+#include <QTime>
 #include <QGraphicsTextItem>
 #include <QImage>
 #include <QtDebug>
@@ -45,6 +45,10 @@ GameWindow::GameWindow(QWidget *parent) :
 
     setLCDStyle();
 
+    setGameTime();
+    gameTimer = new QTimer(this);
+    connect(gameTimer,SIGNAL(&QTimer::timeout), this, SLOT(&GameWindow::showTime()));
+    gameTimer->start(_gameDuration);
 
 
     _scene = new QGraphicsScene();
@@ -187,6 +191,28 @@ void GameWindow::addDataToLCD()
 }
 
 
+void GameWindow::setGameTime()
+{
+    int timeOpt = _playerSettings->value("time setting").toInt();
+    if(timeOpt == settingsDialog::gameTime1) {
+        _gameDuration = 60000;
+    }
+    else if(timeOpt == settingsDialog::gameTime2) {
+        _gameDuration = 120000;
+    }
+    else if(timeOpt == settingsDialog::gameTime3) {
+        _gameDuration = 180000;
+    }
+}
 
 
+
+
+void GameWindow::showTime() {
+    QTime time = QTime(0,0,_gameDuration);
+    QString text = time.toString("m:ss");
+    //if ((time.second() % 2) == 0)
+     //   text[2] = ' ';
+    ui->clockLCD->display(text);
+}
 

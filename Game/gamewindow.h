@@ -38,6 +38,8 @@ public:
     void setLCDStyle();
     void spawnBonusItem();
     void addDataToLCD();
+    void setGameTime();
+    void showTime();
     //void keyReleaseEvent(QKeyEvent * keyEvent);
 
     std::vector<int> getAvailableSize();
@@ -59,6 +61,8 @@ private:
     Ui::GameWindow *ui;
     QTimer *mainTimer;
     QTimer *bonusTimer;
+    QTimer *gameTimer;
+    int _gameDuration;
     QGraphicsScene * _scene;
     Player * _player;
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");

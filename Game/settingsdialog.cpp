@@ -59,7 +59,21 @@ void settingsDialog::setCorrectMusicState()
     }
 }
 
+void settingsDialog::setWantedGameTime()
+{
+    if (ui->timeComboBox->currentIndex() == 0) {
+        _playerSettings->setValue("time setting", gameTime1);
+    }
+    else if (ui->timeComboBox->currentIndex() == 1) {
+        _playerSettings->setValue("time setting", gameTime2);
+    }
+    else if (ui->timeComboBox->currentIndex() == 2) {
+        _playerSettings->setValue("time setting", gameTime3);
+    }
+}
+
 void settingsDialog::on_saveSettingsButton_clicked()
 {
     setCorrectMusicState();
+    setWantedGameTime();
 }
