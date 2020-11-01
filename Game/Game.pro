@@ -8,6 +8,7 @@ CONFIG += c++14
 SOURCES += \
     basicprojectile.cpp \
     bonusitem.cpp \
+    gamecity.cpp \
     gameoverdialog.cpp \
     gamewindow.cpp \
     helpdialog.cpp \
@@ -17,10 +18,7 @@ SOURCES += \
     player.cpp \
     playergamescore.cpp \
     playerhealth.cpp \
-    settingsdialog.cpp \
-    spaceship.cpp \
-    tank.cpp \
-    ufo.cpp
+    settingsdialog.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -49,6 +47,7 @@ else:unix: PRE_TARGETDEPS += \
 HEADERS += \
     basicprojectile.h \
     bonusitem.h \
+    gamecity.h \
     gameoverdialog.h \
     gamewindow.h \
     helpdialog.h \
@@ -57,10 +56,7 @@ HEADERS += \
     player.h \
     playergamescore.h \
     playerhealth.h \
-    settingsdialog.h \
-    spaceship.h \
-    tank.h \
-    ufo.h
+    settingsdialog.h
 
 RESOURCES += \
     resources/res.qrc

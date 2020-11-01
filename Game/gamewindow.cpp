@@ -48,7 +48,6 @@ GameWindow::GameWindow(QWidget *parent) :
 
 
 
-
     _scene = new QGraphicsScene();
 
     setPicture(bkgndBig);
