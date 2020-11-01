@@ -8,6 +8,7 @@ CONFIG += c++14
 SOURCES += \
     basicprojectile.cpp \
     bonusitem.cpp \
+    gameoverdialog.cpp \
     gamewindow.cpp \
     helpdialog.cpp \
     initgame.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
     mainmenudialog.cpp \
     player.cpp \
     playergamescore.cpp \
+    playerhealth.cpp \
     settingsdialog.cpp \
     spaceship.cpp \
     tank.cpp \
@@ -47,12 +49,14 @@ else:unix: PRE_TARGETDEPS += \
 HEADERS += \
     basicprojectile.h \
     bonusitem.h \
+    gameoverdialog.h \
     gamewindow.h \
     helpdialog.h \
     initgame.h \
     mainmenudialog.h \
     player.h \
     playergamescore.h \
+    playerhealth.h \
     settingsdialog.h \
     spaceship.h \
     tank.h \
@@ -62,6 +66,7 @@ RESOURCES += \
     resources/res.qrc
 
 FORMS += \
+    gameoverdialog.ui \
     gamewindow.ui \
     helpdialog.ui \
     mainmenudialog.ui \

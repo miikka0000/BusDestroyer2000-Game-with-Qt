@@ -3,17 +3,22 @@
 
 #include <QObject>
 
-#include <QGraphicsTextItem>
-
-class playerHealth: public QGraphicsTextItem{
-
+class playerHealth : public QObject
+{
+    Q_OBJECT
 public:
-    playerHealth(QGraphicsItem * parent=0);
-    void decreaseHealth();
-    int increaseHealth();
+    explicit playerHealth(QObject *parent = nullptr);
+    ~playerHealth();
 
-private:
-    int _healthPoints;
+    void increaseHealth() {playerHealtPoints += 1;};
+    void decreaseHealth();
+
+    int getPlayerHealth() {return playerHealtPoints;};
+
+    int playerHealtPoints;
+
+signals:
+
 };
 
 #endif // PLAYERHEALTH_H

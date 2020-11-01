@@ -1,5 +1,6 @@
 #include "basicprojectile.h"
 #include "playergamescore.h"
+#include "playerhealth.h"
 
 #include <QTimer>
 #include <QGraphicsScene>
@@ -11,12 +12,15 @@
 #include <memory>
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
+extern std::shared_ptr<playerHealth> smartPlayerHealth;
+
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     setProjectilePicture();
     _projectileTimer = new QTimer(this);
     connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
     _projectileTimer->start(_fireRate);
+    setPos(mapToParent(pos().x(), pos().y()));
 
 }
 
@@ -70,12 +74,10 @@ void basicProjectile::setProjectilePicture()
 
 void basicProjectile::move()
 {
-    //ao aiheuttaa seg faultin!
-    // yrittaa referencata nullpointeria y() arvossa.
+
     QList<QGraphicsItem *> collidingObjects = collidingItems();
 
-
-    for (int i = 0, n = collidingObjects.size(); i < n; ++i){
+    for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
 
             smartPlayerScore->increasePoints();

@@ -3,6 +3,7 @@
 #include "gamewindow.h"
 #include "settingsdialog.h"
 
+
 #include <QDebug>
 #include <QString>
 #include <QSize>
@@ -177,3 +178,5 @@ void MainMenuDialog::on_helpButton_clicked()
     helpDialog *gameHelpDialog = new helpDialog(this);
     gameHelpDialog->exec();
 }
+
+

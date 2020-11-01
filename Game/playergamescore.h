@@ -9,12 +9,12 @@ class playerGameScore : public QObject
 public:
     explicit playerGameScore(QObject *parent = nullptr);
     ~playerGameScore();
-    int playerScore;
+
     void increasePoints() {playerScore += 10;};
     int getPlayerScore() {return playerScore;};
 
+    int playerScore;
 
-signals:
 
 };
 

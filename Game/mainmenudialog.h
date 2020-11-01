@@ -57,6 +57,7 @@ private slots:
 
     void on_helpButton_clicked();
 
+
 private:
     Ui::MainMenuDialog *ui;
 

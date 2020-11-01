@@ -4,6 +4,7 @@
 #include "mainmenudialog.h"
 #include "bonusitem.h"
 #include "playergamescore.h"
+#include "playerhealth.h"
 
 
 #include <QKeyEvent>
@@ -24,6 +25,8 @@
 #include <memory>
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
+extern std::shared_ptr<playerHealth> smartPlayerHealth;
+
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
@@ -115,6 +118,7 @@ void Player::keyReleaseEvent(QKeyEvent * event)
 void Player::movePlayer(){
 
     removeCollidingItem();
+
     if(_keyLeft){
         if(pos().x()  > 0){
             setPos(x() - _spaceshipVelocity, y());
@@ -134,9 +138,7 @@ void Player::movePlayer(){
         }
     }
 
-
 }
-
 
 void Player::setDimensions()
 {
@@ -256,15 +258,11 @@ void Player::removeCollidingItem()
 {
     QList<QGraphicsItem *> collidingObjects = collidingItems();
 
-    for (int i = 0, n = collidingObjects.size(); i < n; ++i){
-        if (typeid(*(collidingObjects.at(i))) == typeid(BonusItem)){
-
-            this->increasePoints();
+    for (int i = 0, j = collidingObjects.size(); i < j; ++i){
+        if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
 
             smartPlayerScore->increasePoints();
-
-            scene()->removeItem(collidingObjects.at(i));
-
+            scene()->removeItem(collidingObjects[i]);
             delete collidingObjects[i];
 
             return;

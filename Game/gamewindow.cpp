@@ -9,6 +9,7 @@
 #include "spaceship.h"
 #include "bonusitem.h"
 #include "playergamescore.h"
+#include "playerhealth.h"
 
 #include <QTimer>
 #include <QTimer>
@@ -33,6 +34,7 @@
 
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
+extern std::shared_ptr<playerHealth> smartPlayerHealth;
 
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -179,10 +181,8 @@ void GameWindow::spawnBonusItem()
 void GameWindow::addDataToLCD()
 {
 
-    //ui->pointsLCD->display(_player->getScore());
     ui->pointsLCD->display(smartPlayerScore->getPlayerScore());
-
-    ui->healthLCD->display(_player->getHealthPoints());
+    ui->healthLCD->display(smartPlayerHealth->getPlayerHealth());
 
 }
 

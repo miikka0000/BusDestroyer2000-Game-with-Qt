@@ -1,5 +1,6 @@
 #include "player.h"
 #include "playergamescore.h"
+#include "playerhealth.h"
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 
@@ -12,8 +13,12 @@
 #include <QSettings>
 #include <memory>
 
+
 std::shared_ptr<playerGameScore> smartPlayerScore =
         std::make_shared<playerGameScore>();
+std::shared_ptr<playerHealth> smartPlayerHealth =
+        std::make_shared<playerHealth>();
+
 int main(int argc, char *argv[])
 {
     using std::shared_ptr;

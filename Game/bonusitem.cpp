@@ -19,6 +19,7 @@ BonusItem::BonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
     _bonusTimer = new QTimer(this);
     connect(_bonusTimer, &QTimer::timeout, this, &BonusItem::move);
     _bonusTimer->start(_bonusInterval);
+    setPos(mapToParent(pos().x(), pos().y()));
 }
 
 void BonusItem::move(){
