@@ -17,10 +17,7 @@ SOURCES += \
     player.cpp \
     playergamescore.cpp \
     playerhealth.cpp \
-    settingsdialog.cpp \
-    spaceship.cpp \
-    tank.cpp \
-    ufo.cpp
+    settingsdialog.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -57,10 +54,7 @@ HEADERS += \
     player.h \
     playergamescore.h \
     playerhealth.h \
-    settingsdialog.h \
-    spaceship.h \
-    tank.h \
-    ufo.h
+    settingsdialog.h
 
 RESOURCES += \
     resources/res.qrc
