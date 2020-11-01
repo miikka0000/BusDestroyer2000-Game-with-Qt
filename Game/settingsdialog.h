@@ -33,7 +33,7 @@ private slots:
 
     void on_backToMainButton_clicked();
 
-    void on_musicsOn_clicked();
+    void onMusicsOnClicked();
 
     void on_saveSettingsButton_clicked();
 

@@ -35,7 +35,7 @@ void settingsDialog::on_backToMainButton_clicked()
     this->close();
 }
 
-void settingsDialog::on_musicsOn_clicked()
+void settingsDialog::onMusicsOnClicked()
 {
 
     if(ui->musicsOnCheckBox->isChecked()){

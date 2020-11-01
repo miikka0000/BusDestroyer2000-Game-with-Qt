@@ -32,7 +32,6 @@
 #include <memory>
 
 
-
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
 QTime gameTime;
