@@ -50,7 +50,6 @@ GameWindow::GameWindow(QWidget *parent) :
     connect(gameTimer,SIGNAL(&QTimer::timeout), this, SLOT(&GameWindow::showTime()));
     gameTimer->start(_gameDuration);
 
-
     _scene = new QGraphicsScene();
 
     setPicture(bkgndBig);

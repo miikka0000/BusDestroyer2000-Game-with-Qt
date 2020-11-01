@@ -8,6 +8,7 @@ CONFIG += c++14
 SOURCES += \
     basicprojectile.cpp \
     bonusitem.cpp \
+    gamecity.cpp \
     gameoverdialog.cpp \
     gamewindow.cpp \
     helpdialog.cpp \
@@ -46,6 +47,7 @@ else:unix: PRE_TARGETDEPS += \
 HEADERS += \
     basicprojectile.h \
     bonusitem.h \
+    gamecity.h \
     gameoverdialog.h \
     gamewindow.h \
     helpdialog.h \
