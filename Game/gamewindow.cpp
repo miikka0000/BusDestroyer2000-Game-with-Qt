@@ -86,9 +86,20 @@ GameWindow::GameWindow(QWidget *parent) :
     gameTimer->start(1000);
 
 
+
+    //luodaan uusi Logic-olio
     CourseSide::Logic *gameLogic =  new CourseSide::Logic();
+
+    // parametri creategame palauttaa shared_ptr<Interface::gameCity>
     gameLogic->takeCity(createGame());
+
+    gameLogic->readOfflineData(":/offlinedata/offlinedata/final_bus_liteN.json",
+                               ":/offlinedata/offlinedata/full_stations_kkj3.json");
+
+    //Logic määrittelee ajan sekunnin tarkkuudella ja Nysset minuutin tarkkuudella
+    // ->vaihdetaan Logicin aika minuutin tarkkuuteen
     gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
+
     gameLogic->finalizeGameStart();
 
 

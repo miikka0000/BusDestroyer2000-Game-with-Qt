@@ -26,6 +26,7 @@ class gameCity : public Interface::ICity, public QGraphicsPixmapItem, public QMa
 public:
 gameCity();
 ~gameCity();
+
 using stopPtr = std::shared_ptr<Interface::IStop>;
 using actorPtr = std::shared_ptr<Interface::IActor>;
 
