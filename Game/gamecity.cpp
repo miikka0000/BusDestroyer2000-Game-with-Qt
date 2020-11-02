@@ -153,7 +153,7 @@ void gameCity::actorRemoved(std::shared_ptr<IActor> actor)
 {
     if(gameStateOn && findActor(actor) && actor->isRemoved() == true){
 
-        //tähän tieto mycitylle siitä, että aktori on onnistneesti poistettu
+        qDebug() << "actor removed ingame";
 
     }
     return;
@@ -215,8 +215,10 @@ std::vector<std::shared_ptr<IActor> > gameCity::getNearbyActors(Location loc) co
             }
 
         }
-        return nearbyActors;
+
     }
+    return nearbyActors;
+
 }
 
 

@@ -39,12 +39,12 @@ void settingsDialog::onMusicsOnClicked()
 {
 
     if(ui->musicsOnCheckBox->isChecked()){
-        qDebug()<<"musics on";
+        //qDebug()<<"musics on";
         _musicsOn = true;
         _playerSettings->setValue("music setting", musicStateOn);
     }else if(!ui->musicsOnCheckBox->isChecked()){
         _musicsOn = false;
-        qDebug()<<"musics off";
+        //qDebug()<<"musics off";
         _playerSettings->setValue("music setting", musicStateOff);
     }
 }

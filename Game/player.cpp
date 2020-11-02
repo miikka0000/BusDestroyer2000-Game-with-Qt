@@ -30,7 +30,7 @@ extern std::shared_ptr<playerHealth> smartPlayerHealth;
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
-    qDebug()<<_playerSettings->value("music setting").toInt();
+    //qDebug()<<_playerSettings->value("music setting").toInt();
     addPlayerSprite();
     savePlayerName();
     initMusic();
@@ -155,8 +155,8 @@ void Player::setDimensions()
     }
 
 
-    qDebug() << "ship height: "<< playerHeight;
-    qDebug() << "ship width: "<< playerWidth;
+    //qDebug() << "ship height: "<< playerHeight;
+    //qDebug() << "ship width: "<< playerWidth;
 }
 
 void Player::changePlayerSpeed(QKeyEvent *speedEvent)
@@ -185,17 +185,17 @@ void Player::addPlayerSprite()
     //qDebug()<< chosenSkin;
 
     if(chosenSkin == MainMenuDialog::spaceshipOption){
-        qDebug()<<"you chose spaceship";
+        //qDebug()<<"you chose spaceship";
         spaceshipChosen = true;
         setPixmap(spaceshipPic);
 
     } else if(chosenSkin == MainMenuDialog::tankOption){
-        qDebug()<<"you chose tank";
+        //qDebug()<<"you chose tank";
         tankChosen = true;
         setPixmap(tankPic);
 
     } else if(chosenSkin == MainMenuDialog::ufoOption){
-        qDebug()<<"you chose ufo";
+        //qDebug()<<"you chose ufo";
         ufoChosen = true;
         setPixmap(ufoPic);
     }
@@ -208,7 +208,7 @@ void Player::initMusic()
 {
     _projectileSound = new QSoundEffect(this);
 
-    qDebug()<<_playerSettings->value("music setting").toInt();
+    //qDebug()<<_playerSettings->value("music setting").toInt();
     int soundEffect = _playerSettings->value("projectile soundeffect setting").toInt();
     if(soundEffect == MainMenuDialog::fireballSound){
         _projectileSound->setSource(fireballSound);

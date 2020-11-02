@@ -25,13 +25,12 @@ int main(int argc, char *argv[])
     using std::shared_ptr;
     QApplication a(argc, argv);
     QCoreApplication::setOrganizationName("Tampere University");
-    QCoreApplication::setApplicationName("BusDestroyer");
+    QCoreApplication::setApplicationName("BusDestroyer2000");
     QSettings mySettings;
 
     Q_INIT_RESOURCE(offlinedata);
 
     MainMenuDialog * menuUi = new MainMenuDialog();
-
 
 
     menuUi->exec();

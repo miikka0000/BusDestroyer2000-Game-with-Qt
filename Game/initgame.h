@@ -8,8 +8,8 @@
 #include <QGraphicsScene>
 
 
-class initGame: public QGraphicsView{
-
+class initGame: public QGraphicsView
+{
 public:
     initGame();
     ~initGame();

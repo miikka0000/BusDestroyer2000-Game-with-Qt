@@ -8,6 +8,7 @@
 #include "playergamescore.h"
 #include "playerhealth.h"
 #include "gameoverdialog.h"
+#include "graphics/simpleactoritem.hh"
 
 
 
@@ -78,17 +79,17 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
-    /*createGame();
-    CourseSide::Logic *gameLogic =  new CourseSide::Logic();
-    gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
-    gameLogic->finalizeGameStart();*/
-
-
     setGameTime();
     gameTimer = new QTimer(this);
 
     connect(gameTimer, &QTimer::timeout, this, &GameWindow::updateCountDown);
     gameTimer->start(1000);
+
+
+    /*CourseSide::Logic *gameLogic =  new CourseSide::Logic();
+    gameLogic->takeCity(createGame());
+    gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
+    gameLogic->finalizeGameStart();*/
 
 
 
@@ -126,8 +127,8 @@ void GameWindow::resizeEvent(QResizeEvent *event)
             _player->setPos(400,500);
         }
 
-        qDebug()<<"resize Window width: " << newWidth;
-        qDebug()<<"resize Window width: " << newHeight;
+        //qDebug()<<"resize Window width: " << newWidth;
+        //qDebug()<<"resize Window width: " << newHeight;
 
         //setPicture(bkgndBig);
         ui->graphicsView->fitInView(_scene->sceneRect(), Qt::IgnoreAspectRatio);
@@ -163,8 +164,8 @@ std::vector<int> GameWindow::getAvailableSize()
 
     int availableWidth = availableGeometry.width();
 
-    qDebug() << "available w: " << availableWidth;
-    qDebug() << "available h: " << availableHeight;
+    //qDebug() << "available w: " << availableWidth;
+    //qDebug() << "available h: " << availableHeight;
     return {availableWidth, availableHeight};
 
 }
@@ -246,6 +247,8 @@ void GameWindow::updateCountDown() {
 std::shared_ptr<Interface::ICity> GameWindow::createGame()
 {
     std::shared_ptr<Interface::gameCity> newGameCity = std::make_shared<Interface::gameCity>();
+
+
     return newGameCity;
 }
 

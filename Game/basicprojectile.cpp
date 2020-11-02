@@ -52,17 +52,17 @@ void basicProjectile::setProjectilePicture()
     //qDebug()<< chosenProjectile;
 
     if(chosenProjectile == MainMenuDialog::fireballOption){
-        qDebug()<<"you chose spaceship";
+        //qDebug()<<"you chose spaceship";
         fireballChosen = true;
         setPixmap(_fireballPic);
 
     } else if(chosenProjectile == MainMenuDialog::missileOption){
-        qDebug()<<"you chose tank";
+        //qDebug()<<"you chose tank";
         missileChosen = true;
         setPixmap(_missilePic);
 
     } else if(chosenProjectile == MainMenuDialog::laserOption){
-        qDebug()<<"you chose ufo";
+        //qDebug()<<"you chose ufo";
         laserChosen = true;
         setPixmap(_laserPic);
     }
