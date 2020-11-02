@@ -9,6 +9,9 @@
 #include "playerhealth.h"
 #include "gameoverdialog.h"
 #include "graphics/simpleactoritem.hh"
+#include "actors/nysse.hh"
+#include "actors/passenger.hh"
+
 
 
 
@@ -244,9 +247,11 @@ void GameWindow::setGameTime()
 void GameWindow::drawStops(std::shared_ptr<Interface::gameCity> currCity)
 {
 
-
+    QPixmap pic;
     std::vector<std::shared_ptr<Interface::IStop>> stops = currCity->allStops;
     for (unsigned int i= 0; i < stops.size(); ++i){
+
+
         auto rectItem = new QGraphicsPixmapItem();
         rectItem->setPos(stops.at(i)->getLocation().giveX() , stops.at(i)->getLocation().giveY());
         rectItem->setPixmap(stopPic);
@@ -261,13 +266,50 @@ void GameWindow::drawBuses(std::shared_ptr<Interface::gameCity> currCity)
 {
 
     std::vector<std::shared_ptr<Interface::IActor>> actors = currCity->allActors;
+    std::vector<std::shared_ptr<Interface::IActor>> nysses;
+    std::vector<std::shared_ptr<Interface::IActor>> people;
+
+    qDebug() <<"actors amount: "<<actors.size();
+
     for (unsigned int i= 0; i < actors.size(); ++i){
-        auto rectItem = new QGraphicsPixmapItem();
-        rectItem->setPos(actors.at(i)->giveLocation().giveX(), actors.at(i)->giveLocation().giveY());
-        rectItem->setPixmap(busPic.scaled(5, 15, Qt::IgnoreAspectRatio, Qt::FastTransformation));
-        _scene->addItem(rectItem);
+        if(typeid (*actors.at(i)) == typeid(CourseSide::Nysse)){
+            nysses.push_back(actors.at(i));
+        }else if(typeid (*actors.at(i)) == typeid(CourseSide::Passenger)){
+            people.push_back(actors.at(i));
+        }
 
     }
+
+    for (unsigned int i= 0; i < nysses.size(); ++i){
+        auto rectItem = new QGraphicsPixmapItem();
+        int xCoord = nysses.at(i)->giveLocation().giveX();
+        int yCoord = nysses.at(i)->giveLocation().giveY();
+
+        rectItem->setPos(nysses.at(i)->giveLocation().giveX(), nysses.at(i)->giveLocation().giveY());
+        rectItem->setPixmap(busPic.scaled(10, 20, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+        if(xCoord < screenWidth && xCoord >= 0 &&
+                yCoord + 20 < screenHeight && yCoord > 0){
+            _scene->addItem(rectItem);
+        }
+    }
+    qDebug() << "nysse amount: "<<nysses.size();
+
+    for (unsigned int i= 0; i < people.size(); ++i){
+        auto rectItem = new QGraphicsPixmapItem();
+        int xCoord = people.at(i)->giveLocation().giveX();
+        int yCoord = people.at(i)->giveLocation().giveY();
+        rectItem->setPos(people.at(i)->giveLocation().giveX(), people.at(i)->giveLocation().giveY());
+        rectItem->setPixmap(passengerPic.scaled(10, 15,  Qt::IgnoreAspectRatio, Qt::FastTransformation));
+        if(xCoord < screenWidth && xCoord >= 0 &&
+                yCoord + 15 < screenHeight && yCoord > 0){
+            _scene->addItem(rectItem);
+        }
+
+    }
+    qDebug() << "people amount: "<<nysses.size();
+
+
+
 }
 
 

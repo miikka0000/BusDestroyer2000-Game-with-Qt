@@ -13,6 +13,7 @@ settingsDialog::settingsDialog(QWidget *parent) :
     this->setFixedSize(QSize(800,600));
     setActionToolTips();
     ui->musicsOnCheckBox->setChecked(false);
+    ui->timeComboBox->setCurrentIndex(1);
 }
 
 settingsDialog::~settingsDialog()
@@ -31,7 +32,7 @@ void settingsDialog::setActionToolTips()
 
 void settingsDialog::on_backToMainButton_clicked()
 {
-    setCorrectMusicState();
+
     this->close();
 }
 
