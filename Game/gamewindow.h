@@ -60,7 +60,7 @@ public:
 
 
     BonusItem *bonusObject;
-    //QTime gameTime(0,0,0);
+
 
     int screenWidth = 800;
     int screenHeight = 600;
@@ -83,7 +83,6 @@ private:
     QTimer *mainTimer;
     QTimer *bonusTimer;
     QTimer *gameTimer;
-    //QTime *gameTime;
     int _gameDuration;
     QGraphicsScene * _scene;
     Player * _player;

@@ -20,6 +20,8 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     setToolTips();
 
     _playerSettings->setValue("music setting", settingsDialog::musicStateOff);
+    _playerSettings->setValue("time setting", settingsDialog::gameTime2);
+
 }
 
 MainMenuDialog::~MainMenuDialog()

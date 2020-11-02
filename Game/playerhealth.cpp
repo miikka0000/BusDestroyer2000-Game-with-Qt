@@ -2,7 +2,7 @@
 
 playerHealth::playerHealth(QObject *parent) : QObject(parent)
 {
-    playerHealtPoints = 3;
+    playerHealtPoints = 50;
 }
 
 playerHealth::~playerHealth()

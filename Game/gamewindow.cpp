@@ -108,8 +108,7 @@ GameWindow::GameWindow(QWidget *parent) :
     qDebug()<<"stop amount: "<<newCity->allStops.size();
     drawStops(newCity);
     drawBuses(newCity);
-
-
+    qDebug()<<_playerSettings->value("time setting").toInt();
 
 }
 
