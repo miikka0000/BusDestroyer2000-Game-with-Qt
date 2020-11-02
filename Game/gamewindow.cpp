@@ -41,6 +41,8 @@ extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
 extern QTime _gameTime;
 
+
+
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::GameWindow)
@@ -89,26 +91,24 @@ GameWindow::GameWindow(QWidget *parent) :
     gameTimer->start(1000);
 
 
-
+    /*
     //luodaan uusi Logic-olio
     CourseSide::Logic *gameLogic =  new CourseSide::Logic();
-
     // parametri creategame palauttaa shared_ptr<Interface::gameCity>
     std::shared_ptr<Interface::gameCity> newCity = createGame();
-
     gameLogic->takeCity(newCity);
-
     gameLogic->fileConfig();
-
     //Logic määrittelee ajan sekunnin tarkkuudella ja Nysset minuutin tarkkuudella
     // ->vaihdetaan Logicin aika minuutin tarkkuuteen
     gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
-
     gameLogic->finalizeGameStart();
     qDebug()<<"stop amount: "<<newCity->allStops.size();
     drawStops(newCity);
     drawBuses(newCity);
-    qDebug()<<_playerSettings->value("time setting").toInt();
+    //qDebug()<<_playerSettings->value("time setting").toInt();*/
+
+   initGame *courseSide = new initGame();
+   courseSide->initLogic(_scene);
 
 }
 
@@ -187,16 +187,6 @@ std::vector<int> GameWindow::getAvailableSize()
 
 }
 
-void GameWindow::drawPanel(int x, int y, int width, int height, QColor color, double opacity){
-
-    QGraphicsRectItem* topPanel = new QGraphicsRectItem(x, y, width, height);
-    QBrush brush;
-    brush.setStyle(Qt::SolidPattern);
-    brush.setColor(color);
-    topPanel->setBrush(brush);
-    topPanel->setOpacity(opacity);
-    _scene->addItem(topPanel);
-}
 
 void GameWindow::setLCDStyle()
 {
@@ -243,10 +233,26 @@ void GameWindow::setGameTime()
 
 }
 
-void GameWindow::drawStops(std::shared_ptr<Interface::gameCity> currCity)
+void GameWindow::updateCountDown() {
+    if (_gameTime.second() > 0 || _gameTime.minute() > 0) {
+        _gameTime = _gameTime.addSecs(-1);
+    }
+    else if (_gameTime.second() == 0 && _gameTime.minute() == 0) {
+        GameOverDialog *gameOverDialog = new GameOverDialog();
+        gameTimer->stop();
+        bonusTimer->stop();
+        mainTimer->stop();
+
+        gameOverDialog->show();
+        this->close();
+    }
+
+}
+
+/*void GameWindow::drawStops(std::shared_ptr<Interface::gameCity> currCity)
 {
 
-    QPixmap pic;
+
     std::vector<std::shared_ptr<Interface::IStop>> stops = currCity->allStops;
     for (unsigned int i= 0; i < stops.size(); ++i){
 
@@ -310,29 +316,15 @@ void GameWindow::drawBuses(std::shared_ptr<Interface::gameCity> currCity)
 
 
 }
-
-
-void GameWindow::updateCountDown() {
-    if (_gameTime.second() > 0 || _gameTime.minute() > 0) {
-        _gameTime = _gameTime.addSecs(-1);
-    }
-    else if (_gameTime.second() == 0 && _gameTime.minute() == 0) {
-        GameOverDialog *gameOverDialog = new GameOverDialog();
-        gameTimer->stop();
-        bonusTimer->stop();
-        mainTimer->stop();
-
-        gameOverDialog->show();
-        this->close();
-    }
-
-}
-
-
 std::shared_ptr<Interface::gameCity> GameWindow::createGame()
 {
     std::shared_ptr<Interface::gameCity> newGameCity = std::make_shared<Interface::gameCity>();
 
     return newGameCity;
-}
+}*/
+
+
+
+
+
 

@@ -17,7 +17,8 @@
 #include <memory>
 
 
-class Player:  public QObject, public QGraphicsPixmapItem{
+class Player:  public QObject, public QGraphicsPixmapItem
+{
     Q_OBJECT
 public:
     Player(QGraphicsItem *parent= 0);

@@ -7,7 +7,7 @@
 #include "errors/initerror.hh"
 #include "core/location.hh"
 
-#include <QMainWindow>
+#include <QObject>
 #include <vector>
 #include <memory>
 #include <QObject>
@@ -18,9 +18,9 @@
 #include <QTime>
 #include <map>
 
-namespace Interface
-{
-class gameCity : public Interface::ICity, public QGraphicsPixmapItem, public QMainWindow
+
+
+class gameCity : public Interface::ICity, public QGraphicsPixmapItem
 {
 
 public:
@@ -43,6 +43,10 @@ bool gameStateOn = false;
 bool backgroundSet= false;
 bool gameClockSet = false;
 
+signals:
+    void removeThisActor(std::shared_ptr<Interface::IActor> cityActor);
+    void moveThisActor(std::shared_ptr<Interface::IActor> cityActor);
+
 virtual void setBackground(QImage& basicbackground, QImage& bigbackground);
 
 /**
@@ -60,7 +64,7 @@ virtual void setClock(QTime clock);
      * @post Stop is added to the city. Exception guarantee: basic
      * @exception InitError Stops position is not valid.
      */
-virtual void addStop(std::shared_ptr<IStop> stop);
+virtual void addStop(std::shared_ptr<Interface::IStop> stop);
 
 /**
      * @brief startGame shofts city from init state to the gamestate.
@@ -75,7 +79,7 @@ virtual void startGame();
      * @post Actor is added to the city. Exception guarantee: basic.
      * @exception GameError Actor is already in the city.
      */
-virtual void addActor(std::shared_ptr<IActor> newactor);
+virtual void addActor(std::shared_ptr<Interface::IActor> newactor);
 /**
      * @brief removeActor removes the actor from the city.
      * @param actor Actor to be removed.
@@ -83,7 +87,7 @@ virtual void addActor(std::shared_ptr<IActor> newactor);
      * @post Actor is removed from the city. Exception guarantee: strong.
      * @exception GameError Actor not found in the city
      */
-virtual void removeActor(std::shared_ptr<IActor> actor);
+virtual void removeActor(std::shared_ptr<Interface::IActor> actor);
 
 /**
      * @brief actorRemoved tells the city that actor is removed ingame.
@@ -91,7 +95,7 @@ virtual void removeActor(std::shared_ptr<IActor> actor);
      * @pre City is in gamestate. Given actor is found in the city. Actor has `actor.isRemoved() == true`.
      * @post Exception guarantee: strong.
      */
-virtual void actorRemoved(std::shared_ptr<IActor> actor);
+virtual void actorRemoved(std::shared_ptr<Interface::IActor> actor);
 
 /**
      * @brief findActor checks if the given actor is in the city.
@@ -100,7 +104,7 @@ virtual void actorRemoved(std::shared_ptr<IActor> actor);
      * @return Boolean that tells wether the actor is in the city.
      * @post Exception guarantee: nothrow.
      */
-virtual bool findActor(std::shared_ptr<IActor> actor) const;
+virtual bool findActor(std::shared_ptr<Interface::IActor> actor) const;
 
 /**
      * @brief actorMoved is an operation that is used to tell wether certain actor has moved.
@@ -108,7 +112,7 @@ virtual bool findActor(std::shared_ptr<IActor> actor) const;
      * @pre City is in gamestate. Given actor is found in the city.
      * @post Exception guarantee: basic.
      */
-virtual void actorMoved(std::shared_ptr<IActor> actor);
+virtual void actorMoved(std::shared_ptr<Interface::IActor> actor);
 
 /**
      * @brief getNearbyActors returns actors that are close to given position.
@@ -117,7 +121,7 @@ virtual void actorMoved(std::shared_ptr<IActor> actor);
      * @return Vector containing actors close to the location, that pass `getLocation().isClose(loc) == true`.
      * @post Exception guarantee: strong.
      */
-virtual std::vector<std::shared_ptr<IActor>> getNearbyActors(Location loc) const;
+virtual std::vector<std::shared_ptr<Interface::IActor>> getNearbyActors(Interface::Location loc) const;
 
 /**
      * @brief isGameOver tells wether the game is overor not.
@@ -129,6 +133,6 @@ virtual bool isGameOver() const;
 
 
 };
-}
+
 
 #endif // GAMECITY_H

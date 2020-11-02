@@ -2,13 +2,11 @@
 #define GAMEWINDOW_H
 #include "player.h"
 #include "basicprojectile.h"
-
+#include "initgame.h"
 #include "bonusitem.h"
-
 #include "gamecity.h"
 #include "interfaces/icity.hh"
 #include "core/logic.hh"
-
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -37,18 +35,15 @@ public:
     ~GameWindow();
 
     void resizeEvent(QResizeEvent * event);
-    void setPicture(QImage img);
-    void drawPanel(int x, int y, int width, int height, QColor color, double opacity);
+    void setPicture(QImage img);    
     void setLCDStyle();
     void spawnBonusItem();
     void addDataToLCD();
     void setGameTime();
-    void drawStops(std::shared_ptr<Interface::gameCity> currCity);
-    void drawBuses(std::shared_ptr<Interface::gameCity> currCity);
+    //void drawStops(std::shared_ptr<Interface::gameCity> currCity);
+    //void drawBuses(std::shared_ptr<Interface::gameCity> currCity);
 
-
-
-    std::shared_ptr<Interface::gameCity> createGame();
+    //std::shared_ptr<Interface::gameCity> createGame();
 
 
 

@@ -12,8 +12,7 @@
 #include <QDebug>
 #include <map>
 
-namespace Interface
-{
+
 gameCity::gameCity()
 {
 
@@ -36,21 +35,23 @@ void gameCity::setBackground(QImage &basicbackground, QImage &bigbackground)
 {
     if(!gameStateOn){
         try {
-            if(this->width() > 500 && this->height() > 500){
+            /*if(this->width() > 500 && this->height() > 500){
                 scene()->addPixmap(QPixmap::fromImage(basicbackground.scaled(this->width(), this->height(),
                                                                              Qt::IgnoreAspectRatio)));
-            }else {
-                scene()->addPixmap(QPixmap::fromImage(bigbackground.scaled(this->width(), this->height(),
+            }else {*/
+                scene()->addPixmap(QPixmap::fromImage(bigbackground.scaled(800, 600,
                                                                            Qt::IgnoreAspectRatio)));
-            }
-            backgroundSet = true;
+                backgroundSet = true;
+
+
         }  catch (...) {
-            throw InitError("InitError Setting the picture was"
-                                       " unsuccesful or the picture was invalid.");
+            throw Interface::InitError("InitError Setting the picture was"
+                            " unsuccesful or the picture was invalid.");
         }
 
     }
 }
+
 
 /**
  * @brief setClock sets the time of the game clock.
@@ -74,13 +75,13 @@ void gameCity::setClock(QTime clock)
  * @post Stop is added to the city. Exception guarantee: basic
  * @exception InitError Stops position is not valid.
  */
-void gameCity::addStop(std::shared_ptr<IStop> stop)
+void gameCity::addStop(std::shared_ptr<Interface::IStop> stop)
 {
     if(!gameStateOn){
         try {
             allStops.push_back(stop);
         }  catch (...) {
-            throw InitError("InitError Stops position is not valid.");
+            throw Interface::InitError("InitError Stops position is not valid.");
         }
 
     }
@@ -107,12 +108,12 @@ void gameCity::startGame()
  * @post Actor is added to the city. Exception guarantee: basic.
  * @exception GameError Actor is already in the city.
  */
-void gameCity::addActor(std::shared_ptr<IActor> newactor)
+void gameCity::addActor(std::shared_ptr<Interface::IActor> newactor)
 {
 
 
     if(findActor(newactor)){
-        throw GameError("GameError Actor is already in the city.");
+        throw Interface::GameError("GameError Actor is already in the city.");
 
     } else{
 
@@ -129,15 +130,21 @@ void gameCity::addActor(std::shared_ptr<IActor> newactor)
  * @post Actor is removed from the city. Exception guarantee: strong.
  * @exception GameError Actor not found in the city
  */
-void gameCity::removeActor(std::shared_ptr<IActor> actor)
+void gameCity::removeActor(std::shared_ptr<Interface::IActor> actor)
 {
     if(gameStateOn){
-        for(unsigned int i = 0; i < allActors.size(); ++i){
-            if(allActors.at(i) == actor){
-                allActors.erase(allActors.begin() + i);
+        if(!findActor(actor)){
+            throw Interface::GameError("GameError Actor not found in the city");
+        } else {
+            for(unsigned int i = 0; i < allActors.size(); ++i){
+                if(allActors.at(i) == actor){
+                    allActors.erase(allActors.begin() + i);
+                }
             }
+            return;
         }
-        throw GameError("GameError Actor not found in the city");
+        return;
+
     }
     return;
 }
@@ -149,11 +156,13 @@ void gameCity::removeActor(std::shared_ptr<IActor> actor)
  * @pre City is in gamestate. Given actor is found in the city. Actor has `actor.isRemoved() == true`.
  * @post Exception guarantee: strong.
  */
-void gameCity::actorRemoved(std::shared_ptr<IActor> actor)
+void gameCity::actorRemoved(std::shared_ptr<Interface::IActor> actor)
 {
     if(gameStateOn && findActor(actor) && actor->isRemoved() == true){
 
-        qDebug() << "actor removed ingame";
+
+        //emit removeThisActor(actor);
+        qDebug() << "actor removed ingame. actor removed signal emitted";
 
     }
     return;
@@ -168,7 +177,7 @@ void gameCity::actorRemoved(std::shared_ptr<IActor> actor)
  * @return Boolean that tells wether the actor is in the city.
  * @post Exception guarantee: nothrow.
  */
-bool gameCity::findActor(std::shared_ptr<IActor> actor) const
+bool gameCity::findActor(std::shared_ptr<Interface::IActor> actor) const
 {
     for(unsigned int i = 0; i < allActors.size(); ++i){
         if(allActors.at(i) == actor){
@@ -184,12 +193,14 @@ bool gameCity::findActor(std::shared_ptr<IActor> actor) const
  * @pre City is in gamestate. Given actor is found in the city.
  * @post Exception guarantee: basic.
  */
-void gameCity::actorMoved(std::shared_ptr<IActor> actor)
+void gameCity::actorMoved(std::shared_ptr<Interface::IActor> actor)
 {
 
     if(gameStateOn && findActor(actor)){
         if(actor->giveLocation().calcDistance(startingLoc, actor->giveLocation()) != 0){
-            qDebug() << "actor moved";
+
+            //emit moveThisActor(actor);
+            qDebug() << "actor has moved. actor removed signal emitted";
 
         }
     }
@@ -203,10 +214,10 @@ void gameCity::actorMoved(std::shared_ptr<IActor> actor)
  * @return Vector containing actors close to the location, that pass `getLocation().isClose(loc) == true`.
  * @post Exception guarantee: strong.
  */
-std::vector<std::shared_ptr<IActor> > gameCity::getNearbyActors(Location loc) const
+std::vector<std::shared_ptr<Interface::IActor> > gameCity::getNearbyActors(Interface::Location loc) const
 {
-    std::vector<std::shared_ptr<IActor>> nearbyActors =
-            std::vector<std::shared_ptr<IActor>>();
+    std::vector<std::shared_ptr<Interface::IActor>> nearbyActors =
+            std::vector<std::shared_ptr<Interface::IActor>>();
 
     if(gameStateOn){
         for(unsigned int i = 0; i < allActors.size(); ++i){
@@ -241,7 +252,7 @@ bool gameCity::isGameOver() const
     return false;
 }
 
-}
+
 
 
 
