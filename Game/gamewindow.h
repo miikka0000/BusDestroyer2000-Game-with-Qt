@@ -43,10 +43,12 @@ public:
     void spawnBonusItem();
     void addDataToLCD();
     void setGameTime();
+    void drawStops(std::shared_ptr<Interface::gameCity> currCity);
+    void drawBuses(std::shared_ptr<Interface::gameCity> currCity);
 
 
 
-    std::shared_ptr<Interface::ICity> createGame();
+    std::shared_ptr<Interface::gameCity> createGame();
 
 
 
@@ -66,6 +68,11 @@ public:
     int interval = 500;
     QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
     QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
+
+    QPixmap stopPic = QPixmap(":/images/stop_15x25.png");
+    QPixmap busPic = QPixmap(":/images/bus_10x20.png");
+    QPixmap passengerPic = QPixmap(":/images/passenger_20x15.png");
+
 
 
 public slots:

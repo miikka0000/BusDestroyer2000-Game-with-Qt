@@ -12,6 +12,9 @@
         <file>controlsPicture.png</file>
         <file>exitButton.png</file>
         <file>bonusGem_30x15.png</file>
+        <file>bus_10x20.png</file>
+        <file>passenger_20x15.png</file>
+        <file>stop_15x25.png</file>
     </qresource>
     <qresource prefix="/sounds">
         <file>blaster_sound.wav</file>

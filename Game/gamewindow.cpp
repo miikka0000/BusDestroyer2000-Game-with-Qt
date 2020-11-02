@@ -91,16 +91,20 @@ GameWindow::GameWindow(QWidget *parent) :
     CourseSide::Logic *gameLogic =  new CourseSide::Logic();
 
     // parametri creategame palauttaa shared_ptr<Interface::gameCity>
-    gameLogic->takeCity(createGame());
+    std::shared_ptr<Interface::gameCity> newCity = createGame();
 
-    gameLogic->readOfflineData(":/offlinedata/offlinedata/final_bus_liteN.json",
-                               ":/offlinedata/offlinedata/full_stations_kkj3.json");
+    gameLogic->takeCity(newCity);
+
+    gameLogic->fileConfig();
 
     //Logic määrittelee ajan sekunnin tarkkuudella ja Nysset minuutin tarkkuudella
     // ->vaihdetaan Logicin aika minuutin tarkkuuteen
     gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
 
     gameLogic->finalizeGameStart();
+    qDebug()<<"stop amount: "<<newCity->allStops.size();
+    drawStops(newCity);
+    drawBuses(newCity);
 
 
 
@@ -237,6 +241,35 @@ void GameWindow::setGameTime()
 
 }
 
+void GameWindow::drawStops(std::shared_ptr<Interface::gameCity> currCity)
+{
+
+
+    std::vector<std::shared_ptr<Interface::IStop>> stops = currCity->allStops;
+    for (unsigned int i= 0; i < stops.size(); ++i){
+        auto rectItem = new QGraphicsPixmapItem();
+        rectItem->setPos(stops.at(i)->getLocation().giveX() , stops.at(i)->getLocation().giveY());
+        rectItem->setPixmap(stopPic);
+        _scene->addItem(rectItem);
+
+    }
+
+
+}
+
+void GameWindow::drawBuses(std::shared_ptr<Interface::gameCity> currCity)
+{
+
+    std::vector<std::shared_ptr<Interface::IActor>> actors = currCity->allActors;
+    for (unsigned int i= 0; i < actors.size(); ++i){
+        auto rectItem = new QGraphicsPixmapItem();
+        rectItem->setPos(actors.at(i)->giveLocation().giveX(), actors.at(i)->giveLocation().giveY());
+        rectItem->setPixmap(busPic.scaled(5, 15, Qt::IgnoreAspectRatio, Qt::FastTransformation));
+        _scene->addItem(rectItem);
+
+    }
+}
+
 
 void GameWindow::updateCountDown() {
     if (_gameTime.second() > 0 || _gameTime.minute() > 0) {
@@ -255,10 +288,9 @@ void GameWindow::updateCountDown() {
 }
 
 
-std::shared_ptr<Interface::ICity> GameWindow::createGame()
+std::shared_ptr<Interface::gameCity> GameWindow::createGame()
 {
     std::shared_ptr<Interface::gameCity> newGameCity = std::make_shared<Interface::gameCity>();
-
 
     return newGameCity;
 }
