@@ -44,7 +44,7 @@ public:
     void addDataToLCD();
     void setGameTime();
 
-    void showTime();
+
 
     std::shared_ptr<Interface::ICity> createGame();
 

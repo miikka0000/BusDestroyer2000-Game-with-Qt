@@ -7,6 +7,7 @@
 #include "bonusitem.h"
 #include "playergamescore.h"
 #include "playerhealth.h"
+#include "gameoverdialog.h"
 
 
 
@@ -34,7 +35,7 @@
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
-QTime gameTime;
+extern QTime gameTime;
 
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -210,14 +211,21 @@ void GameWindow::setGameTime()
     }
     else if(timeOpt == settingsDialog::gameTime3) {
         _gameDuration = 3;
-    } 
-    gameTime.setHMS(0,_gameDuration,0);
+    }
+    gameTime.setHMS(0,0,5);
 
 }
+
 
 void GameWindow::updateCountDown() {
     if (gameTime.second() > 0 || gameTime.minute() > 0) {
         gameTime = gameTime.addSecs(-1);
+    }
+    else if (gameTime.second() == 0 && gameTime.minute() == 0) {
+        GameOverDialog *gameOverDialog = new GameOverDialog();
+        //gameOverDialog->setModal(true);
+        gameOverDialog->exec();
+        this->close();
     }
 
 }
