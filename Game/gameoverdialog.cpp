@@ -47,6 +47,6 @@ void GameOverDialog::on_gameOverCloseButton_clicked()
 void GameOverDialog::on_playAgainButton_clicked()
 {
     MainMenuDialog *newMainMenu = new MainMenuDialog();
-    newMainMenu->exec();
+    newMainMenu->show();
     this->close();
 }

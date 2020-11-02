@@ -19,7 +19,6 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     this->setFixedSize(_menuDialogSize);
     setToolTips();
 
-
     _playerSettings->setValue("music setting", settingsDialog::musicStateOff);
 }
 

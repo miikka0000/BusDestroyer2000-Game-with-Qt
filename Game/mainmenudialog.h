@@ -79,7 +79,6 @@ private:
 
     bool _musicsOn = false;
 
-
     QString _playerAlias;
 
 

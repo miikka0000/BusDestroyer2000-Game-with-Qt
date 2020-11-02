@@ -35,7 +35,7 @@
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
-extern QTime gameTime;
+extern QTime _gameTime;
 
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -45,9 +45,6 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->centralwidget->layout()->setContentsMargins(0, 0, 0, this->height() * 0.03);
 
     setLCDStyle();
-
-
-
 
     _scene = new QGraphicsScene();
 
@@ -89,14 +86,23 @@ GameWindow::GameWindow(QWidget *parent) :
 
     setGameTime();
     gameTimer = new QTimer(this);
-    connect(gameTimer, SIGNAL(timeout()), this, SLOT(updateCountDown()));
+
+    connect(gameTimer, &QTimer::timeout, this, &GameWindow::updateCountDown);
     gameTimer->start(1000);
+
+
 
 }
 
 GameWindow::~GameWindow()
 {
     delete ui;
+    delete _player;
+    delete bonusObject;
+    delete mainTimer;
+    delete bonusTimer;
+    delete gameTimer;
+
     _playerSettings->clear();
 }
 
@@ -195,7 +201,7 @@ void GameWindow::addDataToLCD()
 
     ui->pointsLCD->display(smartPlayerScore->getPlayerScore());
     ui->healthLCD->display(smartPlayerHealth->getPlayerHealth());
-    ui->clockLCD->display(gameTime.toString("m:ss"));
+    ui->clockLCD->display(_gameTime.toString("m:ss"));
 
 }
 
@@ -212,23 +218,30 @@ void GameWindow::setGameTime()
     else if(timeOpt == settingsDialog::gameTime3) {
         _gameDuration = 3;
     }
-    gameTime.setHMS(0,0,5);
+    // testauksen ajaksi sekunnit 5
+    //_gameTime.setHMS(0,_gameDuration, 0);
+    _gameTime.setHMS(0,0, 5);
 
 }
 
 
 void GameWindow::updateCountDown() {
-    if (gameTime.second() > 0 || gameTime.minute() > 0) {
-        gameTime = gameTime.addSecs(-1);
+    if (_gameTime.second() > 0 || _gameTime.minute() > 0) {
+        _gameTime = _gameTime.addSecs(-1);
     }
-    else if (gameTime.second() == 0 && gameTime.minute() == 0) {
+    else if (_gameTime.second() == 0 && _gameTime.minute() == 0) {
         GameOverDialog *gameOverDialog = new GameOverDialog();
-        //gameOverDialog->setModal(true);
-        gameOverDialog->exec();
+        gameTimer->stop();
+        bonusTimer->stop();
+        mainTimer->stop();
+
+        gameOverDialog->show();
         this->close();
     }
 
 }
+
+
 
 std::shared_ptr<Interface::ICity> GameWindow::createGame()
 {

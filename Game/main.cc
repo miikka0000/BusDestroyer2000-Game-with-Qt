@@ -18,7 +18,7 @@ std::shared_ptr<playerGameScore> smartPlayerScore =
         std::make_shared<playerGameScore>();
 std::shared_ptr<playerHealth> smartPlayerHealth =
         std::make_shared<playerHealth>();
-QTime gameTime;
+QTime _gameTime;
 
 int main(int argc, char *argv[])
 {
