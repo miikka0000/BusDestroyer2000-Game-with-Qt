@@ -86,10 +86,10 @@ GameWindow::GameWindow(QWidget *parent) :
     gameTimer->start(1000);
 
 
-    /*CourseSide::Logic *gameLogic =  new CourseSide::Logic();
+    CourseSide::Logic *gameLogic =  new CourseSide::Logic();
     gameLogic->takeCity(createGame());
     gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
-    gameLogic->finalizeGameStart();*/
+    gameLogic->finalizeGameStart();
 
 
 
@@ -219,9 +219,10 @@ void GameWindow::setGameTime()
     else if(timeOpt == settingsDialog::gameTime3) {
         _gameDuration = 3;
     }
+
+    _gameTime.setHMS(0,_gameDuration, 0);
     // testauksen ajaksi sekunnit 5
-    //_gameTime.setHMS(0,_gameDuration, 0);
-    _gameTime.setHMS(0,0, 5);
+    //_gameTime.setHMS(0,0, 5);
 
 }
 
@@ -241,7 +242,6 @@ void GameWindow::updateCountDown() {
     }
 
 }
-
 
 
 std::shared_ptr<Interface::ICity> GameWindow::createGame()
