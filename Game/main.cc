@@ -3,6 +3,7 @@
 #include "playerhealth.h"
 #include "gamewindow.h"
 #include "mainmenudialog.h"
+#include "tophighscores.h"
 
 #include <QApplication>
 #include <QGraphicsScene>
@@ -27,6 +28,10 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationName("Tampere University");
     QCoreApplication::setApplicationName("BusDestroyer2000");
     QSettings mySettings;
+
+    topHighScores *n = new topHighScores;
+    n->writeFile();
+    n->readFile();
 
     Q_INIT_RESOURCE(offlinedata);
 

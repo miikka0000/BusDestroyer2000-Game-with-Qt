@@ -13,6 +13,7 @@
 #include "actors/stop.hh"
 #include "actors/passenger.hh"
 
+
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
@@ -22,6 +23,8 @@
 #include <QTime>
 #include <QImage>
 #include <QObject>
+#include <map>
+#include <QTimer>
 
 
 class initGame: public QObject, public QGraphicsPixmapItem
@@ -45,9 +48,14 @@ public:
      void drawAllStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
      void drawBuses(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
     std::shared_ptr<gameCity> createGame();
+    void moveNysses();
+    void movePassengers();
 
     int getActorHeight(QGraphicsPixmapItem *actor);
     int getActorWidth(QGraphicsPixmapItem *actor);
+
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator nysseIt;
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator passengerIt;
 
 
 
@@ -87,6 +95,7 @@ private:
 
     int screenWidth = 800;
     int screenHeight = 600;
+    QTimer *_updateTimer;
 
 
 

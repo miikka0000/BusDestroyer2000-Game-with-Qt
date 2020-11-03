@@ -162,7 +162,7 @@ void gameCity::actorRemoved(std::shared_ptr<Interface::IActor> actor)
 
 
         //emit removeThisActor(actor);
-        qDebug() << "actor removed ingame. actor removed signal emitted";
+        //qDebug() << "actor removed ingame. actor removed signal emitted";
 
     }
     return;
@@ -200,7 +200,7 @@ void gameCity::actorMoved(std::shared_ptr<Interface::IActor> actor)
         if(actor->giveLocation().calcDistance(startingLoc, actor->giveLocation()) != 0){
 
             //emit moveThisActor(actor);
-            qDebug() << "actor has moved. actor removed signal emitted";
+            //qDebug() << "actor has moved. actor removed signal emitted";
 
         }
     }

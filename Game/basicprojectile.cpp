@@ -76,9 +76,16 @@ void basicProjectile::move()
 {
 
     QList<QGraphicsItem *> collidingObjects = collidingItems();
+    //qDebug()<<"colliding items list: "<<collidingObjects;
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
-        if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
+        if (typeid(*(collidingObjects[i])) == typeid(BonusItem) ||
+
+                typeid(*(collidingObjects[i])) == typeid(CourseSide::Nysse)
+
+                || typeid(*(collidingObjects[i])) == typeid(CourseSide::Nysse)){
+
+
 
             smartPlayerScore->increasePoints();
             scene()->removeItem(collidingObjects[i]);
@@ -87,8 +94,9 @@ void basicProjectile::move()
             delete this;
 
             return;
-        }
+       }
     }
+
 
     setPos(x(), y() - _projectileVelocity);
     if(pos().y() + _projectileHeight < 0){

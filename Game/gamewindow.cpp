@@ -69,7 +69,7 @@ GameWindow::GameWindow(QWidget *parent) :
 
 
     // Spawning bonus gems every 4 seconds
-    bonusTimer->start(4000);
+    //bonusTimer->start(4000);
 
 
     _player = new Player();
@@ -80,7 +80,7 @@ GameWindow::GameWindow(QWidget *parent) :
     _scene->addItem(_player);
     addDataToLCD();
 
-    //drawPanel(0, 0, this->width(), 0.10 * this->height(), Qt::lightGray, 1);
+
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 

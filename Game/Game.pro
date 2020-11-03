@@ -18,7 +18,8 @@ SOURCES += \
     player.cpp \
     playergamescore.cpp \
     playerhealth.cpp \
-    settingsdialog.cpp
+    settingsdialog.cpp \
+    tophighscores.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
     -L$$OUT_PWD/../Course/CourseLib/release/ -lCourseLib
@@ -56,7 +57,8 @@ HEADERS += \
     player.h \
     playergamescore.h \
     playerhealth.h \
-    settingsdialog.h
+    settingsdialog.h \
+    tophighscores.h
 
 RESOURCES += \
     resources/res.qrc

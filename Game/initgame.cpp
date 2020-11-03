@@ -10,18 +10,23 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <map>
+#include <typeinfo>
 
 #include <memory>
 
 
 initGame::initGame(){
 
-    gameCity *city = new gameCity;
+    /*gameCity *city = new gameCity;
 
-    /*connect(city, &gameCity::moveThisActor, this,
+    connect(city, &gameCity::moveThisActor, this,
             &initGame::moveActor);
     connect(city, &gameCity::removeThisActor, this,
             &initGame::moveActor);*/
+    _updateTimer = new QTimer(this);
+    connect(_updateTimer, &QTimer::timeout, this, &initGame::moveNysses);
+     connect(_updateTimer, &QTimer::timeout, this, &initGame::movePassengers);
+    _updateTimer->start(10);
 
 }
 
@@ -74,7 +79,7 @@ void initGame::readActors(std::shared_ptr<gameCity> currCity)
 
 void initGame::drawActorItems(QGraphicsScene *scene)
 {
-    //std::map<std::shared_ptr<CourseSide::Nysse>, QGraphicsPixmapItem*>::iterator nysseIt = nysseMap.begin();
+
 
     for (unsigned int i= 0; i < nysseVec.size(); ++i){
         QGraphicsPixmapItem *nysseRect = new QGraphicsPixmapItem();
@@ -153,6 +158,28 @@ std::shared_ptr<gameCity> initGame::createGame()
     std::shared_ptr<gameCity> newGameCity = std::make_shared<gameCity>();
 
     return newGameCity;
+}
+
+void initGame::movePassengers()
+{
+    for(passengerIt = passengerMap.begin(); passengerIt != passengerMap.end(); ++passengerIt){
+        int newX = passengerIt->first->giveLocation().giveX();
+        int newY = passengerIt->first->giveLocation().giveY();
+        //qDebug()<<"passRect type: "<<  typeid(passengerIt->first).name();
+        passengerIt->second->setPos(newX, newY);
+    }
+}
+
+void initGame::moveNysses()
+{
+   for(nysseIt = nysseMap.begin(); nysseIt != nysseMap.end(); ++nysseIt){
+       int newX = nysseIt->first->giveLocation().giveX();
+       int newY = nysseIt->first->giveLocation().giveY();
+       //qDebug()<<"nysse type: "<<  typeid(nysseIt->first).name();
+       nysseIt->second->setPos(newX, newY);
+   }
+
+
 }
 
 int initGame::getActorHeight(QGraphicsPixmapItem *actor)

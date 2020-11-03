@@ -3,6 +3,9 @@
 
 #include "bonusitem.h"
 #include "mainmenudialog.h"
+#include "actors/nysse.hh"
+#include "actors/passenger.hh"
+#include "initgame.h"
 
 
 #include <QGraphicsRectItem>
@@ -10,6 +13,7 @@
 #include <QTimer>
 #include <QSettings>
 #include <memory>
+#include <map>
 
 class basicProjectile: public QObject, public QGraphicsPixmapItem{
     Q_OBJECT
