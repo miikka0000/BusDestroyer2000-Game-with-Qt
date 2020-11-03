@@ -82,7 +82,6 @@ void basicProjectile::removeShootedActors()
         int xCoord = it->first->giveLocation().giveX();
         int yCoord= it->first->giveLocation().giveY();
 
-
         if(isClose(it->first->giveLocation(), 10, x(), y())){
 
             smartPlayerScore->increasePoints();
@@ -95,7 +94,7 @@ void basicProjectile::removeShootedActors()
 }
 
 // isClose function  is a courtesy from the CourseSide (core/location)
-bool basicProjectile::isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord) const
+bool basicProjectile::isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord)
 {
 
     int dx = loc.giveX() - xCoord;

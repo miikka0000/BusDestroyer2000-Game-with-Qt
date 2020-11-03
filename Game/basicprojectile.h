@@ -25,14 +25,14 @@ public:
     void setProjectilePicture();
     void removeShootedActors();
     // isClose function  is a courtesy from the CourseSide (core/location)
-    bool isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord) const;
+    // with slight modifications on params.
+    bool isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord);
 
 
 
     bool fireballChosen;
     bool missileChosen;
     bool laserChosen;
-
 
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
