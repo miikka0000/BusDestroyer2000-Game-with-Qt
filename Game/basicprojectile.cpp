@@ -1,6 +1,6 @@
 #include "basicprojectile.h"
 #include "playergamescore.h"
-#include "playerhealth.h"
+
 
 #include <QTimer>
 #include <QGraphicsScene>
@@ -12,7 +12,7 @@
 #include <memory>
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
-extern std::shared_ptr<playerHealth> smartPlayerHealth;
+
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){

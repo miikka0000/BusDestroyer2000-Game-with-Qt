@@ -10,6 +10,7 @@ SOURCES += \
     bonusitem.cpp \
     gamecity.cpp \
     gameoverdialog.cpp \
+    gamestatistics.cpp \
     gamewindow.cpp \
     helpdialog.cpp \
     initgame.cpp \
@@ -17,7 +18,6 @@ SOURCES += \
     mainmenudialog.cpp \
     player.cpp \
     playergamescore.cpp \
-    playerhealth.cpp \
     settingsdialog.cpp \
     tophighscores.cpp
 
@@ -50,13 +50,13 @@ HEADERS += \
     bonusitem.h \
     gamecity.h \
     gameoverdialog.h \
+    gamestatistics.h \
     gamewindow.h \
     helpdialog.h \
     initgame.h \
     mainmenudialog.h \
     player.h \
     playergamescore.h \
-    playerhealth.h \
     settingsdialog.h \
     tophighscores.h
 
@@ -69,3 +69,5 @@ FORMS += \
     helpdialog.ui \
     mainmenudialog.ui \
     settingsdialog.ui
+
+

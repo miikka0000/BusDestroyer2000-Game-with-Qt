@@ -1,6 +1,5 @@
 #include "player.h"
 #include "playergamescore.h"
-#include "playerhealth.h"
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 #include "tophighscores.h"
@@ -20,8 +19,6 @@
 
 std::shared_ptr<playerGameScore> smartPlayerScore =
         std::make_shared<playerGameScore>();
-std::shared_ptr<playerHealth> smartPlayerHealth =
-        std::make_shared<playerHealth>();
 std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 QString playerAliasName;
 QTime _gameTime;

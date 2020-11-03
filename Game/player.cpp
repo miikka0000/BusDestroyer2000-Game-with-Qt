@@ -4,7 +4,7 @@
 #include "mainmenudialog.h"
 #include "bonusitem.h"
 #include "playergamescore.h"
-#include "playerhealth.h"
+
 
 
 #include <QKeyEvent>
@@ -25,7 +25,7 @@
 #include <memory>
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
-extern std::shared_ptr<playerHealth> smartPlayerHealth;
+
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 

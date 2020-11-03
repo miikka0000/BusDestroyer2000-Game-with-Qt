@@ -6,7 +6,6 @@
 #include "gamecity.h"
 #include "bonusitem.h"
 #include "playergamescore.h"
-#include "playerhealth.h"
 #include "gameoverdialog.h"
 #include "graphics/simpleactoritem.hh"
 #include "actors/nysse.hh"
@@ -38,10 +37,7 @@
 
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
-extern std::shared_ptr<playerHealth> smartPlayerHealth;
 extern QTime _gameTime;
-
-
 
 GameWindow::GameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -192,7 +188,7 @@ std::vector<int> GameWindow::getAvailableSize()
 
 void GameWindow::setLCDStyle()
 {
-    ui->healthLCD->setPalette(Qt::red);
+
     ui->pointsLCD->setPalette(Qt::black);
     ui->clockLCD->setPalette(Qt::black);
 }
@@ -210,7 +206,6 @@ void GameWindow::addDataToLCD()
 {
 
     ui->pointsLCD->display(smartPlayerScore->getPlayerScore());
-    ui->healthLCD->display(smartPlayerHealth->getPlayerHealth());
     ui->clockLCD->display(_gameTime.toString("m:ss"));
 
 }

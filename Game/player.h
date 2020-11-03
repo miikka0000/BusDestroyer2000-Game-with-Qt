@@ -37,7 +37,7 @@ public:
     void removeCollidingItem();
     void increasePoints() {playerScore += 10;};
     int getScore() {return playerScore;};
-    int getHealthPoints() {return playerHealth;};
+
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
@@ -63,7 +63,7 @@ public:
     bool musicsOn;
 
     int playerScore = 0;
-    int playerHealth = 3;
+
 
 
 
