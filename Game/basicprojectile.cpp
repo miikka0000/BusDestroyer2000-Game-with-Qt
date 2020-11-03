@@ -83,7 +83,7 @@ void basicProjectile::move()
 
                 typeid(*(collidingObjects[i])) == typeid(CourseSide::Nysse)
 
-                || typeid(*(collidingObjects[i])) == typeid(CourseSide::Nysse)){
+                || typeid(*(collidingObjects[i])) == typeid(CourseSide::Passenger)){
 
 
 

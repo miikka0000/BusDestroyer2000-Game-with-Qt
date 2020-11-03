@@ -27,7 +27,7 @@ void topHighScores::writeFile(QString filename)
 {
     QFile textFile(filename);
 
-    if(!textFile.open(QFile::WriteOnly | QFile::Text)){
+    if(!textFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)){
         qDebug() << "Error opening the file";
         return;
     }
