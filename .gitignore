@@ -1,3 +1,14 @@
+/.qmake.cache
+/.qmake.stash
 *.pro.user
+*.pro.user.*
 build-*
 *.autosave
+*.o
+moc_*.cpp
+moc_*.h
+Makefile*
+Debug/
+Release/
+
+
