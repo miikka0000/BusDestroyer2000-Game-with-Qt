@@ -166,15 +166,15 @@ void Player::changePlayerSpeed(QKeyEvent *speedEvent)
     // 5 % decrease in velocity when player presses '+' -key
     double decreaseMultiplier = 0.95;
 
-    if(speedEvent->key() == Qt::Key_Plus && _spaceshipVelocity < 25.0){
+    if(speedEvent->key() == Qt::Key_Plus && _spaceshipVelocity < 26.0){
 
         _spaceshipVelocity = _spaceshipVelocity*increaseMultiplier;
-        _projectileVelocity = _projectileVelocity*increaseMultiplier;
 
-    } else if(speedEvent->key() == Qt::Key_Minus && _spaceshipVelocity > 21.0){
+
+    } else if(speedEvent->key() == Qt::Key_Minus && _spaceshipVelocity > 23.0){
 
         _spaceshipVelocity = _spaceshipVelocity*decreaseMultiplier;
-        _projectileVelocity = _projectileVelocity*decreaseMultiplier;
+
     }
 }
 

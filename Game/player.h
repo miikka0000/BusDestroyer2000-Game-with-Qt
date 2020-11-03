@@ -70,11 +70,11 @@ public:
 private:
 
 
-    double _spaceshipVelocity = 20.0;
-    double _projectileVelocity = 8.0;
+    double _spaceshipVelocity = 23.0;
+
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;
-    int _interval = 25;
+    int _interval = 50;
     bool _keyLeft = false;
     bool _keyRight = false;
     bool _keyUp = false;

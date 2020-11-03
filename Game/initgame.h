@@ -50,6 +50,7 @@ public:
     std::shared_ptr<gameCity> createGame();
     void moveNysses();
     void movePassengers();
+    void moveSceneActors();
 
     int getActorHeight(QGraphicsPixmapItem *actor);
     int getActorWidth(QGraphicsPixmapItem *actor);
@@ -68,6 +69,8 @@ public:
     std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> nysseMap;
     std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> passengerMap;
     std::map<std::shared_ptr<Interface::IStop>, QGraphicsPixmapItem*> stopMap;
+
+     std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> actorsMap;
 
     std::vector<std::shared_ptr<Interface::IActor>> nysseVec;
     std::vector<std::shared_ptr<Interface::IActor>> passengerVec;

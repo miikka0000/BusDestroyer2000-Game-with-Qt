@@ -4,6 +4,7 @@
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 #include "tophighscores.h"
+#include "interfaces/iactor.hh"
 
 #include <QApplication>
 #include <QGraphicsScene>
@@ -13,12 +14,16 @@
 #include <QCoreApplication>
 #include <QSettings>
 #include <memory>
+#include <map>
+#include <QGraphicsPixmapItem>
 
 
 std::shared_ptr<playerGameScore> smartPlayerScore =
         std::make_shared<playerGameScore>();
 std::shared_ptr<playerHealth> smartPlayerHealth =
         std::make_shared<playerHealth>();
+std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
+
 QTime _gameTime;
 
 int main(int argc, char *argv[])
@@ -29,9 +34,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("BusDestroyer2000");
     QSettings mySettings;
 
-    topHighScores *n = new topHighScores;
+    /*topHighScores *n = new topHighScores;
     n->writeFile();
-    n->readFile();
+    n->readFile();*/
 
     Q_INIT_RESOURCE(offlinedata);
 

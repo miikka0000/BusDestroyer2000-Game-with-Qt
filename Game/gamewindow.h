@@ -78,6 +78,7 @@ private:
     QTimer *mainTimer;
     QTimer *bonusTimer;
     QTimer *gameTimer;
+    QTimer *labelTimer;
     int _gameDuration;
     QGraphicsScene * _scene;
     Player * _player;

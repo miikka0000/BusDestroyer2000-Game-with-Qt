@@ -14,7 +14,7 @@
 
 #include <memory>
 
-
+extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 initGame::initGame(){
 
     /*gameCity *city = new gameCity;
@@ -24,9 +24,10 @@ initGame::initGame(){
     connect(city, &gameCity::removeThisActor, this,
             &initGame::moveActor);*/
     _updateTimer = new QTimer(this);
-    connect(_updateTimer, &QTimer::timeout, this, &initGame::moveNysses);
-     connect(_updateTimer, &QTimer::timeout, this, &initGame::movePassengers);
-    _updateTimer->start(10);
+    //connect(_updateTimer, &QTimer::timeout, this, &initGame::moveNysses);
+     //connect(_updateTimer, &QTimer::timeout, this, &initGame::movePassengers);
+    connect(_updateTimer, &QTimer::timeout, this, &initGame::moveSceneActors);
+    _updateTimer->start(50);
 
 }
 
@@ -89,8 +90,9 @@ void initGame::drawActorItems(QGraphicsScene *scene)
         setActorPos(nysseLocX, nysseLocY, nysseRect);
         setActorPic(busPic, nysseRect, 10, 20);
         nysseMap.insert({nysseVec.at(i), nysseRect});
+        actorsMap.insert({nysseVec.at(i), nysseRect});
 
-        if(nysseLocX < screenWidth && nysseLocX >= 0 &&
+        if(nysseLocX + 10 < screenWidth && nysseLocX >= 0 &&
                 nysseLocY + 20 < screenHeight && nysseLocY > 0){
             scene->addItem(nysseRect);
         }
@@ -99,20 +101,22 @@ void initGame::drawActorItems(QGraphicsScene *scene)
 
     for (unsigned int i= 0; i < passengerVec.size(); ++i){
         QGraphicsPixmapItem *passengerRect = new QGraphicsPixmapItem();
-        int xCoord = passengerVec.at(i)->giveLocation().giveX();
-        int yCoord = passengerVec.at(i)->giveLocation().giveY();
+        int passengerLocX = passengerVec.at(i)->giveLocation().giveX();
+        int passengerLocY = passengerVec.at(i)->giveLocation().giveY();
 
-        setActorPos(xCoord, yCoord, passengerRect);
+        setActorPos(passengerLocX, passengerLocY, passengerRect);
 
 
         setActorPic(passengerPic, passengerRect, 10, 15);
         passengerMap.insert({passengerVec.at(i), passengerRect});
-        if(xCoord < screenWidth && xCoord >= 0 &&
-                yCoord + 15 < screenHeight && yCoord > 0){
+        actorsMap.insert({passengerVec.at(i), passengerRect});
+        if(passengerLocX + 10 < screenWidth && passengerLocX >= 0 &&
+                passengerLocY + 15 < screenHeight && passengerLocY > 0){
             scene->addItem(passengerRect);
         }
 
     }
+    smartActors = actorsMap;
 }
 
 void initGame::setActorPic(QPixmap pic, QGraphicsPixmapItem *actorItem,int w, int h)
@@ -160,7 +164,19 @@ std::shared_ptr<gameCity> initGame::createGame()
     return newGameCity;
 }
 
-void initGame::movePassengers()
+void initGame::moveSceneActors()
+{
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator it;
+
+    for(it = smartActors.begin(); it != smartActors.end(); ++it){
+        int newX = it->first->giveLocation().giveX();
+        int newY = it->first->giveLocation().giveY();
+        //qDebug()<<"passRect type: "<<  typeid(passengerIt->first).name();
+        it->second->setPos(newX, newY);
+    }
+}
+
+/*void initGame::movePassengers()
 {
     for(passengerIt = passengerMap.begin(); passengerIt != passengerMap.end(); ++passengerIt){
         int newX = passengerIt->first->giveLocation().giveX();
@@ -180,7 +196,7 @@ void initGame::moveNysses()
    }
 
 
-}
+}*/
 
 int initGame::getActorHeight(QGraphicsPixmapItem *actor)
 {

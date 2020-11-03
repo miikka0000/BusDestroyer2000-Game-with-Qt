@@ -6,6 +6,7 @@
 #include "actors/nysse.hh"
 #include "actors/passenger.hh"
 #include "initgame.h"
+#include "core/location.hh"
 
 
 #include <QGraphicsRectItem>
@@ -22,6 +23,10 @@ public:
     ~basicProjectile();
     void setDimensions();
     void setProjectilePicture();
+    void removeShootedActors();
+    // isClose function  is a courtesy from the CourseSide (core/location)
+    bool isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord) const;
+
 
 
     bool fireballChosen;
@@ -36,7 +41,7 @@ public:
 
 private:
 
-    int _projectileVelocity = 25;
+    int _projectileVelocity = 20;
     int _projectileHeight;
     int _projectileWidth;
 

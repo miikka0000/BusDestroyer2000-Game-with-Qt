@@ -19,6 +19,7 @@ settingsDialog::settingsDialog(QWidget *parent) :
 settingsDialog::~settingsDialog()
 {
     delete ui;
+    _playerSettings->clear();
 }
 
 void settingsDialog::setActionToolTips()

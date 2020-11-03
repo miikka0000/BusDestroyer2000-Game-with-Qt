@@ -59,17 +59,19 @@ GameWindow::GameWindow(QWidget *parent) :
     _scene->setSceneRect(0,0, screenWidth, screenHeight);
 
     mainTimer = new QTimer(this);
+    labelTimer = new QTimer(this);
     connect(mainTimer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
     // adding player score by 10 if gem is picked
-    connect(mainTimer, &QTimer::timeout, this, &GameWindow::addDataToLCD);
+    connect(labelTimer, &QTimer::timeout, this, &GameWindow::addDataToLCD);
     mainTimer->start(interval);
+    labelTimer->start(interval);
 
     bonusTimer = new QTimer(this);
     connect(bonusTimer,&QTimer::timeout, this, &GameWindow::spawnBonusItem);
 
 
     // Spawning bonus gems every 4 seconds
-    //bonusTimer->start(4000);
+    bonusTimer->start(4000);
 
 
     _player = new Player();
@@ -107,8 +109,8 @@ GameWindow::GameWindow(QWidget *parent) :
     drawBuses(newCity);
     //qDebug()<<_playerSettings->value("time setting").toInt();*/
 
-   initGame *courseSide = new initGame();
-   courseSide->initLogic(_scene);
+    initGame *courseSide = new initGame();
+    courseSide->initLogic(_scene);
 
 }
 
@@ -120,8 +122,8 @@ GameWindow::~GameWindow()
     delete mainTimer;
     delete bonusTimer;
     delete gameTimer;
+    delete labelTimer;
 
-    _playerSettings->clear();
 }
 
 void GameWindow::resizeEvent(QResizeEvent *event)

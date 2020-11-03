@@ -13,12 +13,14 @@
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 extern std::shared_ptr<playerHealth> smartPlayerHealth;
+extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     setProjectilePicture();
     _projectileTimer = new QTimer(this);
     connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
+
     _projectileTimer->start(_fireRate);
     setPos(mapToParent(pos().x(), pos().y()));
 
@@ -71,6 +73,39 @@ void basicProjectile::setProjectilePicture()
     setDimensions();
 }
 
+void basicProjectile::removeShootedActors()
+{
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator it;
+
+    for(it = smartActors.begin(); it != smartActors.end(); ++it){
+
+        int xCoord = it->first->giveLocation().giveX();
+        int yCoord= it->first->giveLocation().giveY();
+
+
+        if(isClose(it->first->giveLocation(), 10, x(), y())){
+
+            smartPlayerScore->increasePoints();
+            scene()->removeItem(it->second);
+            smartActors.erase(it);
+        }
+
+
+    }
+}
+
+// isClose function  is a courtesy from the CourseSide (core/location)
+bool basicProjectile::isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord) const
+{
+
+    int dx = loc.giveX() - xCoord;
+    int dy = loc.giveY() - yCoord;
+
+    return dx*dx + dy*dy <= limit*limit;
+
+}
+
+
 
 void basicProjectile::move()
 {
@@ -85,8 +120,6 @@ void basicProjectile::move()
 
                 || typeid(*(collidingObjects[i])) == typeid(CourseSide::Passenger)){
 
-
-
             smartPlayerScore->increasePoints();
             scene()->removeItem(collidingObjects[i]);
             scene()->removeItem(this);
@@ -94,15 +127,17 @@ void basicProjectile::move()
             delete this;
 
             return;
-       }
+        }
     }
 
 
+    removeShootedActors();
     setPos(x(), y() - _projectileVelocity);
     if(pos().y() + _projectileHeight < 0){
         scene()->removeItem(this);
         delete this;
     }
+
 
 }
 
