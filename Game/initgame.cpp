@@ -63,7 +63,7 @@ void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *sce
 void initGame::readActors(std::shared_ptr<gameCity> currCity)
 {
     actorsVec = currCity->allActors;
-    qDebug()<<"actorsVec size: "<< actorsVec.size();
+    //qDebug()<<"actorsVec size: "<< actorsVec.size();
 
     for (unsigned int i= 0; i < actorsVec.size(); ++i){
         if(typeid (*actorsVec.at(i)) == typeid(CourseSide::Nysse)){
@@ -74,8 +74,8 @@ void initGame::readActors(std::shared_ptr<gameCity> currCity)
         }
 
     }
-    qDebug()<<"nysseVec size: "<< nysseVec.size();
-    qDebug()<<"passengerVec size: "<< passengerVec.size();
+    //qDebug()<<"nysseVec size: "<< nysseVec.size();
+    //qDebug()<<"passengerVec size: "<< passengerVec.size();
 }
 
 void initGame::drawActorItems(QGraphicsScene *scene)
@@ -148,9 +148,9 @@ void initGame::initLogic(QGraphicsScene *scene)
     drawStops(newCity, scene);
     readActors(newCity);
     drawActorItems(scene);
-    qDebug()<<"stop amount: "<<stopsVec.size();
-    qDebug()<<"nysse bus amount: "<<nysseVec.size();
-    qDebug()<<"passenger amount: "<<passengerVec.size();
+    //qDebug()<<"stop amount: "<<stopsVec.size();
+    //qDebug()<<"nysse bus amount: "<<nysseVec.size();
+    //qDebug()<<"passenger amount: "<<passengerVec.size();
 
 
 }

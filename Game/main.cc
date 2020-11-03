@@ -23,7 +23,7 @@ std::shared_ptr<playerGameScore> smartPlayerScore =
 std::shared_ptr<playerHealth> smartPlayerHealth =
         std::make_shared<playerHealth>();
 std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
-
+QString playerAliasName;
 QTime _gameTime;
 
 int main(int argc, char *argv[])

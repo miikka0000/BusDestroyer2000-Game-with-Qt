@@ -83,10 +83,11 @@ void basicProjectile::removeShootedActors()
         int yCoord= it->first->giveLocation().giveY();
 
         if(isClose(it->first->giveLocation(), 10, x(), y())){
-
+        if(this->scene() != NULL && it->second->scene() != NULL){
             smartPlayerScore->increasePoints();
             scene()->removeItem(it->second);
             smartActors.erase(it);
+        }
         }
 
 
@@ -110,14 +111,10 @@ void basicProjectile::move()
 {
 
     QList<QGraphicsItem *> collidingObjects = collidingItems();
-    //qDebug()<<"colliding items list: "<<collidingObjects;
+
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
-        if (typeid(*(collidingObjects[i])) == typeid(BonusItem) ||
-
-                typeid(*(collidingObjects[i])) == typeid(CourseSide::Nysse)
-
-                || typeid(*(collidingObjects[i])) == typeid(CourseSide::Passenger)){
+        if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
 
             smartPlayerScore->increasePoints();
             scene()->removeItem(collidingObjects[i]);

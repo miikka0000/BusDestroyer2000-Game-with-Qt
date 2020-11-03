@@ -10,6 +10,7 @@
 #include <QSize>
 #include <QSettings>
 
+extern QString playerAliasName;
 MainMenuDialog::MainMenuDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainMenuDialog)
@@ -103,6 +104,7 @@ void MainMenuDialog::on_playerNameEdit_editingFinished()
 {
     _playerAlias = ui->playerNameEdit->text();
     _playerSettings->setValue("player name setting", _playerAlias);
+    playerAliasName = _playerAlias;
 }
 
 void MainMenuDialog::on_spaceshipButton_clicked()
