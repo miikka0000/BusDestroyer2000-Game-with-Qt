@@ -12,6 +12,7 @@
 #include <QDebug>
 #include <map>
 
+extern std::shared_ptr<gameStatistics> smartStats;
 
 gameCity::gameCity()
 {
@@ -34,23 +35,23 @@ gameCity::~gameCity()
 void gameCity::setBackground(QImage &basicbackground, QImage &bigbackground)
 {
     if(!gameStateOn){
-        try {
-            /*if(this->width() > 500 && this->height() > 500){
-                scene()->addPixmap(QPixmap::fromImage(basicbackground.scaled(this->width(), this->height(),
-                                                                             Qt::IgnoreAspectRatio)));
-            }else {*/
-                scene()->addPixmap(QPixmap::fromImage(bigbackground.scaled(800, 600,
-                                                                           Qt::IgnoreAspectRatio)));
-                backgroundSet = true;
-
-
-        }  catch (...) {
-            throw Interface::InitError("InitError Setting the picture was"
-                            " unsuccesful or the picture was invalid.");
+        if(scene()->width() > 500 && scene()->height() > 500)
+            scene()->addPixmap(QPixmap::fromImage(bigbackground.scaled(800, 600,
+                                                                       Qt::IgnoreAspectRatio)));
+        else{
+            scene()->addPixmap(QPixmap::fromImage(basicbackground.scaled(800, 600,
+                                                                         Qt::IgnoreAspectRatio)));
         }
 
+        backgroundSet = true;
+    }
+
+    else {
+        throw Interface::InitError("InitError Setting the picture was"
+                                   " unsuccesful or the picture was invalid.");
     }
 }
+
 
 
 /**
@@ -78,14 +79,13 @@ void gameCity::setClock(QTime clock)
 void gameCity::addStop(std::shared_ptr<Interface::IStop> stop)
 {
     if(!gameStateOn){
-        try {
-            allStops.push_back(stop);
-        }  catch (...) {
-            throw Interface::InitError("InitError Stops position is not valid.");
-        }
+        allStops.push_back(stop);
 
+    } else{
+        throw Interface::InitError("InitError Stops position is not valid.");
     }
 }
+
 
 /**
  * @brief startGame shifts city from init state to the gamestate.
@@ -160,9 +160,11 @@ void gameCity::actorRemoved(std::shared_ptr<Interface::IActor> actor)
 {
     if(gameStateOn && findActor(actor) && actor->isRemoved() == true){
 
-
-        //emit removeThisActor(actor);
-        //qDebug() << "actor removed ingame. actor removed signal emitted";
+        if(typeid (actor) == typeid(CourseSide::Nysse)){
+            smartStats->nysseLeft();
+        } else if(typeid (actor) == typeid (CourseSide::Passenger)){
+            smartStats->passengerLeft();
+        }
 
     }
     return;
@@ -199,9 +201,7 @@ void gameCity::actorMoved(std::shared_ptr<Interface::IActor> actor)
     if(gameStateOn && findActor(actor)){
         if(actor->giveLocation().calcDistance(startingLoc, actor->giveLocation()) != 0){
 
-            //emit moveThisActor(actor);
-            //qDebug() << "actor has moved. actor removed signal emitted";
-
+            smartStats->actorMoved();
         }
     }
     return;

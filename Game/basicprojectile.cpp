@@ -12,10 +12,14 @@
 #include <memory>
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
+extern std::shared_ptr<gameStatistics> smartStats;
 
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 
-basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
+basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
+
+
+{
 
     setProjectilePicture();
     _projectileTimer = new QTimer(this);
@@ -73,21 +77,29 @@ void basicProjectile::setProjectilePicture()
     setDimensions();
 }
 
-void basicProjectile::removeShootedActors()
+bool basicProjectile::removeShootedActors()
 {
     std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator it;
 
     for(it = smartActors.begin(); it != smartActors.end(); ++it){
 
-        int xCoord = it->first->giveLocation().giveX();
-        int yCoord= it->first->giveLocation().giveY();
-
         if(isClose(it->first->giveLocation(), 10, x(), y())){
-        if(this->scene() != NULL && it->second->scene() != NULL){
-            smartPlayerScore->increasePoints();
-            scene()->removeItem(it->second);
-            smartActors.erase(it);
-        }
+            if(this->scene() != NULL && it->second->scene() != NULL){
+                smartPlayerScore->increasePoints();
+                smartStats->addPoints();
+                if(typeid (it->first) == typeid (CourseSide::Nysse)){
+                    smartStats->nysseRemoved();
+                } else if(typeid (it->first) == typeid (CourseSide::Passenger)){
+                    smartStats->passengerDied(1);
+                }
+
+                scene()->removeItem(it->second);
+
+                smartActors.erase(it);
+                return true;
+
+
+            }
         }
 
 
@@ -105,18 +117,17 @@ bool basicProjectile::isClose(const Interface::Location &loc, int limit, int xCo
 
 }
 
-
-
 void basicProjectile::move()
 {
 
     QList<QGraphicsItem *> collidingObjects = collidingItems();
 
-
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
 
             smartPlayerScore->increasePoints();
+            smartStats->addPoints();
+            smartStats->collectBonus();
             scene()->removeItem(collidingObjects[i]);
             scene()->removeItem(this);
             delete collidingObjects[i];
@@ -126,10 +137,13 @@ void basicProjectile::move()
         }
     }
 
-
-    removeShootedActors();
+    bool isRemoved = removeShootedActors();
     setPos(x(), y() - _projectileVelocity);
     if(pos().y() + _projectileHeight < 0){
+        scene()->removeItem(this);
+        delete this;
+    }
+    if(isRemoved){
         scene()->removeItem(this);
         delete this;
     }

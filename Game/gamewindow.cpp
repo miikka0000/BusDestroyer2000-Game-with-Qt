@@ -37,6 +37,7 @@
 
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
+extern std::shared_ptr<gameStatistics> smartStats;
 extern QTime _gameTime;
 
 GameWindow::GameWindow(QWidget *parent) :
@@ -87,23 +88,6 @@ GameWindow::GameWindow(QWidget *parent) :
 
     connect(gameTimer, &QTimer::timeout, this, &GameWindow::updateCountDown);
     gameTimer->start(1000);
-
-
-    /*
-    //luodaan uusi Logic-olio
-    CourseSide::Logic *gameLogic =  new CourseSide::Logic();
-    // parametri creategame palauttaa shared_ptr<Interface::gameCity>
-    std::shared_ptr<Interface::gameCity> newCity = createGame();
-    gameLogic->takeCity(newCity);
-    gameLogic->fileConfig();
-    //Logic määrittelee ajan sekunnin tarkkuudella ja Nysset minuutin tarkkuudella
-    // ->vaihdetaan Logicin aika minuutin tarkkuuteen
-    gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
-    gameLogic->finalizeGameStart();
-    qDebug()<<"stop amount: "<<newCity->allStops.size();
-    drawStops(newCity);
-    drawBuses(newCity);
-    //qDebug()<<_playerSettings->value("time setting").toInt();*/
 
     initGame *courseSide = new initGame();
     courseSide->initLogic(_scene);
@@ -160,15 +144,6 @@ void GameWindow::setPicture(QImage img)
                                                     Qt::IgnoreAspectRatio)));
 }
 
-/*void GameWindow::keyReleaseEvent(QKeyEvent *keyEvent)
-{
-    if(keyEvent->key() == Qt::Key_Escape){
-        qDebug()<<"esc pressed";
-        _player->musicsOn = false;
-
-
-    }
-}*/
 
 std::vector<int> GameWindow::getAvailableSize()
 {
@@ -179,8 +154,6 @@ std::vector<int> GameWindow::getAvailableSize()
 
     int availableWidth = availableGeometry.width();
 
-    //qDebug() << "available w: " << availableWidth;
-    //qDebug() << "available h: " << availableHeight;
     return {availableWidth, availableHeight};
 
 }
@@ -205,7 +178,7 @@ void GameWindow::spawnBonusItem()
 void GameWindow::addDataToLCD()
 {
 
-    ui->pointsLCD->display(smartPlayerScore->getPlayerScore());
+    ui->pointsLCD->display(smartStats->givePoints());
     ui->clockLCD->display(_gameTime.toString("m:ss"));
 
 }
@@ -246,79 +219,6 @@ void GameWindow::updateCountDown() {
 
 }
 
-/*void GameWindow::drawStops(std::shared_ptr<Interface::gameCity> currCity)
-{
-
-
-    std::vector<std::shared_ptr<Interface::IStop>> stops = currCity->allStops;
-    for (unsigned int i= 0; i < stops.size(); ++i){
-
-
-        auto rectItem = new QGraphicsPixmapItem();
-        rectItem->setPos(stops.at(i)->getLocation().giveX() , stops.at(i)->getLocation().giveY());
-        rectItem->setPixmap(stopPic);
-        _scene->addItem(rectItem);
-
-    }
-
-
-}
-
-void GameWindow::drawBuses(std::shared_ptr<Interface::gameCity> currCity)
-{
-
-    std::vector<std::shared_ptr<Interface::IActor>> actors = currCity->allActors;
-    std::vector<std::shared_ptr<Interface::IActor>> nysses;
-    std::vector<std::shared_ptr<Interface::IActor>> people;
-
-    qDebug() <<"actors amount: "<<actors.size();
-
-    for (unsigned int i= 0; i < actors.size(); ++i){
-        if(typeid (*actors.at(i)) == typeid(CourseSide::Nysse)){
-            nysses.push_back(actors.at(i));
-        }else if(typeid (*actors.at(i)) == typeid(CourseSide::Passenger)){
-            people.push_back(actors.at(i));
-        }
-
-    }
-
-    for (unsigned int i= 0; i < nysses.size(); ++i){
-        auto rectItem = new QGraphicsPixmapItem();
-        int xCoord = nysses.at(i)->giveLocation().giveX();
-        int yCoord = nysses.at(i)->giveLocation().giveY();
-
-        rectItem->setPos(nysses.at(i)->giveLocation().giveX(), nysses.at(i)->giveLocation().giveY());
-        rectItem->setPixmap(busPic.scaled(10, 20, Qt::IgnoreAspectRatio, Qt::FastTransformation));
-        if(xCoord < screenWidth && xCoord >= 0 &&
-                yCoord + 20 < screenHeight && yCoord > 0){
-            _scene->addItem(rectItem);
-        }
-    }
-    qDebug() << "nysse amount: "<<nysses.size();
-
-    for (unsigned int i= 0; i < people.size(); ++i){
-        auto rectItem = new QGraphicsPixmapItem();
-        int xCoord = people.at(i)->giveLocation().giveX();
-        int yCoord = people.at(i)->giveLocation().giveY();
-        rectItem->setPos(people.at(i)->giveLocation().giveX(), people.at(i)->giveLocation().giveY());
-        rectItem->setPixmap(passengerPic.scaled(10, 15,  Qt::IgnoreAspectRatio, Qt::FastTransformation));
-        if(xCoord < screenWidth && xCoord >= 0 &&
-                yCoord + 15 < screenHeight && yCoord > 0){
-            _scene->addItem(rectItem);
-        }
-
-    }
-    qDebug() << "people amount: "<<nysses.size();
-
-
-
-}
-std::shared_ptr<Interface::gameCity> GameWindow::createGame()
-{
-    std::shared_ptr<Interface::gameCity> newGameCity = std::make_shared<Interface::gameCity>();
-
-    return newGameCity;
-}*/
 
 
 

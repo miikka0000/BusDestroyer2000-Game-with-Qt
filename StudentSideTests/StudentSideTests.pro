@@ -10,14 +10,16 @@ TEMPLATE = app
 
 
 SOURCES += tst_statisticstest.cpp \
-    ../Game/gamestatistics.cpp
+    ../Game/gamestatistics.cpp \
+    ../Course/CourseLib/errors/gameerror.cc
 
 
 HEADERS += \
-     ../Game/gamestatistics.h
+     ../Game/gamestatistics.h \
+     ../Course/CourseLib/errors/gameerror.hh
 
 INCLUDEPATH += \
-            ../Game/
+            ../Game/ ../Course/CourseLib/
 DEPENDPATH += \
             ../Game/
 

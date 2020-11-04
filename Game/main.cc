@@ -3,6 +3,7 @@
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 #include "tophighscores.h"
+#include "gamestatistics.h"
 #include "interfaces/iactor.hh"
 
 #include <QApplication>
@@ -19,7 +20,12 @@
 
 std::shared_ptr<playerGameScore> smartPlayerScore =
         std::make_shared<playerGameScore>();
+
+std::shared_ptr<gameStatistics> smartStats =
+        std::make_shared<gameStatistics>();
+
 std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
+
 QString playerAliasName;
 QTime _gameTime;
 

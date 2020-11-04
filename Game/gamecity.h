@@ -6,6 +6,9 @@
 #include "errors/gameerror.hh"
 #include "errors/initerror.hh"
 #include "core/location.hh"
+#include "actors/nysse.hh"
+#include "actors/passenger.hh"
+#include "gamestatistics.h"
 
 #include <QObject>
 #include <vector>

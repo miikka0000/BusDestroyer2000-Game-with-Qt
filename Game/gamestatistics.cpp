@@ -1,15 +1,18 @@
 #include "gamestatistics.h"
+#include "errors/gameerror.hh"
 
-extern std::shared_ptr<playerGameScore> smartPlayerScore;
 
 gameStatistics::gameStatistics()
 {
+    playerPoints = 0;
     passengersDead = 0;
-    destroyedNysses = 0;
+    removedNysses = 0;
     totalPassengers = 0;
     totalNysses = 0;
     leftNysses = 0;
     collectedDiamonds = 0;
+    leftPassengers = 0;
+    movedActorsAmount = 0;
 }
 
 /**
@@ -21,7 +24,7 @@ gameStatistics::gameStatistics()
 
 int gameStatistics::givePoints() const
 {
-    return smartPlayerScore->getPlayerScore();
+    return playerPoints;
 }
 
 /**
@@ -32,8 +35,12 @@ int gameStatistics::givePoints() const
  */
 void gameStatistics::passengerDied(int num)
 {
+
     if(num > 0){
         passengersDead += num;
+    } else{
+        throw Interface::GameError("Amount of dead passengers can't be negative.");
+
     }
 }
 
@@ -45,9 +52,13 @@ void gameStatistics::passengerDied(int num)
  */
 void gameStatistics::morePassengers(int num)
 {
+
     if(num > 0){
         totalPassengers += num;
+    } else{
+        throw Interface::GameError("Added passenger amount can't be negative");
     }
+
 }
 
 /**
@@ -57,7 +68,7 @@ void gameStatistics::morePassengers(int num)
  */
 void gameStatistics::nysseRemoved()
 {
-    destroyedNysses += 1;
+    removedNysses += 1;
 }
 
 /**
@@ -77,10 +88,20 @@ void gameStatistics::newNysse()
  */
 void gameStatistics::nysseLeft()
 {
-
+    leftNysses += 1;
 }
 
 void gameStatistics::collectBonus()
 {
     collectedDiamonds += 1;
+}
+
+void gameStatistics::passengerLeft()
+{
+    leftPassengers += 1;
+}
+
+void gameStatistics::actorMoved()
+{
+    movedActorsAmount += 1;
 }

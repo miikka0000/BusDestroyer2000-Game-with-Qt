@@ -7,7 +7,6 @@
 #include <stdlib.h>
 
 
-
 BonusItem::BonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 

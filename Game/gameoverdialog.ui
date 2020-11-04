@@ -16,8 +16,8 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(224, 222, 255);</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -69,14 +69,10 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0">
-    <widget class="QListWidget" name="topscoreWidget">
-     <property name="textElideMode">
-      <enum>Qt::ElideLeft</enum>
-     </property>
-    </widget>
+   <item>
+    <widget class="QTextBrowser" name="topscoreWidget"/>
    </item>
-   <item row="2" column="0">
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="playAgainButton">

@@ -40,15 +40,7 @@ public:
     void spawnBonusItem();
     void addDataToLCD();
     void setGameTime();
-    //void drawStops(std::shared_ptr<Interface::gameCity> currCity);
-    //void drawBuses(std::shared_ptr<Interface::gameCity> currCity);
 
-    //std::shared_ptr<Interface::gameCity> createGame();
-
-
-
-
-    //void keyReleaseEvent(QKeyEvent * keyEvent);
 
     std::vector<int> getAvailableSize();
     MainMenuDialog *giveDialog() {return _mainMenu;};

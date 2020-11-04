@@ -2,9 +2,9 @@
 #define GAMESTATISTICS_H
 
 #include "../Course/CourseLib/interfaces/istatistics.hh"
-#include "interfaces/istop.hh"
-#include "interfaces/ipassenger.hh"
-#include "interfaces/iactor.hh"
+#include "../Course/CourseLib/interfaces/istop.hh"
+#include "../Course/CourseLib/interfaces/ipassenger.hh"
+#include "../Course/CourseLib/interfaces/iactor.hh"
 #include "playergamescore.h"
 #include "assert.h"
 
@@ -13,8 +13,8 @@
 #include <map>
 #include <memory>
 #include <QObject>
-#include <QGraphicsPixmapItem>
 #include <QDebug>
+
 
 
 class gameStatistics : public Interface::IStatistics
@@ -70,16 +70,22 @@ public:
     virtual void nysseLeft();
 
     void collectBonus();
+    void addPoints() {playerPoints += 10;};
+    void passengerLeft();
+    void actorMoved();
 
+    int playerPoints;
     int passengersDead;
-    int destroyedNysses;
+    int removedNysses;
     int totalPassengers;
     int totalNysses;
     int leftNysses;
+    int leftPassengers;
     int collectedDiamonds;
+    int movedActorsAmount;
 
 private:
-     std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator _it;
+     //std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator _it;
 
 
 };

@@ -3,11 +3,11 @@
 
 #include "bonusitem.h"
 #include "mainmenudialog.h"
+#include "gamestatistics.h"
 #include "actors/nysse.hh"
 #include "actors/passenger.hh"
 #include "initgame.h"
 #include "core/location.hh"
-
 
 #include <QGraphicsRectItem>
 #include <QPixmap>
@@ -23,7 +23,7 @@ public:
     ~basicProjectile();
     void setDimensions();
     void setProjectilePicture();
-    void removeShootedActors();
+    bool removeShootedActors();
     // isClose function  is a courtesy from the CourseSide (core/location)
     // with slight modifications on params.
     bool isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord);
