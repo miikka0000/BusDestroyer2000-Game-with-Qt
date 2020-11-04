@@ -1,5 +1,4 @@
 #include "player.h"
-#include "playergamescore.h"
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 #include "tophighscores.h"
@@ -17,9 +16,6 @@
 #include <map>
 #include <QGraphicsPixmapItem>
 
-
-std::shared_ptr<playerGameScore> smartPlayerScore =
-        std::make_shared<playerGameScore>();
 
 std::shared_ptr<gameStatistics> smartStats =
         std::make_shared<gameStatistics>();

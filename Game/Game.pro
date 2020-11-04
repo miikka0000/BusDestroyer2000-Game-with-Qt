@@ -19,6 +19,7 @@ SOURCES += \
     player.cpp \
     playergamescore.cpp \
     settingsdialog.cpp \
+    statistisdialog.cpp \
     tophighscores.cpp
 
 win32:CONFIG(release, debug|release): LIBS += \
@@ -58,6 +59,7 @@ HEADERS += \
     player.h \
     playergamescore.h \
     settingsdialog.h \
+    statistisdialog.h \
     tophighscores.h
 
 RESOURCES += \
@@ -68,6 +70,7 @@ FORMS += \
     gamewindow.ui \
     helpdialog.ui \
     mainmenudialog.ui \
-    settingsdialog.ui
+    settingsdialog.ui \
+    statistisdialog.ui
 
 

@@ -24,7 +24,7 @@
 #include <QGraphicsItem>
 #include <memory>
 
-extern std::shared_ptr<playerGameScore> smartPlayerScore;
+extern std::shared_ptr<gameStatistics> smartStats;
 
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
@@ -261,7 +261,8 @@ void Player::removeCollidingItem()
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
 
-            smartPlayerScore->increasePoints();
+            smartStats->addPoints();
+            smartStats->addCollectedDiamond();
             scene()->removeItem(collidingObjects[i]);
             delete collidingObjects[i];
 

@@ -8,7 +8,8 @@
 #include <memory>
 #include <QString>
 
-extern std::shared_ptr<playerGameScore> smartPlayerScore;
+
+extern std::shared_ptr<gameStatistics> smartStats;
 
 GameOverDialog::GameOverDialog(QWidget *parent) :
     QDialog(parent),
@@ -29,11 +30,13 @@ void GameOverDialog::setToolTips()
 {
     ui->playAgainButton->setToolTip("Play Again");
     ui->gameOverCloseButton->setToolTip("Close Game");
+    ui->statsButton->setToolTip("Show game statistics");
+
 }
 
 void GameOverDialog::setPlayerPoints()
 {
-    QString points = QString::number(smartPlayerScore->getPlayerScore());
+    QString points = QString::number(smartStats->givePoints());
     ui->pointsLabel->setText("<p>GAME OVER! You got " + points +
                              " points in total, well done!");
 
@@ -48,5 +51,14 @@ void GameOverDialog::on_playAgainButton_clicked()
 {
     MainMenuDialog *newMainMenu = new MainMenuDialog();
     newMainMenu->show();
+    this->close();
+}
+
+
+
+void GameOverDialog::on_statsButton_clicked()
+{
+    statistisDialog *statsDialog = new statistisDialog;
+    statsDialog->show();
     this->close();
 }

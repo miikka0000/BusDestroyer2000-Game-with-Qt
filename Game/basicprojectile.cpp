@@ -11,7 +11,7 @@
 #include <QList>
 #include <memory>
 
-extern std::shared_ptr<playerGameScore> smartPlayerScore;
+
 extern std::shared_ptr<gameStatistics> smartStats;
 
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
@@ -85,7 +85,7 @@ bool basicProjectile::removeShootedActors()
 
         if(isClose(it->first->giveLocation(), 10, x(), y())){
             if(this->scene() != NULL && it->second->scene() != NULL){
-                smartPlayerScore->increasePoints();
+
                 smartStats->addPoints();
                 if(typeid (it->first) == typeid (CourseSide::Nysse)){
                     smartStats->nysseRemoved();
@@ -125,9 +125,9 @@ void basicProjectile::move()
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
 
-            smartPlayerScore->increasePoints();
+
             smartStats->addPoints();
-            smartStats->collectBonus();
+            smartStats->addCollectedDiamond();
             scene()->removeItem(collidingObjects[i]);
             scene()->removeItem(this);
             delete collidingObjects[i];

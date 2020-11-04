@@ -71,8 +71,10 @@ public:
 
     void collectBonus();
     void addPoints() {playerPoints += 10;};
+    void addCollectedDiamond() {collectedDiamonds += 1;};
     void passengerLeft();
     void actorMoved();
+    int giveCollectedDiamonds(){return collectedDiamonds;};
 
     int playerPoints;
     int passengersDead;

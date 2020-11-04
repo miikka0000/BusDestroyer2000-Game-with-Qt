@@ -36,7 +36,7 @@
 #include <memory>
 
 
-extern std::shared_ptr<playerGameScore> smartPlayerScore;
+
 extern std::shared_ptr<gameStatistics> smartStats;
 extern QTime _gameTime;
 
@@ -197,9 +197,9 @@ void GameWindow::setGameTime()
         _gameDuration = 3;
     }
 
-    _gameTime.setHMS(0,_gameDuration, 0);
+    //_gameTime.setHMS(0,_gameDuration, 0);
     // testauksen ajaksi sekunnit 5
-    //_gameTime.setHMS(0,0, 5);
+    _gameTime.setHMS(0,0, 15);
 
 }
 
