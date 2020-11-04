@@ -11,9 +11,6 @@
 #include "actors/nysse.hh"
 #include "actors/passenger.hh"
 
-
-
-
 #include <QTimer>
 #include <QTime>
 #include <QGraphicsTextItem>
@@ -34,8 +31,6 @@
 #include <QGraphicsRectItem>
 #include <QBrush>
 #include <memory>
-
-
 
 extern std::shared_ptr<gameStatistics> smartStats;
 extern QTime _gameTime;
@@ -129,7 +124,6 @@ void GameWindow::resizeEvent(QResizeEvent *event)
         //qDebug()<<"resize Window width: " << newWidth;
         //qDebug()<<"resize Window width: " << newHeight;
 
-        //setPicture(bkgndBig);
         ui->graphicsView->fitInView(_scene->sceneRect(), Qt::IgnoreAspectRatio);
 
     }
@@ -197,9 +191,9 @@ void GameWindow::setGameTime()
         _gameDuration = 3;
     }
 
-    //_gameTime.setHMS(0,_gameDuration, 0);
+    _gameTime.setHMS(0,_gameDuration, 0);
     // testauksen ajaksi sekunnit 5
-    _gameTime.setHMS(0,0, 15);
+    //_gameTime.setHMS(0,0, 15);
 
 }
 

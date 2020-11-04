@@ -160,9 +160,9 @@ void gameCity::actorRemoved(std::shared_ptr<Interface::IActor> actor)
 {
     if(gameStateOn && findActor(actor) && actor->isRemoved() == true){
 
-        if(typeid (actor) == typeid(CourseSide::Nysse)){
+        if(typeid (*(actor)) == typeid(CourseSide::Nysse)){
             smartStats->nysseLeft();
-        } else if(typeid (actor) == typeid (CourseSide::Passenger)){
+        } else if(typeid (*(actor)) == typeid (CourseSide::Passenger)){
             smartStats->passengerLeft();
         }
 

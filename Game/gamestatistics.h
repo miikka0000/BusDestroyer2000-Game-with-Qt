@@ -69,12 +69,13 @@ public:
      */
     virtual void nysseLeft();
 
-    void collectBonus();
     void addPoints() {playerPoints += 10;};
-    void addCollectedDiamond() {collectedDiamonds += 1;};
+    void addCollectedDiamond();
     void passengerLeft();
     void actorMoved();
     int giveCollectedDiamonds(){return collectedDiamonds;};
+    int giveDestroyedNysses() {return removedNysses;};
+    int giveDestroyedPassengers() {return passengersDead;};
 
     int playerPoints;
     int passengersDead;

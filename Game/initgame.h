@@ -88,10 +88,6 @@ public:
     int nysseVelocity = 10;
     int passengerVelocity = 5;
 
-public slots:
-    void removeActor(std::shared_ptr<Interface::IActor> removedActor);
-    void moveActor(std::shared_ptr<Interface::IActor> movedActor);
-
 
 
 private:

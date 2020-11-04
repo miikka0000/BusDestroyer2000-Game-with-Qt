@@ -10,22 +10,15 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <map>
-#include <typeinfo>
+
 
 #include <memory>
 
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 initGame::initGame(){
 
-    /*gameCity *city = new gameCity;
 
-    connect(city, &gameCity::moveThisActor, this,
-            &initGame::moveActor);
-    connect(city, &gameCity::removeThisActor, this,
-            &initGame::moveActor);*/
     _updateTimer = new QTimer(this);
-    //connect(_updateTimer, &QTimer::timeout, this, &initGame::moveNysses);
-     //connect(_updateTimer, &QTimer::timeout, this, &initGame::movePassengers);
     connect(_updateTimer, &QTimer::timeout, this, &initGame::moveSceneActors);
     _updateTimer->start(50);
 
@@ -63,24 +56,21 @@ void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *sce
 void initGame::readActors(std::shared_ptr<gameCity> currCity)
 {
     actorsVec = currCity->allActors;
-    //qDebug()<<"actorsVec size: "<< actorsVec.size();
 
     for (unsigned int i= 0; i < actorsVec.size(); ++i){
-        if(typeid (*actorsVec.at(i)) == typeid(CourseSide::Nysse)){
+        if(typeid (*(actorsVec.at(i))) == typeid(CourseSide::Nysse)){
             nysseVec.push_back(actorsVec.at(i));
 
-        }else if(typeid (*actorsVec.at(i)) == typeid(CourseSide::Passenger)){
+        }else if(typeid (*(actorsVec.at(i))) == typeid(CourseSide::Passenger)){
             passengerVec.push_back(actorsVec.at(i));
         }
 
     }
-    //qDebug()<<"nysseVec size: "<< nysseVec.size();
-    //qDebug()<<"passengerVec size: "<< passengerVec.size();
+
 }
 
 void initGame::drawActorItems(QGraphicsScene *scene)
 {
-
 
     for (unsigned int i= 0; i < nysseVec.size(); ++i){
         QGraphicsPixmapItem *nysseRect = new QGraphicsPixmapItem();
@@ -98,7 +88,6 @@ void initGame::drawActorItems(QGraphicsScene *scene)
         }
     }
 
-
     for (unsigned int i= 0; i < passengerVec.size(); ++i){
         QGraphicsPixmapItem *passengerRect = new QGraphicsPixmapItem();
         int passengerLocX = passengerVec.at(i)->giveLocation().giveX();
@@ -106,10 +95,10 @@ void initGame::drawActorItems(QGraphicsScene *scene)
 
         setActorPos(passengerLocX, passengerLocY, passengerRect);
 
-
         setActorPic(passengerPic, passengerRect, 10, 15);
         passengerMap.insert({passengerVec.at(i), passengerRect});
         actorsMap.insert({passengerVec.at(i), passengerRect});
+
         if(passengerLocX + 10 < screenWidth && passengerLocX >= 0 &&
                 passengerLocY + 15 < screenHeight && passengerLocY > 0){
             scene->addItem(passengerRect);
@@ -148,13 +137,9 @@ void initGame::initLogic(QGraphicsScene *scene)
     drawStops(newCity, scene);
     readActors(newCity);
     drawActorItems(scene);
-    //qDebug()<<"stop amount: "<<stopsVec.size();
-    //qDebug()<<"nysse bus amount: "<<nysseVec.size();
-    //qDebug()<<"passenger amount: "<<passengerVec.size();
 
 
 }
-
 
 
 std::shared_ptr<gameCity> initGame::createGame()
@@ -171,32 +156,12 @@ void initGame::moveSceneActors()
     for(it = smartActors.begin(); it != smartActors.end(); ++it){
         int newX = it->first->giveLocation().giveX();
         int newY = it->first->giveLocation().giveY();
-        //qDebug()<<"passRect type: "<<  typeid(passengerIt->first).name();
+
         it->second->setPos(newX, newY);
     }
 }
 
-/*void initGame::movePassengers()
-{
-    for(passengerIt = passengerMap.begin(); passengerIt != passengerMap.end(); ++passengerIt){
-        int newX = passengerIt->first->giveLocation().giveX();
-        int newY = passengerIt->first->giveLocation().giveY();
-        //qDebug()<<"passRect type: "<<  typeid(passengerIt->first).name();
-        passengerIt->second->setPos(newX, newY);
-    }
-}
 
-void initGame::moveNysses()
-{
-   for(nysseIt = nysseMap.begin(); nysseIt != nysseMap.end(); ++nysseIt){
-       int newX = nysseIt->first->giveLocation().giveX();
-       int newY = nysseIt->first->giveLocation().giveY();
-       //qDebug()<<"nysse type: "<<  typeid(nysseIt->first).name();
-       nysseIt->second->setPos(newX, newY);
-   }
-
-
-}*/
 
 int initGame::getActorHeight(QGraphicsPixmapItem *actor)
 {
@@ -208,58 +173,6 @@ int initGame::getActorWidth(QGraphicsPixmapItem *actor)
     return actor->boundingRect().width();
 }
 
-void initGame::removeActor(std::shared_ptr<Interface::IActor> removedActor)
-{
-    using std::shared_ptr;
-    using std::map;
-
-    map<shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator itN;
-    map<shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator itP;
-
-    if(typeid (*removedActor) == typeid(CourseSide::Nysse)){
-        for(itN = nysseMap.begin(); itN != nysseMap.end(); itN++){
-            if(itN->first == removedActor){
-
-                nysseMap.erase(itN);
-            }
-        }
-    } else if(typeid (*removedActor) == typeid(CourseSide::Passenger)){
-        for(itP = nysseMap.begin(); itP != nysseMap.end(); itP++){
-            if(itP->first == removedActor){
-                nysseMap.erase(itP);
-
-            }
-        }
-    }
-}
-
-void initGame::moveActor(std::shared_ptr<Interface::IActor> movedActor)
-{
-    using std::shared_ptr;
-    using std::map;
-
-    map<shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator itN;
-    map<shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator itP;
-
-    if(typeid (*movedActor) == typeid(CourseSide::Nysse)){
-        for(itN = nysseMap.begin(); itN != nysseMap.end(); itN++){
-            if(itN->first == movedActor){
-
-                itN->first->move(Interface::Location(300, 300));
-                setPos(300 - nysseVelocity, 300 - nysseVelocity);
-            }
-        }
-    } else if(typeid (*movedActor) == typeid(CourseSide::Passenger)){
-        for(itP = nysseMap.begin(); itP != nysseMap.end(); itP++){
-            if(itP->first == movedActor){
 
 
 
-                itP->first->move(Interface::Location(300, 300));
-                setPos(300 - passengerVelocity, 300 - passengerVelocity);
-            }
-        }
-    }
-
-
-}

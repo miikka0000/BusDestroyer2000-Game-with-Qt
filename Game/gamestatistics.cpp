@@ -91,10 +91,11 @@ void gameStatistics::nysseLeft()
     leftNysses += 1;
 }
 
-void gameStatistics::collectBonus()
+void gameStatistics::addCollectedDiamond()
 {
     collectedDiamonds += 1;
 }
+
 
 void gameStatistics::passengerLeft()
 {

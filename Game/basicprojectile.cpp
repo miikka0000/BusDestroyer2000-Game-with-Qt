@@ -11,16 +11,11 @@
 #include <QList>
 #include <memory>
 
-
 extern std::shared_ptr<gameStatistics> smartStats;
-
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
-
-
 {
-
     setProjectilePicture();
     _projectileTimer = new QTimer(this);
     connect(_projectileTimer, &QTimer::timeout, this, &basicProjectile::move);
@@ -58,17 +53,17 @@ void basicProjectile::setProjectilePicture()
     //qDebug()<< chosenProjectile;
 
     if(chosenProjectile == MainMenuDialog::fireballOption){
-        //qDebug()<<"you chose spaceship";
+
         fireballChosen = true;
         setPixmap(_fireballPic);
 
     } else if(chosenProjectile == MainMenuDialog::missileOption){
-        //qDebug()<<"you chose tank";
+
         missileChosen = true;
         setPixmap(_missilePic);
 
     } else if(chosenProjectile == MainMenuDialog::laserOption){
-        //qDebug()<<"you chose ufo";
+
         laserChosen = true;
         setPixmap(_laserPic);
     }
@@ -87,10 +82,12 @@ bool basicProjectile::removeShootedActors()
             if(this->scene() != NULL && it->second->scene() != NULL){
 
                 smartStats->addPoints();
-                if(typeid (it->first) == typeid (CourseSide::Nysse)){
+                if(typeid (*(it->first)) == typeid (CourseSide::Nysse)){
                     smartStats->nysseRemoved();
-                } else if(typeid (it->first) == typeid (CourseSide::Passenger)){
+                    smartStats->nysseLeft();
+                } else if(typeid (*(it->first)) == typeid (CourseSide::Passenger)){
                     smartStats->passengerDied(1);
+                    smartStats->passengerLeft();
                 }
 
                 scene()->removeItem(it->second);
@@ -100,10 +97,13 @@ bool basicProjectile::removeShootedActors()
 
 
             }
-        }
+            return false;
 
+        }
+        continue;
 
     }
+
 }
 
 // isClose function  is a courtesy from the CourseSide (core/location)
@@ -124,7 +124,6 @@ void basicProjectile::move()
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
-
 
             smartStats->addPoints();
             smartStats->addCollectedDiamond();

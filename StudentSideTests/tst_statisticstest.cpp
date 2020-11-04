@@ -22,7 +22,7 @@ private slots:
     void testMorePassengers();
     void testNewNysse();
     void testNysseLeft();
-    void testCollectBonus();
+    void addCollectedDiamond();
     void testActorMoved();
     void testPassengerLeft();
     void testAddPoints();
@@ -79,11 +79,11 @@ void statisticstest::testNysseLeft()
     QCOMPARE(test.leftNysses, 1);
 }
 
-void statisticstest::testCollectBonus()
+void statisticstest::addCollectedDiamond()
 {
     gameStatistics test;
-    test.collectBonus();
-    QCOMPARE(test.collectedDiamonds, 1);
+    test.addCollectedDiamond();
+    QCOMPARE(test.giveCollectedDiamonds(), 1);
 }
 
 void statisticstest::testActorMoved()
