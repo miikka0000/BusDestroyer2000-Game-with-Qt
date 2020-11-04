@@ -1,11 +1,12 @@
 #ifndef GAMESTATISTICS_H
 #define GAMESTATISTICS_H
 
-#include "interfaces/istatistics.hh"
+#include "../Course/CourseLib/interfaces/istatistics.hh"
 #include "interfaces/istop.hh"
 #include "interfaces/ipassenger.hh"
 #include "interfaces/iactor.hh"
 #include "playergamescore.h"
+#include "assert.h"
 
 
 
@@ -16,12 +17,12 @@
 #include <QDebug>
 
 
-class gameStatistics : public QObject, public Interface::IStatistics
+class gameStatistics : public Interface::IStatistics
 {
-    Q_OBJECT
+
 public:
-    explicit gameStatistics(QObject *parent = nullptr);
-    ~gameStatistics();
+
+    gameStatistics();
 
     /**
      * @brief givePoints returns current score in the game.

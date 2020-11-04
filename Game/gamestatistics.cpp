@@ -2,7 +2,7 @@
 
 extern std::shared_ptr<playerGameScore> smartPlayerScore;
 
-gameStatistics::gameStatistics(QObject *parent) : QObject(parent)
+gameStatistics::gameStatistics()
 {
     passengersDead = 0;
     destroyedNysses = 0;
@@ -12,17 +12,13 @@ gameStatistics::gameStatistics(QObject *parent) : QObject(parent)
     collectedDiamonds = 0;
 }
 
-gameStatistics::~gameStatistics()
-{
-
-}
-
 /**
  * @brief givePoints returns current score in the game.
  * @pre -
  * @return score
  * @post Exception guarantee: nothrow
  */
+
 int gameStatistics::givePoints() const
 {
     return smartPlayerScore->getPlayerScore();
