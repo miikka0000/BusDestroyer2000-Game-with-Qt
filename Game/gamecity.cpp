@@ -52,8 +52,6 @@ void gameCity::setBackground(QImage &basicbackground, QImage &bigbackground)
     }
 }
 
-
-
 /**
  * @brief setClock sets the time of the game clock.
  * @param clock Game clock time at the function call.
@@ -86,7 +84,6 @@ void gameCity::addStop(std::shared_ptr<Interface::IStop> stop)
     }
 }
 
-
 /**
  * @brief startGame shifts city from init state to the gamestate.
  * @pre City is in init state. setBackground() and setClock() have been called.
@@ -98,7 +95,6 @@ void gameCity::startGame()
         gameStateOn = true;
     }
     return;
-
 }
 
 /**
@@ -111,7 +107,6 @@ void gameCity::startGame()
 void gameCity::addActor(std::shared_ptr<Interface::IActor> newactor)
 {
 
-
     if(findActor(newactor)){
         throw Interface::GameError("GameError Actor is already in the city.");
 
@@ -120,7 +115,6 @@ void gameCity::addActor(std::shared_ptr<Interface::IActor> newactor)
         allActors.push_back(newactor);
     }
     return;
-
 }
 
 /**
@@ -149,7 +143,6 @@ void gameCity::removeActor(std::shared_ptr<Interface::IActor> actor)
     return;
 }
 
-
 /**
  * @brief actorRemoved tells the city that actor is removed ingame.
  * @param actor Actor that is set removed ingame.
@@ -168,8 +161,6 @@ void gameCity::actorRemoved(std::shared_ptr<Interface::IActor> actor)
 
     }
     return;
-
-
 }
 
 /**
@@ -197,7 +188,6 @@ bool gameCity::findActor(std::shared_ptr<Interface::IActor> actor) const
  */
 void gameCity::actorMoved(std::shared_ptr<Interface::IActor> actor)
 {
-
     if(gameStateOn && findActor(actor)){
         if(actor->giveLocation().calcDistance(startingLoc, actor->giveLocation()) != 0){
 
@@ -224,12 +214,9 @@ std::vector<std::shared_ptr<Interface::IActor> > gameCity::getNearbyActors(Inter
             if(loc.isClose(allActors.at(i)->giveLocation())){
                 nearbyActors.push_back(allActors.at(i));
             }
-
         }
-
     }
     return nearbyActors;
-
 }
 
 

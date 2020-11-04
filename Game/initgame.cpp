@@ -20,7 +20,8 @@ initGame::initGame(){
 
     _updateTimer = new QTimer(this);
     connect(_updateTimer, &QTimer::timeout, this, &initGame::moveSceneActors);
-    _updateTimer->start(50);
+    //interval was previously 50, changed it to 200 to see it it affects fps
+    _updateTimer->start(200);
 
 }
 

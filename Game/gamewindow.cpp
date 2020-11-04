@@ -111,8 +111,6 @@ void GameWindow::resizeEvent(QResizeEvent *event)
 
         screenWidth = newWidth;
         screenHeight = newHeight;
-        //player_->screenWidth_ = newWidth;
-        //player_->screenHeight_ = newHeight;
 
         if(ui->graphicsView->width() > 800){
             std::vector<int> screen = getAvailableSize();
@@ -120,12 +118,7 @@ void GameWindow::resizeEvent(QResizeEvent *event)
         else{
             _player->setPos(400,500);
         }
-
-        //qDebug()<<"resize Window width: " << newWidth;
-        //qDebug()<<"resize Window width: " << newHeight;
-
         ui->graphicsView->fitInView(_scene->sceneRect(), Qt::IgnoreAspectRatio);
-
     }
     _largeMode = true;
 
@@ -137,7 +130,6 @@ void GameWindow::setPicture(QImage img)
     _scene->addPixmap(QPixmap::fromImage(img.scaled(this->width(), this->height(),
                                                     Qt::IgnoreAspectRatio)));
 }
-
 
 std::vector<int> GameWindow::getAvailableSize()
 {
@@ -151,7 +143,6 @@ std::vector<int> GameWindow::getAvailableSize()
     return {availableWidth, availableHeight};
 
 }
-
 
 void GameWindow::setLCDStyle()
 {

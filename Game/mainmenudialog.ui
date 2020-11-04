@@ -60,7 +60,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget1">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -212,7 +212,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget2">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -382,7 +382,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget3">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -424,7 +424,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget4">
    <property name="geometry">
     <rect>
      <x>310</x>
@@ -521,7 +521,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="layoutWidget5">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -532,7 +532,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
-     <widget class="QLabel" name="infoLabel1">
+     <widget class="QLabel" name="mainHeaderLabel">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -555,7 +555,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="infoLabel2">
+     <widget class="QLabel" name="subHeaderLabel">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -604,7 +604,7 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="proctileButtonGroup"/>
   <buttongroup name="playerButtonGroup"/>
+  <buttongroup name="proctileButtonGroup"/>
  </buttongroups>
 </ui>

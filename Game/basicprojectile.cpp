@@ -89,21 +89,17 @@ bool basicProjectile::removeShootedActors()
                     smartStats->passengerDied(1);
                     smartStats->passengerLeft();
                 }
+                if(!it->first->isRemoved() && it->second != NULL){
 
-                scene()->removeItem(it->second);
+                    scene()->removeItem(it->second);
 
-                smartActors.erase(it);
+                    smartActors.erase(it);
+                }
                 return true;
-
-
             }
-            return false;
-
         }
-        continue;
-
     }
-
+    return false;
 }
 
 // isClose function  is a courtesy from the CourseSide (core/location)
@@ -135,14 +131,14 @@ void basicProjectile::move()
             return;
         }
     }
-
     bool isRemoved = removeShootedActors();
-    setPos(x(), y() - _projectileVelocity);
-    if(pos().y() + _projectileHeight < 0){
-        scene()->removeItem(this);
-        delete this;
-    }
-    if(isRemoved){
+    if(!isRemoved){
+        setPos(x(), y() - _projectileVelocity);
+        if(pos().y() + _projectileHeight < 0){
+            scene()->removeItem(this);
+            delete this;
+        }
+    }else if(isRemoved){
         scene()->removeItem(this);
         delete this;
     }
