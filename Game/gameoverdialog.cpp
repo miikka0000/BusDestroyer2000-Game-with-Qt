@@ -26,7 +26,7 @@ GameOverDialog::GameOverDialog(QWidget *parent) :
 
     highScores->writeFile();
     highScores->readFile();
-    ui->topscoreWidget->setText(highScores->scores);
+    ui->topscoreWidget->setText(highScores->strScores);
 }
 
 GameOverDialog::~GameOverDialog()

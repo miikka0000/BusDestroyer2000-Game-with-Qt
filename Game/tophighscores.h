@@ -18,7 +18,10 @@ public:
     void readFile(QString filename = textFilePath);
     void writeFile(QString filename = textFilePath);
 
-    QString scores;
+    std::map<QString, int> scores;
+    QString strScores;
+
+    void sort(std::map<QString, int> M);
 
 signals:
 
