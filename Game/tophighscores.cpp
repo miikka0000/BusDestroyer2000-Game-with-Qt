@@ -15,19 +15,41 @@ void topHighScores::readFile(QString filename)
     QFile file(filename);
     if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
         QTextStream stream(&file);
-        int line_count = 0;
-        while(!stream.atEnd() && line_count <= 10)
-        {
 
+        while(!stream.atEnd())
+        {
             QString line = stream.readLine();
-            if (line_count > 0) {
-                scores += QString::number(line_count) + ") " + line + "\n";
-            }
-            line_count++;
+            QStringList data = line.split(": ");
+            QString name = data.at(0);
+
+            int points = data.at(1).toInt();
+
+
+            scores.insert ( std::pair<QString,int>(name, points) );
+
+
         }
         file.close();
         qDebug() << "Reading finished";
     };
+    sort(scores);
+}
+
+void topHighScores::sort(std::map<QString, int> M)
+{
+    std::multimap<int, QString> MM;
+
+    for (auto it : M) {
+        MM.insert({ it.second, it.first });
+    }
+    int i = 10;
+    for (auto it : MM) {
+        if (i > 0) {
+            strScores += QString::number(i) + ") " + it.second + ": " + QString::number(it.first) + "\n";
+        }
+        i = i-1;
+    }
+
 
 }
 
@@ -40,7 +62,9 @@ void topHighScores::writeFile(QString filename)
 
         QTextStream stream(&file);
 
-        stream <<  playerAliasName << ": "<< smartStats->givePoints() << "\n";
+        if (playerAliasName != "") {
+            stream <<  playerAliasName << ": "<< smartStats->givePoints() << "\n";
+        }
 
         file.close();
         qDebug() << "Writing finished";
