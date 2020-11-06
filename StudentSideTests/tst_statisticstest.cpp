@@ -7,13 +7,13 @@
 
 // add necessary includes here
 
-class statisticstest : public QObject
+class statisticsTest : public QObject
 {
     Q_OBJECT
 
 public:
-    statisticstest();
-    ~statisticstest();
+    statisticsTest();
+    ~statisticsTest();
 
 private slots:
     void testGivePoints();
@@ -29,29 +29,29 @@ private slots:
 
 };
 
-statisticstest::statisticstest()
+statisticsTest::statisticsTest()
 {
 
 }
 
-statisticstest::~statisticstest()
+statisticsTest::~statisticsTest()
 {
 
 }
 
-void statisticstest::testGivePoints()
+void statisticsTest::testGivePoints()
 {
     gameStatistics test;
     QCOMPARE(test.givePoints(), 0);
 }
 
-void statisticstest::testPassengerDied()
+void statisticsTest::testPassengerDied()
 {
     gameStatistics test;
     QVERIFY_EXCEPTION_THROWN(test.passengerDied(-1), Interface::GameError);
 }
 
-void statisticstest::testNysseRemoved()
+void statisticsTest::testNysseRemoved()
 {
     gameStatistics test;
     test.nysseRemoved();
@@ -59,54 +59,54 @@ void statisticstest::testNysseRemoved()
 
 }
 
-void statisticstest::testMorePassengers()
+void statisticsTest::testMorePassengers()
 {
     gameStatistics test;
     QVERIFY_EXCEPTION_THROWN(test.morePassengers(-1), Interface::GameError);
 }
 
-void statisticstest::testNewNysse()
+void statisticsTest::testNewNysse()
 {
     gameStatistics test;
     test.newNysse();
     QCOMPARE(test.totalNysses, 1);
 }
 
-void statisticstest::testNysseLeft()
+void statisticsTest::testNysseLeft()
 {
     gameStatistics test;
     test.nysseLeft();
     QCOMPARE(test.leftNysses, 1);
 }
 
-void statisticstest::addCollectedDiamond()
+void statisticsTest::addCollectedDiamond()
 {
     gameStatistics test;
     test.addCollectedDiamond();
     QCOMPARE(test.giveCollectedDiamonds(), 1);
 }
 
-void statisticstest::testActorMoved()
+void statisticsTest::testActorMoved()
 {
     gameStatistics test;
     test.actorMoved();
     QCOMPARE(test.movedActorsAmount, 1);
 }
 
-void statisticstest::testPassengerLeft()
+void statisticsTest::testPassengerLeft()
 {
     gameStatistics test;
     test.passengerLeft();
     QCOMPARE(test.leftPassengers, 1);
 }
 
-void statisticstest::testAddPoints()
+void statisticsTest::testAddPoints()
 {
     gameStatistics test;
     test.addPoints();
     QCOMPARE(test.playerPoints, 10);
 }
 
-QTEST_APPLESS_MAIN(statisticstest)
+QTEST_APPLESS_MAIN(statisticsTest)
 
 #include "tst_statisticstest.moc"
