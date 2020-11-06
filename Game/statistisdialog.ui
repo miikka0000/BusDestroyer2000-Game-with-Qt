@@ -27,7 +27,7 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>14</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -42,6 +42,11 @@
    </item>
    <item>
     <widget class="QTextBrowser" name="statsTextBrowser">
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="autoFormatting">
       <set>QTextEdit::AutoNone</set>
      </property>

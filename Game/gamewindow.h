@@ -35,18 +35,13 @@ public:
     ~GameWindow();
 
     void resizeEvent(QResizeEvent * event);
-    void setPicture(QImage img);    
+    void setPicture(QImage img);
     void setLCDStyle();
     void spawnBonusItem();
     void addDataToLCD();
     void setGameTime();
 
-
     std::vector<int> getAvailableSize();
-    MainMenuDialog *giveDialog() {return _mainMenu;};
-
-
-    BonusItem *bonusObject;
 
 
     int screenWidth = 800;
@@ -61,7 +56,6 @@ public:
     QPixmap passengerPic = QPixmap(":/images/passenger_20x15.png");
 
 
-
 public slots:
     void updateCountDown();
 
@@ -71,13 +65,15 @@ private:
     QTimer *bonusTimer;
     QTimer *gameTimer;
     QTimer *labelTimer;
-    int _gameDuration;
+    MainMenuDialog *_mainMenu;
     QGraphicsScene * _scene;
+    initGame * _newGame;
     Player * _player;
     QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
-    bool _largeMode = false;
-    MainMenuDialog *_mainMenu;
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
+    bool _largeMode = false;
+    int _gameDuration;
+
 
 
 };

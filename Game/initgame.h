@@ -51,6 +51,7 @@ public:
     void moveNysses();
     void movePassengers();
     void moveSceneActors();
+    void endGame();
 
     int getActorHeight(QGraphicsPixmapItem *actor);
     int getActorWidth(QGraphicsPixmapItem *actor);

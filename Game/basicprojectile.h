@@ -30,9 +30,9 @@ public:
 
 
 
-    bool fireballChosen;
-    bool missileChosen;
-    bool laserChosen;
+    bool fireballChosen = false;
+    bool missileChosen = false;
+    bool laserChosen = false;
 
     QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");

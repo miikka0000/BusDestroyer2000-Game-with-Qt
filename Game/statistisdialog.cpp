@@ -37,8 +37,7 @@ void statistisDialog::generateStatsString()
 
             ui->statsTextBrowser->append(stats);
     ui->statsTextBrowser->setAlignment(Qt::AlignLeft);
-    ui->statsTextBrowser->setFontPointSize(12);
-    ui->statsTextBrowser->setFrameStyle(QFrame::NoFrame);
+
 }
 
 void statistisDialog::on_exitGameButton_clicked()

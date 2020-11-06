@@ -13,7 +13,7 @@ public:
     void increasePoints() {playerScore += 10;};
     int getPlayerScore() {return playerScore;};
 
-    int playerScore;
+    int playerScore = 0;
 
 
 };

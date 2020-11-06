@@ -5,7 +5,7 @@
 
 #include <QDialog>
 #include <QString>
-#include <QFrame>
+
 
 namespace Ui {
 class statistisDialog;

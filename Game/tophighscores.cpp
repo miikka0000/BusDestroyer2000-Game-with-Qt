@@ -1,7 +1,10 @@
 #include "tophighscores.h"
-
+#include "playergamescore.h"
+#include "gamestatistics.h"
 #include <QDebug>
 
+extern std::shared_ptr<gameStatistics> smartStats;
+extern QString playerAliasName;
 topHighScores::topHighScores(QObject *parent) : QObject(parent)
 {
 
@@ -9,30 +12,37 @@ topHighScores::topHighScores(QObject *parent) : QObject(parent)
 
 void topHighScores::readFile(QString filename)
 {
-    QFile textFile(filename);
+    QFile file(filename);
+    if(file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream stream(&file);
+        int line_count = 0;
+        while(!stream.atEnd() && line_count <= 10)
+        {
 
-    if(!textFile.open(QFile::ReadOnly | QFile::Text)){
-        qDebug() << "Error reading the file";
-        return;
-    }
-    QTextStream in(&textFile);
-    QString scores = in.readAll();
-    qDebug() << scores;
+            QString line = stream.readLine();
+            if (line_count > 0) {
+                scores += QString::number(line_count) + ") " + line + "\n";
+            }
+            line_count++;
+        }
+        file.close();
+        qDebug() << "Reading finished";
+    };
 
-
-    textFile.close();
 }
+
 
 void topHighScores::writeFile(QString filename)
 {
-    QFile textFile(filename);
+    QFile file(filename);
+    if(file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
+    {
 
-    if(!textFile.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text)){
-        qDebug() << "Error opening the file";
-        return;
+        QTextStream stream(&file);
+
+        stream <<  playerAliasName << ": "<< smartStats->givePoints() << "\n";
+
+        file.close();
+        qDebug() << "Writing finished";
     }
-    QTextStream out(&textFile);
-    out << "Hello World";
-
-    textFile.close();
 }

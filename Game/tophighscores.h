@@ -18,6 +18,8 @@ public:
     void readFile(QString filename = textFilePath);
     void writeFile(QString filename = textFilePath);
 
+    QString scores;
+
 signals:
 
 };

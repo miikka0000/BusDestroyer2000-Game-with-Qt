@@ -13,6 +13,7 @@
 #include <map>
 
 extern std::shared_ptr<gameStatistics> smartStats;
+extern QTime _gameTime;
 
 gameCity::gameCity()
 {
@@ -229,12 +230,11 @@ std::vector<std::shared_ptr<Interface::IActor> > gameCity::getNearbyActors(Inter
 bool gameCity::isGameOver() const
 {
     if(gameStateOn){
-        if(gameClock == QTime(0,0)){
+        if(_gameTime.second() == 0 && _gameTime.minute() == 0){
 
             return true;
         }
         return false;
-
     }
     return false;
 }

@@ -2,7 +2,7 @@
 #define GAMEOVERDIALOG_H
 
 #include "statistisdialog.h"
-
+#include "tophighscores.h"
 #include <QDialog>
 
 namespace Ui {
@@ -19,6 +19,7 @@ public:
 
     void setToolTips();
     void setPlayerPoints();
+    topHighScores *highScores;
 
 private slots:
     void on_gameOverCloseButton_clicked();

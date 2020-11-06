@@ -84,8 +84,11 @@ GameWindow::GameWindow(QWidget *parent) :
     connect(gameTimer, &QTimer::timeout, this, &GameWindow::updateCountDown);
     gameTimer->start(1000);
 
-    initGame *courseSide = new initGame();
-    courseSide->initLogic(_scene);
+    _newGame = new initGame();
+    _newGame->initLogic(_scene);
+
+
+
 
 }
 
@@ -93,11 +96,13 @@ GameWindow::~GameWindow()
 {
     delete ui;
     delete _player;
-    delete bonusObject;
     delete mainTimer;
     delete bonusTimer;
     delete gameTimer;
     delete labelTimer;
+    delete _scene;
+    delete _player;
+    delete _newGame;
 
 }
 
@@ -182,9 +187,9 @@ void GameWindow::setGameTime()
         _gameDuration = 3;
     }
 
-    _gameTime.setHMS(0,_gameDuration, 0);
+    //_gameTime.setHMS(0,_gameDuration, 0);
     // testauksen ajaksi sekunnit 5
-    //_gameTime.setHMS(0,0, 15);
+    _gameTime.setHMS(0,0, 5);
 
 }
 
@@ -197,8 +202,10 @@ void GameWindow::updateCountDown() {
         gameTimer->stop();
         bonusTimer->stop();
         mainTimer->stop();
+        _newGame->endGame();
 
         gameOverDialog->show();
+
         this->close();
     }
 

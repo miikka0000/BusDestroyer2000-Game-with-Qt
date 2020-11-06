@@ -27,7 +27,7 @@ initGame::initGame(){
 
 initGame::~initGame()
 {
-
+    delete _updateTimer;
 }
 
 void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene)
@@ -37,7 +37,7 @@ void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *sce
 
     for (unsigned int i= 0; i < stopsVec.size(); ++i){
 
-        QGraphicsPixmapItem *stopRect = new QGraphicsPixmapItem();
+        QGraphicsPixmapItem *stopRect = new QGraphicsPixmapItem(this);
         int xCoord = stopsVec.at(i)->getLocation().giveX();
         int yCoord = stopsVec.at(i)->getLocation().giveY();
 
@@ -50,7 +50,6 @@ void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *sce
                 yCoord + 25 < screenHeight && yCoord > 0){
             scene->addItem(stopRect);
         }
-
     }
 }
 
@@ -65,16 +64,14 @@ void initGame::readActors(std::shared_ptr<gameCity> currCity)
         }else if(typeid (*(actorsVec.at(i))) == typeid(CourseSide::Passenger)){
             passengerVec.push_back(actorsVec.at(i));
         }
-
     }
-
 }
 
 void initGame::drawActorItems(QGraphicsScene *scene)
 {
 
     for (unsigned int i= 0; i < nysseVec.size(); ++i){
-        QGraphicsPixmapItem *nysseRect = new QGraphicsPixmapItem();
+        QGraphicsPixmapItem *nysseRect = new QGraphicsPixmapItem(this);
         int nysseLocX = nysseVec.at(i)->giveLocation().giveX();
         int nysseLocY = nysseVec.at(i)->giveLocation().giveY();
 
@@ -90,7 +87,7 @@ void initGame::drawActorItems(QGraphicsScene *scene)
     }
 
     for (unsigned int i= 0; i < passengerVec.size(); ++i){
-        QGraphicsPixmapItem *passengerRect = new QGraphicsPixmapItem();
+        QGraphicsPixmapItem *passengerRect = new QGraphicsPixmapItem(this);
         int passengerLocX = passengerVec.at(i)->giveLocation().giveX();
         int passengerLocY = passengerVec.at(i)->giveLocation().giveY();
 
@@ -139,9 +136,7 @@ void initGame::initLogic(QGraphicsScene *scene)
     readActors(newCity);
     drawActorItems(scene);
 
-
 }
-
 
 std::shared_ptr<gameCity> initGame::createGame()
 {
@@ -162,7 +157,10 @@ void initGame::moveSceneActors()
     }
 }
 
-
+void initGame::endGame()
+{
+    newCity->isGameOver();
+}
 
 int initGame::getActorHeight(QGraphicsPixmapItem *actor)
 {

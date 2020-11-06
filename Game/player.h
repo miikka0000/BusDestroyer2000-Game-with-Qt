@@ -53,25 +53,19 @@ public:
     const QUrl missileSound = QUrl("qrc:/sounds/missileSound.wav");
 
     std::string playerName;
-    bool tankChosen;
-    bool spaceshipChosen;
-    bool ufoChosen;
-    bool fireballChosen;
-    bool missileChosen;
-    bool laserChosen;
-
-    bool musicsOn;
+    bool tankChosen = false;
+    bool spaceshipChosen = false;
+    bool ufoChosen = false;
+    bool fireballChosen = false;
+    bool missileChosen = false;
+    bool laserChosen = false;
+    bool musicsOn = false;
 
     int playerScore = 0;
 
-
-
-
 private:
 
-
     double _spaceshipVelocity = 23.0;
-
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;
     int _interval = 50;

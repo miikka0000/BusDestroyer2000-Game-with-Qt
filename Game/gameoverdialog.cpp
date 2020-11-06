@@ -2,6 +2,7 @@
 #include "ui_gameoverdialog.h"
 #include "mainmenudialog.h"
 #include "playergamescore.h"
+#include "tophighscores.h"
 
 #include <QSize>
 #include <QSettings>
@@ -11,6 +12,8 @@
 
 extern std::shared_ptr<gameStatistics> smartStats;
 
+extern QString playerAliasName;
+
 GameOverDialog::GameOverDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GameOverDialog)
@@ -19,6 +22,11 @@ GameOverDialog::GameOverDialog(QWidget *parent) :
     this->setFixedSize(QSize(800, 600));
     setToolTips();
     setPlayerPoints();
+    highScores = new topHighScores();
+
+    highScores->writeFile();
+    highScores->readFile();
+    ui->topscoreWidget->setText(highScores->scores);
 }
 
 GameOverDialog::~GameOverDialog()
@@ -38,7 +46,9 @@ void GameOverDialog::setPlayerPoints()
 {
     QString points = QString::number(smartStats->givePoints());
     ui->pointsLabel->setText("<p>GAME OVER! You got " + points +
-                             " points in total, well done!");
+                             " points in total, well done " +
+                             playerAliasName + "!");
+
 
 }
 

@@ -19,7 +19,6 @@
 
 std::shared_ptr<gameStatistics> smartStats =
         std::make_shared<gameStatistics>();
-
 std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 
 QString playerAliasName;
@@ -33,9 +32,9 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("BusDestroyer2000");
     QSettings mySettings;
 
-    /*topHighScores *n = new topHighScores;
+    topHighScores *n = new topHighScores;
     n->writeFile();
-    n->readFile();*/
+    //n->readFile();
 
     Q_INIT_RESOURCE(offlinedata);
 
