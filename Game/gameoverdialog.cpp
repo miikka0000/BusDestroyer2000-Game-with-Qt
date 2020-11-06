@@ -11,7 +11,7 @@
 
 
 extern std::shared_ptr<gameStatistics> smartStats;
-
+extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 extern QString playerAliasName;
 
 GameOverDialog::GameOverDialog(QWidget *parent) :
@@ -31,7 +31,9 @@ GameOverDialog::GameOverDialog(QWidget *parent) :
 
 GameOverDialog::~GameOverDialog()
 {
+    initGameData();
     delete ui;
+
 }
 
 void GameOverDialog::setToolTips()
@@ -52,6 +54,12 @@ void GameOverDialog::setPlayerPoints()
 
 }
 
+void GameOverDialog::initGameData()
+{
+    smartStats->initAllValues();
+    smartActors.clear();
+}
+
 void GameOverDialog::on_gameOverCloseButton_clicked()
 {
     this->close();
@@ -59,6 +67,7 @@ void GameOverDialog::on_gameOverCloseButton_clicked()
 
 void GameOverDialog::on_playAgainButton_clicked()
 {
+    initGameData();
     MainMenuDialog *newMainMenu = new MainMenuDialog();
     newMainMenu->show();
     this->close();

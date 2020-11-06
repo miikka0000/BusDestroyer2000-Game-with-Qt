@@ -19,14 +19,13 @@ public:
 
     void setToolTips();
     void setPlayerPoints();
+    void initGameData();
     topHighScores *highScores;
 
 private slots:
     void on_gameOverCloseButton_clicked();
 
     void on_playAgainButton_clicked();
-
-
 
     void on_statsButton_clicked();
 

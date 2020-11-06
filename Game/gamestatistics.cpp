@@ -106,3 +106,16 @@ void gameStatistics::actorMoved()
 {
     movedActorsAmount += 1;
 }
+
+void gameStatistics::initAllValues()
+{
+    playerPoints = 0;
+    passengersDead = 0;
+    removedNysses = 0;
+    totalPassengers = 0;
+    totalNysses = 0;
+    leftNysses = 0;
+    collectedDiamonds = 0;
+    leftPassengers = 0;
+    movedActorsAmount = 0;
+}

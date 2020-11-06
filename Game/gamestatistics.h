@@ -76,6 +76,7 @@ public:
     int giveCollectedDiamonds(){return collectedDiamonds;};
     int giveDestroyedNysses() {return removedNysses;};
     int giveDestroyedPassengers() {return passengersDead;};
+    void initAllValues();
 
     int playerPoints;
     int passengersDead;
