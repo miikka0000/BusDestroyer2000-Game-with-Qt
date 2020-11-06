@@ -159,7 +159,7 @@ void GameWindow::setLCDStyle()
 void GameWindow::spawnBonusItem()
 {
 
-    BonusItem * bonusGem = new BonusItem();
+    bonusItem * bonusGem = new bonusItem();
     bonusGem->currentWidth = this->width();
     bonusGem->currentHeight = this->height();
     _scene->addItem(bonusGem);

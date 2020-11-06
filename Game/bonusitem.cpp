@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 
-BonusItem::BonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
+bonusItem::bonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 
     int randXCoord = rand() % currentWidth;
@@ -16,12 +16,12 @@ BonusItem::BonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(pare
     setPixmap(gemPic);
 
     _bonusTimer = new QTimer(this);
-    connect(_bonusTimer, &QTimer::timeout, this, &BonusItem::move);
+    connect(_bonusTimer, &QTimer::timeout, this, &bonusItem::move);
     _bonusTimer->start(_bonusInterval);
     setPos(mapToParent(pos().x(), pos().y()));
 }
 
-void BonusItem::move(){
+void bonusItem::move(){
 
     setPos(this->x(), this->y() + 5);
 

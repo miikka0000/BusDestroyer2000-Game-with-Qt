@@ -259,7 +259,7 @@ void Player::removeCollidingItem()
     QList<QGraphicsItem *> collidingObjects = collidingItems();
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
-        if (typeid(*(collidingObjects[i])) == typeid(BonusItem)){
+        if (typeid(*(collidingObjects[i])) == typeid(bonusItem)){
 
             smartStats->addPoints();
             smartStats->addCollectedDiamond();

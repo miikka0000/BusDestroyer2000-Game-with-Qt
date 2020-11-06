@@ -10,12 +10,12 @@
 #include <QPixmap>
 #include <QTimer>
 
-class BonusItem: public QObject,public QGraphicsPixmapItem{
+class bonusItem: public QObject,public QGraphicsPixmapItem{
 
     Q_OBJECT
 
 public:
-    BonusItem(QGraphicsItem * parent=0);
+    bonusItem(QGraphicsItem * parent=0);
 
 
     QPixmap gemPic = QPixmap(":/images/bonusGem_30x15.png");
