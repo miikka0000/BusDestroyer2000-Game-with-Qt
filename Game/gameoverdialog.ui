@@ -60,7 +60,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Top10 High Scores:</string>
+        <string>SCALED Top10 High Scores:</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>

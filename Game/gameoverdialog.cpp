@@ -51,6 +51,7 @@ void GameOverDialog::setPlayerPoints()
                              " points in total, well done " +
                              playerAliasName + "!");
 
+    ui->highScoresHeaderLabel->setText("<p>SCALED Top10 High Scores:</p>");
 
 }
 

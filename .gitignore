@@ -16,6 +16,8 @@ CMakeLists.txt.user*
 /release
 *debug*
 *release*
+*ui_*
+*ui_*
 
 
 
