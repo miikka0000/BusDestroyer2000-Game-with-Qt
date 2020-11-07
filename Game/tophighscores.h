@@ -1,11 +1,14 @@
 #ifndef TOPHIGHSCORES_H
 #define TOPHIGHSCORES_H
 
+#include "settingsdialog.h"
 #include <QObject>
 #include <iostream>
 #include <QFile>
 #include <QString>
 #include <QTextStream>
+#include <QSettings>
+#include <memory>
 
 const QString textFilePath = "top10scores.txt";
 
@@ -21,10 +24,14 @@ public:
     std::map<QString, int> scores;
     QString strScores;
 
-    void sort(std::map<QString, int> M);
+    void sortAndDisplay(std::map<QString, int> M);
+    int getDuration();
+private:
+    std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 
 signals:
 
 };
+
 
 #endif // TOPHIGHSCORES_H

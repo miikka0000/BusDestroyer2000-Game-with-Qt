@@ -40,7 +40,7 @@ private slots:
 private:
     Ui::settingsDialog *ui;
     bool _musicsOn = false;
-     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
+    std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 };
 
 #endif // SETTINGSDIALOG_H
