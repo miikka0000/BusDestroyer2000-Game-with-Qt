@@ -14,6 +14,8 @@ object_script.*.Debug
 CMakeLists.txt.user*
 /debug
 /release
+*debug*
+*release*
 
 
 

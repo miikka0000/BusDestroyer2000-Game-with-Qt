@@ -405,7 +405,7 @@ public:
         exitButton->setText(QCoreApplication::translate("MainMenuDialog", "Exit", nullptr));
         settingsButton->setText(QCoreApplication::translate("MainMenuDialog", "Settings", nullptr));
         helpButton->setText(QCoreApplication::translate("MainMenuDialog", "Help", nullptr));
-        mainHeaderLabel->setText(QCoreApplication::translate("MainMenuDialog", "Welcome to BUSDESTROYER2000!", nullptr));
+        mainHeaderLabel->setText(QCoreApplication::translate("MainMenuDialog", "Welcome to BUSDESTROYER 2000!", nullptr));
         subHeaderLabel->setText(QCoreApplication::translate("MainMenuDialog", "Please set the following info down below to start playing.", nullptr));
         pushButton->setText(QCoreApplication::translate("MainMenuDialog", "GameOver", nullptr));
     } // retranslateUi

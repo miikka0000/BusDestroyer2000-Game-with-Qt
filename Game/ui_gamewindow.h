@@ -115,6 +115,7 @@ public:
         graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         graphicsView->setSizeAdjustPolicy(QAbstractScrollArea::AdjustToContents);
+        graphicsView->setViewportUpdateMode(QGraphicsView::MinimalViewportUpdate);
 
         gridLayout->addWidget(graphicsView, 1, 0, 1, 1);
 

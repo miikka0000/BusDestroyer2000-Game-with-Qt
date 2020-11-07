@@ -52,10 +52,10 @@ GameWindow::GameWindow(QWidget *parent) :
 
     mainTimer = new QTimer(this);
     labelTimer = new QTimer(this);
-    connect(mainTimer, &QTimer::timeout, _scene, &QGraphicsScene::advance);
+    connect(mainTimer, &QTimer::timeout, this, &GameWindow::screenFrameUpdate);
     // adding player score by 10 if gem is picked
     connect(labelTimer, &QTimer::timeout, this, &GameWindow::addDataToLCD);
-    mainTimer->start(interval);
+    mainTimer->start(_frameRate);
     labelTimer->start(interval);
 
     bonusTimer = new QTimer(this);
@@ -159,7 +159,7 @@ void GameWindow::setLCDStyle()
 void GameWindow::spawnBonusItem()
 {
 
-    bonusItem * bonusGem = new bonusItem();
+    bonusItem *bonusGem = new bonusItem;
     bonusGem->currentWidth = this->width();
     bonusGem->currentHeight = this->height();
     _scene->addItem(bonusGem);
@@ -191,6 +191,11 @@ void GameWindow::setGameTime()
     // testauksen ajaksi sekunnit 5
     _gameTime.setHMS(0,0, 5);
 
+}
+
+void GameWindow::screenFrameUpdate()
+{
+ ui->graphicsView->update();
 }
 
 void GameWindow::updateCountDown() {

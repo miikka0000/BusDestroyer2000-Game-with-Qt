@@ -40,6 +40,7 @@ public:
     void spawnBonusItem();
     void addDataToLCD();
     void setGameTime();
+    void screenFrameUpdate();
 
     std::vector<int> getAvailableSize();
 
@@ -73,6 +74,7 @@ private:
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
     bool _largeMode = false;
     int _gameDuration;
+    int _frameRate = 20;
 
 
 

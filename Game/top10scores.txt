@@ -1,0 +1,12 @@
+ossi: 140
+tatu: 120
+ada: 60
+rr: 50
+ff: 100
+asf: 170
+asffa: 150
+ddd: 0
+sdsad: 100
+afa: 90
+sad: 120
+asdsa: 90
