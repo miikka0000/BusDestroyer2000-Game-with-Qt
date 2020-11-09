@@ -1,7 +1,6 @@
 #include "gameoverdialog.h"
 #include "ui_gameoverdialog.h"
 #include "mainmenudialog.h"
-#include "playergamescore.h"
 #include "tophighscores.h"
 
 #include <QSize>
@@ -22,11 +21,11 @@ GameOverDialog::GameOverDialog(QWidget *parent) :
     this->setFixedSize(QSize(800, 600));
     setToolTips();
     setPlayerPoints();
-    highScores = new topHighScores();
+    highScores = new topHighScores(this);
 
     highScores->writeFile();
     highScores->readFile();
-    ui->topscoreWidget->setText(highScores->strScores);
+    ui->topscoreWidget->setText(highScores->scoreStream);
 }
 
 GameOverDialog::~GameOverDialog()

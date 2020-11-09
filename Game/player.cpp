@@ -3,7 +3,7 @@
 #include "gamewindow.h"
 #include "mainmenudialog.h"
 #include "bonusitem.h"
-#include "playergamescore.h"
+
 
 
 
@@ -153,10 +153,6 @@ void Player::setDimensions()
         playerHeight = ufoPic.height();
         playerWidth = ufoPic.width();
     }
-
-
-    //qDebug() << "ship height: "<< playerHeight;
-    //qDebug() << "ship width: "<< playerWidth;
 }
 
 void Player::changePlayerSpeed(QKeyEvent *speedEvent)
@@ -181,21 +177,20 @@ void Player::changePlayerSpeed(QKeyEvent *speedEvent)
 void Player::addPlayerSprite()
 {
 
-    int chosenSkin = _playerSettings->value("player type setting").toInt();
-    //qDebug()<< chosenSkin;
+    int chosenSkin = _playerSettings->value("player type setting").toInt();  
 
     if(chosenSkin == MainMenuDialog::spaceshipOption){
-        //qDebug()<<"you chose spaceship";
+
         spaceshipChosen = true;
         setPixmap(spaceshipPic);
 
     } else if(chosenSkin == MainMenuDialog::tankOption){
-        //qDebug()<<"you chose tank";
+
         tankChosen = true;
         setPixmap(tankPic);
 
     } else if(chosenSkin == MainMenuDialog::ufoOption){
-        //qDebug()<<"you chose ufo";
+
         ufoChosen = true;
         setPixmap(ufoPic);
     }
@@ -208,7 +203,6 @@ void Player::initMusic()
 {
     _projectileSound = new QSoundEffect(this);
 
-    //qDebug()<<_playerSettings->value("music setting").toInt();
     int soundEffect = _playerSettings->value("projectile soundeffect setting").toInt();
     if(soundEffect == MainMenuDialog::fireballSound){
         _projectileSound->setSource(fireballSound);
@@ -251,7 +245,7 @@ void Player::savePlayerName()
 
     QString playerNickname = _playerSettings->value("player name setting").toString();
     playerName = playerNickname.toStdString();
-    //qDebug()<<QString::fromStdString(playerName);
+
 }
 
 void Player::removeCollidingItem()

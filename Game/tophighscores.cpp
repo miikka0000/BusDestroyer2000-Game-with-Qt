@@ -1,6 +1,6 @@
 #include "tophighscores.h"
-#include "playergamescore.h"
 #include "gamestatistics.h"
+
 #include <QDebug>
 
 extern std::shared_ptr<gameStatistics> smartStats;
@@ -39,7 +39,7 @@ void topHighScores::sortAndDisplay(std::map<QString, int> mapToBeSorted)
     int i = 1;
     for (auto it = sortedMap.rbegin(); it != sortedMap.rend(); ++it) {
         if (i <= 10) {
-            strScores += QString::number(i) + ") " + it->second + ": " + QString::number(it->first) + "\n";
+            scoreStream += QString::number(i) + ") " + it->second + ": " + QString::number(it->first) + "\n";
         }
         ++i;
     }

@@ -17,7 +17,6 @@ SOURCES += \
     main.cc \
     mainmenudialog.cpp \
     player.cpp \
-    playergamescore.cpp \
     settingsdialog.cpp \
     statistisdialog.cpp \
     tophighscores.cpp
@@ -57,7 +56,6 @@ HEADERS += \
     initgame.h \
     mainmenudialog.h \
     player.h \
-    playergamescore.h \
     settingsdialog.h \
     statistisdialog.h \
     tophighscores.h

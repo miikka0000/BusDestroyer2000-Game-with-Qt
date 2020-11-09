@@ -424,16 +424,74 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget4">
+  <widget class="QWidget" name="layoutWidget5">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>10</x>
+     <y>10</y>
+     <width>631</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QLabel" name="mainHeaderLabel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Welcome to BUSDESTROYER 2000!</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="subHeaderLabel">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Please set the following info down below to start playing.</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>253</x>
      <y>450</y>
-     <width>344</width>
+     <width>371</width>
      <height>26</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_8">
+   <layout class="QHBoxLayout" name="horizontalLayout_6">
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout_5">
       <item>
@@ -521,90 +579,13 @@ font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget5">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>631</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <widget class="QLabel" name="mainHeaderLabel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Welcome to BUSDESTROYER 2000!</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="subHeaderLabel">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string>Please set the following info down below to start playing.</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>450</y>
-     <width>80</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="text">
-    <string>GameOver</string>
-   </property>
-  </widget>
  </widget>
  <resources>
   <include location="resources/res.qrc"/>
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="playerButtonGroup"/>
   <buttongroup name="proctileButtonGroup"/>
+  <buttongroup name="playerButtonGroup"/>
  </buttongroups>
 </ui>

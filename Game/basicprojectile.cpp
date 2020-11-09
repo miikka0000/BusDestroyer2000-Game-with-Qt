@@ -1,5 +1,5 @@
 #include "basicprojectile.h"
-#include "playergamescore.h"
+
 
 
 #include <QTimer>

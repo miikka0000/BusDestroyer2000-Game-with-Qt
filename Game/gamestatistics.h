@@ -5,17 +5,11 @@
 #include "../Course/CourseLib/interfaces/istop.hh"
 #include "../Course/CourseLib/interfaces/ipassenger.hh"
 #include "../Course/CourseLib/interfaces/iactor.hh"
-#include "playergamescore.h"
-#include "assert.h"
-
-
 
 #include <map>
 #include <memory>
 #include <QObject>
 #include <QDebug>
-
-
 
 class gameStatistics : public Interface::IStatistics
 {

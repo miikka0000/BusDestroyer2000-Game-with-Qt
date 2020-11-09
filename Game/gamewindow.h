@@ -41,6 +41,7 @@ public:
     void addDataToLCD();
     void setGameTime();
     void screenFrameUpdate();
+    void stopTimers();
 
     std::vector<int> getAvailableSize();
 
@@ -62,10 +63,10 @@ public slots:
 
 private:
     Ui::GameWindow *ui;
-    QTimer *mainTimer;
-    QTimer *bonusTimer;
-    QTimer *gameTimer;
-    QTimer *labelTimer;
+    QTimer *_mainTimer;
+    QTimer *_bonusTimer;
+    QTimer *_gameTimer;
+    QTimer *_labelTimer;
     MainMenuDialog *_mainMenu;
     QGraphicsScene * _scene;
     initGame * _newGame;
@@ -75,6 +76,9 @@ private:
     bool _largeMode = false;
     int _gameDuration;
     int _frameRate = 20;
+    int _countDownInterval = 1000;
+    int _spawnBonusInterval = 4000;
+
 
 
 

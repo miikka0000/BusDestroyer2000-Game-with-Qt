@@ -1,8 +1,6 @@
 #ifndef BONUSITEM_H
 #define BONUSITEM_H
 
-
-
 #include <QObject>
 #include <QGraphicsPixmapItem>
 #include <QObject>

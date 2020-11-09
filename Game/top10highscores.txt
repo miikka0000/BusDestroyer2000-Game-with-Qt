@@ -1,0 +1,6 @@
+ad: 5
+dd: 5
+asd: 5
+tatai: 5
+osteri44: 15
+sakas: 5
