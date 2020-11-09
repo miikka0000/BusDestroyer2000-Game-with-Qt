@@ -15,24 +15,24 @@ extern QString playerAliasName;
 
 GameOverDialog::GameOverDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::GameOverDialog)
+    ui(new Ui::GameOverDialog),
+    _highScores(new topHighScores)
 {
     ui->setupUi(this);
     this->setFixedSize(QSize(800, 600));
+    this->setWindowTitle("Game Over");
     setToolTips();
     setPlayerPoints();
-    highScores = new topHighScores(this);
 
-    highScores->writeFile();
-    highScores->readFile();
-    ui->topscoreWidget->setText(highScores->scoreStream);
+    _highScores->writeFile();
+    _highScores->readFile();
+    ui->topscoreWidget->setText(_highScores->scoreStream);
 }
 
 GameOverDialog::~GameOverDialog()
 {
     initGameData();
     delete ui;
-
 }
 
 void GameOverDialog::setToolTips()
@@ -40,7 +40,6 @@ void GameOverDialog::setToolTips()
     ui->playAgainButton->setToolTip("Play Again");
     ui->gameOverCloseButton->setToolTip("Close Game");
     ui->statsButton->setToolTip("Show game statistics");
-
 }
 
 void GameOverDialog::setPlayerPoints()
@@ -51,7 +50,6 @@ void GameOverDialog::setPlayerPoints()
                              playerAliasName + "!");
 
     ui->highScoresHeaderLabel->setText("<p>SCALED Top10 High Scores:</p>");
-
 }
 
 void GameOverDialog::initGameData()
@@ -73,11 +71,9 @@ void GameOverDialog::on_playAgainButton_clicked()
     this->close();
 }
 
-
-
 void GameOverDialog::on_statsButton_clicked()
 {
-    statistisDialog *statsDialog = new statistisDialog;
+    statistisDialog *statsDialog = new statistisDialog();
     statsDialog->show();
     this->close();
 }

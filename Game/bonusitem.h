@@ -15,19 +15,16 @@ class bonusItem: public QObject,public QGraphicsPixmapItem{
 public:
     bonusItem(QGraphicsItem * parent=0);
 
-
-    QPixmap gemPic = QPixmap(":/images/bonusGem_30x15.png");
     int currentWidth = 800;
     int currentHeight = 600;
-
 
 public slots:
     void move();
 
-
 private:
-    QTimer * _bonusTimer;
+    QTimer *_bonusTimer;
     int _bonusInterval = 50;
+    const QPixmap _gemPic = QPixmap(":/images/bonusGem_30x15.png");
 
 };
 

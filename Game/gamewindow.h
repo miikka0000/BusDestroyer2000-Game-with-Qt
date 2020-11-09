@@ -42,21 +42,10 @@ public:
     void setGameTime();
     void screenFrameUpdate();
     void stopTimers();
-
     std::vector<int> getAvailableSize();
-
 
     int screenWidth = 800;
     int screenHeight = 600;
-
-    int interval = 500;
-    QImage bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
-    QImage bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
-
-    QPixmap stopPic = QPixmap(":/images/stop_15x25.png");
-    QPixmap busPic = QPixmap(":/images/bus_10x20.png");
-    QPixmap passengerPic = QPixmap(":/images/passenger_20x15.png");
-
 
 public slots:
     void updateCountDown();
@@ -71,13 +60,16 @@ private:
     QGraphicsScene * _scene;
     initGame * _newGame;
     Player * _player;
-    QPixmap _pixmapBg = QPixmap(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
     bool _largeMode = false;
     int _gameDuration;
     int _frameRate = 20;
+    int _interval = 500;
     int _countDownInterval = 1000;
     int _spawnBonusInterval = 4000;
+    const QImage _bkgndSmall = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
+    const QImage _bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
+
 
 
 

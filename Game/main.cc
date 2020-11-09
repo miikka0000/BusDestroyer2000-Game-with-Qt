@@ -1,21 +1,12 @@
-#include "player.h"
-#include "gamewindow.h"
 #include "mainmenudialog.h"
-#include "tophighscores.h"
 #include "gamestatistics.h"
-#include "interfaces/iactor.hh"
 
 #include <QApplication>
-#include <QGraphicsScene>
-#include <QGraphicsView>
-#include <QGraphicsRectItem>
-#include <QScreen>
 #include <QCoreApplication>
 #include <QSettings>
 #include <memory>
 #include <map>
 #include <QGraphicsPixmapItem>
-
 
 std::shared_ptr<gameStatistics> smartStats =
         std::make_shared<gameStatistics>();
@@ -32,19 +23,10 @@ int main(int argc, char *argv[])
     QCoreApplication::setApplicationName("BusDestroyer2000");
     QSettings mySettings;
 
-    topHighScores *n = new topHighScores;
-    n->writeFile();
-    //n->readFile();
-
     Q_INIT_RESOURCE(offlinedata);
 
     MainMenuDialog * menuUi = new MainMenuDialog();
-
-
     menuUi->exec();
-
-
-
 
     return a.exec();
 }

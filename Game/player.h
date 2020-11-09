@@ -3,7 +3,6 @@
 #include "mainmenudialog.h"
 #include "basicprojectile.h"
 
-
 #include <QGraphicsRectItem>
 #include <QKeyEvent>
 #include <QSoundEffect>
@@ -35,33 +34,14 @@ public:
     void setMusicChoice();
     void savePlayerName();
     void removeCollidingItem();
-    void increasePoints() {playerScore += 10;};
-    int getScore() {return playerScore;};
-
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
     int playerWidth;
     int screenWidth = 800;
     int screenHeight = 600;
-    QPixmap spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
-    QPixmap tankPic = QPixmap(":/images/tank_sprite_26x50.png");
-    QPixmap ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
-
-    const QUrl blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
-    const QUrl fireballSound = QUrl("qrc:/sounds/fireballSound.wav");
-    const QUrl missileSound = QUrl("qrc:/sounds/missileSound.wav");
 
     std::string playerName;
-    bool tankChosen = false;
-    bool spaceshipChosen = false;
-    bool ufoChosen = false;
-    bool fireballChosen = false;
-    bool missileChosen = false;
-    bool laserChosen = false;
-    bool musicsOn = false;
-
-    int playerScore = 0;
 
 private:
 
@@ -69,13 +49,30 @@ private:
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;
     int _interval = 50;
+
     bool _keyLeft = false;
     bool _keyRight = false;
     bool _keyUp = false;
     bool _keyDown = false;
     bool _keySpace = false;
 
+    bool _tankChosen = false;
+    bool _spaceshipChosen = false;
+    bool _ufoChosen = false;
+    bool _fireballChosen = false;
+    bool _missileChosen = false;
+    bool _laserChosen = false;
+    bool _musicsOn = false;
+
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
+
+    const QPixmap _spaceshipPic = QPixmap(":/images/spaceship_45x31.png");
+    const QPixmap _tankPic = QPixmap(":/images/tank_sprite_26x50.png");
+    const QPixmap _ufoPic = QPixmap(":/images/ufo_sprite_50x50.png");
+
+    const QUrl _blasterSound = QUrl("qrc:/sounds/blaster_sound.wav");
+    const QUrl _fireballSound = QUrl("qrc:/sounds/fireballSound.wav");
+    const QUrl _missileSound = QUrl("qrc:/sounds/missileSound.wav");
 
 };
 

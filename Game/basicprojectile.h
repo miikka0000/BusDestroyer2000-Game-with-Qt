@@ -21,6 +21,7 @@ class basicProjectile: public QObject, public QGraphicsPixmapItem{
 public:
     basicProjectile(QGraphicsItem *parent= 0);
     ~basicProjectile();
+
     void setDimensions();
     void setProjectilePicture();
     bool removeShootedActors();
@@ -28,18 +29,13 @@ public:
     // with slight modifications on params.
     bool isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord);
 
-
-
-    bool fireballChosen = false;
-    bool missileChosen = false;
-    bool laserChosen = false;
-
-    QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
-    QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
-    QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
-
+public slots:
+    void move();
 
 private:
+    bool _fireballChosen = false;
+    bool _missileChosen = false;
+    bool _laserChosen = false;
 
     int _projectileVelocity = 20;
     int _projectileHeight;
@@ -49,11 +45,9 @@ private:
     int _fireRate = 50;
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 
-
-
-
-public slots:
-    void move();
+    const QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
+    const QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
+    const QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
 
 };
 

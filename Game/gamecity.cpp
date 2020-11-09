@@ -43,11 +43,9 @@ void gameCity::setBackground(QImage &basicbackground, QImage &bigbackground)
             scene()->addPixmap(QPixmap::fromImage(basicbackground.scaled(800, 600,
                                                                          Qt::IgnoreAspectRatio)));
         }
-
         backgroundSet = true;
-    }
 
-    else {
+    } else {
         throw Interface::InitError("InitError Setting the picture was"
                                    " unsuccesful or the picture was invalid.");
     }
@@ -139,7 +137,6 @@ void gameCity::removeActor(std::shared_ptr<Interface::IActor> actor)
             return;
         }
         return;
-
     }
     return;
 }
@@ -159,7 +156,6 @@ void gameCity::actorRemoved(std::shared_ptr<Interface::IActor> actor)
         } else if(typeid (*(actor)) == typeid (CourseSide::Passenger)){
             smartStats->passengerLeft();
         }
-
     }
     return;
 }

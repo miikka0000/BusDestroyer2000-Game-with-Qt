@@ -5,8 +5,6 @@
 #include <QtTest>
 #include <QObject>
 
-// add necessary includes here
-
 class statisticsTest : public QObject
 {
     Q_OBJECT
@@ -56,7 +54,6 @@ void statisticsTest::testNysseRemoved()
     gameStatistics test;
     test.nysseRemoved();
     QCOMPARE(test.removedNysses, 1);
-
 }
 
 void statisticsTest::testMorePassengers()

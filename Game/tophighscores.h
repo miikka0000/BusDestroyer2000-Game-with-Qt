@@ -21,16 +21,14 @@ public:
 
     void readFile(QString filename = textFilePath);
     void writeFile(QString filename = textFilePath);
+    void sortAndDisplay(std::map<QString, int> mapToBeSorted);
+    int getDuration();
 
     std::map<QString, int> scores;
     QString scoreStream;
 
-    void sortAndDisplay(std::map<QString, int> mapToBeSorted);
-    int getDuration();
 private:
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
-
-signals:
 
 };
 

@@ -1,7 +1,5 @@
 #include "basicprojectile.h"
 
-
-
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
@@ -22,7 +20,6 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
 
     _projectileTimer->start(_fireRate);
     setPos(mapToParent(pos().x(), pos().y()));
-
 }
 
 basicProjectile::~basicProjectile()
@@ -32,39 +29,35 @@ basicProjectile::~basicProjectile()
 
 void basicProjectile::setDimensions()
 {
-
-    if(fireballChosen){
+    if(_fireballChosen){
         _projectileHeight = _fireballPic.height();
         _projectileWidth = _fireballPic.width();
-    } else if(missileChosen){
+    } else if(_missileChosen){
         _projectileHeight = _missilePic.height();
         _projectileWidth = _missilePic.width();
-    } else if(laserChosen){
+    } else if(_laserChosen){
         _projectileHeight = _laserPic.height();
         _projectileWidth = _laserPic.width();
     }
-
 }
 
 void basicProjectile::setProjectilePicture()
 {
-
     int chosenProjectile = _playerSettings->value("projectile type setting").toInt();
-    //qDebug()<< chosenProjectile;
 
     if(chosenProjectile == MainMenuDialog::fireballOption){
 
-        fireballChosen = true;
+        _fireballChosen = true;
         setPixmap(_fireballPic);
 
     } else if(chosenProjectile == MainMenuDialog::missileOption){
 
-        missileChosen = true;
+        _missileChosen = true;
         setPixmap(_missilePic);
 
     } else if(chosenProjectile == MainMenuDialog::laserOption){
 
-        laserChosen = true;
+        _laserChosen = true;
         setPixmap(_laserPic);
     }
     setTransformOriginPoint(5, 10);
@@ -102,20 +95,15 @@ bool basicProjectile::removeShootedActors()
     return false;
 }
 
-// isClose function  is a courtesy from the CourseSide (core/location)
 bool basicProjectile::isClose(const Interface::Location &loc, int limit, int xCoord, int yCoord)
 {
-
     int dx = loc.giveX() - xCoord;
     int dy = loc.giveY() - yCoord;
-
     return dx*dx + dy*dy <= limit*limit;
-
 }
 
 void basicProjectile::move()
 {
-
     QList<QGraphicsItem *> collidingObjects = collidingItems();
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
@@ -127,7 +115,6 @@ void basicProjectile::move()
             scene()->removeItem(this);
             delete collidingObjects[i];
             delete this;
-
             return;
         }
     }
@@ -142,8 +129,6 @@ void basicProjectile::move()
         scene()->removeItem(this);
         delete this;
     }
-
-
 }
 
 

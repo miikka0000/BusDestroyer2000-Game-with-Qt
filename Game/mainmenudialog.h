@@ -31,7 +31,6 @@ public:
         fireballOption, missileOption, laserOption,
         musicStateOn, musicStateOff, fireballSound,
         missileSound, blasterSound
-
     };
 
 private slots:
@@ -57,14 +56,13 @@ private slots:
 
     void on_helpButton_clicked();
 
-
 private:
     Ui::MainMenuDialog *ui;
 
     QSize _menuDialogSize;
-    QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
-    QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
-    QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
+    const QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
+    const QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
+    const QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 
     bool _tank = false;
@@ -78,7 +76,6 @@ private:
     bool _musicsOn = false;
 
     QString _playerAlias;
-
 
 };
 

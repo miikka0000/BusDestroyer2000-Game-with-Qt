@@ -82,10 +82,6 @@ public:
     int collectedDiamonds;
     int movedActorsAmount;
 
-private:
-     //std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator _it;
-
-
 };
 
 #endif // GAMESTATISTICS_H

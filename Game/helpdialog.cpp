@@ -11,8 +11,8 @@ helpDialog::helpDialog(QWidget *parent) :
     this->setFixedSize(QSize(800, 700));
     ui->helpTextBrowser->setFixedSize(QSize(800, 700));
     ui->closeHelpButton->move(800 - (2.5 * ui->closeHelpButton->width()), 0);
+    this->setWindowTitle("Help");
     setActionTips();
-
 }
 
 helpDialog::~helpDialog()
@@ -22,9 +22,8 @@ helpDialog::~helpDialog()
 
 void helpDialog::setActionTips()
 {
- ui->closeHelpButton->setToolTip("Back to Main Menu");
+    ui->closeHelpButton->setToolTip("Back to Main Menu");
 }
-
 
 void helpDialog::on_closeHelpButton_clicked()
 {

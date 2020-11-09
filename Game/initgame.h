@@ -43,52 +43,15 @@ public:
 
     void setActorPos(int newX, int newY, QGraphicsPixmapItem *item);
 
-     void initLogic(QGraphicsScene *scene);
+    void initLogic(QGraphicsScene *scene);
 
-     void drawAllStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
-     void drawBuses(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
+    void drawAllStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
+    void drawBuses(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
     std::shared_ptr<gameCity> createGame();
     void moveNysses();
     void movePassengers();
     void moveSceneActors();
     void endGame();
-
-    int getActorHeight(QGraphicsPixmapItem *actor);
-    int getActorWidth(QGraphicsPixmapItem *actor);
-
-    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator nysseIt;
-    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*>::iterator passengerIt;
-
-
-
-
-    QPixmap stopPic = QPixmap(":/images/stop_15x25.png");
-    QPixmap busPic = QPixmap(":/images/bus_10x20.png");
-    QPixmap passengerPic = QPixmap(":/images/passenger_20x15.png");
-
-
-    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> nysseMap;
-    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> passengerMap;
-    std::map<std::shared_ptr<Interface::IStop>, QGraphicsPixmapItem*> stopMap;
-
-     std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> actorsMap;
-
-    std::vector<std::shared_ptr<Interface::IActor>> nysseVec;
-    std::vector<std::shared_ptr<Interface::IActor>> passengerVec;
-    std::vector<std::shared_ptr<Interface::IStop>> stopsVec;
-    std::vector<std::shared_ptr<Interface::IActor>> actorsVec;
-
-
-    std::shared_ptr<gameCity> newCity;
-    std::shared_ptr<CourseSide::Logic> gameLogic;
-
-
-    QImage basicbackgroung = QImage(":/offlinedata/offlinedata/kartta_pieni_500x500.png");
-    QImage bigbackground = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
-
-    int nysseVelocity = 10;
-    int passengerVelocity = 5;
-
 
 
 private:
@@ -97,7 +60,22 @@ private:
     int screenHeight = 600;
     QTimer *_updateTimer;
 
+    std::map<std::shared_ptr<Interface::IStop>, QGraphicsPixmapItem*> _stopMap;
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> _nysseMap;
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> _passengerMap;
+    std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> _actorsMap;
 
+    std::vector<std::shared_ptr<Interface::IActor>> _nysseVec;
+    std::vector<std::shared_ptr<Interface::IActor>> _passengerVec;
+    std::vector<std::shared_ptr<Interface::IStop>> _stopsVec;
+    std::vector<std::shared_ptr<Interface::IActor>> _actorsVec;
+
+    std::shared_ptr<gameCity> _newCity;
+    std::shared_ptr<CourseSide::Logic> _gameLogic;
+
+    const QPixmap _stopPic = QPixmap(":/images/stop_15x25.png");
+    const QPixmap _busPic = QPixmap(":/images/bus_10x20.png");
+    const QPixmap _passengerPic = QPixmap(":/images/passenger_20x15.png");
 
 };
 

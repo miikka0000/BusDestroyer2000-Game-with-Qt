@@ -26,11 +26,8 @@
 
 extern std::shared_ptr<gameStatistics> smartStats;
 
-
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
-
-    //qDebug()<<_playerSettings->value("music setting").toInt();
     addPlayerSprite();
     savePlayerName();
     initMusic();
@@ -49,22 +46,20 @@ Player::~Player()
 void Player::keyPressEvent(QKeyEvent *event)
 {
 
-
     if(event->key() == Qt::Key_Left){
-        //qDebug() << "key left pressed";
+
         _keyLeft = true;
 
     }  else if(event->key() == Qt::Key_Right){
 
-        //qDebug() << "key right pressed";
         _keyRight = true;
 
     } else if(event->key() == Qt::Key_Up){
-        //qDebug() << "key up pressed";
+
         _keyUp = true;
 
     } else if(event->key() == Qt::Key_Down){
-        //qDebug() << "key down pressed";
+
         _keyDown = true;
 
     }  else if(event->key() == Qt::Key_Space){
@@ -77,7 +72,7 @@ void Player::keyPressEvent(QKeyEvent *event)
             scene()->addItem(projectile);
             setMusicChoice();
         }
-        //qDebug() << "space pressed";
+
         _keySpace = true;
 
     } changePlayerSpeed(event);
@@ -90,24 +85,24 @@ void Player::keyReleaseEvent(QKeyEvent * event)
     if (!event->isAutoRepeat())
     {
         if(event->key() == Qt::Key_Left){
-            //qDebug() << "Left key relased.";
+
             _keyLeft = false;
 
         } else if(event->key() == Qt::Key_Right){
 
-            //qDebug() << "Right key relased.";
+
             _keyRight = false;
 
         } else if(event->key() == Qt::Key_Up){
-            //qDebug() << "Up key relased.";
+
             _keyUp = false;
 
         } else if(event->key() == Qt::Key_Down){
-            //qDebug() << "Down key relased.";
+
             _keyDown = false;
 
         }  else if(event->key() == Qt::Key_Space){
-            //qDebug() << "Space key relased.";
+
             _keySpace = false;
 
         }
@@ -137,21 +132,20 @@ void Player::movePlayer(){
             setPos(x(), y() + _spaceshipVelocity);
         }
     }
-
 }
 
 void Player::setDimensions()
 {
 
-    if(tankChosen){
-        playerHeight = tankPic.height();
-        playerWidth = tankPic.width();
-    } else if(spaceshipChosen){
-        playerHeight = spaceshipPic.height();
-        playerWidth = spaceshipPic.width();
-    } else if(ufoChosen){
-        playerHeight = ufoPic.height();
-        playerWidth = ufoPic.width();
+    if(_tankChosen){
+        playerHeight = _tankPic.height();
+        playerWidth = _tankPic.width();
+    } else if(_spaceshipChosen){
+        playerHeight = _spaceshipPic.height();
+        playerWidth = _spaceshipPic.width();
+    } else if(_ufoChosen){
+        playerHeight = _ufoPic.height();
+        playerWidth = _ufoPic.width();
     }
 }
 
@@ -166,37 +160,34 @@ void Player::changePlayerSpeed(QKeyEvent *speedEvent)
 
         _spaceshipVelocity = _spaceshipVelocity*increaseMultiplier;
 
-
     } else if(speedEvent->key() == Qt::Key_Minus && _spaceshipVelocity > 23.0){
 
         _spaceshipVelocity = _spaceshipVelocity*decreaseMultiplier;
-
     }
 }
 
 void Player::addPlayerSprite()
 {
 
-    int chosenSkin = _playerSettings->value("player type setting").toInt();  
+    int chosenSkin = _playerSettings->value("player type setting").toInt();
 
     if(chosenSkin == MainMenuDialog::spaceshipOption){
 
-        spaceshipChosen = true;
-        setPixmap(spaceshipPic);
+        _spaceshipChosen = true;
+        setPixmap(_spaceshipPic);
 
     } else if(chosenSkin == MainMenuDialog::tankOption){
 
-        tankChosen = true;
-        setPixmap(tankPic);
+        _tankChosen = true;
+        setPixmap(_tankPic);
 
     } else if(chosenSkin == MainMenuDialog::ufoOption){
 
-        ufoChosen = true;
-        setPixmap(ufoPic);
+        _ufoChosen = true;
+        setPixmap(_ufoPic);
     }
 
     setDimensions();
-
 }
 
 void Player::initMusic()
@@ -205,15 +196,14 @@ void Player::initMusic()
 
     int soundEffect = _playerSettings->value("projectile soundeffect setting").toInt();
     if(soundEffect == MainMenuDialog::fireballSound){
-        _projectileSound->setSource(fireballSound);
+        _projectileSound->setSource(_fireballSound);
 
     }else if(soundEffect == MainMenuDialog::missileSound){
-        _projectileSound->setSource(missileSound);
+        _projectileSound->setSource(_missileSound);
 
     }else if(soundEffect == MainMenuDialog::blasterSound){
-        _projectileSound->setSource(blasterSound);
+        _projectileSound->setSource(_blasterSound);
     }
-
 }
 
 void Player::configureMusic()
@@ -231,21 +221,19 @@ void Player::setMusicChoice()
     int musicOpt = _playerSettings->value("music setting").toInt();
 
     if(musicOpt == settingsDialog::musicStateOn){
-        this->musicsOn = true;
+        this->_musicsOn = true;
         configureMusic();
 
     } else if(musicOpt == settingsDialog::musicStateOff){
-        this->musicsOn = false;
+        this->_musicsOn = false;
         return;
     }
 }
 
 void Player::savePlayerName()
 {
-
     QString playerNickname = _playerSettings->value("player name setting").toString();
     playerName = playerNickname.toStdString();
-
 }
 
 void Player::removeCollidingItem()
@@ -259,7 +247,6 @@ void Player::removeCollidingItem()
             smartStats->addCollectedDiamond();
             scene()->removeItem(collidingObjects[i]);
             delete collidingObjects[i];
-
             return;
         }
     }
@@ -272,7 +259,6 @@ std::vector<int> Player::getPlayerOrigin(int width, int height)
     int centerHeight = height / 2;
     playerDimensions.push_back(centerWidth);
     playerDimensions.push_back(centerHeight);
-
     return playerDimensions;
 }
 

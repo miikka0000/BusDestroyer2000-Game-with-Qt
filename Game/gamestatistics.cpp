@@ -1,7 +1,6 @@
 #include "gamestatistics.h"
 #include "errors/gameerror.hh"
 
-
 gameStatistics::gameStatistics()
 {
     playerPoints = 0;
@@ -38,9 +37,9 @@ void gameStatistics::passengerDied(int num)
 
     if(num > 0){
         passengersDead += num;
+
     } else{
         throw Interface::GameError("Amount of dead passengers can't be negative.");
-
     }
 }
 
@@ -55,6 +54,7 @@ void gameStatistics::morePassengers(int num)
 
     if(num > 0){
         totalPassengers += num;
+
     } else{
         throw Interface::GameError("Added passenger amount can't be negative");
     }

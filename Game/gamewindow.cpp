@@ -41,7 +41,7 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->centralwidget->layout()->setContentsMargins(0, 0, 0, this->height() * 0.03);
 
-    setPicture(bkgndBig);
+    setPicture(_bkgndBig);
     ui->graphicsView->setScene(_scene);
     _scene->setSceneRect(0,0, screenWidth, screenHeight);
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -54,7 +54,7 @@ GameWindow::GameWindow(QWidget *parent) :
     connect(_gameTimer, &QTimer::timeout, this, &GameWindow::updateCountDown);
 
     _mainTimer->start(_frameRate);
-    _labelTimer->start(interval);
+    _labelTimer->start(_interval);
     _bonusTimer->start(_spawnBonusInterval);
     _gameTimer->start(_countDownInterval);
 

@@ -20,16 +20,15 @@ public:
     void setCorrectMusicState();
     void setWantedGameTime();
 
-
     enum musicState {
         musicStateOn, musicStateOff
     };
+
     enum gameTime {
         gameTime1, gameTime2, gameTime3
     };
 
 private slots:
-
 
     void on_backToMainButton_clicked();
 

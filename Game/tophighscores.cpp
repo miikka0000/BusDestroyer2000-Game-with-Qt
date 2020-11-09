@@ -5,6 +5,7 @@
 
 extern std::shared_ptr<gameStatistics> smartStats;
 extern QString playerAliasName;
+
 topHighScores::topHighScores(QObject *parent) : QObject(parent)
 {
 

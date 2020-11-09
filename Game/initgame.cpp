@@ -33,18 +33,18 @@ initGame::~initGame()
 void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene)
 {
 
-    stopsVec = currCity->allStops;
+    _stopsVec = currCity->allStops;
 
-    for (unsigned int i= 0; i < stopsVec.size(); ++i){
+    for (unsigned int i= 0; i < _stopsVec.size(); ++i){
 
         QGraphicsPixmapItem *stopRect = new QGraphicsPixmapItem(this);
-        int xCoord = stopsVec.at(i)->getLocation().giveX();
-        int yCoord = stopsVec.at(i)->getLocation().giveY();
+        int xCoord = _stopsVec.at(i)->getLocation().giveX();
+        int yCoord = _stopsVec.at(i)->getLocation().giveY();
 
         setActorPos(xCoord, yCoord, stopRect);
-        setActorPic(stopPic, stopRect, 15, 25);
+        setActorPic(_stopPic, stopRect, 15, 25);
 
-        stopMap.insert({stopsVec.at(i), stopRect});
+        _stopMap.insert({_stopsVec.at(i), stopRect});
 
         if(xCoord < screenWidth && xCoord >= 0 &&
                 yCoord + 25 < screenHeight && yCoord > 0){
@@ -55,14 +55,14 @@ void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *sce
 
 void initGame::readActors(std::shared_ptr<gameCity> currCity)
 {
-    actorsVec = currCity->allActors;
+    _actorsVec = currCity->allActors;
 
-    for (unsigned int i= 0; i < actorsVec.size(); ++i){
-        if(typeid (*(actorsVec.at(i))) == typeid(CourseSide::Nysse)){
-            nysseVec.push_back(actorsVec.at(i));
+    for (unsigned int i= 0; i < _actorsVec.size(); ++i){
+        if(typeid (*(_actorsVec.at(i))) == typeid(CourseSide::Nysse)){
+            _nysseVec.push_back(_actorsVec.at(i));
 
-        }else if(typeid (*(actorsVec.at(i))) == typeid(CourseSide::Passenger)){
-            passengerVec.push_back(actorsVec.at(i));
+        }else if(typeid (*(_actorsVec.at(i))) == typeid(CourseSide::Passenger)){
+            _passengerVec.push_back(_actorsVec.at(i));
         }
     }
 }
@@ -70,15 +70,15 @@ void initGame::readActors(std::shared_ptr<gameCity> currCity)
 void initGame::drawActorItems(QGraphicsScene *scene)
 {
 
-    for (unsigned int i= 0; i < nysseVec.size(); ++i){
+    for (unsigned int i= 0; i < _nysseVec.size(); ++i){
         QGraphicsPixmapItem *nysseRect = new QGraphicsPixmapItem(this);
-        int nysseLocX = nysseVec.at(i)->giveLocation().giveX();
-        int nysseLocY = nysseVec.at(i)->giveLocation().giveY();
+        int nysseLocX = _nysseVec.at(i)->giveLocation().giveX();
+        int nysseLocY = _nysseVec.at(i)->giveLocation().giveY();
 
         setActorPos(nysseLocX, nysseLocY, nysseRect);
-        setActorPic(busPic, nysseRect, 10, 20);
-        nysseMap.insert({nysseVec.at(i), nysseRect});
-        actorsMap.insert({nysseVec.at(i), nysseRect});
+        setActorPic(_busPic, nysseRect, 10, 20);
+        _nysseMap.insert({_nysseVec.at(i), nysseRect});
+        _actorsMap.insert({_nysseVec.at(i), nysseRect});
 
         if(nysseLocX + 10 < screenWidth && nysseLocX >= 0 &&
                 nysseLocY + 20 < screenHeight && nysseLocY > 0){
@@ -86,16 +86,16 @@ void initGame::drawActorItems(QGraphicsScene *scene)
         }
     }
 
-    for (unsigned int i= 0; i < passengerVec.size(); ++i){
+    for (unsigned int i= 0; i < _passengerVec.size(); ++i){
         QGraphicsPixmapItem *passengerRect = new QGraphicsPixmapItem(this);
-        int passengerLocX = passengerVec.at(i)->giveLocation().giveX();
-        int passengerLocY = passengerVec.at(i)->giveLocation().giveY();
+        int passengerLocX = _passengerVec.at(i)->giveLocation().giveX();
+        int passengerLocY = _passengerVec.at(i)->giveLocation().giveY();
 
         setActorPos(passengerLocX, passengerLocY, passengerRect);
 
-        setActorPic(passengerPic, passengerRect, 10, 15);
-        passengerMap.insert({passengerVec.at(i), passengerRect});
-        actorsMap.insert({passengerVec.at(i), passengerRect});
+        setActorPic(_passengerPic, passengerRect, 10, 15);
+        _passengerMap.insert({_passengerVec.at(i), passengerRect});
+        _actorsMap.insert({_passengerVec.at(i), passengerRect});
 
         if(passengerLocX + 10 < screenWidth && passengerLocX >= 0 &&
                 passengerLocY + 15 < screenHeight && passengerLocY > 0){
@@ -103,7 +103,7 @@ void initGame::drawActorItems(QGraphicsScene *scene)
         }
 
     }
-    smartActors = actorsMap;
+    smartActors = _actorsMap;
 }
 
 void initGame::setActorPic(QPixmap pic, QGraphicsPixmapItem *actorItem,int w, int h)
@@ -118,22 +118,22 @@ void initGame::setActorPos(int newX, int newY, QGraphicsPixmapItem *item)
 
 void initGame::initLogic(QGraphicsScene *scene)
 {
-    gameLogic = std::make_shared<CourseSide::Logic>();
+    _gameLogic = std::make_shared<CourseSide::Logic>();
 
-    newCity = createGame();
+    _newCity = createGame();
 
-    gameLogic->takeCity(newCity);
-    newCity->backgroundSet = true;
+    _gameLogic->takeCity(_newCity);
+    _newCity->backgroundSet = true;
 
-    gameLogic->fileConfig();
+    _gameLogic->fileConfig();
 
     // Logic defines time accuracy within seconds and Nysse within minutes,
     // so it is necessary to call setTime before finalizing gamestart
-    gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
+    _gameLogic->setTime(QTime::currentTime().hour(), QTime::currentTime().minute());
 
-    gameLogic->finalizeGameStart();
-    drawStops(newCity, scene);
-    readActors(newCity);
+    _gameLogic->finalizeGameStart();
+    drawStops(_newCity, scene);
+    readActors(_newCity);
     drawActorItems(scene);
 
 }
@@ -159,18 +159,10 @@ void initGame::moveSceneActors()
 
 void initGame::endGame()
 {
-    newCity->isGameOver();
+    _newCity->isGameOver();
 }
 
-int initGame::getActorHeight(QGraphicsPixmapItem *actor)
-{
-    return actor->boundingRect().height();
-}
 
-int initGame::getActorWidth(QGraphicsPixmapItem *actor)
-{
-    return actor->boundingRect().width();
-}
 
 
 

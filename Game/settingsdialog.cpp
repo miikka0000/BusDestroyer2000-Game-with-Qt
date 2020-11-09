@@ -11,6 +11,7 @@ settingsDialog::settingsDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(QSize(800,600));
+    this->setWindowTitle("Settings");
     setActionToolTips();
     ui->musicsOnCheckBox->setChecked(false);
     ui->timeComboBox->setCurrentIndex(1);
@@ -30,10 +31,8 @@ void settingsDialog::setActionToolTips()
     ui->timeComboBox->setToolTip("Set game duration");
 }
 
-
 void settingsDialog::on_backToMainButton_clicked()
 {
-
     this->close();
 }
 
@@ -41,12 +40,10 @@ void settingsDialog::onMusicsOnClicked()
 {
 
     if(ui->musicsOnCheckBox->isChecked()){
-        //qDebug()<<"musics on";
         _musicsOn = true;
         _playerSettings->setValue("music setting", musicStateOn);
     }else if(!ui->musicsOnCheckBox->isChecked()){
         _musicsOn = false;
-        //qDebug()<<"musics off";
         _playerSettings->setValue("music setting", musicStateOff);
     }
 }

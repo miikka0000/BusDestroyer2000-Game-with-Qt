@@ -16,11 +16,11 @@ MainMenuDialog::MainMenuDialog(QWidget *parent) :
     ui->setupUi(this);
     _menuDialogSize = QSize(800, 600);
     this->setFixedSize(_menuDialogSize);
+    this->setWindowTitle("Main Menu");
     setToolTips();
 
     _playerSettings->setValue("music setting", settingsDialog::musicStateOff);
     _playerSettings->setValue("time setting", settingsDialog::gameTime2);
-
 }
 
 MainMenuDialog::~MainMenuDialog()
@@ -50,7 +50,6 @@ void MainMenuDialog::on_startButton_clicked()
 {
     if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
             && _playerAlias != NULL){
-
 
         GameWindow *mainWin = new GameWindow();
         mainWin->show();
@@ -86,7 +85,6 @@ void MainMenuDialog::on_startButton_clicked()
               && _playerAlias != NULL){
         ui->erronousInputLabel->setText("Remember to set projectile"
                                         " and player type!");
-
     }else {
         ui->erronousInputLabel->setText("Remember to set projectile type, "
                                         "player name and player type!");
@@ -107,7 +105,6 @@ void MainMenuDialog::on_playerNameEdit_editingFinished()
 
 void MainMenuDialog::on_spaceshipButton_clicked()
 {
-    //qDebug() <<"spaceship chosen";
     _spaceShip = true;
     _tank = false;
     _ufo = false;
@@ -117,7 +114,6 @@ void MainMenuDialog::on_spaceshipButton_clicked()
 
 void MainMenuDialog::on_tankButton_clicked()
 {
-    //qDebug() <<"tank chosen";
     _tank = true;
     _spaceShip = false;
     _ufo = false;
@@ -127,7 +123,6 @@ void MainMenuDialog::on_tankButton_clicked()
 
 void MainMenuDialog::on_ufoButton_clicked()
 {
-    //qDebug() <<"ufo chosen";
     _ufo = true;
     _tank = false;
     _spaceShip = false;
@@ -137,7 +132,6 @@ void MainMenuDialog::on_ufoButton_clicked()
 
 void MainMenuDialog::on_fireballButton_clicked()
 {
-    //qDebug()<< "fireball clicked";
     _fireball = true;
     _missile = false;
     _laser = false;
@@ -148,7 +142,6 @@ void MainMenuDialog::on_fireballButton_clicked()
 
 void MainMenuDialog::on_missileButton_clicked()
 {
-    //qDebug()<< "missile clicked";
     _fireball = false;
     _missile = true;
     _laser = false;
@@ -159,11 +152,9 @@ void MainMenuDialog::on_missileButton_clicked()
 
 void MainMenuDialog::on_laserButton_clicked()
 {
-    //qDebug()<< "laser clicked";
     _fireball = false;
     _missile = false;
     _laser = true;
-
 
     _playerSettings->setValue("projectile type setting", laserOption);
     _playerSettings->setValue("projectile soundeffect setting", blasterSound);

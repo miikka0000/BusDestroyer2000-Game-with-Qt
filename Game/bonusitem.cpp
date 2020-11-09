@@ -1,19 +1,16 @@
 #include "bonusitem.h"
 
-
 #include <QTimer>
 #include <QGraphicsScene>
 #include <QList>
 #include <stdlib.h>
 
-
 bonusItem::bonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
-
 
     int randXCoord = rand() % currentWidth;
 
     setPos(randXCoord, 0);
-    setPixmap(gemPic);
+    setPixmap(_gemPic);
 
     _bonusTimer = new QTimer(this);
     connect(_bonusTimer, &QTimer::timeout, this, &bonusItem::move);
