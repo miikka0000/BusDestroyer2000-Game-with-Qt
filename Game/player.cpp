@@ -4,9 +4,6 @@
 #include "mainmenudialog.h"
 #include "bonusitem.h"
 
-
-
-
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <QPixmap>
@@ -45,38 +42,30 @@ Player::~Player()
 
 void Player::keyPressEvent(QKeyEvent *event)
 {
-
     if(event->key() == Qt::Key_Left){
-
         _keyLeft = true;
 
     }  else if(event->key() == Qt::Key_Right){
-
         _keyRight = true;
 
     } else if(event->key() == Qt::Key_Up){
-
         _keyUp = true;
 
     } else if(event->key() == Qt::Key_Down){
-
         _keyDown = true;
 
     }  else if(event->key() == Qt::Key_Space){
         if ( !event->isAutoRepeat() ){
 
-            std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);
-            //std::unique_ptr<basicProjectile> projectile = std::make_unique<basicProjectile>();
+            std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);           
             basicProjectile *projectile = new basicProjectile();
             projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
             scene()->addItem(projectile);
             setMusicChoice();
         }
-
         _keySpace = true;
-
-    } changePlayerSpeed(event);
-
+    }
+    changePlayerSpeed(event);
     return;
 }
 
@@ -85,26 +74,19 @@ void Player::keyReleaseEvent(QKeyEvent * event)
     if (!event->isAutoRepeat())
     {
         if(event->key() == Qt::Key_Left){
-
             _keyLeft = false;
 
         } else if(event->key() == Qt::Key_Right){
-
-
             _keyRight = false;
 
         } else if(event->key() == Qt::Key_Up){
-
             _keyUp = false;
 
         } else if(event->key() == Qt::Key_Down){
-
             _keyDown = false;
 
-        }  else if(event->key() == Qt::Key_Space){
-
+        } else if(event->key() == Qt::Key_Space){
             _keySpace = false;
-
         }
         return;
     }
@@ -127,7 +109,6 @@ void Player::movePlayer(){
             setPos(x(), y() - _spaceshipVelocity);
         }
     } else if(_keyDown){
-
         if(pos().y() + playerHeight < screenHeight){
             setPos(x(), y() + _spaceshipVelocity);
         }
@@ -136,7 +117,6 @@ void Player::movePlayer(){
 
 void Player::setDimensions()
 {
-
     if(_tankChosen){
         playerHeight = _tankPic.height();
         playerWidth = _tankPic.width();
@@ -157,11 +137,9 @@ void Player::changePlayerSpeed(QKeyEvent *speedEvent)
     double decreaseMultiplier = 0.95;
 
     if(speedEvent->key() == Qt::Key_Plus && _spaceshipVelocity < 26.0){
-
         _spaceshipVelocity = _spaceshipVelocity*increaseMultiplier;
 
     } else if(speedEvent->key() == Qt::Key_Minus && _spaceshipVelocity > 23.0){
-
         _spaceshipVelocity = _spaceshipVelocity*decreaseMultiplier;
     }
 }
@@ -172,21 +150,17 @@ void Player::addPlayerSprite()
     int chosenSkin = _playerSettings->value("player type setting").toInt();
 
     if(chosenSkin == MainMenuDialog::spaceshipOption){
-
         _spaceshipChosen = true;
         setPixmap(_spaceshipPic);
 
     } else if(chosenSkin == MainMenuDialog::tankOption){
-
         _tankChosen = true;
         setPixmap(_tankPic);
 
     } else if(chosenSkin == MainMenuDialog::ufoOption){
-
         _ufoChosen = true;
         setPixmap(_ufoPic);
     }
-
     setDimensions();
 }
 
@@ -242,7 +216,6 @@ void Player::removeCollidingItem()
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(bonusItem)){
-
             smartStats->addPoints();
             smartStats->addCollectedDiamond();
             scene()->removeItem(collidingObjects[i]);

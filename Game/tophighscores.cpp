@@ -70,7 +70,6 @@ void topHighScores::writeFile(QString filename)
         if (playerAliasName != "") {
             stream <<  playerAliasName << ": "<< points << "\n";
         }
-
         file.close();
         qDebug() << "Writing finished";
     }

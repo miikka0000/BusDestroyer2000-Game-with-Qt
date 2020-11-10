@@ -46,48 +46,70 @@ void MainMenuDialog::setToolTips()
 
 }
 
+bool MainMenuDialog::nameIsEmpty(const QString playerName) const
+{
+    if(playerName.trimmed().isEmpty()){
+        return true;
+    }
+    return false;
+}
+
 void MainMenuDialog::on_startButton_clicked()
 {
     if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
-            && _playerAlias != NULL){
+            && !nameIsEmpty(_playerAlias)){
+
+        ui->erronousInputLabel->setText("A new game is starting, good luck!");
+        ui->erronousInputLabel->repaint();
 
         GameWindow *mainWin = new GameWindow();
         mainWin->show();
-
         this->close();
 
-    } else if(_playerAlias == NULL && (_tank || _spaceShip || _ufo) &&
+    } else if(_playerAlias.isEmpty() && (_tank || _spaceShip || _ufo) &&
               (_fireball || _missile || _laser)){
 
         ui->erronousInputLabel->setText("Remember to set player name!");
     }
     else if(!(_tank && _spaceShip && _ufo) && (_fireball || _missile || _laser)
-            && _playerAlias != NULL){
+            && !nameIsEmpty(_playerAlias)){
 
         ui->erronousInputLabel->setText("Remember to set player type!");
 
     }else if((_fireball || _missile || _laser) && !(_tank && _spaceShip && _ufo)
-             && _playerAlias == NULL){
+             && _playerAlias.isEmpty()){
+
         ui->erronousInputLabel->setText("Remember to set player type and"
                                         " player name!");
 
     } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
-              && _playerAlias != NULL){
+              && !nameIsEmpty(_playerAlias)){
 
         ui->erronousInputLabel->setText("Remember to set projectile type!");
 
     } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
-              && _playerAlias == NULL){
+              && _playerAlias.isEmpty()){
+
         ui->erronousInputLabel->setText("Remember to set projectile type"
                                         " and player name!");
 
     } else if(!(_tank && _spaceShip && _ufo) && !(_fireball && _missile && _laser)
-              && _playerAlias != NULL){
+              && !nameIsEmpty(_playerAlias)){
+
         ui->erronousInputLabel->setText("Remember to set projectile"
                                         " and player type!");
-    }else {
+
+    }else if(!(_tank || _spaceShip  || _ufo) && !(_fireball || _missile || _laser)
+             && _playerAlias.isEmpty()){
+
         ui->erronousInputLabel->setText("Remember to set projectile type, "
                                         "player name and player type!");
+
+    } else if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
+              && nameIsEmpty(_playerAlias)){
+
+        ui->erronousInputLabel->setText("Player name cannot contain only "
+                                        "whitespace!");
     }
 }
 
@@ -171,5 +193,7 @@ void MainMenuDialog::on_helpButton_clicked()
     helpDialog *gameHelpDialog = new helpDialog(this);
     gameHelpDialog->exec();
 }
+
+
 
 

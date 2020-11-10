@@ -38,7 +38,6 @@ void settingsDialog::on_backToMainButton_clicked()
 
 void settingsDialog::onMusicsOnClicked()
 {
-
     if(ui->musicsOnCheckBox->isChecked()){
         _musicsOn = true;
         _playerSettings->setValue("music setting", musicStateOn);
@@ -50,7 +49,6 @@ void settingsDialog::onMusicsOnClicked()
 
 void settingsDialog::setCorrectMusicState()
 {
-
     if(ui->musicsOnCheckBox->isChecked()){
         _playerSettings->setValue("music setting", musicStateOn);
     }else{

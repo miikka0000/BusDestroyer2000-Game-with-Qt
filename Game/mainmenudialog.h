@@ -12,7 +12,6 @@
 #include <QSettings>
 #include <memory>
 
-
 namespace Ui {
 class MainMenuDialog;
 }
@@ -25,6 +24,7 @@ public:
     explicit MainMenuDialog(QWidget *parent = nullptr);
     ~MainMenuDialog();
     void setToolTips();
+    bool nameIsEmpty(const QString playerName) const;
 
     enum playerConfig {
         spaceshipOption, tankOption, ufoOption,

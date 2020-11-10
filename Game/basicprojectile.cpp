@@ -46,17 +46,14 @@ void basicProjectile::setProjectilePicture()
     int chosenProjectile = _playerSettings->value("projectile type setting").toInt();
 
     if(chosenProjectile == MainMenuDialog::fireballOption){
-
         _fireballChosen = true;
         setPixmap(_fireballPic);
 
     } else if(chosenProjectile == MainMenuDialog::missileOption){
-
         _missileChosen = true;
         setPixmap(_missilePic);
 
     } else if(chosenProjectile == MainMenuDialog::laserOption){
-
         _laserChosen = true;
         setPixmap(_laserPic);
     }
@@ -108,7 +105,6 @@ void basicProjectile::move()
 
     for (int i = 0, j = collidingObjects.size(); i < j; ++i){
         if (typeid(*(collidingObjects[i])) == typeid(bonusItem)){
-
             smartStats->addPoints();
             smartStats->addCollectedDiamond();
             scene()->removeItem(collidingObjects[i]);

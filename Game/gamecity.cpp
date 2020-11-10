@@ -108,9 +108,7 @@ void gameCity::addActor(std::shared_ptr<Interface::IActor> newactor)
 
     if(findActor(newactor)){
         throw Interface::GameError("GameError Actor is already in the city.");
-
     } else{
-
         allActors.push_back(newactor);
     }
     return;

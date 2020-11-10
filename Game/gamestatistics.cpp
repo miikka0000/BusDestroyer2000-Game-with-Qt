@@ -3,15 +3,7 @@
 
 gameStatistics::gameStatistics()
 {
-    playerPoints = 0;
-    passengersDead = 0;
-    removedNysses = 0;
-    totalPassengers = 0;
-    totalNysses = 0;
-    leftNysses = 0;
-    collectedDiamonds = 0;
-    leftPassengers = 0;
-    movedActorsAmount = 0;
+
 }
 
 /**
@@ -34,7 +26,6 @@ int gameStatistics::givePoints() const
  */
 void gameStatistics::passengerDied(int num)
 {
-
     if(num > 0){
         passengersDead += num;
 
@@ -51,7 +42,6 @@ void gameStatistics::passengerDied(int num)
  */
 void gameStatistics::morePassengers(int num)
 {
-
     if(num > 0){
         totalPassengers += num;
 

@@ -10,19 +10,15 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <map>
-
-
 #include <memory>
 
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
-initGame::initGame(){
 
+initGame::initGame(){
 
     _updateTimer = new QTimer(this);
     connect(_updateTimer, &QTimer::timeout, this, &initGame::moveSceneActors);
-    //interval was previously 50, changed it to 200 to see it it affects fps
     _updateTimer->start(200);
-
 }
 
 initGame::~initGame()
@@ -141,7 +137,6 @@ void initGame::initLogic(QGraphicsScene *scene)
 std::shared_ptr<gameCity> initGame::createGame()
 {
     std::shared_ptr<gameCity> newGameCity = std::make_shared<gameCity>();
-
     return newGameCity;
 }
 

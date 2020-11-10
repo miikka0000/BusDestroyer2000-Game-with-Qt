@@ -8,7 +8,6 @@
 bonusItem::bonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     int randXCoord = rand() % currentWidth;
-
     setPos(randXCoord, 0);
     setPixmap(_gemPic);
 
@@ -23,7 +22,6 @@ void bonusItem::move(){
     setPos(this->x(), this->y() + 5);
 
     if (pos().y() > currentHeight){
-
         scene()->removeItem(this);
         delete this;
     }

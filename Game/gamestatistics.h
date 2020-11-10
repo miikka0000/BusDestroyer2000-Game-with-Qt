@@ -72,15 +72,15 @@ public:
     int giveDestroyedPassengers() {return passengersDead;};
     void initAllValues();
 
-    int playerPoints;
-    int passengersDead;
-    int removedNysses;
-    int totalPassengers;
-    int totalNysses;
-    int leftNysses;
-    int leftPassengers;
-    int collectedDiamonds;
-    int movedActorsAmount;
+    int playerPoints = 0;
+    int passengersDead = 0;
+    int removedNysses = 0;
+    int totalPassengers = 0;
+    int totalNysses = 0;
+    int leftNysses = 0;
+    int leftPassengers = 0;
+    int collectedDiamonds = 0;
+    int movedActorsAmount = 0;
 
 };
 
