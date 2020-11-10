@@ -1,5 +1,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+
 #include "mainmenudialog.h"
 #include "basicprojectile.h"
 
@@ -19,8 +20,17 @@
 class Player:  public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
+
 public:
+    /**
+      * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QGraphicsItem.
+      * @post basicProjectile is at initialization state.
+      */
     Player(QGraphicsItem *parent= 0);
+
+    /**
+      * @brief GameOverDialog has a basic destructor.
+      */
     ~Player();
 
     void keyPressEvent(QKeyEvent *event);

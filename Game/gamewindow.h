@@ -1,5 +1,6 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
+
 #include "player.h"
 #include "basicprojectile.h"
 #include "initgame.h"
@@ -22,6 +23,10 @@
 #include <QSettings>
 #include <memory>
 
+
+/**
+  * @brief Defines an interface that reperesents the gameWindow's User Interface (Ui).
+  */
 namespace Ui {
 class GameWindow;
 }
@@ -31,7 +36,15 @@ class GameWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    /**
+      * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QWidget.
+      * @post basicProjectile is at initialization state.
+      */
     explicit GameWindow(QWidget *parent = nullptr);
+
+    /**
+      * @brief GameOverDialog has a basic destructor.
+      */
     ~GameWindow();
 
     void resizeEvent(QResizeEvent * event);

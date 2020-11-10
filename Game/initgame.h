@@ -1,5 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
+
 #include "player.h"
 #include "basicprojectile.h"
 #include "graphics/simplemainwindow.hh"
@@ -12,7 +13,6 @@
 #include "actors/nysse.hh"
 #include "actors/stop.hh"
 #include "actors/passenger.hh"
-
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
@@ -30,8 +30,17 @@
 class initGame: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
+
 public:
+    /**
+      * @brief Basic constructor for gameStatistics.
+      * @post gameStatistics is at initialization state.
+      */
     initGame();
+
+    /**
+      * @brief GameOverDialog has a basic destructor.
+      */
     ~initGame();
 
     void drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);

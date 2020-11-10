@@ -40,7 +40,7 @@ void initGame::drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *sce
         setActorPos(xCoord, yCoord, stopRect);
         setActorPic(_stopPic, stopRect, 15, 25);
 
-        _stopMap.insert({_stopsVec.at(i), stopRect});
+        _stopMap.insert({ _stopsVec.at(i), stopRect });
 
         if(xCoord < screenWidth && xCoord >= 0 &&
                 yCoord + 25 < screenHeight && yCoord > 0){
@@ -73,8 +73,8 @@ void initGame::drawActorItems(QGraphicsScene *scene)
 
         setActorPos(nysseLocX, nysseLocY, nysseRect);
         setActorPic(_busPic, nysseRect, 10, 20);
-        _nysseMap.insert({_nysseVec.at(i), nysseRect});
-        _actorsMap.insert({_nysseVec.at(i), nysseRect});
+        _nysseMap.insert({ _nysseVec.at(i), nysseRect });
+        _actorsMap.insert({ _nysseVec.at(i), nysseRect });
 
         if(nysseLocX + 10 < screenWidth && nysseLocX >= 0 &&
                 nysseLocY + 20 < screenHeight && nysseLocY > 0){
@@ -90,8 +90,8 @@ void initGame::drawActorItems(QGraphicsScene *scene)
         setActorPos(passengerLocX, passengerLocY, passengerRect);
 
         setActorPic(_passengerPic, passengerRect, 10, 15);
-        _passengerMap.insert({_passengerVec.at(i), passengerRect});
-        _actorsMap.insert({_passengerVec.at(i), passengerRect});
+        _passengerMap.insert({ _passengerVec.at(i), passengerRect });
+        _actorsMap.insert({ _passengerVec.at(i), passengerRect });
 
         if(passengerLocX + 10 < screenWidth && passengerLocX >= 0 &&
                 passengerLocY + 15 < screenHeight && passengerLocY > 0){

@@ -26,26 +26,25 @@ class gameCity : public Interface::ICity, public QGraphicsPixmapItem
 {
 
 public:
+    /**
+      * @brief Basic constructor for gameCity.
+      * @post gameCity is at initialization state.
+      */
     gameCity();
+
+    /**
+      * @brief gameCity has a basic destructor.
+      */
     ~gameCity();
 
-    using stopPtr = std::shared_ptr<Interface::IStop>;
-    using actorPtr = std::shared_ptr<Interface::IActor>;
-
-    std::vector<stopPtr> allStops =
-            std::vector<stopPtr>();
-
-    std::vector< actorPtr> allActors =
-            std::vector<actorPtr>();
-
-    Interface::Location startingLoc =  Interface::Location(6700000, 3500000);
-
-    QTime gameClock;
-    bool gameStateOn = false;
-    bool backgroundSet= false;
-    bool gameClockSet = false;
-
-
+    /**
+     * @brief setBackground sets the bitmap picture of the game area.
+     * @param basicbackground  Normal sized picture used as the game area. Bottom left position of the picture in pixelcoordinates can be found out using the offset()-method.
+     * @param bigbackground  Background of the game that is bigger than normal. Used only if doing Scrolling map-expansion. Bottom left position of the picture in pixelcoordinates can be found out using the offset()-method.
+     * @pre City is in init state.
+     * @post Picture for the game area is set. Exception guarantee: basic.
+     * @exception InitError Setting the picture was unsuccesful or the picture was invalid.
+     */
     virtual void setBackground(QImage& basicbackground, QImage& bigbackground);
 
     /**
@@ -71,6 +70,7 @@ public:
      * @post City is in gamestate. Exception guarantee: nothrow.
      */
     virtual void startGame();
+
     /**
      * @brief addActor adds a new actor to the city.
      * @param newactor actor to be added to the city that fulfills ActorIF.
@@ -79,6 +79,7 @@ public:
      * @exception GameError Actor is already in the city.
      */
     virtual void addActor(std::shared_ptr<Interface::IActor> newactor);
+
     /**
      * @brief removeActor removes the actor from the city.
      * @param actor Actor to be removed.
@@ -130,6 +131,21 @@ public:
      */
     virtual bool isGameOver() const;
 
+    using stopPtr = std::shared_ptr<Interface::IStop>;
+    using actorPtr = std::shared_ptr<Interface::IActor>;
+
+    std::vector<stopPtr> allStops =
+            std::vector<stopPtr>();
+
+    std::vector< actorPtr> allActors =
+            std::vector<actorPtr>();
+
+    Interface::Location startingLoc =  Interface::Location(6700000, 3500000);
+
+    QTime gameClock;
+    bool gameStateOn = false;
+    bool backgroundSet= false;
+    bool gameClockSet = false;
 
 };
 

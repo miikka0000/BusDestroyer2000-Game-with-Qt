@@ -11,12 +11,19 @@
 #include <QSettings>
 #include <memory>
 
+// default file where the player name and score are saved in this kind of format:
+// playerName:scaledPoints
 const QString textFilePath = "top10highscores.txt";
 
 class topHighScores : public QObject
 {
     Q_OBJECT
+
 public:
+    /**
+      * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QGraphicsItem.
+      * @post basicProjectile is at initialization state.
+      */
     explicit topHighScores(QObject *parent = nullptr);
 
     void readFile(QString filename = textFilePath);

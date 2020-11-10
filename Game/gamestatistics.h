@@ -15,7 +15,10 @@ class gameStatistics : public Interface::IStatistics
 {
 
 public:
-
+    /**
+      * @brief Basic constructor for gameStatistics.
+      * @post gameStatistics is at initialization state.
+      */
     gameStatistics();
 
     /**
@@ -63,14 +66,65 @@ public:
      */
     virtual void nysseLeft();
 
+    /**
+     * @brief addPoints function increases the player points by 10.
+     * @pre -
+     * @post Player's points have been increased by 10. Exception guarantee: nothrow.
+     */
     void addPoints() {playerPoints += 10;};
+
+    /**
+     * @brief addCollectedDiamond function increases the collected diamonds by 1.
+     * @pre -
+     * @post Player's collected diamond count has been increased by 1. Exception guarantee: nothrow.
+     */
     void addCollectedDiamond();
+
+    /**
+     * @brief passengerLeft function increases passengers that left ingame count by 1.
+     * @pre -
+     * @post Passenger left ingame count has been increased by 1. Exception guarantee: nothrow.
+     */
     void passengerLeft();
+
+    /**
+     * @brief actorMoved function increases the actors moved ingame count by 1.
+     * @pre -
+     * @post Actors moved ingame count has been increased by 1. Exception guarantee: nothrow.
+     */
     void actorMoved();
-    int giveCollectedDiamonds(){return collectedDiamonds;};
-    int giveDestroyedNysses() {return removedNysses;};
-    int giveDestroyedPassengers() {return passengersDead;};
+
+    /**
+     * @brief initAllValues function initializes all the gameStatistics class public attributes to zero.
+     * @pre -
+     * @post gameStatistics class public attributes have all been set to zero. Exception guarantee: nothrow.
+     */
     void initAllValues();
+
+    /**
+     * @brief giveCollectedDiamonds returns the amount of collected diamonds by the player at the time when the function is called.
+     * @pre -
+     * @return Integer amount of collected diamonds by the player.
+     * @post The amount of collected diamonds has been returned. Exception guarantee: nothrow.
+     */
+    int giveCollectedDiamonds(){return collectedDiamonds;};
+
+    /**
+     * @brief giveDestroyedNysses returns the amount of destroyed Nysse-buses by the player at the time when the function is called.
+     * @pre -
+     * @pre -
+     * @return Integer amount of destroyed Nysses by the player.
+     * @post The amount of destroyed Nysses has been returned. Exception guarantee: nothrow.
+     */
+    int giveDestroyedNysses() {return removedNysses;};
+
+    /**
+     * @brief giveDestroyedPassengers returns the amount of destroyed passengers by the player at the time when the function is called.
+     * @pre -
+     * @return Integer amount of destroyed passengers by the player.
+     * @post The amount of destroyed passengers has been returned. Exception guarantee: nothrow.
+     */
+    int giveDestroyedPassengers() {return passengersDead;};
 
     int playerPoints = 0;
     int passengersDead = 0;

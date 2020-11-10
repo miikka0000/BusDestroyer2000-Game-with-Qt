@@ -11,7 +11,12 @@
 #include <string>
 #include <QSettings>
 #include <memory>
+#include <QFont>
 
+
+/**
+  * @brief Defines an interface that reperesents the MainMenuDialog's User Interface (Ui).
+  */
 namespace Ui {
 class MainMenuDialog;
 }
@@ -21,9 +26,18 @@ class MainMenuDialog : public QDialog
     Q_OBJECT
 
 public:
+    /**
+      * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QWidget.
+      * @post basicProjectile is at initialization state.
+      */
     explicit MainMenuDialog(QWidget *parent = nullptr);
+
+    /**
+      * @brief GameOverDialog has a basic destructor.
+      */
     ~MainMenuDialog();
     void setToolTips();
+    void setStartGameText(QString text, QString color = "red");
     bool nameIsEmpty(const QString playerName) const;
 
     enum playerConfig {
