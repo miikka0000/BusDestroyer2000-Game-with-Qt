@@ -90,6 +90,8 @@ void GameWindow::resizeEvent(QResizeEvent *event)
         int newHeight = event->size().height();
         screenWidth = newWidth;
         screenHeight = newHeight;
+        _newGame->screenWidth = newWidth;
+        _newGame->screenHeight = newHeight;
 
         if(ui->graphicsView->width() > 800){
             std::vector<int> screen = getAvailableSize();
@@ -150,9 +152,9 @@ void GameWindow::setGameTime()
     } else if(timeOpt == settingsDialog::gameTime3) {
         _gameDuration = 3;
     }
-    //_gameTime.setHMS(0,_gameDuration, 0);
+    _gameTime.setHMS(0,_gameDuration, 0);
     // testauksen ajaksi sekunnit 5
-    _gameTime.setHMS(0,0, 5);
+    //_gameTime.setHMS(0,0, 5);
 
 }
 

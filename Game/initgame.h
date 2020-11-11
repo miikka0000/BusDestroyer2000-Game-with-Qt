@@ -62,11 +62,12 @@ public:
     void moveSceneActors();
     void endGame();
 
+    int screenWidth = 800;
+    int screenHeight = 600;
+
 
 private:
 
-    int screenWidth = 800;
-    int screenHeight = 600;
     QTimer *_updateTimer;
 
     std::map<std::shared_ptr<Interface::IStop>, QGraphicsPixmapItem*> _stopMap;

@@ -65,7 +65,6 @@ void initGame::readActors(std::shared_ptr<gameCity> currCity)
 
 void initGame::drawActorItems(QGraphicsScene *scene)
 {
-
     for (unsigned int i= 0; i < _nysseVec.size(); ++i){
         QGraphicsPixmapItem *nysseRect = new QGraphicsPixmapItem(this);
         int nysseLocX = _nysseVec.at(i)->giveLocation().giveX();
@@ -97,7 +96,6 @@ void initGame::drawActorItems(QGraphicsScene *scene)
                 passengerLocY + 15 < screenHeight && passengerLocY > 0){
             scene->addItem(passengerRect);
         }
-
     }
     smartActors = _actorsMap;
 }
@@ -131,7 +129,6 @@ void initGame::initLogic(QGraphicsScene *scene)
     drawStops(_newCity, scene);
     readActors(_newCity);
     drawActorItems(scene);
-
 }
 
 std::shared_ptr<gameCity> initGame::createGame()
