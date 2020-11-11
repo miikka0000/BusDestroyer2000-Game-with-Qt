@@ -13,7 +13,6 @@
 #include <memory>
 #include <QFont>
 
-
 /**
   * @brief Defines an interface that reperesents the MainMenuDialog's User Interface (Ui).
   */
@@ -21,6 +20,10 @@ namespace Ui {
 class MainMenuDialog;
 }
 
+/**
+  * @brief Defines a QDialog which is the first shown window to the user when the app is run.
+  * It is the main configuration dialog in which player sets a player nickname, chooses player and projectile type and possibly accesses settings or help.
+  */
 class MainMenuDialog : public QDialog
 {
     Q_OBJECT

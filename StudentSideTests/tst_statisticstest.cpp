@@ -5,24 +5,75 @@
 #include <QtTest>
 #include <QObject>
 
+/**
+  * @brief Unit tests for the gameStatistics class which inherits from Course Side's
+  * iStatistics
+  */
 class statisticsTest : public QObject
 {
     Q_OBJECT
 
 public:
+    /**
+      * @brief Basic constructor for statisticsTest.
+      * @post statisticsTest is at initialization state.
+      */
     statisticsTest();
+
+    /**
+      * @brief statisticsTest has a basic destructor.
+      */
     ~statisticsTest();
 
 private slots:
+    /**
+      * @brief Testing give points -functionality.
+      */
     void testGivePoints();
+
+    /**
+      * @brief Testing passenger died -functionality.
+      */
     void testPassengerDied();
+
+    /**
+      * @brief Testing Nysse removed -functionality.
+      */
     void testNysseRemoved();
+
+    /**
+      * @brief Testing more passengers -functionality.
+      */
     void testMorePassengers();
+
+    /**
+      * @brief Testing new Nysse addition -functionality.
+      */
     void testNewNysse();
+
+    /**
+      * @brief Testing Nysse left -functionality.
+      */
     void testNysseLeft();
+
+    /**
+      * @brief Testing adding collected diamond -functionality.
+      */
     void addCollectedDiamond();
+
+    /**
+      * @brief Testing actor removed -functionality.
+      */
     void testActorMoved();
+
+    /**
+      * @brief Testing passenger left -functionality.
+      */
     void testPassengerLeft();
+
+    /**
+      * @brief Testing adding points -functionality.
+      */
     void testAddPoints();
 
 };

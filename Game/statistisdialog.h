@@ -6,7 +6,6 @@
 #include <QDialog>
 #include <QString>
 
-
 /**
   * @brief Defines an interface that reperesents the statistisDialog's User Interface (Ui).
   */
@@ -14,6 +13,10 @@ namespace Ui {
 class statistisDialog;
 }
 
+/**
+  * @brief Defines a QDialog which offers statisctics of the game played by the player.
+  * The Dialog itself is accessible from GameOverDialog's "Statistics" -button.
+  */
 class statistisDialog : public QDialog
 {
     Q_OBJECT

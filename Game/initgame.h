@@ -26,7 +26,11 @@
 #include <map>
 #include <QTimer>
 
-
+/**
+  * @brief Defines a Class in which the CourseSide integration mostly happens.
+  * The class is also responsible for moving and showing all the actors offered by CourseSide.
+  * Furthermore, CreateGame -function is implemented here.
+  */
 class initGame: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

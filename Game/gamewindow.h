@@ -24,7 +24,6 @@
 #include <memory>
 #include <QResizeEvent>
 
-
 /**
   * @brief Defines an interface that reperesents the gameWindow's User Interface (Ui).
   */
@@ -32,6 +31,10 @@ namespace Ui {
 class gameWindow;
 }
 
+/**
+  * @brief Defines a class for the MainWindow where the actual playing happens. It has a game map background which depicts Tampere City Center.
+  * Game Window also shows the chosen player which can be moved with arrow keys. Shooting happens by pressing space bar. Also the CourseSide integration is visualized in the game window: Nysses and passengers move in real time on the map.
+  */
 class gameWindow : public QMainWindow
 {
     Q_OBJECT

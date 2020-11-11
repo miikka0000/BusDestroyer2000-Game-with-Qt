@@ -153,9 +153,8 @@ void gameWindow::setGameTime()
         _gameDuration = 3;
     }
     _gameTime.setHMS(0,_gameDuration, 0);
-    // testauksen ajaksi sekunnit 5
+    // during testing game duration is set to 5 seconds
     //_gameTime.setHMS(0,0, 5);
-
 }
 
 void gameWindow::screenFrameUpdate()

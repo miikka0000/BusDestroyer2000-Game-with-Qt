@@ -3,7 +3,6 @@
 
 #include <QDialog>
 
-
 /**
   * @brief Defines an interface that reperesents the helpDialogs's User Interface (Ui).
   */
@@ -11,6 +10,10 @@ namespace Ui {
 class helpDialog;
 }
 
+/**
+  * @brief Defines a QDialog which offers help to a new player who possibly isn't aware of the game rules, settings or controls etc.
+  * The Dialog itself is accessible from MainMenu's "Help" -button.
+  */
 class helpDialog : public QDialog
 {
     Q_OBJECT

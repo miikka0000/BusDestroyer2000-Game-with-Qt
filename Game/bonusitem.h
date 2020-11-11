@@ -8,6 +8,10 @@
 #include <QPixmap>
 #include <QTimer>
 
+/**
+  * @brief Defines a class for the other unique object in the game: bonusItem's (small red diamonds) that appear randomly in the game map every 4 seconds.
+  * If the player manages to collect these bonus items either by moving into their location or by shooting them, 10 points are added to the player score.
+  */
 class bonusItem: public QObject,public QGraphicsPixmapItem{
 
     Q_OBJECT

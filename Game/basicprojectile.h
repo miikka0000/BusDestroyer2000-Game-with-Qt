@@ -16,6 +16,9 @@
 #include <memory>
 #include <map>
 
+/**
+  * @brief Defines a class for the projectile that player shoots in the game by pressing space key.
+  */
 class basicProjectile: public QObject, public QGraphicsPixmapItem{
 
     Q_OBJECT

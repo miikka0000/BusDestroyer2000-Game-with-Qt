@@ -12,11 +12,14 @@
 #include <memory>
 #include <map>
 
-
 // default file where the player name and score are saved in this kind of format:
 // playerName:scaledPoints
 const QString textFilePath = "top10highscores.txt";
 
+/**
+  * @brief Defines a Class which is responsible for saving and reading player name and SCALED points to and from a top10highscores.txt file.
+  * The class also implements a top10-highscore feature which gives the player information about all-time best players when the metric is the highest scaled points count.
+  */
 class topHighScores : public QObject
 {
     Q_OBJECT

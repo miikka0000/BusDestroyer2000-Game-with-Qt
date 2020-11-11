@@ -5,7 +5,6 @@
 #include <QSettings>
 #include <memory>
 
-
 /**
   * @brief Defines an interface that reperesents the settingsDialog's User Interface (Ui).
   */
@@ -13,6 +12,12 @@ namespace Ui {
 class settingsDialog;
 }
 
+/**
+  * @brief Defines a QDialog which offers a separate settings window where the player can set music on/off and alter the game duration.
+  * The Dialog itself is accessible from MainMenu's "Settings" -button.
+  * If the player does not make any changes to the settings (which isn't compulsory), the default settings are used: musics off and game duration 2 minutes.
+  * Beware that if you don't press the "Save" -button in the settingsDialog, your changes to the settings won't come into effect and the program will use the default settings!
+  */
 class settingsDialog : public QDialog
 {
     Q_OBJECT

@@ -22,6 +22,10 @@
 #include <QTime>
 #include <map>
 
+/**
+  * @brief Defines a class that inherits from ICity and implements its virtual functions.
+  * The class handles functionality regarding the actual city.
+  */
 class gameCity : public Interface::ICity, public QGraphicsPixmapItem
 {
 

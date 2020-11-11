@@ -27,7 +27,7 @@ void statistisDialog::setToolTips()
 
 void statistisDialog::generateStatsString()
 {
-    QString stats = "<br><b>Score points: </b>" + QString::number(smartStats->givePoints())
+    QString stats = "<br><b>NONSCALED Score points: </b>" + QString::number(smartStats->givePoints())
             + "<br><br>" +
             "<b>Collected diamonds: </b>" + QString::number(smartStats->giveCollectedDiamonds())
             + "<br><br>" +

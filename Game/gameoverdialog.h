@@ -6,7 +6,6 @@
 
 #include <QDialog>
 
-
 /**
   * @brief Defines an interface that reperesents the GameOverDialog's User Interface (Ui).
   */
@@ -14,6 +13,9 @@ namespace Ui {
 class GameOverDialog;
 }
 
+/**
+  * @brief Defines a QDialog that is shown to the player when the game is over.
+  */
 class GameOverDialog : public QDialog
 {
     Q_OBJECT
@@ -38,7 +40,7 @@ public:
     void setToolTips();
 
     /**
-     * @brief setPlayerPoints shows the UNSCALED (not scaled by the chosen game duration) points that the player got in the game.
+     * @brief setPlayerPoints shows the NONSCALED (not scaled by the chosen game duration) points that the player got in the game.
      * @pre -
      * @post Player is shown the points in the topmost header in GameOverDialog. Exception guarantee: nothrow.
      */
