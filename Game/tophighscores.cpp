@@ -8,7 +8,6 @@ extern QString playerAliasName;
 
 topHighScores::topHighScores(QObject *parent) : QObject(parent)
 {
-
 }
 
 void topHighScores::readFile(QString filename)

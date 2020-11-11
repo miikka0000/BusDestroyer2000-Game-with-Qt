@@ -3,7 +3,6 @@
 
 gameStatistics::gameStatistics()
 {
-
 }
 
 int gameStatistics::givePoints() const

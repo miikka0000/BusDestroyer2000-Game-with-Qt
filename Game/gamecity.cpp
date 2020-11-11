@@ -17,12 +17,10 @@ extern QTime _gameTime;
 
 gameCity::gameCity()
 {
-
 }
 
 gameCity::~gameCity()
 {
-
 }
 
 void gameCity::setBackground(QImage &basicbackground, QImage &bigbackground)

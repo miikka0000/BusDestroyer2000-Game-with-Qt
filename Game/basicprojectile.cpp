@@ -24,7 +24,6 @@ basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPix
 
 basicProjectile::~basicProjectile()
 {
-
 }
 
 void basicProjectile::setDimensions()

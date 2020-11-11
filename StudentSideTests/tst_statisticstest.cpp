@@ -29,12 +29,10 @@ private slots:
 
 statisticsTest::statisticsTest()
 {
-
 }
 
 statisticsTest::~statisticsTest()
 {
-
 }
 
 void statisticsTest::testGivePoints()

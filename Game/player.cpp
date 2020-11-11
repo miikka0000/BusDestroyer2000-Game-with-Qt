@@ -37,7 +37,6 @@ Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
 Player::~Player()
 {
-
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
