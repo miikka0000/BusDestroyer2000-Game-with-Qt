@@ -112,7 +112,6 @@ public:
     /**
      * @brief giveDestroyedNysses returns the amount of destroyed Nysse-buses by the player at the time when the function is called.
      * @pre -
-     * @pre -
      * @return Integer amount of destroyed Nysses by the player.
      * @post The amount of destroyed Nysses has been returned. Exception guarantee: nothrow.
      */

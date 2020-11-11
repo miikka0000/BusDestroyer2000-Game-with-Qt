@@ -33,41 +33,90 @@ class initGame: public QObject, public QGraphicsPixmapItem
 
 public:
     /**
-      * @brief Basic constructor for gameStatistics.
-      * @post gameStatistics is at initialization state.
+      * @brief Basic constructor for initGame.
+      * @post initGame is at initialization state.
       */
     initGame();
 
     /**
-      * @brief GameOverDialog has a basic destructor.
+      * @brief initGame has a basic destructor.
       */
     ~initGame();
 
+    /**
+     * @brief drawStops adds all the bus stops that fit in the game mip to the QGraphicsScene and also set the picture for each stop (red flag).
+     * @param Shared pointer to the gameCity and a raw pointer to the game's main QGraphicsScene.
+     * @pre QGraphicsScene has been created and is active.
+     * @post Stops have been added to the game map and they are depicted with a red flag. Exception guarantee: strong.
+     */
     void drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
 
-    void readActors(std::shared_ptr<gameCity> currCity);
+    /**
+     * @brief drawActorItems adds all the Nysse-buses and passengers that fit in the game mip to the QGraphicsScene and also set the picture for each Nysse and passenger.
+     * @param Raw pointer to the game's main QGraphicsScene.
+     * @pre QGraphicsScene has been created and is active.
+     * @post Nysses and passengers have been added to the game map and they are depicted with a proper icon. Exception guarantee: strong.
+     */
     void drawActorItems(QGraphicsScene *scene);
 
+    /**
+     * @brief readActors separates the actors for one another: Nysses and passengers are being pushed to their own vectors.
+     * @param Shared pointer to the gameCity.
+     * @pre -
+     * @post Nysses and passengers are added into their own separate vectors. Exception guarantee: nothrow.
+     */
+    void readActors(std::shared_ptr<gameCity> currCity);
+
+    /**
+     * @brief setActorPic sets an icon picture for desired actor.
+     * @param QPixmap pic (picture to be set), QGraphicsPixmapItem raw pointer to the actor, width and the height of the to-be-set picture.
+     * @pre -
+     * @post Picture for the actor has been set. Exception guarantee: nothrow.
+     */
     void setActorPic(QPixmap pic, QGraphicsPixmapItem *actorItem, int w, int h);
 
-    void setActorPos(int newX, int newY, QGraphicsPixmapItem *item);
+    /**
+     * @brief setActorPos sets the position of the actor (x- and y-coordinates).
+     * @param newX x-coordinate, newY y-coordinate and QGraphicsPixmapItem raw pointer to the actor whose position we want to set.
+     * @pre -
+     * @post Position for the actor has been set. Exception guarantee: nothrow.
+     */
+    void setActorPos(int newX, int newY, QGraphicsPixmapItem *actorItem);
 
+    /**
+     * @brief initLogic initializes the Logic so that that the CourseSide integration would be possible.
+     * @param Raw pointer to the game's main QGraphicsScene.
+     * @pre QGraphicsScene has been created and is active.
+     * @post New Logic object has been created and properly initialized and finally finalizeGameStart method of Logic is being called to start the back-end functionality. Exception guarantee: nothrow.
+     */
     void initLogic(QGraphicsScene *scene);
 
-    void drawAllStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
-    void drawBuses(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
+    /**
+     * @brief createGame creates the games city (gameCity object) and returns a shared pointer to it.
+     * @pre -
+     * @return pointer to the created city which is in initialization state.
+     * @post Exception guarantee: basic.
+     */
     std::shared_ptr<gameCity> createGame();
-    void moveNysses();
-    void movePassengers();
+
+    /**
+     * @brief moveSceneActors moves the actors in the scene (sets new positions according to their current Location).
+     * @pre -
+     * @post If actor has moved (it has a different Location than before), then the method updates the actor's new position to the scene. Exception guarantee: nothrow.
+     */
     void moveSceneActors();
+
+    /**
+     * @brief endGame calls the gameCity's function isGameOver.
+     * @pre -
+     * @post ICity's function isGameOver has been called. Exception guarantee: nothrow.
+     */
     void endGame();
 
     int screenWidth = 800;
     int screenHeight = 600;
 
-
 private:
-
     QTimer *_updateTimer;
 
     std::map<std::shared_ptr<Interface::IStop>, QGraphicsPixmapItem*> _stopMap;

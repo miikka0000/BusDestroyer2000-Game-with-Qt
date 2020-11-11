@@ -47,9 +47,9 @@ public:
     void setProjectilePicture();
 
     /**
-     * @brief removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact with the bullet.
+     * @brief removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact with the bullet from the scene and memory.
      * @pre Projectile comes in contact with a Nysse or a passenger.
-     * @post Shooted Nysse or passenger is deleted from the game and map and memory or nothing happens. Exception guarantee: nothrow.
+     * @post Shooted Nysse or passenger is deleted from the game map and memory or nothing happens. Exception guarantee: nothrow.
      */
     bool removeShootedActors();
 

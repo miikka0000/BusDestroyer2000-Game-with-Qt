@@ -21,8 +21,8 @@ void topHighScores::readFile(QString filename)
             QString line = stream.readLine();
             QStringList data = line.split(": ");
             QString name = data.at(0);
-            int points = data.at(1).toInt();
-            scores.insert ( std::pair<QString,int>(name, points) );
+            int scaledPoints = data.at(1).toInt();
+            scores.insert( std::pair<QString,int>(name, scaledPoints));
         }
         file.close();
         qDebug() << "Reading finished";
@@ -64,11 +64,11 @@ void topHighScores::writeFile(QString filename)
 
     if(file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
     {
-        int points = smartStats->givePoints()/getDuration();
+        int scaledPoints = smartStats->givePoints()/getDuration();
         QTextStream stream(&file);
 
         if (playerAliasName != "") {
-            stream <<  playerAliasName << ": "<< points << "\n";
+            stream <<  playerAliasName << ": "<< scaledPoints << "\n";
         }
         file.close();
         qDebug() << "Writing finished";

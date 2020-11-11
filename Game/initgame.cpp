@@ -105,9 +105,9 @@ void initGame::setActorPic(QPixmap pic, QGraphicsPixmapItem *actorItem,int w, in
     actorItem->setPixmap(pic.scaled(w, h,  Qt::IgnoreAspectRatio, Qt::FastTransformation));
 }
 
-void initGame::setActorPos(int newX, int newY, QGraphicsPixmapItem *item)
+void initGame::setActorPos(int newX, int newY, QGraphicsPixmapItem *actorItem)
 {
-    item->setPos(newX, newY);
+    actorItem->setPos(newX, newY);
 }
 
 void initGame::initLogic(QGraphicsScene *scene)

@@ -69,7 +69,7 @@ void MainMenuDialog::on_startButton_clicked()
         setStartGameText("A new game is starting, good luck!", "green");
         ui->erronousInputLabel->repaint();
 
-        GameWindow *mainWin = new GameWindow();
+        gameWindow *mainWin = new gameWindow();
         mainWin->show();
         this->close();
 

@@ -21,16 +21,27 @@ class statistisDialog : public QDialog
 public:
     /**
       * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QGraphicsItem.
-      * @post basicProjectile is at initialization state.
+      * @post statistisDialog is at initialization state.
       */
     explicit statistisDialog(QWidget *parent = nullptr);
 
     /**
-      * @brief GameOverDialog has a basic destructor.
+      * @brief statistisDialog has a basic destructor.
       */
     ~statistisDialog();
 
+    /**
+     * @brief setToolTips sets tool tips in the statistisDialog's GUI to guide the player (shown when player hovers mouse on top of a button or a label etc.)
+     * @pre -
+     * @post ToolTips are shown to the user of the software when hovering mouse above buttons, labels or other items of the GUI. Exception guarantee: nothrow.
+     */
     void setToolTips();
+
+    /**
+     * @brief generateStatsString creates and adds player's statistical data of a single game into the QTextBrowser in statisticsDialog.
+     * @pre -
+     * @post Player game statisctics are shown to the user of the software in the statisticsDialog. Exception guarantee: nothrow.
+     */
     void generateStatsString();
 
 

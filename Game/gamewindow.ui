@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GameWindow</class>
- <widget class="QMainWindow" name="GameWindow">
+ <class>gameWindow</class>
+ <widget class="QMainWindow" name="gameWindow">
   <property name="windowModality">
    <enum>Qt::NonModal</enum>
   </property>
@@ -132,7 +132,7 @@
        <enum>QAbstractScrollArea::AdjustToContents</enum>
       </property>
       <property name="viewportUpdateMode">
-       <enum>QGraphicsView::MinimalViewportUpdate</enum>
+       <enum>QGraphicsView::NoViewportUpdate</enum>
       </property>
      </widget>
     </item>

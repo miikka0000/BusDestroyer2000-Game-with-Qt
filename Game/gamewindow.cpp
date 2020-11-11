@@ -26,9 +26,9 @@
 extern std::shared_ptr<gameStatistics> smartStats;
 extern QTime _gameTime;
 
-GameWindow::GameWindow(QWidget *parent) :
+gameWindow::gameWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::GameWindow),
+    ui(new Ui::gameWindow),
     _mainTimer(new QTimer),
     _bonusTimer(new QTimer),
     _gameTimer(new QTimer),
@@ -48,10 +48,10 @@ GameWindow::GameWindow(QWidget *parent) :
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setLCDStyle();
 
-    connect(_mainTimer, &QTimer::timeout, this, &GameWindow::screenFrameUpdate);
-    connect(_labelTimer, &QTimer::timeout, this, &GameWindow::addDataToLCD);
-    connect(_bonusTimer,&QTimer::timeout, this, &GameWindow::spawnBonusItem);
-    connect(_gameTimer, &QTimer::timeout, this, &GameWindow::updateCountDown);
+    connect(_mainTimer, &QTimer::timeout, this, &gameWindow::screenFrameUpdate);
+    connect(_labelTimer, &QTimer::timeout, this, &gameWindow::addDataToLCD);
+    connect(_bonusTimer,&QTimer::timeout, this, &gameWindow::spawnBonusItem);
+    connect(_gameTimer, &QTimer::timeout, this, &gameWindow::updateCountDown);
 
     _mainTimer->start(_frameRate);
     _labelTimer->start(_interval);
@@ -69,7 +69,7 @@ GameWindow::GameWindow(QWidget *parent) :
 
 }
 
-GameWindow::~GameWindow()
+gameWindow::~gameWindow()
 {
     delete ui;
     delete _player;
@@ -82,7 +82,7 @@ GameWindow::~GameWindow()
     delete _newGame;
 }
 
-void GameWindow::resizeEvent(QResizeEvent *event)
+void gameWindow::resizeEvent(QResizeEvent *event)
 {
     if(_largeMode){
 
@@ -105,13 +105,13 @@ void GameWindow::resizeEvent(QResizeEvent *event)
     _largeMode = true;
 }
 
-void GameWindow::setPicture(QImage img)
+void gameWindow::setPicture(QImage img)
 {
     _scene->addPixmap(QPixmap::fromImage(img.scaled(this->width(), this->height(),
                                                     Qt::IgnoreAspectRatio)));
 }
 
-std::vector<int> GameWindow::getAvailableSize()
+std::vector<int> gameWindow::getAvailableSize()
 {
     QList<QScreen *> rec = QGuiApplication::screens();
     QRect availableGeometry = rec.at(0)->geometry();
@@ -120,13 +120,13 @@ std::vector<int> GameWindow::getAvailableSize()
     return {availableWidth, availableHeight};
 }
 
-void GameWindow::setLCDStyle()
+void gameWindow::setLCDStyle()
 {
     ui->pointsLCD->setPalette(Qt::black);
     ui->clockLCD->setPalette(Qt::black);
 }
 
-void GameWindow::spawnBonusItem()
+void gameWindow::spawnBonusItem()
 {
     bonusItem *bonusGem = new bonusItem;
     bonusGem->currentWidth = this->width();
@@ -134,13 +134,13 @@ void GameWindow::spawnBonusItem()
     _scene->addItem(bonusGem);
 }
 
-void GameWindow::addDataToLCD()
+void gameWindow::addDataToLCD()
 {
     ui->pointsLCD->display(smartStats->givePoints());
     ui->clockLCD->display(_gameTime.toString("m:ss"));
 }
 
-void GameWindow::setGameTime()
+void gameWindow::setGameTime()
 {
     int timeOpt = _playerSettings->value("time setting").toInt();
     if(timeOpt == settingsDialog::gameTime1) {
@@ -158,12 +158,12 @@ void GameWindow::setGameTime()
 
 }
 
-void GameWindow::screenFrameUpdate()
+void gameWindow::screenFrameUpdate()
 {
-    ui->graphicsView->update();
+    ui->graphicsView->viewport()->update();
 }
 
-void GameWindow::stopTimers()
+void gameWindow::stopTimers()
 {
     _gameTimer->stop();
     _bonusTimer->stop();
@@ -171,7 +171,7 @@ void GameWindow::stopTimers()
     _labelTimer->stop();
 }
 
-void GameWindow::updateCountDown()
+void gameWindow::updateCountDown()
 {
     if (_gameTime.second() > 0 || _gameTime.minute() > 0) {
         _gameTime = _gameTime.addSecs(-1);

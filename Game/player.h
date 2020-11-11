@@ -24,37 +24,111 @@ class Player:  public QObject, public QGraphicsPixmapItem
 public:
     /**
       * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QGraphicsItem.
-      * @post basicProjectile is at initialization state.
+      * @post Player is at initialization state.
       */
     Player(QGraphicsItem *parent= 0);
 
     /**
-      * @brief GameOverDialog has a basic destructor.
+      * @brief Player has a basic destructor.
       */
     ~Player();
 
+    /**
+     * @brief keyPressEvent checks which keys are being pressed during the game in MainWindow to enable smooth player transitions in the game map.
+     * @param QKeyEvent when player presses arrow or space keys ingame.
+     * @pre The game has started and gameWindow is active and responsive.
+     * @post Keys that are pressed ingame are set to "true". Exception guarantee: nothrow.
+     */
     void keyPressEvent(QKeyEvent *event);
+
+    /**
+     * @brief keyReleaseEvent checks which keys are being released during the game in MainWindow to enable smooth player transitions in the game map.
+     * @param QKeyEvent when player releases arrow or space keys ingame.
+     * @pre The game has started and gameWindow is active and responsive.
+     * @post Keys that are released ingame are set to "false". Exception guarantee: nothrow.
+     */
     void keyReleaseEvent(QKeyEvent * event);
+
+    /**
+     * @brief movePlayer function is responsible for moving the player in the game map.
+     * @pre -
+     * @post Bullet has moved in the map and is deleted from the scene and the memory if it encounters a object in its way or exits the game screen. Exception guarantee: nothrow.
+     */
     void movePlayer();
+
+    /**
+     * @brief setDimensions sets the width and the height of a chosen player type.
+     * @pre Chosen player type is existent and therefore has some kind of dimensions.
+     * @post Dimensions for the player projectile type are successfully set. Exception guarantee: nothrow.
+     */
     void setDimensions();
+
+    /**
+     * @brief changePlayerSpeed increases (if "+"-key is pressed) or decreases (if "-"-key is pressed) player speed during the game within reasonable limits. Each increase or decrease is at 5 % delta.
+     * @param QKeyEvent when player presses "+" or "-" key ingame.
+     * @pre The game has started and gameWindow is active and responsive.
+     * @post Player speed has been changed if certain keys have been pressed ingame. Exception guarantee: nothrow.
+     */
     void changePlayerSpeed(QKeyEvent *speedEvent);
+
+    /**
+     * @brief addPlayerSprite sets the the chosen picture as the player icon in the game.
+     * @pre Player pictures provided are valid and they exist.
+     * @post Player picture for the chosen player type is set. Exception guarantee: nothrow.
+     */
     void addPlayerSprite();
+
+    /**
+     * @brief initMusic initializes the QSoundEffect object according to the projectile type chosen by the player. Every porjectile tupe has an unique sound: fireball has a magic cast, missile an explosion and laser a blaster sound effect.
+     * @pre -
+     * @post QSoundEffect has been initialized according to the chosen projectile type. Exception guarantee: nothrow.
+     */
     void initMusic();
+
+    /**
+     * @brief configureMusic checks is the sound is being played ingame at the time of the function call. It plays the music if needed to and also sets the music volume to a player-friendly level.
+     * @pre Music has been opted in by the player.
+     * @post Exception guarantee: nothrow.
+     */
     void configureMusic();
+
+    /**
+     * @brief setMusicChoice checks the music setting and acts accordingly: if the music has been opted in, then it calls the configureMusic() -method or otherwise it does not do anything.
+     * @pre -
+     * @post Exception guarantee: nothrow.
+     */
     void setMusicChoice();
+
+    /**
+     * @brief savePlayerName saves player name (in std::string format) chosen by the player into Player-class attribute.
+     * @pre -
+     * @post Player name has been saved correctly. Exception guarantee: nothrow.
+     */
     void savePlayerName();
+
+    /**
+     * @brief removeCollidingItem is responsible for removing the bonus diamonds that are in contact with the player from the scene and memory. It also increases player points and updates the changes to the gameStatistics if a bonus diamond is collected by the player.
+     * @pre Player comes in contact with a bonus diamond in the game map.
+     * @post Collected diamond is deleted from the game map and memory or nothing happens. Exception guarantee: nothrow.
+     */
     void removeCollidingItem();
+
+    /**
+     * @brief getPlayerOrigin gets chosen player type's center coordinates and returns them in a vector.
+     * @param Player icon's width and height.
+     * @pre -
+     * @return Vector containing player icon's origin coordinates: x-coordinate is at index 0 and y-coordinate is at index 1.
+     * @post Exception guarantee: nothrow.
+     */
     std::vector<int> getPlayerOrigin(int width, int height);
 
     int playerHeight;
     int playerWidth;
     int screenWidth = 800;
     int screenHeight = 600;
-
     std::string playerName;
 
 private:
-
     double _spaceshipVelocity = 23.0;
     QSoundEffect *_projectileSound;
     QTimer *_moveTimer;

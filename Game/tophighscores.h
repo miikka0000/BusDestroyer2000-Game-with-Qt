@@ -10,6 +10,8 @@
 #include <QTextStream>
 #include <QSettings>
 #include <memory>
+#include <map>
+
 
 // default file where the player name and score are saved in this kind of format:
 // playerName:scaledPoints
@@ -22,13 +24,40 @@ class topHighScores : public QObject
 public:
     /**
       * @brief Basic constructor of the class. As a default, parent is set to a nullpointer to QGraphicsItem.
-      * @post basicProjectile is at initialization state.
+      * @post topHighScores is at initialization state.
       */
     explicit topHighScores(QObject *parent = nullptr);
 
+    /**
+     * @brief readFile reads data from a textfile into map.
+     * @param Default path to the top10highscores.txt -file where the data is ultimately stored.
+     * @pre The textfile exists in the path set.
+     * @post Data from textfile (playerName: scaledPoints) has been read into a map. Exception guarantee: strong.
+     */
     void readFile(QString filename = textFilePath);
+
+    /**
+     * @brief writeFile writes data into a textfile (player name and his points scaled according to the chosen game duration).
+     * @param Default path to the top10highscores.txt -file where the data is ultimately stored.
+     * @pre -
+     * @post Data has been written to the textfile (playerName: scaledPoints). Exception guarantee: strong.
+     */
     void writeFile(QString filename = textFilePath);
+
+    /**
+     * @brief sortAndDisplay sorts the players according to their points into a top10 -subset and appends these top10 -players into a QString which is shown to the player later in GameOverDialog's QTextBrowser.
+     * @param Unsorted map that contains all-time player data.
+     * @pre -
+     * @post Map is sorted and its contents are appended into a QString. Exception guarantee: strong.
+     */
     void sortAndDisplay(std::map<QString, int> mapToBeSorted);
+
+    /**
+     * @brief getDuration reads the game duration setting saved before and returns it as an integer which represents game duration in minutes.
+     * @pre -
+     * @return Chosen game duration as an integer which represents game duration in minutes. If the player has not chosen game durations, it is by default 2 minutes.
+     * @post Game duration has been returned. Exception guarantee: strong.
+     */
     int getDuration();
 
     std::map<QString, int> scores;

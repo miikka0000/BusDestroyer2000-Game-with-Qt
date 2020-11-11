@@ -191,7 +191,6 @@ void Player::configureMusic()
 
 void Player::setMusicChoice()
 {
-
     int musicOpt = _playerSettings->value("music setting").toInt();
 
     if(musicOpt == settingsDialog::musicStateOn){
