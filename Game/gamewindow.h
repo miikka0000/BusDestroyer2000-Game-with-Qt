@@ -33,7 +33,7 @@ class gameWindow;
 
 /**
  * @brief
- * All of the classes done by us are found in StudentSide namespace.
+ * All of the classes done by the student team are found in StudentSide namespace.
  */
 namespace StudentSide {
 
