@@ -17,6 +17,12 @@
 #include <map>
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a class for the projectile that player shoots in the game by pressing space key.
   */
 class basicProjectile: public QObject, public QGraphicsPixmapItem{
@@ -89,7 +95,7 @@ private:
     const QPixmap _fireballPic = QPixmap(":/images/fireball_16x16.png");
     const QPixmap _missilePic = QPixmap(":/images/missile_23x10.png");
     const QPixmap _laserPic = QPixmap(":/images/laser_32x32.png");
-
 };
+}
 
 #endif // PROJECTILE_H

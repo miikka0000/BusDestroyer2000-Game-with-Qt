@@ -12,8 +12,9 @@
 #include <QDebug>
 #include <map>
 
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
 extern QTime _gameTime;
+namespace StudentSide {
 
 gameCity::gameCity()
 {
@@ -157,7 +158,7 @@ bool gameCity::isGameOver() const
     }
     return false;
 }
-
+}
 
 
 

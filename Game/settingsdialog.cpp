@@ -5,6 +5,8 @@
 #include <QSettings>
 #include <QDebug>
 
+namespace StudentSide {
+
 settingsDialog::settingsDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::settingsDialog)
@@ -73,4 +75,5 @@ void settingsDialog::on_saveSettingsButton_clicked()
 {
     setCorrectMusicState();
     setWantedGameTime();
+}
 }

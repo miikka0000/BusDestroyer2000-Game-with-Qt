@@ -21,7 +21,8 @@
 #include <QGraphicsItem>
 #include <memory>
 
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
+namespace StudentSide {
 
 Player::Player(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
@@ -232,7 +233,7 @@ std::vector<int> Player::getPlayerOrigin(int width, int height)
     playerDimensions.push_back(centerHeight);
     return playerDimensions;
 }
-
+}
 
 
 

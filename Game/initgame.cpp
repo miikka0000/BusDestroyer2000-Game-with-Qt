@@ -13,6 +13,7 @@
 #include <memory>
 
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
+namespace StudentSide {
 
 initGame::initGame(){
 
@@ -153,7 +154,7 @@ void initGame::endGame()
 {
     _newCity->isGameOver();
 }
-
+}
 
 
 

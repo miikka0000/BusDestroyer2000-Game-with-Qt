@@ -27,6 +27,12 @@
 #include <QTimer>
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a Class in which the CourseSide integration mostly happens.
   * The class is also responsible for moving and showing all the actors offered by CourseSide.
   * Furthermore, CreateGame -function is implemented here.
@@ -141,6 +147,6 @@ private:
     const QPixmap _passengerPic = QPixmap(":/images/passenger_20x15.png");
 
 };
-
+}
 #endif // GAME_H
 

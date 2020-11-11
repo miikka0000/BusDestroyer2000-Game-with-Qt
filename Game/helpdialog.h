@@ -11,6 +11,12 @@ class helpDialog;
 }
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a QDialog which offers help to a new player who possibly isn't aware of the game rules, settings or controls etc.
   * The Dialog itself is accessible from MainMenu's "Help" -button.
   */
@@ -43,5 +49,5 @@ private slots:
 private:
     Ui::helpDialog *ui;
 };
-
+}
 #endif // HELPDIALOG_H

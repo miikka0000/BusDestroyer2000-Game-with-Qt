@@ -23,8 +23,9 @@
 #include <QGraphicsRectItem>
 #include <memory>
 
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
 extern QTime _gameTime;
+namespace StudentSide {
 
 gameWindow::gameWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -183,7 +184,7 @@ void gameWindow::updateCountDown()
         this->close();
     }
 }
-
+}
 
 
 

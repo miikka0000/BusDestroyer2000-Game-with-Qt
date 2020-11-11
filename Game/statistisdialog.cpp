@@ -1,7 +1,8 @@
 #include "statistisdialog.h"
 #include "ui_statistisdialog.h"
 
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
+namespace StudentSide {
 
 statistisDialog::statistisDialog(QWidget *parent) :
     QDialog(parent),
@@ -50,4 +51,5 @@ void statistisDialog::on_playAgainButton_clicked()
     MainMenuDialog *newMainMenu = new MainMenuDialog();
     newMainMenu->show();
     this->close();
+}
 }

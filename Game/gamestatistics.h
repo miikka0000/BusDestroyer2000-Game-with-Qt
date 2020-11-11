@@ -12,6 +12,12 @@
 #include <QDebug>
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a class that inherits from IStatistics and implements its virtual functions. In addition class has some own functions and attributes.
   * Class is responsible for the statistical bookkeeping for all the relevant statistics that the player generates ingame.
   */
@@ -140,5 +146,5 @@ public:
     int movedActorsAmount = 0;
 
 };
-
+}
 #endif // GAMESTATISTICS_H

@@ -32,6 +32,12 @@ class gameWindow;
 }
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a class for the MainWindow where the actual playing happens. It has a game map background which depicts Tampere City Center.
   * Game Window also shows the chosen player which can be moved with arrow keys. Shooting happens by pressing space bar. Also the CourseSide integration is visualized in the game window: Nysses and passengers move in real time on the map.
   */
@@ -149,5 +155,5 @@ private:
     const QImage _bkgndBig = QImage(":/offlinedata/offlinedata/kartta_iso_1095x592.png");
 
 };
-
+}
 #endif // GAMEWINDOW_H

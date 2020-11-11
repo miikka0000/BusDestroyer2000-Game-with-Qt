@@ -3,6 +3,8 @@
 
 #include <QSize>
 
+namespace StudentSide {
+
 helpDialog::helpDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::helpDialog)
@@ -28,4 +30,5 @@ void helpDialog::setActionTips()
 void helpDialog::on_closeHelpButton_clicked()
 {
     this->close();
+}
 }

@@ -9,6 +9,12 @@
 #include <QTimer>
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a class for the other unique object in the game: bonusItem's (small red diamonds) that appear randomly in the game map every 4 seconds.
   * If the player manages to collect these bonus items either by moving into their location or by shooting them, 10 points are added to the player score.
   */
@@ -38,8 +44,6 @@ private:
     QTimer *_bonusTimer;
     int _bonusInterval = 50;
     const QPixmap _gemPic = QPixmap(":/images/bonusGem_30x15.png");
-
 };
-
-
+}
 #endif // BONUSITEM_H

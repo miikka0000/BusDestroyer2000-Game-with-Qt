@@ -8,10 +8,10 @@
 #include <memory>
 #include <QString>
 
-
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
 extern QString playerAliasName;
+namespace StudentSide {
 
 GameOverDialog::GameOverDialog(QWidget *parent) :
     QDialog(parent),
@@ -76,4 +76,5 @@ void GameOverDialog::on_statsButton_clicked()
     statistisDialog *statsDialog = new statistisDialog();
     statsDialog->show();
     this->close();
+}
 }

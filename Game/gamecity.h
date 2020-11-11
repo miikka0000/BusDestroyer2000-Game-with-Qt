@@ -23,6 +23,12 @@
 #include <map>
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a class that inherits from ICity and implements its virtual functions.
   * The class handles functionality regarding the actual city.
   */
@@ -150,8 +156,7 @@ public:
     bool gameStateOn = false;
     bool backgroundSet= false;
     bool gameClockSet = false;
-
 };
-
+}
 
 #endif // GAMECITY_H

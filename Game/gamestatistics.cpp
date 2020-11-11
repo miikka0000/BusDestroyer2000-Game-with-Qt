@@ -1,6 +1,8 @@
 #include "gamestatistics.h"
 #include "errors/gameerror.hh"
 
+namespace StudentSide {
+
 gameStatistics::gameStatistics()
 {
 }
@@ -72,4 +74,5 @@ void gameStatistics::initAllValues()
     collectedDiamonds = 0;
     leftPassengers = 0;
     movedActorsAmount = 0;
+}
 }

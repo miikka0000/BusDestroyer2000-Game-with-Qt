@@ -9,6 +9,8 @@
 #include <QSettings>
 
 extern QString playerAliasName;
+namespace StudentSide {
+
 MainMenuDialog::MainMenuDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MainMenuDialog)
@@ -200,7 +202,7 @@ void MainMenuDialog::on_helpButton_clicked()
     helpDialog *gameHelpDialog = new helpDialog(this);
     gameHelpDialog->exec();
 }
-
+}
 
 
 

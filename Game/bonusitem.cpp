@@ -5,6 +5,8 @@
 #include <QList>
 #include <stdlib.h>
 
+namespace StudentSide {
+
 bonusItem::bonusItem(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent){
 
     int randXCoord = rand() % currentWidth;
@@ -25,4 +27,5 @@ void bonusItem::move(){
         scene()->removeItem(this);
         delete this;
     }
+}
 }

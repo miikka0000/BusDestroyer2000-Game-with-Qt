@@ -21,6 +21,12 @@ class MainMenuDialog;
 }
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a QDialog which is the first shown window to the user when the app is run.
   * It is the main configuration dialog in which player sets a player nickname, chooses player and projectile type and possibly accesses settings or help.
   */
@@ -116,5 +122,5 @@ private:
     QString _playerAlias;
 
 };
-
+}
 #endif // MAINMENUDIALOG_H

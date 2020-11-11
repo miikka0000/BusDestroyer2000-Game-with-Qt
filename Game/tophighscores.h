@@ -12,6 +12,12 @@
 #include <memory>
 #include <map>
 
+/**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
 // default file where the player name and score are saved in this kind of format:
 // playerName:scaledPoints
 const QString textFilePath = "top10highscores.txt";
@@ -70,6 +76,5 @@ private:
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 
 };
-
-
+}
 #endif // TOPHIGHSCORES_H

@@ -9,8 +9,9 @@
 #include <QList>
 #include <memory>
 
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
 extern std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
+namespace StudentSide {
 
 basicProjectile::basicProjectile(QGraphicsItem *parent): QObject(), QGraphicsPixmapItem(parent)
 {
@@ -124,6 +125,7 @@ void basicProjectile::move()
         scene()->removeItem(this);
         delete this;
     }
+}
 }
 
 

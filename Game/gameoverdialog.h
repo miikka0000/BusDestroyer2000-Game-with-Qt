@@ -14,6 +14,12 @@ class GameOverDialog;
 }
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a QDialog that is shown to the player when the game is over.
   */
 class GameOverDialog : public QDialog
@@ -64,5 +70,5 @@ private:
     Ui::GameOverDialog *ui;
     topHighScores *_highScores;
 };
-
+}
 #endif // GAMEOVERDIALOG_H

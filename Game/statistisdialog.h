@@ -14,6 +14,12 @@ class statistisDialog;
 }
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a QDialog which offers statisctics of the game played by the player.
   * The Dialog itself is accessible from GameOverDialog's "Statistics" -button.
   */
@@ -56,5 +62,5 @@ private slots:
 private:
     Ui::statistisDialog *ui;
 };
-
+}
 #endif // STATISTISDIALOG_H

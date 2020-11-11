@@ -17,6 +17,12 @@
 #include <memory>
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a class for the main player that the game's user controls in the game.
   * The player can be in interaction with bonusItems, Nysses and passengers shown on the game map.
   * Player movement happens via arrow key pressing, and shooting via space bar.
@@ -163,5 +169,5 @@ private:
     const QUrl _missileSound = QUrl("qrc:/sounds/missileSound.wav");
 
 };
-
+}
 #endif // PLAYER_H

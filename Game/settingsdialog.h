@@ -13,6 +13,12 @@ class settingsDialog;
 }
 
 /**
+ * @brief
+ * All of the classes done by us are found in StudentSide namespace.
+ */
+namespace StudentSide {
+
+/**
   * @brief Defines a QDialog which offers a separate settings window where the player can set music on/off and alter the game duration.
   * The Dialog itself is accessible from MainMenu's "Settings" -button.
   * If the player does not make any changes to the settings (which isn't compulsory), the default settings are used: musics off and game duration 2 minutes.
@@ -78,5 +84,5 @@ private:
     bool _musicsOn = false;
     std::shared_ptr<QSettings> _playerSettings = std::make_shared<QSettings>();
 };
-
+}
 #endif // SETTINGSDIALOG_H

@@ -4,6 +4,7 @@
 
 #include <QtTest>
 #include <QObject>
+using namespace StudentSide;
 
 /**
   * @brief Unit tests for the gameStatistics class which inherits from Course Side's

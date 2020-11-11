@@ -8,16 +8,13 @@
 #include <map>
 #include <QGraphicsPixmapItem>
 
-std::shared_ptr<gameStatistics> smartStats =
-        std::make_shared<gameStatistics>();
+std::shared_ptr<StudentSide::gameStatistics> smartStats =
+        std::make_shared<StudentSide::gameStatistics>();
 std::map<std::shared_ptr<Interface::IActor>, QGraphicsPixmapItem*> smartActors;
-
 QString playerAliasName;
 QTime _gameTime;
-
 int main(int argc, char *argv[])
 {
-    using std::shared_ptr;
     QApplication a(argc, argv);
     QCoreApplication::setOrganizationName("Tampere University");
     QCoreApplication::setApplicationName("BusDestroyer2000");
@@ -25,7 +22,7 @@ int main(int argc, char *argv[])
 
     Q_INIT_RESOURCE(offlinedata);
 
-    MainMenuDialog * menuUi = new MainMenuDialog();
+    StudentSide::MainMenuDialog * menuUi = new StudentSide::MainMenuDialog();
     menuUi->exec();
 
     return a.exec();

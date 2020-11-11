@@ -3,8 +3,9 @@
 
 #include <QDebug>
 
-extern std::shared_ptr<gameStatistics> smartStats;
+extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
 extern QString playerAliasName;
+namespace StudentSide {
 
 topHighScores::topHighScores(QObject *parent) : QObject(parent)
 {
@@ -72,4 +73,5 @@ void topHighScores::writeFile(QString filename)
         file.close();
         qDebug() << "Writing finished";
     }
+}
 }
