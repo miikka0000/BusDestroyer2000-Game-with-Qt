@@ -66,7 +66,7 @@ public:
      * @param String in QString format.
      * @pre -
      * @return Returns true if the string given as a parameter contains ONLY whitespace characters, otherwise returns false.
-     * @post Boolean has been returned to tell if the string contains only whitespace or not. Exception guarantee: strong.
+     * @post Boolean has been returned to tell if the string contains only whitespace or not. Exception guarantee: nothrow.
      */
     bool nameIsEmpty(const QString playerName) const;
 

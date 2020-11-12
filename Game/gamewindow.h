@@ -119,7 +119,7 @@ public:
      * @brief getAvailableSize returns player's current available screen size.
      * @pre The game has started and gameWindow is active.
      * @return Vector containing the width (index 0) and the height (index 1) of the available screen.
-     * @post Exception guarantee: strong.
+     * @post Exception guarantee: nothrow.
      */
     std::vector<int> getAvailableSize();
 

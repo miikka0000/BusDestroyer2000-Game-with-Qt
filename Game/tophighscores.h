@@ -41,7 +41,7 @@ public:
      * @brief readFile reads data from a textfile into map.
      * @param Default path to the top10highscores.txt -file where the data is ultimately stored.
      * @pre The textfile exists in the path set.
-     * @post Data from textfile (playerName: scaledPoints) has been read into a map. Exception guarantee: strong.
+     * @post Data from textfile (playerName: scaledPoints) has been read into a map. Exception guarantee: nothrow.
      */
     void readFile(QString filename = textFilePath);
 
@@ -49,7 +49,7 @@ public:
      * @brief writeFile writes data into a textfile (player name and his points scaled according to the chosen game duration).
      * @param Default path to the top10highscores.txt -file where the data is ultimately stored.
      * @pre -
-     * @post Data has been written to the textfile (playerName: scaledPoints). Exception guarantee: strong.
+     * @post Data has been written to the textfile (playerName: scaledPoints). Exception guarantee: nothrow.
      */
     void writeFile(QString filename = textFilePath);
 
@@ -57,7 +57,7 @@ public:
      * @brief sortAndDisplay sorts the players according to their points into a top10 -subset and appends these top10 -players into a QString which is shown to the player later in GameOverDialog's QTextBrowser.
      * @param Unsorted map that contains all-time player data.
      * @pre -
-     * @post Map is sorted and its contents are appended into a QString. Exception guarantee: strong.
+     * @post Map is sorted and its contents are appended into a QString. Exception guarantee: nothrow.
      */
     void sortAndDisplay(std::map<QString, int> mapToBeSorted);
 
@@ -65,7 +65,7 @@ public:
      * @brief getDuration reads the game duration setting saved before and returns it as an integer which represents game duration in minutes.
      * @pre -
      * @return Chosen game duration as an integer which represents game duration in minutes. If the player has not chosen game durations, it is by default 2 minutes.
-     * @post Game duration has been returned. Exception guarantee: strong.
+     * @post Game duration has been returned. Exception guarantee: nothrow.
      */
     int getDuration();
 

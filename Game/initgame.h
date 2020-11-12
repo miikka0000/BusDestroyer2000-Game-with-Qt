@@ -57,7 +57,7 @@ public:
      * @brief drawStops adds all the bus stops that fit in the game mip to the QGraphicsScene and also set the picture for each stop (red flag).
      * @param Shared pointer to the gameCity and a raw pointer to the game's main QGraphicsScene.
      * @pre QGraphicsScene has been created and is active.
-     * @post Stops have been added to the game map and they are depicted with a red flag. Exception guarantee: strong.
+     * @post Stops have been added to the game map and they are depicted with a red flag. Exception guarantee: nothrow.
      */
     void drawStops(std::shared_ptr<gameCity> currCity, QGraphicsScene *scene);
 
@@ -65,7 +65,7 @@ public:
      * @brief drawActorItems adds all the Nysse-buses and passengers that fit in the game mip to the QGraphicsScene and also set the picture for each Nysse and passenger.
      * @param Raw pointer to the game's main QGraphicsScene.
      * @pre QGraphicsScene has been created and is active.
-     * @post Nysses and passengers have been added to the game map and they are depicted with a proper icon. Exception guarantee: strong.
+     * @post Nysses and passengers have been added to the game map and they are depicted with a proper icon. Exception guarantee: nothrow.
      */
     void drawActorItems(QGraphicsScene *scene);
 

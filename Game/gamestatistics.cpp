@@ -30,7 +30,6 @@ void gameStatistics::morePassengers(int num)
     } else{
         throw Interface::GameError("Added passenger amount can't be negative");
     }
-
 }
 
 void gameStatistics::nysseRemoved()

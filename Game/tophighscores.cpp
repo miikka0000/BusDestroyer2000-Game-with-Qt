@@ -61,7 +61,6 @@ int topHighScores::getDuration() {
 void topHighScores::writeFile(QString filename)
 {
     QFile file(filename);
-
     if(file.open(QIODevice::WriteOnly | QIODevice::Append | QIODevice::Text))
     {
         int scaledPoints = smartStats->givePoints()/getDuration();

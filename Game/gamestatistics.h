@@ -44,6 +44,7 @@ public:
      * @param num how many passangers eliminated.
      * @pre num > 0
      * @post Exception guarantee: strong
+     * @exception GameError number given as a paremeter is negative.
      */
     virtual void passengerDied(int num);
 
@@ -52,27 +53,28 @@ public:
      * @param num how many new passangers are added.
      * @pre num > 0
      * @post Exception guarantee: strong
+     * @exception GameError number given as a paremeter is negative.
      */
     virtual void morePassengers(int num);
 
     /**
      * @brief nysseRemoved notifies, that the nysse is removed ingame.
      * @pre -
-     * @post Exception guarantee: strong
+     * @post Exception guarantee: nothrow.
      */
     virtual void nysseRemoved();
 
     /**
      * @brief newNysse notifies, that a new nysse is added to the game.
      * @pre -
-     * @post Exception guarantee: strong
+     * @post Exception guarantee: nothrow.
      */
     virtual void newNysse();
 
     /**
      * @brief nysseLeft notifies, that a nysse has left the game.
      * @pre -
-     * @post Exception guarantee: strong
+     * @post Exception guarantee: nothrow.
      */
     virtual void nysseLeft();
 
