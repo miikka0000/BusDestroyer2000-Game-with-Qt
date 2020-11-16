@@ -7,6 +7,11 @@ Doxygen documentation has been created inside the DoxygenDocumentation -folder (
 
 All the relevant documentation of our project can be found inside the Documentation -folder, which is located in our repo root.
 
+## How to start the game
+1) First clone this project to your local machine
+2) Open Nysse.pro -file which is located in our repo root.
+3) Run the program (CTRL + R)
+
 ## DISCLAIMERS:
 - We, the project team, do not take any credits for the code in directory "./Course" nor all the resources in "./Game/resources".
 - Our contribution is in the code under the Game and StudentTest folders.
