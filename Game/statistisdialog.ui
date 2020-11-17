@@ -55,7 +55,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="playAgainButton">
+      <widget class="QPushButton" name="backButton">
        <property name="font">
         <font>
          <weight>75</weight>
@@ -66,23 +66,7 @@
         <string notr="true">background-color: rgb(240, 240, 240);</string>
        </property>
        <property name="text">
-        <string>Play again</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="exitGameButton">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(240, 240, 240);</string>
-       </property>
-       <property name="text">
-        <string>Exit</string>
+        <string>Back</string>
        </property>
       </widget>
      </item>

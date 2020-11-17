@@ -55,9 +55,7 @@ public:
 
 
 private slots:
-    void on_exitGameButton_clicked();
-
-    void on_playAgainButton_clicked();
+    void on_backButton_clicked();
 
 private:
     Ui::statistisDialog *ui;

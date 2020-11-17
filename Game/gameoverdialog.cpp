@@ -74,7 +74,7 @@ void GameOverDialog::on_playAgainButton_clicked()
 void GameOverDialog::on_statsButton_clicked()
 {
     statistisDialog *statsDialog = new statistisDialog();
-    statsDialog->show();
-    this->close();
+    statsDialog->exec();
+    this->setModal(false);
 }
 }

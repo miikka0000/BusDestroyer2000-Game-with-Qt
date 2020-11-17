@@ -22,8 +22,7 @@ statistisDialog::~statistisDialog()
 
 void statistisDialog::setToolTips()
 {
-    ui->exitGameButton->setToolTip("Exit game");
-    ui->playAgainButton->setToolTip("Start a new game");
+    ui->backButton->setToolTip("Back to game over dialog");
 }
 
 void statistisDialog::generateStatsString()
@@ -41,15 +40,8 @@ void statistisDialog::generateStatsString()
     ui->statsTextBrowser->setAlignment(Qt::AlignLeft);
 }
 
-void statistisDialog::on_exitGameButton_clicked()
+void StudentSide::statistisDialog::on_backButton_clicked()
 {
-    this->close();
-}
-
-void statistisDialog::on_playAgainButton_clicked()
-{
-    MainMenuDialog *newMainMenu = new MainMenuDialog();
-    newMainMenu->show();
     this->close();
 }
 }
