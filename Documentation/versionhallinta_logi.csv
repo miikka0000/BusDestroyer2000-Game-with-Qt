@@ -1,144 +1,150 @@
-"1db9f3a,""Miikka Mensio"",""Mon, 16 Nov 2020 14:17:56 +0200"",""siirretty doxygendokumentaatio Documentation kansioon"",	 162 files changed, 0 insertions(+), 0 deletions(-)	"
-"560419f,""Miikka Mensio"",""Mon, 16 Nov 2020 14:14:15 +0200"",""vaihdettu dokumentaatiokansion nimi"",	 1 file changed, 0 insertions(+), 0 deletions(-)	"
-"08b7f4c,""Miikka Mensio"",""Thu, 12 Nov 2020 13:33:52 +0200"",""suomekielinen pelidokementaatio lisatty repon juureen kansioon GameDocumentation_fin_pdf"",	 1 file changed, 0 insertions(+), 0 deletions(-)	"
-"1fa52a9,""Miikka Mensio"",""Thu, 12 Nov 2020 13:22:44 +0200"",""paivitetty doxygen dokumentaatio"",	 163 files changed, 279 insertions(+), 262 deletions(-)	"
-"7968bb6,""Miikka Mensio"",""Thu, 12 Nov 2020 13:12:26 +0200"",""refaktorointia ja siivousta"",	 7 files changed, 13 insertions(+), 13 deletions(-)	"
-"5ed4af6,""Miikka Mensio"",""Thu, 12 Nov 2020 11:24:10 +0200"",""poistettu gitlab-ci.yml. KOKO porjekti testeineen kääntyy ja alkaa olla tuotantokelpoinen"",	 2 files changed, 1 insertion(+), 3 deletions(-)	"
-"24cce7d,""Miikka Mensio"",""Wed, 11 Nov 2020 21:14:37 +0200"",""poistettu redundantti kansio"",	 91 files changed, 5403 deletions(-)	"
-"cb6afed,""Miikka Mensio"",""Wed, 11 Nov 2020 21:11:23 +0200"",""generoitu doxygen dokumentaatio projektille"",	 177 files changed, 23732 insertions(+), 14 deletions(-)	"
-"e61745b,""Miikka Mensio"",""Wed, 11 Nov 2020 20:46:43 +0200"",""laitettu oma koodimme StudenSide nimiavaruuden alla luettavuutta helpottamaan"",	 29 files changed, 134 insertions(+), 37 deletions(-)	"
-"07a5042,""Miikka Mensio"",""Wed, 11 Nov 2020 15:13:02 +0200"",""sopimussuunnittelu tehty loppuun"",	 17 files changed, 109 insertions(+), 13 deletions(-)	"
-"5296d97,""Miikka Mensio"",""Wed, 11 Nov 2020 13:36:07 +0200"",""siivousta"",	 6 files changed, 8 deletions(-)	"
-"b231822,""Miikka Mensio"",""Wed, 11 Nov 2020 13:23:28 +0200"",""sopisuunniittelu kaikkien luokkien osalta alustavasti tehty"",	 16 files changed, 334 insertions(+), 68 deletions(-)	"
-"dba6414,""Miikka Mensio"",""Wed, 11 Nov 2020 09:18:48 +0200"",""poistettu redundantti resutiedosto"",	 5 files changed, 7 insertions(+), 8 deletions(-)	"
-"02ec88f,""Miikka Mensio"",""Tue, 10 Nov 2020 21:46:04 +0200"",""tehty 5:lle luokalle sopimussuunnittelu"",	 18 files changed, 279 insertions(+), 147 deletions(-)	"
-"1b1dca3,""Miikka Mensio"",""Tue, 10 Nov 2020 12:50:58 +0200"",""muokattu readme"",	 1 file changed, 4 insertions(+), 4 deletions(-)	"
-"d9b5b48,""Miikka Mensio"",""Tue, 10 Nov 2020 12:49:26 +0200"",""muokattu readme"",	 1 file changed, 6 insertions(+), 5 deletions(-)	"
-"031c820,""Miikka Mensio"",""Tue, 10 Nov 2020 12:44:47 +0200"",""muokattu readme"",	 1 file changed, 3 insertions(+), 3 deletions(-)	"
-"a838031,""Miikka Mensio"",""Tue, 10 Nov 2020 12:42:46 +0200"",""muokattu readme"",	 1 file changed, 2 insertions(+), 2 deletions(-)	"
-"ae9dd84,""Miikka Mensio"",""Tue, 10 Nov 2020 12:39:46 +0200"",""muokattu README ja muuta siivousta koodin puolella"",	 13 files changed, 61 insertions(+), 103 deletions(-)	"
-"6041403,""Miikka Mensio"",""Mon, 9 Nov 2020 17:10:38 +0200"",""submodule paivitys originiin"",	 1 file changed, 1 insertion(+), 1 deletion(-)	"
-"195880b,""Miikka Mensio"",""Mon, 9 Nov 2020 17:09:28 +0200"",""refaktorointia ja siivousta yms yllapitoa"",	 35 files changed, 195 insertions(+), 1445 deletions(-)	"
-"90ab476,""Miikka Mensio"",""Mon, 9 Nov 2020 15:36:55 +0200"",""refaktorointia ja siivousta"",	 22 files changed, 139 insertions(+), 345 deletions(-)	"
-"39e6a73,""Miikka Mensio"",""Sat, 7 Nov 2020 16:25:42 +0200"",""muokattu gitignorea"",	 1 file changed, 1 insertion(+)	"
-"9bcf4b9,""Miikka Mensio"",""Sat, 7 Nov 2020 16:23:10 +0200"",""muokattu gameoverdialogin labelia"",	 3 files changed, 4 insertions(+), 1 deletion(-)	"
-"630f81c,""Markus Mensio"",""Sat, 7 Nov 2020 15:52:03 +0200"",""tophighscores pisteet nyt skaalautuvat peliajan suhteen"",	 3 files changed, 33 insertions(+), 22 deletions(-)	"
-"aee5c13,""Miikka Mensio"",""Sat, 7 Nov 2020 12:03:17 +0200"",""muokattu frameratea pelaajaystavallisemmaksi"",	 1 file changed, 12 deletions(-)	"
-"dda01fe,""Miikka Mensio"",""Sat, 7 Nov 2020 11:43:07 +0200"",""vaihdettu framerate 20ms ja qgraphicsviewssa asetettu minimalviewportupdate, jotta gameplay olisi smoothimpi"",	 44 files changed, 41 insertions(+), 41563 deletions(-)	"
-"d4d9b85,""Miikka Mensio"",""Fri, 6 Nov 2020 19:49:07 +0200"",""vahdettu testiluokan nimi statisticstest-> statisticsTest"",	 1 file changed, 16 insertions(+), 16 deletions(-)	"
-"f92ccd4,""Miikka Mensio"",""Fri, 6 Nov 2020 19:30:49 +0200"",""vaihdettu BonusItem classin nimi -> bonusItem, jotta camelCase yhtenäisyys sailyisi"",	 5 files changed, 8 insertions(+), 8 deletions(-)	"
-"f19bb79,""Markus Mensio"",""Fri, 6 Nov 2020 17:19:36 +0200"",""sorttia alustettu tophighscores luokkaan"",	 32 files changed, 37 insertions(+), 11 deletions(-)	"
-"75be277,""Miikka Mensio"",""Fri, 6 Nov 2020 14:56:00 +0200"",""nyt pisteet ym data nollaantuu, jos gameoverdialogista aloitetaan uusi peli"",	 35 files changed, 41573 insertions(+), 3 deletions(-)	"
-"a346445,""Miikka Mensio"",""Fri, 6 Nov 2020 13:11:39 +0200"",""poistettu redundanssia originista"",	 34 files changed, 41547 deletions(-)	"
-"b063f0f,""Miikka Mensio"",""Fri, 6 Nov 2020 12:58:58 +0200"",""shadow build aktivoitu Nysse-projektiin"",	 35 files changed, 41547 insertions(+), 2 deletions(-)	"
-"79ac3bd,""Miikka Mensio"",""Fri, 6 Nov 2020 12:17:36 +0200"",""muokattu gitignorea"",	 35 files changed, 2 insertions(+), 41547 deletions(-)	"
-"e8750b2,""Miikka Mensio"",""Fri, 6 Nov 2020 12:12:11 +0200"",""nollattu tekstitiedosto"",	 1 file changed, 2 insertions(+)	"
-"7a9dae1,""Miikka Mensio"",""Fri, 6 Nov 2020 12:07:50 +0200"",""nyt coursesiden logic ei enaa jaa pyorimaan taustalle vaan prosessi lopetetaan pelin paatyttya"",	 59 files changed, 42760 insertions(+), 78 deletions(-)	"
-"fb69488,""Miikka Mensio"",""Fri, 6 Nov 2020 12:05:49 +0200"",""modifioitu gitignorea"",	 1 file changed, 5 insertions(+), 1 deletion(-)	"
-"288f6e1,""Miikka Mensio"",""Wed, 4 Nov 2020 18:00:44 +0200"",""bugifixi part 2 liittyen tuhotun passengerin deletoimiseen kartalata->nyt pitaisi toimia paljon paremmin"",	 6 files changed, 23 insertions(+), 48 deletions(-)	"
-"3edfc45,""Miikka Mensio"",""Wed, 4 Nov 2020 13:38:30 +0200"",""refaktorointia ja korjattu kriittinen bugi: segmentation fault"",	 9 files changed, 35 insertions(+), 130 deletions(-)	"
-"12ba3b5,""Miikka Mensio"",""Wed, 4 Nov 2020 12:27:17 +0200"",""statisticsDialogi generoitu ja nappi lisatty gameoverdialogiin"",	 13 files changed, 235 insertions(+), 18 deletions(-)	"
-"9fa3718,""Miikka Mensio"",""Wed, 4 Nov 2020 11:26:20 +0200"",""modifioitu gitignorea"",	 1 file changed, 8 insertions(+), 1 deletion(-)	"
-"13721ec,""Miikka Mensio"",""Wed, 4 Nov 2020 11:23:03 +0200"",""unit testit generoitu istatisticsin implementoivalle gameSatisticsille. Vaihdettu gameoverdialogin textikentta QTextBrowseriksi"",	 13 files changed, 189 insertions(+), 177 deletions(-)	"
-"4f73cfa,""Miikka Mensio"",""Wed, 4 Nov 2020 09:45:17 +0200"",""poistettu doxygen kansio duplikaatti"",	 91 files changed, 5403 deletions(-)	"
-"5c6739d,""Miikka Mensio"",""Wed, 4 Nov 2020 09:44:25 +0200"",""alustettu ja conffattu yksikkötestit gameStatisticsille ja tehty tarvittavat muutokset StudentSideTests.pro tiedostoon"",	 97 files changed, 5476 insertions(+), 21 deletions(-)	"
-"3e8bd47,""Miikka Mensio"",""Tue, 3 Nov 2020 22:12:16 +0200"",""poistettu health paneeli ja toteutettu rajapinnan istatistics virtuaalimetodit luokkaan gameStatistics"",	 11 files changed, 190 insertions(+), 75 deletions(-)	"
-"7903c97,""Miikka Mensio"",""Tue, 3 Nov 2020 20:26:17 +0200"",""lisayksia gitignoreen"",	 1 file changed, 11 insertions(+)	"
-"28a1c9f,""Miikka Mensio"",""Tue, 3 Nov 2020 19:05:00 +0200"",""initiliasoitu QString muuttuja mainiin pelaajan nimelle, ja tähän kopoidaan mainmenudialogista pelajaan nimi myöhempaa kayttoa varten. Lisäksi poistettu turhia debug-lauseita. Nysset ja pelaajta liikkuu kartalla, pisteidenlaskenta toimii"",	 4 files changed, 13 insertions(+), 14 deletions(-)	"
-"12415e8,""Miikka Mensio"",""Tue, 3 Nov 2020 15:35:39 +0200"",""pieniä siivoustoimenpiteita"",	 2 files changed, 3 insertions(+), 4 deletions(-)	"
-"e9d2c75,""Miikka Mensio"",""Tue, 3 Nov 2020 14:51:37 +0200"",""nysset ja matkustajat liikkuu autonomisesti kartalla. Lisäksi niitä voi tuhota ampumalla jolloin pisteet += 10 ja tuhotut aktorit poistetaan kartalta"",	 10 files changed, 98 insertions(+), 30 deletions(-)	"
-"d6c3b03,""Miikka Mensio"",""Tue, 3 Nov 2020 12:09:28 +0200"",""refaktorointia"",	 2 files changed, 2 insertions(+), 2 deletions(-)	"
-"c42b246,""Miikka Mensio"",""Tue, 3 Nov 2020 12:03:04 +0200"",""nysset ja matkustajat saatu liikkumaan kartalla"",	 11 files changed, 130 insertions(+), 11 deletions(-)	"
-"023ef3a,""Miikka Mensio"",""Mon, 2 Nov 2020 23:50:45 +0200"",""aloitettu initGame luokan tekoa, jonka tarkoitus on piirtää nysset, pysäkit ja matkustajat kartalle."",	 7 files changed, 359 insertions(+), 112 deletions(-)	"
-"3e92adc,""Miikka Mensio"",""Mon, 2 Nov 2020 19:11:23 +0200"",""refaktorintia ja peliaika asetettu default 2min. lisäksi healthpointsit default alustus 50:n."",	 5 files changed, 8 insertions(+), 8 deletions(-)	"
-"80db67a,""Miikka Mensio"",""Mon, 2 Nov 2020 18:52:24 +0200"",""nyt bussit, stopit ja matkustajat on alustettu kartalle näkyviin gamewindowissa"",	 3 files changed, 48 insertions(+), 5 deletions(-)	"
-"7c01eb2,""Miikka Mensio"",""Mon, 2 Nov 2020 17:59:24 +0200"",""lisätty resuja ja nyt pysäkit ja matkustajat näkyy kartalla"",	 6 files changed, 48 insertions(+), 6 deletions(-)	"
-"949f8bb,""Miikka Mensio"",""Mon, 2 Nov 2020 15:28:58 +0200"",""ladataan JSONit gameCityyn ja tehdään logicin alustus gamewindowin konstruktorissa"",	 2 files changed, 12 insertions(+)	"
-"a83ead6,""Miikka Mensio"",""Mon, 2 Nov 2020 14:39:50 +0200"",""siirretty topscores txt Game kansion sisään"",	 2 files changed, 5 insertions(+), 5 deletions(-)	"
-"dff0c41,""Miikka Mensio"",""Mon, 2 Nov 2020 14:10:36 +0200"",""refaktorointia"",	 7 files changed, 32 insertions(+), 28 deletions(-)	"
-"02025da,""Miikka Mensio"",""Mon, 2 Nov 2020 13:20:25 +0200"",""peliajan loppuessa gameWindow sulkeutuu ja gameoverdialog tulee esiin"",	 7 files changed, 29 insertions(+), 17 deletions(-)	"
-"7fdfdab,""Markus Mensio"",""Mon, 2 Nov 2020 12:46:22 +0200"",""Totetutettu peliaika ominaisuus"",	 3 files changed, 13 insertions(+), 4 deletions(-)	"
-"974e9b9,""Miikka Mensio"",""Sun, 1 Nov 2020 21:51:21 +0200"",""refaktorointia/siivousta"",	 3 files changed, 2 insertions(+), 3 deletions(-)	"
-"0a1f36c,""Miikka Mensio"",""Sun, 1 Nov 2020 21:38:21 +0200"",""aloitettu rajapinnan iCity virt.funkkareiden tekoa gameCity luokassa"",	 4 files changed, 178 insertions(+), 50 deletions(-)	"
-"22f4439,""Markus Mensio"",""Sun, 1 Nov 2020 19:24:41 +0200"",""Edistetty peliaika ominaisuuden toteutusta pääikkunassa"",	 2 files changed, 24 insertions(+), 19 deletions(-)	"
-"b7063b8,""Miikka Mensio"",""Sun, 1 Nov 2020 17:10:34 +0200"",""siivousta"",	 5 files changed, 2 insertions(+), 50 deletions(-)	"
-"d6f0d5e,""Miikka Mensio"",""Sun, 1 Nov 2020 17:06:51 +0200"",""poistettu redundantit luokat: tank, ufo ja spaceship. aloitettu implementoimaan ICItyn virtuaalifunktioita luokkaan gameCity"",	 6 files changed, 271 insertions(+), 41 deletions(-)	"
-"8cdb412,""Markus Mensio"",""Sun, 1 Nov 2020 16:28:39 +0200"",""Edistetty peliaika ominaisuuden toteutusta peliasetuksissa ja pääikkunassa"",	 4 files changed, 50 insertions(+), 1 deletion(-)	"
-"38fd066,""Miikka Mensio"",""Sun, 1 Nov 2020 13:02:18 +0200"",""jatkettu gameoverdialogia->lisätty labeleita ja mm. qlistwidget top10scoren näyttämiseen"",	 6 files changed, 232 insertions(+), 66 deletions(-)	"
-"1d456e1,""Miikka Mensio"",""Sun, 1 Nov 2020 12:17:22 +0200"",""alustettu GameOverDialog, top10scores.txt sekä playerHealth-luokka. Lisäksi refaktoroitu ja poistetttu allaround -redundanssia"",	 15 files changed, 219 insertions(+), 26 deletions(-)	"
-"8a2f10b,""Miikka Mensio"",""Sun, 1 Nov 2020 00:21:06 +0200"",""segementation fault bugifixi: vaihdettu osoitin smart pointteriksi"",	 5 files changed, 20 insertions(+), 16 deletions(-)	"
-"0652b3c,""Miikka Mensio"",""Sat, 31 Oct 2020 23:45:45 +0200"",""siivousta / refaktorointia. lisäksi jos pelaaja ampuu bonusItemin, niin siitä tulee myös +10p"",	 15 files changed, 156 insertions(+), 86 deletions(-)	"
-"57ea743,""Miikka Mensio"",""Sat, 31 Oct 2020 19:53:27 +0200"",""fixed music checkbox but propably?"",	 1 file changed, 1 insertion(+), 1 deletion(-)	"
-"3e0e83c,""Miikka Mensio"",""Sat, 31 Oct 2020 19:50:53 +0200"",""poistettu redundantit luokat playerhealth ja playerpoints. lisätty bonus timantti, jonka keräämällä kartalta pelaaja saa + 10 pointsia lisaa"",	 10 files changed, 51 insertions(+), 40 deletions(-)	"
-"00500d3,""Miikka Mensio"",""Sat, 31 Oct 2020 18:20:42 +0200"",""bonusitem spawnaa nyt kartalle nykyisen näytön leveyden mukaan"",	 4 files changed, 24 insertions(+), 23 deletions(-)	"
-"9306ee3,""Miikka Mensio"",""Sat, 31 Oct 2020 17:52:19 +0200"",""changed screen dimensions struct into more user friendly int attribute in GameWindow class"",	 1 file changed, 6 insertions(+), 6 deletions(-)	"
-"a1857d4,""Miikka Mensio"",""Sat, 31 Oct 2020 17:11:00 +0200"",""alustettu BonusItem, playerHealth ja playerPoints luokat"",	 11 files changed, 171 insertions(+), 19 deletions(-)	"
-"44b3e24,""Miikka Mensio"",""Sat, 31 Oct 2020 16:24:38 +0200"",""alustettu BonusItem uniikki toimija luokka"",	 3 files changed, 24 insertions(+)	"
-"452b35e,""Miikka Mensio"",""Sat, 31 Oct 2020 16:21:44 +0200"",""siivousta"",	 1 file changed, 7 insertions(+), 1 deletion(-)	"
-"491b01f,""Miikka Mensio"",""Sat, 31 Oct 2020 16:13:07 +0200"",""siivousta"",	 1 file changed, 93 insertions(+), 24 deletions(-)	"
-"7f94e36,""Miikka Mensio"",""Sat, 31 Oct 2020 15:29:57 +0200"",""refaktorointia, ei suurempia muutoksia part 2"",	 4 files changed, 47 insertions(+), 22 deletions(-)	"
-"a52ab99,""Miikka Mensio"",""Sat, 31 Oct 2020 15:12:33 +0200"",""refaktorointia, ei suurempia muutoksia"",	 10 files changed, 50 insertions(+), 44 deletions(-)	"
-"9beb55d,""Miikka Mensio"",""Sat, 31 Oct 2020 13:53:13 +0200"",""korjattu GameWindowin kartanpiirto dynaamiseksi ja responsiiviseksi - kartan koko muuttuu, jos peli-ikkuna suurennetaan"",	 1 file changed, 4 insertions(+), 2 deletions(-)	"
-"1a1ac8f,""Miikka Mensio"",""Sat, 31 Oct 2020 13:07:09 +0200"",""lisätty GameWindowiin drawPanel funkkari, jonka tarkoituksena on piirtää paneeli, johon myöhemmin asetetaan sekuntikello, pelaajan health ja score pointsit"",	 2 files changed, 18 insertions(+), 1 deletion(-)	"
-"4e043e1,""Miikka Mensio"",""Sat, 31 Oct 2020 12:36:25 +0200"",""alustettu settingsDialogia ja edistetty sitä. Siirretty musiikkiasetus kokonaan tänne MainMenusta ja generoitu QComboBox peliajan valitsemista varten"",	 11 files changed, 283 insertions(+), 195 deletions(-)	"
-"b4e98aa,""Miikka Mensio"",""Fri, 30 Oct 2020 22:35:56 +0200"",""siivousta"",	 1 file changed, 2 insertions(+), 4 deletions(-)	"
-"8a47aeb,""Miikka Mensio"",""Fri, 30 Oct 2020 22:29:15 +0200"",""Alustettu HelpDialog ja SettingsDialog, joihin on pääsy alku-MainMenuDialogista. Lisätty myös resursseja resufolderiin"",	 14 files changed, 718 insertions(+), 256 deletions(-)	"
-"d7fb19f,""Miikka Mensio"",""Fri, 30 Oct 2020 17:30:09 +0200"",""nyt musics on off toimii. Lisäksi jokaiselle ammustyypille on eri ääniefektinsä part 3"",	 1 file changed, 3 insertions(+), 3 deletions(-)	"
-"97612ea,""Miikka Mensio"",""Fri, 30 Oct 2020 17:20:44 +0200"",""nyt musics on off toimii. Lisäksi jokaiselle ammustyypille on eri ääniefektinsä part 2"",	 3 files changed, 17 insertions(+), 2 deletions(-)	"
-"9f45f3d,""Miikka Mensio"",""Fri, 30 Oct 2020 16:45:42 +0200"",""nyt musics on off toimii. Lisäksi jokaiselle ammustyypille on eri ääniefektinsä"",	 8 files changed, 35 insertions(+), 14 deletions(-)	"
-"4a40c39,""Miikka Mensio"",""Fri, 30 Oct 2020 15:53:17 +0200"",""nyt PLayer luokka tallentaa julkiseksi attribuutikseen MainMenuDialogissa pelaajalle asetetun nimen"",	 3 files changed, 14 insertions(+), 4 deletions(-)	"
-"0d5275c,""Miikka Mensio"",""Fri, 30 Oct 2020 15:40:15 +0200"",""hiotu QDialog GUIta , tehty mm. pieniä layout muutoksia"",	 1 file changed, 348 insertions(+), 284 deletions(-)	"
-"7c880a4,""Miikka Mensio"",""Fri, 30 Oct 2020 15:26:01 +0200"",""pelaaja, musiikki ja ammusvalinta saatu toimimaan. lisäksi dialog GUI antaa herjan, jos kaikkia tarvittavia esitietoja ei ole täytetty"",	 12 files changed, 139 insertions(+), 130 deletions(-)	"
-"50f7736,""Miikka Mensio"",""Fri, 30 Oct 2020 13:35:09 +0200"",""aloitettu tekemään pelaaja sekä ammus sprite valintaa"",	 12 files changed, 191 insertions(+), 156 deletions(-)	"
-"762c6de,""Miikka Mensio"",""Fri, 30 Oct 2020 11:26:38 +0200"",""refactoring: vaihdettu BetterMainWindow nimi -> GameWindow"",	 7 files changed, 31 insertions(+), 31 deletions(-)	"
-"be96b4c,""Miikka Mensio"",""Thu, 29 Oct 2020 23:35:43 +0200"",""lisätty KeyPressedEvent MainWindowiin->mahdollistaa esim asetuksiin menemisen jollain näppäinkomennolla"",	 2 files changed, 13 insertions(+)	"
-"76902b0,""Miikka Mensio"",""Thu, 29 Oct 2020 22:52:54 +0200"",""10 px marginaalit lisätty peli-Ikkunaan"",	 2 files changed, 10 insertions(+), 10 deletions(-)	"
-"e3b197a,""Miikka Mensio"",""Thu, 29 Oct 2020 21:29:39 +0200"",""refaktorointia, siivousta"",	 9 files changed, 9 insertions(+), 157 deletions(-)	"
-"26c51b0,""Miikka Mensio"",""Thu, 29 Oct 2020 21:27:07 +0200"",""refaktorointia, siivousta"",	 2 files changed, 107 insertions(+)	"
-"cb35093,""Miikka Mensio"",""Thu, 29 Oct 2020 21:22:48 +0200"",""projectile lähtee nyt pelaajan keskipisteestä, eikä reunasta"",	 4 files changed, 34 insertions(+), 16 deletions(-)	"
-"8fa75c8,""Miikka Mensio"",""Thu, 29 Oct 2020 21:02:59 +0200"",""lisätty musics on off checkbox ja implementoitu signal/slot siihen"",	 4 files changed, 26 insertions(+), 3 deletions(-)	"
-"8f24ba0,""Miikka Mensio"",""Thu, 29 Oct 2020 20:54:57 +0200"",""musics on off checkbox lisätty aloitusdialogiin"",	 8 files changed, 166 insertions(+), 48 deletions(-)	"
-"9027ba3,""Miikka Mensio"",""Thu, 29 Oct 2020 19:21:04 +0200"",""type-valinta saatu toimimaan. siivousta, refactoringia part4"",	 2 files changed, 67 insertions(+), 28 deletions(-)	"
-"aefbb96,""Miikka Mensio"",""Thu, 29 Oct 2020 18:32:46 +0200"",""type-valinta saatu toimimaan. siivousta, refactoringia part3"",	 9 files changed, 280 insertions(+), 532 deletions(-)	"
-"e6977b9,""Miikka Mensio"",""Thu, 29 Oct 2020 18:27:21 +0200"",""type-valinta saatu toimimaan. siivousta, refactoringia part2"",	 11 files changed, 288 insertions(+), 24 deletions(-)	"
-"ce050fd,""Miikka Mensio"",""Thu, 29 Oct 2020 17:02:34 +0200"",""lisätty kuvat pelaajatyypeistä mainmenuDialogiin"",	 5 files changed, 203 insertions(+), 60 deletions(-)	"
-"2aa3ac4,""Miikka Mensio"",""Thu, 29 Oct 2020 16:41:33 +0200"",""siivousta"",	 4 files changed, 28 insertions(+), 31 deletions(-)	"
-"c943b2c,""Miikka Mensio"",""Thu, 29 Oct 2020 16:33:51 +0200"",""type-valinta saatu toimimaan. siivousta, refactoringia"",	 5 files changed, 111 insertions(+), 203 deletions(-)	"
-"0d45ac6,""Miikka Mensio"",""Thu, 29 Oct 2020 16:04:00 +0200"",""type-valinta saatu toimimaan"",	 5 files changed, 44 insertions(+), 19 deletions(-)	"
-"3be4832,""Miikka Mensio"",""Thu, 29 Oct 2020 15:22:03 +0200"",""siivoilua ja refaktorointia, ei merkittäviä lisäyksiä"",	 3 files changed, 6 insertions(+), 3 deletions(-)	"
-"9788cb7,""Miikka Mensio"",""Thu, 29 Oct 2020 14:59:00 +0200"",""hiottu QDialogia ja tehty virhetarakstelu käyttäjän syöttämiin arvoihin (nimi, pelaajatyyppi)"",	 12 files changed, 212 insertions(+), 90 deletions(-)	"
-"5249205,""Minna Färm"",""Thu, 29 Oct 2020 13:10:34 +0200"",""Course updated to prevent cloning errors"",	 1 file changed, 1 insertion(+), 1 deletion(-)	"
-"1b3d3bf,""Markus Mensio"",""Thu, 29 Oct 2020 12:18:03 +0200"",""Edistetty mainmenudialogin signaaleja"",	 6 files changed, 90 insertions(+), 47 deletions(-)	"
-"8dda98a,""Miikka Mensio"",""Wed, 28 Oct 2020 14:25:25 +0200"",""poistettu peliikkunan paddingit"",	 2 files changed, 38 insertions(+), 5 deletions(-)	"
-"a2df295,""Miikka Mensio"",""Wed, 28 Oct 2020 14:07:06 +0200"",""luotu rungot luokille spaceship, ufo ja tank"",	 12 files changed, 140 insertions(+), 88 deletions(-)	"
-"3d582dd,""Miikka Mensio"",""Wed, 28 Oct 2020 13:17:00 +0200"",""lisätty ufo ja tankki kuvat resources kansioon"",	 14 files changed, 93 insertions(+), 10 deletions(-)	"
-"a23dcb9,""Markus Mensio"",""Wed, 28 Oct 2020 13:15:35 +0200"",""Edistetty mainmenudialogin signaaleja."",	 7 files changed, 61 insertions(+), 13 deletions(-)	"
-"8138289,""Miikka Mensio"",""Wed, 28 Oct 2020 11:20:23 +0200"",""fixed thing I broke"",	 4 files changed, 5 insertions(+), 5 deletions(-)	"
-"b26f735,""Markus Mensio"",""Wed, 28 Oct 2020 11:15:09 +0200"",""Aloitettu mainmenudialogin signaalit."",	 1 file changed, 6 insertions(+)	"
-"7ff93fe,""Miikka Mensio"",""Wed, 28 Oct 2020 11:12:54 +0200"",""refaktorointia: uudelleennimetty Spaceship luokka -> Player luokaksi"",	 8 files changed, 25 insertions(+), 25 deletions(-)	"
-"abaaa1a,""Markus Mensio"",""Wed, 28 Oct 2020 10:52:09 +0200"",""Aloitettu mainmenudialog qtdesigner:ssa. Signaalit ovat vielä luomatta."",	 3 files changed, 126 insertions(+), 9 deletions(-)	"
-"bb14b09,""Miikka Mensio"",""Tue, 27 Oct 2020 18:37:49 +0200"",""Peli-ikkunan automaattinen koon skaalaus tehty melko julkaisukelpoiseksi. Käyttäjäkokemuksia otetaan vastaan... part 4"",	 3 files changed, 46 insertions(+), 78 deletions(-)	"
-"098be54,""Miikka Mensio"",""Tue, 27 Oct 2020 15:11:46 +0200"",""Peli-ikkunan automaattinen koon skaalaus tehty melko julkaisukelpoiseksi. Käyttäjäkokemuksia otetaan vastaan..."",	 5 files changed, 120 insertions(+), 31 deletions(-)	"
-"99c7d22,""Miikka Mensio"",""Tue, 27 Oct 2020 11:58:45 +0200"",""Peli-ikkunan automaattinen koon skaalaus tehty alustavasti part 3"",	 4 files changed, 67 insertions(+), 36 deletions(-)	"
-"3955a36,""Miikka Mensio"",""Mon, 26 Oct 2020 21:56:30 +0200"",""Peli-ikkunan automaattinen koon skaalaus tehty alustavasti part 2"",	 4 files changed, 57 insertions(+), 26 deletions(-)	"
-"7b7232d,""Miikka Mensio"",""Mon, 26 Oct 2020 21:11:41 +0200"",""Peli-ikkunan automaattinen koon skaalaus tehty alustavasti"",	 5 files changed, 55 insertions(+), 18 deletions(-)	"
-"53a3446,""Miikka Mensio"",""Mon, 26 Oct 2020 20:32:43 +0200"",""Alettu konvertoimaan BetterMainWindowia pelin päänäkymäksi part 2"",	 3 files changed, 28 insertions(+), 9 deletions(-)	"
-"5029856,""Miikka Mensio"",""Mon, 26 Oct 2020 20:20:49 +0200"",""Alettu konvertoimaan BetterMainWindowia pelin päänäkymäksi"",	 6 files changed, 83 insertions(+), 9 deletions(-)	"
-"580345f,""Miikka Mensio"",""Mon, 26 Oct 2020 19:49:48 +0200"",""Lisätty skeletonit mm. BetterMAinWindow ja MainMenuDialog"",	 10 files changed, 126 insertions(+), 10 deletions(-)	"
-"1b14863,""Miikka Mensio"",""Sat, 24 Oct 2020 15:31:20 +0300"",""lisätty kuvia resurssiteidostoon: mm. musiikki-on-off -ikoni"",	 3 files changed, 2 insertions(+)	"
-"e5f52b6,""Miikka Mensio"",""Fri, 23 Oct 2020 13:30:46 +0300"",""Parannettu pelaajan liikkumismekaniikkaa smoothimmaksi"",	 6 files changed, 140 insertions(+), 34 deletions(-)	"
-"40a9675,""Miikka Mensio"",""Thu, 22 Oct 2020 20:40:57 +0300"",""tiedostojen uudelleennimeämistä, turhan redundanssin poistoa ja siivousta etc."",	 7 files changed, 9 insertions(+), 9 deletions(-)	"
-"5b97822,""Miikka Mensio"",""Thu, 22 Oct 2020 20:29:29 +0300"",""pieniä modifikaatioita submoduleen"",	 1 file changed, 1 insertion(+), 1 deletion(-)	"
-"7574fb4,""Miikka Mensio"",""Thu, 22 Oct 2020 20:07:40 +0300"",""Lisätty resources Game.pro konffitiedostoon, jotta peli kääntyisi"",	 1 file changed, 12 insertions(+), 1 deletion(-)	"
-"f073d22,""Miikka Mensio"",""Thu, 22 Oct 2020 19:56:21 +0300"",""Incluudattu tarvittavia Qt-Kirjastoja, luotu basicProjectile- sekä Spaceship-oliot ja käynnistetään varsinainen peli-ikkuna."",	 1 file changed, 20 insertions(+)	"
-"5e9f006,""Miikka Mensio"",""Thu, 22 Oct 2020 19:48:23 +0300"",""Aloitettu tapahtumapeli-ikkunan kontsruointia (pelin alkaessa ilmestyvä varsinainen peli-ikkuna, johon mm. ilmestyy bussit, matkustajat ja spaceship)."",	 2 files changed, 74 insertions(+)	"
-"90932b8,""Miikka Mensio"",""Thu, 22 Oct 2020 19:46:03 +0300"",""Lisätty resourses -kansio, joka sisältää mm. ääniefekti- ja sprite-tiedostot. Kuvat ja äänet ovat opensource ja royalty free materiaalipankeista haettu."",	 5 files changed, 10 insertions(+)	"
-"87635e7,""Miikka Mensio"",""Thu, 22 Oct 2020 19:43:56 +0300"",""Aloitettu pelaajasta lähtevän luodin (basicProjectile -luokka) tekoa. Lisätty mm. ääniefektioptio sekä QTimer luotien generoimisen avuksi."",	 2 files changed, 77 insertions(+)	"
-"b13d09e,""Miikka Mensio"",""Thu, 22 Oct 2020 19:41:12 +0300"",""Aloitettu spaceship -luokan tekoa. Lisätty mm. alustava liikkumistoteutus pelaajalle sekä liitetty sprite pelaajan ulkomuodoksi peli-ikkunaan"",	 2 files changed, 113 insertions(+)	"
-"26e2145,""Miikka Mensio"",""Wed, 30 Sep 2020 21:48:58 +0300"",""deleted redundant index.html"",	 1 file changed, 101 deletions(-)	"
-"3a5d53f,""Miikka Mensio"",""Wed, 30 Sep 2020 21:33:25 +0300"",""added html folder which consists of doxygen documentation about course-side"",	 91 files changed, 5403 insertions(+)	"
-"8070b3c,""Miikka Mensio"",""Wed, 30 Sep 2020 14:51:56 +0300"",""added .gitignore to include build-* and *.pro.user"",	 1 file changed, 2 insertions(+)	"
-"4269da3,""Miikka Mensio"",""Wed, 30 Sep 2020 14:49:27 +0300"",""html doxygen documentation about things provided by coure-side"",	 1 file changed, 101 insertions(+)	"
-"6fe41ce,""Minna Färm"",""Mon, 28 Sep 2020 15:48:47 +0300"",""Readme added."",	 1 file changed, 27 insertions(+)	"
-"fb6959f,""Minna Färm"",""Mon, 28 Sep 2020 15:32:27 +0300"","".gitmodules file somehow wasn't generated previously. Course url now listed properly."",	 1 file changed, 3 insertions(+)	"
-"5a49d75,""Minna Färm"",""Fri, 25 Sep 2020 14:24:55 +0300"",""Template"",	 4 files changed, 51 insertions(+)	"
+"e707d74","Markus Mensio","Tue, 17 Nov 2020 13:01:28 +0200","poistettu turhia nappeja statisticsdialogista. nyt siina enaa back button",	 5 files changed, 7 insertions(+), 37 deletions(-)	
+"49f9022","Markus Mensio","Tue, 17 Nov 2020 12:37:29 +0200","top10highscores-tekstiedoston lukemisessa oli kriittinen crashaava bugi joka nyt korjattu",	 2 files changed, 9 insertions(+), 4 deletions(-)	
+"5fb5e40","Miikka Mensio","Tue, 17 Nov 2020 12:08:49 +0200","siivousta",	 1 file changed, 2 insertions(+), 2 deletions(-)	
+"917c41d","Miikka Mensio","Mon, 16 Nov 2020 15:18:26 +0200","modified readme",	 1 file changed, 5 insertions(+)	
+"a753e7d","Miikka Mensio","Mon, 16 Nov 2020 15:12:37 +0200","modified readme",	 1 file changed, 3 insertions(+), 1 deletion(-)	
+"5277fad","Miikka Mensio","Mon, 16 Nov 2020 15:01:26 +0200","tiivistetty dokumentaatiota sekä generoitu versionhallintalogi Documentation kansioon",	 2 files changed, 144 insertions(+)	
+"1db9f3a","Miikka Mensio","Mon, 16 Nov 2020 14:17:56 +0200","siirretty doxygendokumentaatio Documentation kansioon",	 162 files changed, 0 insertions(+), 0 deletions(-)	
+"560419f","Miikka Mensio","Mon, 16 Nov 2020 14:14:15 +0200","vaihdettu dokumentaatiokansion nimi",	 1 file changed, 0 insertions(+), 0 deletions(-)	
+"08b7f4c","Miikka Mensio","Thu, 12 Nov 2020 13:33:52 +0200","suomekielinen pelidokementaatio lisatty repon juureen kansioon GameDocumentation_fin_pdf",	 1 file changed, 0 insertions(+), 0 deletions(-)	
+"1fa52a9","Miikka Mensio","Thu, 12 Nov 2020 13:22:44 +0200","paivitetty doxygen dokumentaatio",	 163 files changed, 279 insertions(+), 262 deletions(-)	
+"7968bb6","Miikka Mensio","Thu, 12 Nov 2020 13:12:26 +0200","refaktorointia ja siivousta",	 7 files changed, 13 insertions(+), 13 deletions(-)	
+"5ed4af6","Miikka Mensio","Thu, 12 Nov 2020 11:24:10 +0200","poistettu gitlab-ci.yml. KOKO porjekti testeineen kääntyy ja alkaa olla tuotantokelpoinen",	 2 files changed, 1 insertion(+), 3 deletions(-)	
+"24cce7d","Miikka Mensio","Wed, 11 Nov 2020 21:14:37 +0200","poistettu redundantti kansio",	 91 files changed, 5403 deletions(-)	
+"cb6afed","Miikka Mensio","Wed, 11 Nov 2020 21:11:23 +0200","generoitu doxygen dokumentaatio projektille",	 177 files changed, 23732 insertions(+), 14 deletions(-)	
+"e61745b","Miikka Mensio","Wed, 11 Nov 2020 20:46:43 +0200","laitettu oma koodimme StudenSide nimiavaruuden alla luettavuutta helpottamaan",	 29 files changed, 134 insertions(+), 37 deletions(-)	
+"07a5042","Miikka Mensio","Wed, 11 Nov 2020 15:13:02 +0200","sopimussuunnittelu tehty loppuun",	 17 files changed, 109 insertions(+), 13 deletions(-)	
+"5296d97","Miikka Mensio","Wed, 11 Nov 2020 13:36:07 +0200","siivousta",	 6 files changed, 8 deletions(-)	
+"b231822","Miikka Mensio","Wed, 11 Nov 2020 13:23:28 +0200","sopisuunniittelu kaikkien luokkien osalta alustavasti tehty",	 16 files changed, 334 insertions(+), 68 deletions(-)	
+"dba6414","Miikka Mensio","Wed, 11 Nov 2020 09:18:48 +0200","poistettu redundantti resutiedosto",	 5 files changed, 7 insertions(+), 8 deletions(-)	
+"02ec88f","Miikka Mensio","Tue, 10 Nov 2020 21:46:04 +0200","tehty 5:lle luokalle sopimussuunnittelu",	 18 files changed, 279 insertions(+), 147 deletions(-)	
+"1b1dca3","Miikka Mensio","Tue, 10 Nov 2020 12:50:58 +0200","muokattu readme",	 1 file changed, 4 insertions(+), 4 deletions(-)	
+"d9b5b48","Miikka Mensio","Tue, 10 Nov 2020 12:49:26 +0200","muokattu readme",	 1 file changed, 6 insertions(+), 5 deletions(-)	
+"031c820","Miikka Mensio","Tue, 10 Nov 2020 12:44:47 +0200","muokattu readme",	 1 file changed, 3 insertions(+), 3 deletions(-)	
+"a838031","Miikka Mensio","Tue, 10 Nov 2020 12:42:46 +0200","muokattu readme",	 1 file changed, 2 insertions(+), 2 deletions(-)	
+"ae9dd84","Miikka Mensio","Tue, 10 Nov 2020 12:39:46 +0200","muokattu README ja muuta siivousta koodin puolella",	 13 files changed, 61 insertions(+), 103 deletions(-)	
+"6041403","Miikka Mensio","Mon, 9 Nov 2020 17:10:38 +0200","submodule paivitys originiin",	 1 file changed, 1 insertion(+), 1 deletion(-)	
+"195880b","Miikka Mensio","Mon, 9 Nov 2020 17:09:28 +0200","refaktorointia ja siivousta yms yllapitoa",	 35 files changed, 195 insertions(+), 1445 deletions(-)	
+"90ab476","Miikka Mensio","Mon, 9 Nov 2020 15:36:55 +0200","refaktorointia ja siivousta",	 22 files changed, 139 insertions(+), 345 deletions(-)	
+"39e6a73","Miikka Mensio","Sat, 7 Nov 2020 16:25:42 +0200","muokattu gitignorea",	 1 file changed, 1 insertion(+)	
+"9bcf4b9","Miikka Mensio","Sat, 7 Nov 2020 16:23:10 +0200","muokattu gameoverdialogin labelia",	 3 files changed, 4 insertions(+), 1 deletion(-)	
+"630f81c","Markus Mensio","Sat, 7 Nov 2020 15:52:03 +0200","tophighscores pisteet nyt skaalautuvat peliajan suhteen",	 3 files changed, 33 insertions(+), 22 deletions(-)	
+"aee5c13","Miikka Mensio","Sat, 7 Nov 2020 12:03:17 +0200","muokattu frameratea pelaajaystavallisemmaksi",	 1 file changed, 12 deletions(-)	
+"dda01fe","Miikka Mensio","Sat, 7 Nov 2020 11:43:07 +0200","vaihdettu framerate 20ms ja qgraphicsviewssa asetettu minimalviewportupdate, jotta gameplay olisi smoothimpi",	 44 files changed, 41 insertions(+), 41563 deletions(-)	
+"d4d9b85","Miikka Mensio","Fri, 6 Nov 2020 19:49:07 +0200","vahdettu testiluokan nimi statisticstest-> statisticsTest",	 1 file changed, 16 insertions(+), 16 deletions(-)	
+"f92ccd4","Miikka Mensio","Fri, 6 Nov 2020 19:30:49 +0200","vaihdettu BonusItem classin nimi -> bonusItem, jotta camelCase yhtenäisyys sailyisi",	 5 files changed, 8 insertions(+), 8 deletions(-)	
+"f19bb79","Markus Mensio","Fri, 6 Nov 2020 17:19:36 +0200","sorttia alustettu tophighscores luokkaan",	 32 files changed, 37 insertions(+), 11 deletions(-)	
+"75be277","Miikka Mensio","Fri, 6 Nov 2020 14:56:00 +0200","nyt pisteet ym data nollaantuu, jos gameoverdialogista aloitetaan uusi peli",	 35 files changed, 41573 insertions(+), 3 deletions(-)	
+"a346445","Miikka Mensio","Fri, 6 Nov 2020 13:11:39 +0200","poistettu redundanssia originista",	 34 files changed, 41547 deletions(-)	
+"b063f0f","Miikka Mensio","Fri, 6 Nov 2020 12:58:58 +0200","shadow build aktivoitu Nysse-projektiin",	 35 files changed, 41547 insertions(+), 2 deletions(-)	
+"79ac3bd","Miikka Mensio","Fri, 6 Nov 2020 12:17:36 +0200","muokattu gitignorea",	 35 files changed, 2 insertions(+), 41547 deletions(-)	
+"e8750b2","Miikka Mensio","Fri, 6 Nov 2020 12:12:11 +0200","nollattu tekstitiedosto",	 1 file changed, 2 insertions(+)	
+"7a9dae1","Miikka Mensio","Fri, 6 Nov 2020 12:07:50 +0200","nyt coursesiden logic ei enaa jaa pyorimaan taustalle vaan prosessi lopetetaan pelin paatyttya",	 59 files changed, 42760 insertions(+), 78 deletions(-)	
+"fb69488","Miikka Mensio","Fri, 6 Nov 2020 12:05:49 +0200","modifioitu gitignorea",	 1 file changed, 5 insertions(+), 1 deletion(-)	
+"288f6e1","Miikka Mensio","Wed, 4 Nov 2020 18:00:44 +0200","bugifixi part 2 liittyen tuhotun passengerin deletoimiseen kartalata->nyt pitaisi toimia paljon paremmin",	 6 files changed, 23 insertions(+), 48 deletions(-)	
+"3edfc45","Miikka Mensio","Wed, 4 Nov 2020 13:38:30 +0200","refaktorointia ja korjattu kriittinen bugi: segmentation fault",	 9 files changed, 35 insertions(+), 130 deletions(-)	
+"12ba3b5","Miikka Mensio","Wed, 4 Nov 2020 12:27:17 +0200","statisticsDialogi generoitu ja nappi lisatty gameoverdialogiin",	 13 files changed, 235 insertions(+), 18 deletions(-)	
+"9fa3718","Miikka Mensio","Wed, 4 Nov 2020 11:26:20 +0200","modifioitu gitignorea",	 1 file changed, 8 insertions(+), 1 deletion(-)	
+"13721ec","Miikka Mensio","Wed, 4 Nov 2020 11:23:03 +0200","unit testit generoitu istatisticsin implementoivalle gameSatisticsille. Vaihdettu gameoverdialogin textikentta QTextBrowseriksi",	 13 files changed, 189 insertions(+), 177 deletions(-)	
+"4f73cfa","Miikka Mensio","Wed, 4 Nov 2020 09:45:17 +0200","poistettu doxygen kansio duplikaatti",	 91 files changed, 5403 deletions(-)	
+"5c6739d","Miikka Mensio","Wed, 4 Nov 2020 09:44:25 +0200","alustettu ja conffattu yksikkötestit gameStatisticsille ja tehty tarvittavat muutokset StudentSideTests.pro tiedostoon",	 97 files changed, 5476 insertions(+), 21 deletions(-)	
+"3e8bd47","Miikka Mensio","Tue, 3 Nov 2020 22:12:16 +0200","poistettu health paneeli ja toteutettu rajapinnan istatistics virtuaalimetodit luokkaan gameStatistics",	 11 files changed, 190 insertions(+), 75 deletions(-)	
+"7903c97","Miikka Mensio","Tue, 3 Nov 2020 20:26:17 +0200","lisayksia gitignoreen",	 1 file changed, 11 insertions(+)	
+"28a1c9f","Miikka Mensio","Tue, 3 Nov 2020 19:05:00 +0200","initiliasoitu QString muuttuja mainiin pelaajan nimelle, ja tähän kopoidaan mainmenudialogista pelajaan nimi myöhempaa kayttoa varten. Lisäksi poistettu turhia debug-lauseita. Nysset ja pelaajta liikkuu kartalla, pisteidenlaskenta toimii",	 4 files changed, 13 insertions(+), 14 deletions(-)	
+"12415e8","Miikka Mensio","Tue, 3 Nov 2020 15:35:39 +0200","pieniä siivoustoimenpiteita",	 2 files changed, 3 insertions(+), 4 deletions(-)	
+"e9d2c75","Miikka Mensio","Tue, 3 Nov 2020 14:51:37 +0200","nysset ja matkustajat liikkuu autonomisesti kartalla. Lisäksi niitä voi tuhota ampumalla jolloin pisteet += 10 ja tuhotut aktorit poistetaan kartalta",	 10 files changed, 98 insertions(+), 30 deletions(-)	
+"d6c3b03","Miikka Mensio","Tue, 3 Nov 2020 12:09:28 +0200","refaktorointia",	 2 files changed, 2 insertions(+), 2 deletions(-)	
+"c42b246","Miikka Mensio","Tue, 3 Nov 2020 12:03:04 +0200","nysset ja matkustajat saatu liikkumaan kartalla",	 11 files changed, 130 insertions(+), 11 deletions(-)	
+"023ef3a","Miikka Mensio","Mon, 2 Nov 2020 23:50:45 +0200","aloitettu initGame luokan tekoa, jonka tarkoitus on piirtää nysset, pysäkit ja matkustajat kartalle.",	 7 files changed, 359 insertions(+), 112 deletions(-)	
+"3e92adc","Miikka Mensio","Mon, 2 Nov 2020 19:11:23 +0200","refaktorintia ja peliaika asetettu default 2min. lisäksi healthpointsit default alustus 50:n.",	 5 files changed, 8 insertions(+), 8 deletions(-)	
+"80db67a","Miikka Mensio","Mon, 2 Nov 2020 18:52:24 +0200","nyt bussit, stopit ja matkustajat on alustettu kartalle näkyviin gamewindowissa",	 3 files changed, 48 insertions(+), 5 deletions(-)	
+"7c01eb2","Miikka Mensio","Mon, 2 Nov 2020 17:59:24 +0200","lisätty resuja ja nyt pysäkit ja matkustajat näkyy kartalla",	 6 files changed, 48 insertions(+), 6 deletions(-)	
+"949f8bb","Miikka Mensio","Mon, 2 Nov 2020 15:28:58 +0200","ladataan JSONit gameCityyn ja tehdään logicin alustus gamewindowin konstruktorissa",	 2 files changed, 12 insertions(+)	
+"a83ead6","Miikka Mensio","Mon, 2 Nov 2020 14:39:50 +0200","siirretty topscores txt Game kansion sisään",	 2 files changed, 5 insertions(+), 5 deletions(-)	
+"dff0c41","Miikka Mensio","Mon, 2 Nov 2020 14:10:36 +0200","refaktorointia",	 7 files changed, 32 insertions(+), 28 deletions(-)	
+"02025da","Miikka Mensio","Mon, 2 Nov 2020 13:20:25 +0200","peliajan loppuessa gameWindow sulkeutuu ja gameoverdialog tulee esiin",	 7 files changed, 29 insertions(+), 17 deletions(-)	
+"7fdfdab","Markus Mensio","Mon, 2 Nov 2020 12:46:22 +0200","Totetutettu peliaika ominaisuus",	 3 files changed, 13 insertions(+), 4 deletions(-)	
+"974e9b9","Miikka Mensio","Sun, 1 Nov 2020 21:51:21 +0200","refaktorointia/siivousta",	 3 files changed, 2 insertions(+), 3 deletions(-)	
+"0a1f36c","Miikka Mensio","Sun, 1 Nov 2020 21:38:21 +0200","aloitettu rajapinnan iCity virt.funkkareiden tekoa gameCity luokassa",	 4 files changed, 178 insertions(+), 50 deletions(-)	
+"22f4439","Markus Mensio","Sun, 1 Nov 2020 19:24:41 +0200","Edistetty peliaika ominaisuuden toteutusta pääikkunassa",	 2 files changed, 24 insertions(+), 19 deletions(-)	
+"b7063b8","Miikka Mensio","Sun, 1 Nov 2020 17:10:34 +0200","siivousta",	 5 files changed, 2 insertions(+), 50 deletions(-)	
+"d6f0d5e","Miikka Mensio","Sun, 1 Nov 2020 17:06:51 +0200","poistettu redundantit luokat: tank, ufo ja spaceship. aloitettu implementoimaan ICItyn virtuaalifunktioita luokkaan gameCity",	 6 files changed, 271 insertions(+), 41 deletions(-)	
+"8cdb412","Markus Mensio","Sun, 1 Nov 2020 16:28:39 +0200","Edistetty peliaika ominaisuuden toteutusta peliasetuksissa ja pääikkunassa",	 4 files changed, 50 insertions(+), 1 deletion(-)	
+"38fd066","Miikka Mensio","Sun, 1 Nov 2020 13:02:18 +0200","jatkettu gameoverdialogia->lisätty labeleita ja mm. qlistwidget top10scoren näyttämiseen",	 6 files changed, 232 insertions(+), 66 deletions(-)	
+"1d456e1","Miikka Mensio","Sun, 1 Nov 2020 12:17:22 +0200","alustettu GameOverDialog, top10scores.txt sekä playerHealth-luokka. Lisäksi refaktoroitu ja poistetttu allaround -redundanssia",	 15 files changed, 219 insertions(+), 26 deletions(-)	
+"8a2f10b","Miikka Mensio","Sun, 1 Nov 2020 00:21:06 +0200","segementation fault bugifixi: vaihdettu osoitin smart pointteriksi",	 5 files changed, 20 insertions(+), 16 deletions(-)	
+"0652b3c","Miikka Mensio","Sat, 31 Oct 2020 23:45:45 +0200","siivousta / refaktorointia. lisäksi jos pelaaja ampuu bonusItemin, niin siitä tulee myös +10p",	 15 files changed, 156 insertions(+), 86 deletions(-)	
+"57ea743","Miikka Mensio","Sat, 31 Oct 2020 19:53:27 +0200","fixed music checkbox but propably?",	 1 file changed, 1 insertion(+), 1 deletion(-)	
+"3e0e83c","Miikka Mensio","Sat, 31 Oct 2020 19:50:53 +0200","poistettu redundantit luokat playerhealth ja playerpoints. lisätty bonus timantti, jonka keräämällä kartalta pelaaja saa + 10 pointsia lisaa",	 10 files changed, 51 insertions(+), 40 deletions(-)	
+"00500d3","Miikka Mensio","Sat, 31 Oct 2020 18:20:42 +0200","bonusitem spawnaa nyt kartalle nykyisen näytön leveyden mukaan",	 4 files changed, 24 insertions(+), 23 deletions(-)	
+"9306ee3","Miikka Mensio","Sat, 31 Oct 2020 17:52:19 +0200","changed screen dimensions struct into more user friendly int attribute in GameWindow class",	 1 file changed, 6 insertions(+), 6 deletions(-)	
+"a1857d4","Miikka Mensio","Sat, 31 Oct 2020 17:11:00 +0200","alustettu BonusItem, playerHealth ja playerPoints luokat",	 11 files changed, 171 insertions(+), 19 deletions(-)	
+"44b3e24","Miikka Mensio","Sat, 31 Oct 2020 16:24:38 +0200","alustettu BonusItem uniikki toimija luokka",	 3 files changed, 24 insertions(+)	
+"452b35e","Miikka Mensio","Sat, 31 Oct 2020 16:21:44 +0200","siivousta",	 1 file changed, 7 insertions(+), 1 deletion(-)	
+"491b01f","Miikka Mensio","Sat, 31 Oct 2020 16:13:07 +0200","siivousta",	 1 file changed, 93 insertions(+), 24 deletions(-)	
+"7f94e36","Miikka Mensio","Sat, 31 Oct 2020 15:29:57 +0200","refaktorointia, ei suurempia muutoksia part 2",	 4 files changed, 47 insertions(+), 22 deletions(-)	
+"a52ab99","Miikka Mensio","Sat, 31 Oct 2020 15:12:33 +0200","refaktorointia, ei suurempia muutoksia",	 10 files changed, 50 insertions(+), 44 deletions(-)	
+"9beb55d","Miikka Mensio","Sat, 31 Oct 2020 13:53:13 +0200","korjattu GameWindowin kartanpiirto dynaamiseksi ja responsiiviseksi - kartan koko muuttuu, jos peli-ikkuna suurennetaan",	 1 file changed, 4 insertions(+), 2 deletions(-)	
+"1a1ac8f","Miikka Mensio","Sat, 31 Oct 2020 13:07:09 +0200","lisätty GameWindowiin drawPanel funkkari, jonka tarkoituksena on piirtää paneeli, johon myöhemmin asetetaan sekuntikello, pelaajan health ja score pointsit",	 2 files changed, 18 insertions(+), 1 deletion(-)	
+"4e043e1","Miikka Mensio","Sat, 31 Oct 2020 12:36:25 +0200","alustettu settingsDialogia ja edistetty sitä. Siirretty musiikkiasetus kokonaan tänne MainMenusta ja generoitu QComboBox peliajan valitsemista varten",	 11 files changed, 283 insertions(+), 195 deletions(-)	
+"b4e98aa","Miikka Mensio","Fri, 30 Oct 2020 22:35:56 +0200","siivousta",	 1 file changed, 2 insertions(+), 4 deletions(-)	
+"8a47aeb","Miikka Mensio","Fri, 30 Oct 2020 22:29:15 +0200","Alustettu HelpDialog ja SettingsDialog, joihin on pääsy alku-MainMenuDialogista. Lisätty myös resursseja resufolderiin",	 14 files changed, 718 insertions(+), 256 deletions(-)	
+"d7fb19f","Miikka Mensio","Fri, 30 Oct 2020 17:30:09 +0200","nyt musics on off toimii. Lisäksi jokaiselle ammustyypille on eri ääniefektinsä part 3",	 1 file changed, 3 insertions(+), 3 deletions(-)	
+"97612ea","Miikka Mensio","Fri, 30 Oct 2020 17:20:44 +0200","nyt musics on off toimii. Lisäksi jokaiselle ammustyypille on eri ääniefektinsä part 2",	 3 files changed, 17 insertions(+), 2 deletions(-)	
+"9f45f3d","Miikka Mensio","Fri, 30 Oct 2020 16:45:42 +0200","nyt musics on off toimii. Lisäksi jokaiselle ammustyypille on eri ääniefektinsä",	 8 files changed, 35 insertions(+), 14 deletions(-)	
+"4a40c39","Miikka Mensio","Fri, 30 Oct 2020 15:53:17 +0200","nyt PLayer luokka tallentaa julkiseksi attribuutikseen MainMenuDialogissa pelaajalle asetetun nimen",	 3 files changed, 14 insertions(+), 4 deletions(-)	
+"0d5275c","Miikka Mensio","Fri, 30 Oct 2020 15:40:15 +0200","hiotu QDialog GUIta , tehty mm. pieniä layout muutoksia",	 1 file changed, 348 insertions(+), 284 deletions(-)	
+"7c880a4","Miikka Mensio","Fri, 30 Oct 2020 15:26:01 +0200","pelaaja, musiikki ja ammusvalinta saatu toimimaan. lisäksi dialog GUI antaa herjan, jos kaikkia tarvittavia esitietoja ei ole täytetty",	 12 files changed, 139 insertions(+), 130 deletions(-)	
+"50f7736","Miikka Mensio","Fri, 30 Oct 2020 13:35:09 +0200","aloitettu tekemään pelaaja sekä ammus sprite valintaa",	 12 files changed, 191 insertions(+), 156 deletions(-)	
+"762c6de","Miikka Mensio","Fri, 30 Oct 2020 11:26:38 +0200","refactoring: vaihdettu BetterMainWindow nimi -> GameWindow",	 7 files changed, 31 insertions(+), 31 deletions(-)	
+"be96b4c","Miikka Mensio","Thu, 29 Oct 2020 23:35:43 +0200","lisätty KeyPressedEvent MainWindowiin->mahdollistaa esim asetuksiin menemisen jollain näppäinkomennolla",	 2 files changed, 13 insertions(+)	
+"76902b0","Miikka Mensio","Thu, 29 Oct 2020 22:52:54 +0200","10 px marginaalit lisätty peli-Ikkunaan",	 2 files changed, 10 insertions(+), 10 deletions(-)	
+"e3b197a","Miikka Mensio","Thu, 29 Oct 2020 21:29:39 +0200","refaktorointia, siivousta",	 9 files changed, 9 insertions(+), 157 deletions(-)	
+"26c51b0","Miikka Mensio","Thu, 29 Oct 2020 21:27:07 +0200","refaktorointia, siivousta",	 2 files changed, 107 insertions(+)	
+"cb35093","Miikka Mensio","Thu, 29 Oct 2020 21:22:48 +0200","projectile lähtee nyt pelaajan keskipisteestä, eikä reunasta",	 4 files changed, 34 insertions(+), 16 deletions(-)	
+"8fa75c8","Miikka Mensio","Thu, 29 Oct 2020 21:02:59 +0200","lisätty musics on off checkbox ja implementoitu signal/slot siihen",	 4 files changed, 26 insertions(+), 3 deletions(-)	
+"8f24ba0","Miikka Mensio","Thu, 29 Oct 2020 20:54:57 +0200","musics on off checkbox lisätty aloitusdialogiin",	 8 files changed, 166 insertions(+), 48 deletions(-)	
+"9027ba3","Miikka Mensio","Thu, 29 Oct 2020 19:21:04 +0200","type-valinta saatu toimimaan. siivousta, refactoringia part4",	 2 files changed, 67 insertions(+), 28 deletions(-)	
+"aefbb96","Miikka Mensio","Thu, 29 Oct 2020 18:32:46 +0200","type-valinta saatu toimimaan. siivousta, refactoringia part3",	 9 files changed, 280 insertions(+), 532 deletions(-)	
+"e6977b9","Miikka Mensio","Thu, 29 Oct 2020 18:27:21 +0200","type-valinta saatu toimimaan. siivousta, refactoringia part2",	 11 files changed, 288 insertions(+), 24 deletions(-)	
+"ce050fd","Miikka Mensio","Thu, 29 Oct 2020 17:02:34 +0200","lisätty kuvat pelaajatyypeistä mainmenuDialogiin",	 5 files changed, 203 insertions(+), 60 deletions(-)	
+"2aa3ac4","Miikka Mensio","Thu, 29 Oct 2020 16:41:33 +0200","siivousta",	 4 files changed, 28 insertions(+), 31 deletions(-)	
+"c943b2c","Miikka Mensio","Thu, 29 Oct 2020 16:33:51 +0200","type-valinta saatu toimimaan. siivousta, refactoringia",	 5 files changed, 111 insertions(+), 203 deletions(-)	
+"0d45ac6","Miikka Mensio","Thu, 29 Oct 2020 16:04:00 +0200","type-valinta saatu toimimaan",	 5 files changed, 44 insertions(+), 19 deletions(-)	
+"3be4832","Miikka Mensio","Thu, 29 Oct 2020 15:22:03 +0200","siivoilua ja refaktorointia, ei merkittäviä lisäyksiä",	 3 files changed, 6 insertions(+), 3 deletions(-)	
+"9788cb7","Miikka Mensio","Thu, 29 Oct 2020 14:59:00 +0200","hiottu QDialogia ja tehty virhetarakstelu käyttäjän syöttämiin arvoihin (nimi, pelaajatyyppi)",	 12 files changed, 212 insertions(+), 90 deletions(-)	
+"5249205","Minna Färm","Thu, 29 Oct 2020 13:10:34 +0200","Course updated to prevent cloning errors",	 1 file changed, 1 insertion(+), 1 deletion(-)	
+"1b3d3bf","Markus Mensio","Thu, 29 Oct 2020 12:18:03 +0200","Edistetty mainmenudialogin signaaleja",	 6 files changed, 90 insertions(+), 47 deletions(-)	
+"8dda98a","Miikka Mensio","Wed, 28 Oct 2020 14:25:25 +0200","poistettu peliikkunan paddingit",	 2 files changed, 38 insertions(+), 5 deletions(-)	
+"a2df295","Miikka Mensio","Wed, 28 Oct 2020 14:07:06 +0200","luotu rungot luokille spaceship, ufo ja tank",	 12 files changed, 140 insertions(+), 88 deletions(-)	
+"3d582dd","Miikka Mensio","Wed, 28 Oct 2020 13:17:00 +0200","lisätty ufo ja tankki kuvat resources kansioon",	 14 files changed, 93 insertions(+), 10 deletions(-)	
+"a23dcb9","Markus Mensio","Wed, 28 Oct 2020 13:15:35 +0200","Edistetty mainmenudialogin signaaleja.",	 7 files changed, 61 insertions(+), 13 deletions(-)	
+"8138289","Miikka Mensio","Wed, 28 Oct 2020 11:20:23 +0200","fixed thing I broke",	 4 files changed, 5 insertions(+), 5 deletions(-)	
+"b26f735","Markus Mensio","Wed, 28 Oct 2020 11:15:09 +0200","Aloitettu mainmenudialogin signaalit.",	 1 file changed, 6 insertions(+)	
+"7ff93fe","Miikka Mensio","Wed, 28 Oct 2020 11:12:54 +0200","refaktorointia: uudelleennimetty Spaceship luokka -> Player luokaksi",	 8 files changed, 25 insertions(+), 25 deletions(-)	
+"abaaa1a","Markus Mensio","Wed, 28 Oct 2020 10:52:09 +0200","Aloitettu mainmenudialog qtdesigner:ssa. Signaalit ovat vielä luomatta.",	 3 files changed, 126 insertions(+), 9 deletions(-)	
+"bb14b09","Miikka Mensio","Tue, 27 Oct 2020 18:37:49 +0200","Peli-ikkunan automaattinen koon skaalaus tehty melko julkaisukelpoiseksi. Käyttäjäkokemuksia otetaan vastaan... part 4",	 3 files changed, 46 insertions(+), 78 deletions(-)	
+"098be54","Miikka Mensio","Tue, 27 Oct 2020 15:11:46 +0200","Peli-ikkunan automaattinen koon skaalaus tehty melko julkaisukelpoiseksi. Käyttäjäkokemuksia otetaan vastaan...",	 5 files changed, 120 insertions(+), 31 deletions(-)	
+"99c7d22","Miikka Mensio","Tue, 27 Oct 2020 11:58:45 +0200","Peli-ikkunan automaattinen koon skaalaus tehty alustavasti part 3",	 4 files changed, 67 insertions(+), 36 deletions(-)	
+"3955a36","Miikka Mensio","Mon, 26 Oct 2020 21:56:30 +0200","Peli-ikkunan automaattinen koon skaalaus tehty alustavasti part 2",	 4 files changed, 57 insertions(+), 26 deletions(-)	
+"7b7232d","Miikka Mensio","Mon, 26 Oct 2020 21:11:41 +0200","Peli-ikkunan automaattinen koon skaalaus tehty alustavasti",	 5 files changed, 55 insertions(+), 18 deletions(-)	
+"53a3446","Miikka Mensio","Mon, 26 Oct 2020 20:32:43 +0200","Alettu konvertoimaan BetterMainWindowia pelin päänäkymäksi part 2",	 3 files changed, 28 insertions(+), 9 deletions(-)	
+"5029856","Miikka Mensio","Mon, 26 Oct 2020 20:20:49 +0200","Alettu konvertoimaan BetterMainWindowia pelin päänäkymäksi",	 6 files changed, 83 insertions(+), 9 deletions(-)	
+"580345f","Miikka Mensio","Mon, 26 Oct 2020 19:49:48 +0200","Lisätty skeletonit mm. BetterMAinWindow ja MainMenuDialog",	 10 files changed, 126 insertions(+), 10 deletions(-)	
+"1b14863","Miikka Mensio","Sat, 24 Oct 2020 15:31:20 +0300","lisätty kuvia resurssiteidostoon: mm. musiikki-on-off -ikoni",	 3 files changed, 2 insertions(+)	
+"e5f52b6","Miikka Mensio","Fri, 23 Oct 2020 13:30:46 +0300","Parannettu pelaajan liikkumismekaniikkaa smoothimmaksi",	 6 files changed, 140 insertions(+), 34 deletions(-)	
+"40a9675","Miikka Mensio","Thu, 22 Oct 2020 20:40:57 +0300","tiedostojen uudelleennimeämistä, turhan redundanssin poistoa ja siivousta etc.",	 7 files changed, 9 insertions(+), 9 deletions(-)	
+"5b97822","Miikka Mensio","Thu, 22 Oct 2020 20:29:29 +0300","pieniä modifikaatioita submoduleen",	 1 file changed, 1 insertion(+), 1 deletion(-)	
+"7574fb4","Miikka Mensio","Thu, 22 Oct 2020 20:07:40 +0300","Lisätty resources Game.pro konffitiedostoon, jotta peli kääntyisi",	 1 file changed, 12 insertions(+), 1 deletion(-)	
+"f073d22","Miikka Mensio","Thu, 22 Oct 2020 19:56:21 +0300","Incluudattu tarvittavia Qt-Kirjastoja, luotu basicProjectile- sekä Spaceship-oliot ja käynnistetään varsinainen peli-ikkuna.",	 1 file changed, 20 insertions(+)	
+"5e9f006","Miikka Mensio","Thu, 22 Oct 2020 19:48:23 +0300","Aloitettu tapahtumapeli-ikkunan kontsruointia (pelin alkaessa ilmestyvä varsinainen peli-ikkuna, johon mm. ilmestyy bussit, matkustajat ja spaceship).",	 2 files changed, 74 insertions(+)	
+"90932b8","Miikka Mensio","Thu, 22 Oct 2020 19:46:03 +0300","Lisätty resourses -kansio, joka sisältää mm. ääniefekti- ja sprite-tiedostot. Kuvat ja äänet ovat opensource ja royalty free materiaalipankeista haettu.",	 5 files changed, 10 insertions(+)	
+"87635e7","Miikka Mensio","Thu, 22 Oct 2020 19:43:56 +0300","Aloitettu pelaajasta lähtevän luodin (basicProjectile -luokka) tekoa. Lisätty mm. ääniefektioptio sekä QTimer luotien generoimisen avuksi.",	 2 files changed, 77 insertions(+)	
+"b13d09e","Miikka Mensio","Thu, 22 Oct 2020 19:41:12 +0300","Aloitettu spaceship -luokan tekoa. Lisätty mm. alustava liikkumistoteutus pelaajalle sekä liitetty sprite pelaajan ulkomuodoksi peli-ikkunaan",	 2 files changed, 113 insertions(+)	
+"26e2145","Miikka Mensio","Wed, 30 Sep 2020 21:48:58 +0300","deleted redundant index.html",	 1 file changed, 101 deletions(-)	
+"3a5d53f","Miikka Mensio","Wed, 30 Sep 2020 21:33:25 +0300","added html folder which consists of doxygen documentation about course-side",	 91 files changed, 5403 insertions(+)	
+"8070b3c","Miikka Mensio","Wed, 30 Sep 2020 14:51:56 +0300","added .gitignore to include build-* and *.pro.user",	 1 file changed, 2 insertions(+)	
+"4269da3","Miikka Mensio","Wed, 30 Sep 2020 14:49:27 +0300","html doxygen documentation about things provided by coure-side",	 1 file changed, 101 insertions(+)	
+"6fe41ce","Minna Färm","Mon, 28 Sep 2020 15:48:47 +0300","Readme added.",	 1 file changed, 27 insertions(+)	
+"fb6959f","Minna Färm","Mon, 28 Sep 2020 15:32:27 +0300",".gitmodules file somehow wasn't generated previously. Course url now listed properly.",	 1 file changed, 3 insertions(+)	
+"5a49d75","Minna Färm","Fri, 25 Sep 2020 14:24:55 +0300","Template",	 4 files changed, 51 insertions(+)	
