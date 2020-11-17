@@ -19,10 +19,12 @@ void topHighScores::readFile(QString filename)
         while(!stream.atEnd())
         {
             QString line = stream.readLine();
-            QStringList data = line.split(": ");
-            QString name = data.at(0);
-            int scaledPoints = data.at(1).toInt();
-            scores.insert( std::pair<QString,int>(name, scaledPoints));
+            if(line != "") {
+                QStringList data = line.split(": ");
+                QString name = data.at(0);
+                int scaledPoints = data.at(1).toInt();
+                scores.insert( std::pair<QString,int>(name, scaledPoints));
+            }
         }
         file.close();
         qDebug() << "Reading finished";
