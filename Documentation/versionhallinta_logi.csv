@@ -1,3 +1,6 @@
+"cf3ba59","hfmame","Tue, 17 Nov 2020 13:19:08 +0200","muokattu doxygendokumentaatiotta",	 128 files changed, 391 insertions(+), 395 deletions(-)	
+"ea18b35","Markus Mensio","Tue, 17 Nov 2020 13:15:35 +0200","testausta, refaktorintia ja siivousta koko projektille",	 6 files changed, 6 insertions(+), 15 deletions(-)	
+"b65e934","Markus Mensio","Tue, 17 Nov 2020 13:06:09 +0200","luotu versionhallintalogi, joka vaadittiin tehtavanannossa",	 1 file changed, 150 insertions(+), 144 deletions(-)	
 "e707d74","Markus Mensio","Tue, 17 Nov 2020 13:01:28 +0200","poistettu turhia nappeja statisticsdialogista. nyt siina enaa back button",	 5 files changed, 7 insertions(+), 37 deletions(-)	
 "49f9022","Markus Mensio","Tue, 17 Nov 2020 12:37:29 +0200","top10highscores-tekstiedoston lukemisessa oli kriittinen crashaava bugi joka nyt korjattu",	 2 files changed, 9 insertions(+), 4 deletions(-)	
 "5fb5e40","Miikka Mensio","Tue, 17 Nov 2020 12:08:49 +0200","siivousta",	 1 file changed, 2 insertions(+), 2 deletions(-)	
