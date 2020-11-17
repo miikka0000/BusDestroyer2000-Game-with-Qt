@@ -153,9 +153,9 @@ void gameWindow::setGameTime()
     } else if(timeOpt == settingsDialog::gameTime3) {
         _gameDuration = 3;
     }
-    _gameTime.setHMS(0,_gameDuration, 0);
+    //_gameTime.setHMS(0,_gameDuration, 0);
     // during testing game duration is set to 5 seconds
-    //_gameTime.setHMS(0,0, 5);
+    _gameTime.setHMS(0,0, 5);
 }
 
 void gameWindow::screenFrameUpdate()
