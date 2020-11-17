@@ -3,7 +3,6 @@
 #include "gamewindow.h"
 #include "settingsdialog.h"
 
-#include <QDebug>
 #include <QString>
 #include <QSize>
 #include <QSettings>
@@ -89,7 +88,7 @@ void MainMenuDialog::on_startButton_clicked()
              && _playerAlias.isEmpty()){
 
         setStartGameText("Remember to set player type and"
-                                        " player name!");
+                         " player name!");
 
     } else if((_tank || _spaceShip || _ufo) && !(_fireball && _missile && _laser)
               && !nameIsEmpty(_playerAlias)){
@@ -100,25 +99,25 @@ void MainMenuDialog::on_startButton_clicked()
               && _playerAlias.isEmpty()){
 
         setStartGameText("Remember to set projectile type"
-                                        " and player name!");
+                         " and player name!");
 
     } else if(!(_tank && _spaceShip && _ufo) && !(_fireball && _missile && _laser)
               && !nameIsEmpty(_playerAlias)){
 
         setStartGameText("Remember to set projectile"
-                                        " and player type!");
+                         " and player type!");
 
     }else if(!(_tank || _spaceShip  || _ufo) && !(_fireball || _missile || _laser)
              && _playerAlias.isEmpty()){
 
         setStartGameText("Remember to set projectile type, "
-                                        "player name and player type!");
+                         "player name and player type!");
 
     } else if((_tank || _spaceShip  || _ufo) && (_fireball || _missile || _laser)
               && nameIsEmpty(_playerAlias)){
 
         setStartGameText("Player name cannot contain only "
-                                        "whitespace!");
+                         "whitespace!");
     }
 }
 

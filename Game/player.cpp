@@ -7,7 +7,6 @@
 #include <QKeyEvent>
 #include <QGraphicsScene>
 #include <QPixmap>
-#include <QDebug>
 #include <QImage>
 #include <QSoundEffect>
 #include <QUrl>
@@ -57,7 +56,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     }  else if(event->key() == Qt::Key_Space){
         if ( !event->isAutoRepeat() ){
 
-            std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);           
+            std::vector<int> playerCenter = getPlayerOrigin(playerWidth, playerHeight);
             basicProjectile *projectile = new basicProjectile();
             projectile->setPos(x() + playerCenter.at(0), y() - playerCenter.at(1));
             scene()->addItem(projectile);

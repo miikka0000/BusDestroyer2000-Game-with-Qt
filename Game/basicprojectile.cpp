@@ -4,7 +4,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
 #include <QPixmap>
-#include <QDebug>
 #include <QGraphicsItem>
 #include <QList>
 #include <memory>

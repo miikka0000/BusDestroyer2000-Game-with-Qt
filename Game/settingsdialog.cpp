@@ -3,7 +3,6 @@
 
 #include <QSize>
 #include <QSettings>
-#include <QDebug>
 
 namespace StudentSide {
 

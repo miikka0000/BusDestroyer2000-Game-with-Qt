@@ -1,8 +1,6 @@
 #include "tophighscores.h"
 #include "gamestatistics.h"
 
-#include <QDebug>
-
 extern std::shared_ptr<StudentSide::gameStatistics> smartStats;
 extern QString playerAliasName;
 namespace StudentSide {
@@ -27,7 +25,6 @@ void topHighScores::readFile(QString filename)
             }
         }
         file.close();
-        qDebug() << "Reading finished";
     };
     sortAndDisplay(scores);
 }
@@ -72,7 +69,6 @@ void topHighScores::writeFile(QString filename)
             stream <<  playerAliasName << ": "<< scaledPoints << "\n";
         }
         file.close();
-        qDebug() << "Writing finished";
     }
 }
 }
