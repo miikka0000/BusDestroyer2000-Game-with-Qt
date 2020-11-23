@@ -56,7 +56,7 @@ public:
     void setProjectilePicture();
 
     /**
-     * @brief removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact with the bullet from the scene and memory.
+     * @brief removeShootedActors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory.
      * @pre Projectile comes in contact with a Nysse or a passenger.
      * @post Shooted Nysse or passenger is deleted from the game map and memory or nothing happens. Exception guarantee: nothrow.
      */
@@ -75,7 +75,7 @@ public slots:
     /**
      * @brief move function is responsible for moving the bullet up in the game map. Also if the bullet encounters a bonus diamond, they both are deleted from the map and from the memory.
      * @pre -
-     * @post Bullet has moved in the map and is deleted from the scene and the memory if it encounters a object in its way or exits the game screen. Exception guarantee: nothrow.
+     * @post Bullet has moved in the map and is deleted from the scene and the memory if it encounters an object in its way or exits the game screen. Exception guarantee: nothrow.
      */
     void move();
 

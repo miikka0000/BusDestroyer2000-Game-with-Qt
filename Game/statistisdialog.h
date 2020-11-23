@@ -53,7 +53,6 @@ public:
      */
     void generateStatsString();
 
-
 private slots:
     void on_backButton_clicked();
 

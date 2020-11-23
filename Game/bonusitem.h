@@ -28,7 +28,7 @@ public:
       * @post bonusItem is at initialization state.
       */
     bonusItem(QGraphicsItem * parent=0);
-
+    // screen dimensions
     int currentWidth = 800;
     int currentHeight = 600;
 
