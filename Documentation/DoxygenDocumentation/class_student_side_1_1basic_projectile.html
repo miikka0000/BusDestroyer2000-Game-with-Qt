@@ -87,7 +87,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2bd108e765905008f92d324d367fa3e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">setProjectilePicture sets the the chosen picture as the projectile icon in the game.  <a href="#a2bd108e765905008f92d324d367fa3e1">More...</a><br/></td></tr>
 <tr class="separator:a2bd108e765905008f92d324d367fa3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4225fda62adbf0201c854727c67798dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_side_1_1basic_projectile.html#a4225fda62adbf0201c854727c67798dd">removeShootedActors</a> ()</td></tr>
-<tr class="memdesc:a4225fda62adbf0201c854727c67798dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact with the bullet from the scene and memory.  <a href="#a4225fda62adbf0201c854727c67798dd">More...</a><br/></td></tr>
+<tr class="memdesc:a4225fda62adbf0201c854727c67798dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">removeShootedActors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory.  <a href="#a4225fda62adbf0201c854727c67798dd">More...</a><br/></td></tr>
 <tr class="separator:a4225fda62adbf0201c854727c67798dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44c7ff82d8a0fa7ae2fe2c3ba6304850"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_side_1_1basic_projectile.html#a44c7ff82d8a0fa7ae2fe2c3ba6304850">isClose</a> (const <a class="el" href="class_interface_1_1_location.html">Interface::Location</a> &amp;loc, int limit, int xCoord, int yCoord)</td></tr>
 <tr class="memdesc:a44c7ff82d8a0fa7ae2fe2c3ba6304850"><td class="mdescLeft">&#160;</td><td class="mdescRight">isClose function is a courtesy from Course Side (core/logic) with slight modifications on parameters. It calculates the distance between two items given as a paremeters within specific limit which is also given as a parameter.  <a href="#a44c7ff82d8a0fa7ae2fe2c3ba6304850">More...</a><br/></td></tr>
@@ -227,7 +227,7 @@ const QPixmap&#160;</td><td class="memItemRight" valign="bottom"><b>_laserPic</b
 
 <p>move function is responsible for moving the bullet up in the game map. Also if the bullet encounters a bonus diamond, they both are deleted from the map and from the memory. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>- </dd></dl>
-<dl class="section post"><dt>Postcondition</dt><dd>Bullet has moved in the map and is deleted from the scene and the memory if it encounters a object in its way or exits the game screen. Exception guarantee: nothrow. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>Bullet has moved in the map and is deleted from the scene and the memory if it encounters an object in its way or exits the game screen. Exception guarantee: nothrow. </dd></dl>
 
 </div>
 </div>
@@ -244,7 +244,7 @@ const QPixmap&#160;</td><td class="memItemRight" valign="bottom"><b>_laserPic</b
       </table>
 </div><div class="memdoc">
 
-<p>removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact with the bullet from the scene and memory. </p>
+<p>removeShootedActors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory. </p>
 <dl class="section pre"><dt>Precondition</dt><dd>Projectile comes in contact with a Nysse or a passenger. </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>Shooted Nysse or passenger is deleted from the game map and memory or nothing happens. Exception guarantee: nothrow. </dd></dl>
 
@@ -295,7 +295,7 @@ const QPixmap&#160;</td><td class="memItemRight" valign="bottom"><b>_laserPic</b
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 17 2020 13:17:59 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 23 2020 10:15:35 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

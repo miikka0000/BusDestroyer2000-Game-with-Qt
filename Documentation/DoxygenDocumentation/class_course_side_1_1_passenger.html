@@ -93,6 +93,12 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>wantToEnterNy
 <tr class="memitem:a86068b1577229b24a2678179708a5313"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86068b1577229b24a2678179708a5313"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>enterNysse</b> (std::weak_ptr&lt; <a class="el" href="class_course_side_1_1_nysse.html">Nysse</a> &gt; nysse)</td></tr>
 <tr class="separator:a86068b1577229b24a2678179708a5313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d41e1363ef666dc791ba192963bc884"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d41e1363ef666dc791ba192963bc884"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>wantToEnterVehicle</b> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt; vehicle) const </td></tr>
+<tr class="separator:a7d41e1363ef666dc791ba192963bc884"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43652cea3cc00a5e11f37b9c736f7956"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43652cea3cc00a5e11f37b9c736f7956"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>enterVehicle</b> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt; vehicle)</td></tr>
+<tr class="separator:a43652cea3cc00a5e11f37b9c736f7956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895021f9d644deee528950dfae2d67c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a895021f9d644deee528950dfae2d67c2"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>wantToEnterStop</b> (std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface::IStop</a> &gt; stop) const </td></tr>
 <tr class="separator:a895021f9d644deee528950dfae2d67c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -127,9 +133,10 @@ std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aadc903264d76d562d17a27051914132f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aadc903264d76d562d17a27051914132f"></a>
-std::weak_ptr&lt; <a class="el" href="class_course_side_1_1_nysse.html">Nysse</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>nyssep_</b></td></tr>
-<tr class="separator:aadc903264d76d562d17a27051914132f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7fed916dd6f587e95c2e5b39c82691e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7fed916dd6f587e95c2e5b39c82691e"></a>
+std::weak_ptr<br class="typebreak"/>
+&lt; <a class="el" href="class_interface_1_1_i_vehicle.html">Interface::IVehicle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>nyssep_</b></td></tr>
+<tr class="separator:ae7fed916dd6f587e95c2e5b39c82691e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa29e68f44c61baea727b3b0c8f850404"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa29e68f44c61baea727b3b0c8f850404"></a>
 std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface::IStop</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stopp_</b></td></tr>
 <tr class="separator:aa29e68f44c61baea727b3b0c8f850404"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -339,7 +346,7 @@ std::weak_ptr&lt; <a class="el" href="class_interface_1_1_i_stop.html">Interface
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 17 2020 13:17:58 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 23 2020 10:15:34 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

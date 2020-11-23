@@ -41,7 +41,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_55294ee132739b697d7099c9124b2a6c.html">Course</a></li><li class="navelem"><a class="el" href="dir_9b8bb4ade7438e8ad21472e028a44fa5.html">CourseLib</a></li><li class="navelem"><a class="el" href="dir_676ac15969e0049adcf7fcc975ba656e.html">actors</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_c1cf26f316484c7acde88477be33d474.html">Course</a></li><li class="navelem"><a class="el" href="dir_3e08df69a4263a1474a983351a029c27.html">CourseLib</a></li><li class="navelem"><a class="el" href="dir_1ab9fc6e70df40490fa365618a3c2bba.html">actors</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -83,30 +83,35 @@
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// Moves the passenger from stop into the bus.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> enterNysse(std::weak_ptr&lt; Nysse &gt; nysse );</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// Tells passenger that the bus has arrived to the stop and asks if passenger wants to get out.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> wantToEnterStop(std::weak_ptr&lt;Interface::IStop&gt; stop) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Moves the passenger from but to the stop.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> enterStop(std::weak_ptr&lt;Interface::IStop&gt; stop);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> removed_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::weak_ptr&lt; Interface::IStop &gt; destination_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// WantToEnterNysse but make it accept all vehicles</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> wantToEnterVehicle(std::weak_ptr&lt; Interface::IVehicle &gt; vehicle ) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// enterNysse but make it accept all vehicles</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> enterVehicle(std::weak_ptr&lt; Interface::IVehicle &gt; vehicle);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Tells passenger that the bus has arrived to the stop and asks if passenger wants to get out.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> wantToEnterStop(std::weak_ptr&lt;Interface::IStop&gt; stop) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Moves the passenger from but to the stop.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> enterStop(std::weak_ptr&lt;Interface::IStop&gt; stop);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Current bus</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::weak_ptr&lt; Nysse &gt; nyssep_;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Current stop</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::weak_ptr&lt; Interface::IStop &gt; stopp_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> removed_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::weak_ptr&lt; Interface::IStop &gt; destination_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Current bus</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::weak_ptr&lt; Interface::IVehicle &gt; nyssep_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Current stop</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::weak_ptr&lt; Interface::IStop &gt; stopp_;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif // PASSENGER_HH</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    };</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif // PASSENGER_HH</span></div>
 <div class="ttc" id="class_course_side_1_1_passenger_html"><div class="ttname"><a href="class_course_side_1_1_passenger.html">CourseSide::Passenger</a></div><div class="ttdef"><b>Definition:</b> passenger.hh:16</div></div>
 <div class="ttc" id="class_course_side_1_1_passenger_html_a31f9c4c37536be5a528822d4f1145974"><div class="ttname"><a href="class_course_side_1_1_passenger.html#a31f9c4c37536be5a528822d4f1145974">CourseSide::Passenger::getVehicle</a></div><div class="ttdeci">std::shared_ptr&lt; Interface::IVehicle &gt; getVehicle() const </div><div class="ttdoc">getVehicle returns the vehicle passenger is in. </div><div class="ttdef"><b>Definition:</b> passenger.cc:52</div></div>
 <div class="ttc" id="icity_8hh_html"><div class="ttname"><a href="icity_8hh.html">icity.hh</a></div><div class="ttdoc">Defines an interface that reperesents the city&amp;#39;s operations. </div></div>
@@ -121,7 +126,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 17 2020 13:17:58 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 23 2020 10:15:34 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>

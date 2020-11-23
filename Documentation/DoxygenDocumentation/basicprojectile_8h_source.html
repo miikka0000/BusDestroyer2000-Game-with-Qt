@@ -41,7 +41,7 @@
   </div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_b95c2906724d8ef2905f14f301bb88e2.html">Game</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_0431ecab988fc9a9f6661b113c78b526.html">Game</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -107,7 +107,7 @@
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_student_side_1_1basic_projectile.html#a2bd108e765905008f92d324d367fa3e1">setProjectilePicture</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment"></span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    /**</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * @brief removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact with the bullet from the scene and memory.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     * @brief removeShootedActors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory.</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     * @pre Projectile comes in contact with a Nysse or a passenger.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     * @post Shooted Nysse or passenger is deleted from the game map and memory or nothing happens. Exception guarantee: nothrow.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">     */</span></div>
@@ -126,7 +126,7 @@
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">    /**</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">     * @brief move function is responsible for moving the bullet up in the game map. Also if the bullet encounters a bonus diamond, they both are deleted from the map and from the memory.</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">     * @pre -</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * @post Bullet has moved in the map and is deleted from the scene and the memory if it encounters a object in its way or exits the game screen. Exception guarantee: nothrow.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">     * @post Bullet has moved in the map and is deleted from the scene and the memory if it encounters an object in its way or exits the game screen. Exception guarantee: nothrow.</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">     */</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_student_side_1_1basic_projectile.html#aed74caa287a283642f035d0d4303d43d">move</a>();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
@@ -151,7 +151,7 @@
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif // PROJECTILE_H</span></div>
 <div class="ttc" id="class_student_side_1_1basic_projectile_html_aa06a1abf7ce15f0599b3a7754028aaaf"><div class="ttname"><a href="class_student_side_1_1basic_projectile.html#aa06a1abf7ce15f0599b3a7754028aaaf">StudentSide::basicProjectile::setDimensions</a></div><div class="ttdeci">void setDimensions()</div><div class="ttdoc">setDimensions sets the width and the height of a chosen projectile type. </div><div class="ttdef"><b>Definition:</b> basicprojectile.cpp:29</div></div>
-<div class="ttc" id="class_student_side_1_1basic_projectile_html_a4225fda62adbf0201c854727c67798dd"><div class="ttname"><a href="class_student_side_1_1basic_projectile.html#a4225fda62adbf0201c854727c67798dd">StudentSide::basicProjectile::removeShootedActors</a></div><div class="ttdeci">bool removeShootedActors()</div><div class="ttdoc">removeShootedActors is responsible for removing the Nysses of passengers (actors) that are in contact...</div><div class="ttdef"><b>Definition:</b> basicprojectile.cpp:64</div></div>
+<div class="ttc" id="class_student_side_1_1basic_projectile_html_a4225fda62adbf0201c854727c67798dd"><div class="ttname"><a href="class_student_side_1_1basic_projectile.html#a4225fda62adbf0201c854727c67798dd">StudentSide::basicProjectile::removeShootedActors</a></div><div class="ttdeci">bool removeShootedActors()</div><div class="ttdoc">removeShootedActors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory. </div><div class="ttdef"><b>Definition:</b> basicprojectile.cpp:64</div></div>
 <div class="ttc" id="class_student_side_1_1basic_projectile_html_ab9ec2068f1d038fa1428b97f33eba9a5"><div class="ttname"><a href="class_student_side_1_1basic_projectile.html#ab9ec2068f1d038fa1428b97f33eba9a5">StudentSide::basicProjectile::basicProjectile</a></div><div class="ttdeci">basicProjectile(QGraphicsItem *parent=0)</div><div class="ttdoc">Basic constructor of the class. As a default, parent is set to a nullpointer to QGraphicsItem. </div><div class="ttdef"><b>Definition:</b> basicprojectile.cpp:15</div></div>
 <div class="ttc" id="class_student_side_1_1basic_projectile_html_a44c7ff82d8a0fa7ae2fe2c3ba6304850"><div class="ttname"><a href="class_student_side_1_1basic_projectile.html#a44c7ff82d8a0fa7ae2fe2c3ba6304850">StudentSide::basicProjectile::isClose</a></div><div class="ttdeci">bool isClose(const Interface::Location &amp;loc, int limit, int xCoord, int yCoord)</div><div class="ttdoc">isClose function is a courtesy from Course Side (core/logic) with slight modifications on parameters...</div><div class="ttdef"><b>Definition:</b> basicprojectile.cpp:94</div></div>
 <div class="ttc" id="class_student_side_1_1basic_projectile_html"><div class="ttname"><a href="class_student_side_1_1basic_projectile.html">StudentSide::basicProjectile</a></div><div class="ttdoc">Defines a class for the projectile that player shoots in the game by pressing space key...</div><div class="ttdef"><b>Definition:</b> basicprojectile.h:28</div></div>
@@ -163,7 +163,7 @@
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 17 2020 13:17:58 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 23 2020 10:15:34 for BusDestroyer2000 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
