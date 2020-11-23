@@ -124,6 +124,8 @@ void MainMenuDialog::on_startButton_clicked()
 void MainMenuDialog::on_exitButton_clicked()
 {
     this->close();
+    // successful completion of the program
+    exit(0);
 }
 
 void MainMenuDialog::on_playerNameEdit_editingFinished()
