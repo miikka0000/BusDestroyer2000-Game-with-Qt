@@ -1,0 +1,143 @@
+\hypertarget{class_student_side_1_1settings_dialog}{}\doxysection{Student\+Side\+::settings\+Dialog Class Reference}
+\label{class_student_side_1_1settings_dialog}\index{StudentSide::settingsDialog@{StudentSide::settingsDialog}}
+
+
+Defines a Q\+Dialog which offers a separate settings window where the player can set music on/off and alter the game duration. The Dialog itself is accessible from Main\+Menu\textquotesingle{}s \char`\"{}\+Settings\char`\"{} -\/button. If the player does not make any changes to the settings (which isn\textquotesingle{}t compulsory), the default settings are used\+: musics off and game duration 2 minutes. Beware that if you don\textquotesingle{}t press the \char`\"{}\+Save\char`\"{} -\/button in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}}, your changes to the settings won\textquotesingle{}t come into effect and the program will use the default settings!  
+
+
+
+
+{\ttfamily \#include $<$settingsdialog.\+h$>$}
+
+
+
+Inherits Q\+Dialog.
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a0db10217cd4391b7cc42c298b7b7dcb3}\label{class_student_side_1_1settings_dialog_a0db10217cd4391b7cc42c298b7b7dcb3}} 
+enum {\bfseries music\+State} \{ {\bfseries music\+State\+On}, 
+{\bfseries music\+State\+Off}
+ \}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a117f45adc622c6993d01dcfd0556b92e}\label{class_student_side_1_1settings_dialog_a117f45adc622c6993d01dcfd0556b92e}} 
+enum {\bfseries game\+Time} \{ {\bfseries game\+Time1}, 
+{\bfseries game\+Time2}, 
+{\bfseries game\+Time3}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1settings_dialog_a385e665357662bd738baebe5a69711a5}{settings\+Dialog}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a1e242bd3bf130a7888f66b3c9d32f79a}\label{class_student_side_1_1settings_dialog_a1e242bd3bf130a7888f66b3c9d32f79a}} 
+\mbox{\hyperlink{class_student_side_1_1settings_dialog_a1e242bd3bf130a7888f66b3c9d32f79a}{$\sim$settings\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}} has a basic destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1settings_dialog_a570a03d0fc65c27aa777fd95e26f1e99}{set\+Action\+Tool\+Tips}} ()
+\begin{DoxyCompactList}\small\item\em set\+Action\+Tool\+Tips sets tool tips in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}}\textquotesingle{}s G\+UI to guide the player (shown when player hovers mouse on top of a button or a label etc.) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1settings_dialog_aef5905bef381f1ab1077fbd400670e56}{set\+Correct\+Music\+State}} ()
+\begin{DoxyCompactList}\small\item\em set\+Correct\+Music\+State saves the music setting chosen by the player. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1settings_dialog_acac656aa83c59919fcf8823fabe69178}{set\+Wanted\+Game\+Time}} ()
+\begin{DoxyCompactList}\small\item\em set\+Wanted\+Game\+Time saves the game duration chosen by the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_add02dd4e7abe75c060df01eacaaee880}\label{class_student_side_1_1settings_dialog_add02dd4e7abe75c060df01eacaaee880}} 
+void {\bfseries on\+\_\+back\+To\+Main\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a5d1cd2083627b3e1a4e49f1b2d0c0f9e}\label{class_student_side_1_1settings_dialog_a5d1cd2083627b3e1a4e49f1b2d0c0f9e}} 
+void {\bfseries on\+Musics\+On\+Clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a214cecdb4ab595c9ccfe740d2b6f7313}\label{class_student_side_1_1settings_dialog_a214cecdb4ab595c9ccfe740d2b6f7313}} 
+void {\bfseries on\+\_\+save\+Settings\+Button\+\_\+clicked} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_af1da4e19f213e2f8eaa771ff15c15e3a}\label{class_student_side_1_1settings_dialog_af1da4e19f213e2f8eaa771ff15c15e3a}} 
+Ui\+::settings\+Dialog $\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a5ad45a759f3d59b04e878c9bca5a3d2e}\label{class_student_side_1_1settings_dialog_a5ad45a759f3d59b04e878c9bca5a3d2e}} 
+bool {\bfseries \+\_\+musics\+On} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a501f0b4f1a6b1981205a6f44553e8fe6}\label{class_student_side_1_1settings_dialog_a501f0b4f1a6b1981205a6f44553e8fe6}} 
+std\+::shared\+\_\+ptr$<$ Q\+Settings $>$ {\bfseries \+\_\+player\+Settings} = std\+::make\+\_\+shared$<$Q\+Settings$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a Q\+Dialog which offers a separate settings window where the player can set music on/off and alter the game duration. The Dialog itself is accessible from Main\+Menu\textquotesingle{}s \char`\"{}\+Settings\char`\"{} -\/button. If the player does not make any changes to the settings (which isn\textquotesingle{}t compulsory), the default settings are used\+: musics off and game duration 2 minutes. Beware that if you don\textquotesingle{}t press the \char`\"{}\+Save\char`\"{} -\/button in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}}, your changes to the settings won\textquotesingle{}t come into effect and the program will use the default settings! 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a385e665357662bd738baebe5a69711a5}\label{class_student_side_1_1settings_dialog_a385e665357662bd738baebe5a69711a5}} 
+\index{StudentSide::settingsDialog@{StudentSide::settingsDialog}!settingsDialog@{settingsDialog}}
+\index{settingsDialog@{settingsDialog}!StudentSide::settingsDialog@{StudentSide::settingsDialog}}
+\doxysubsubsection{\texorpdfstring{settingsDialog()}{settingsDialog()}}
+{\footnotesize\ttfamily Student\+Side\+::settings\+Dialog\+::settings\+Dialog (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_a570a03d0fc65c27aa777fd95e26f1e99}\label{class_student_side_1_1settings_dialog_a570a03d0fc65c27aa777fd95e26f1e99}} 
+\index{StudentSide::settingsDialog@{StudentSide::settingsDialog}!setActionToolTips@{setActionToolTips}}
+\index{setActionToolTips@{setActionToolTips}!StudentSide::settingsDialog@{StudentSide::settingsDialog}}
+\doxysubsubsection{\texorpdfstring{setActionToolTips()}{setActionToolTips()}}
+{\footnotesize\ttfamily void Student\+Side\+::settings\+Dialog\+::set\+Action\+Tool\+Tips (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Action\+Tool\+Tips sets tool tips in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}}\textquotesingle{}s G\+UI to guide the player (shown when player hovers mouse on top of a button or a label etc.) 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Tool\+Tips are shown to the user of the software when hovering mouse above buttons, labels or other items of the G\+UI. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_aef5905bef381f1ab1077fbd400670e56}\label{class_student_side_1_1settings_dialog_aef5905bef381f1ab1077fbd400670e56}} 
+\index{StudentSide::settingsDialog@{StudentSide::settingsDialog}!setCorrectMusicState@{setCorrectMusicState}}
+\index{setCorrectMusicState@{setCorrectMusicState}!StudentSide::settingsDialog@{StudentSide::settingsDialog}}
+\doxysubsubsection{\texorpdfstring{setCorrectMusicState()}{setCorrectMusicState()}}
+{\footnotesize\ttfamily void Student\+Side\+::settings\+Dialog\+::set\+Correct\+Music\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Correct\+Music\+State saves the music setting chosen by the player. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Chosen music setting has been saved. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1settings_dialog_acac656aa83c59919fcf8823fabe69178}\label{class_student_side_1_1settings_dialog_acac656aa83c59919fcf8823fabe69178}} 
+\index{StudentSide::settingsDialog@{StudentSide::settingsDialog}!setWantedGameTime@{setWantedGameTime}}
+\index{setWantedGameTime@{setWantedGameTime}!StudentSide::settingsDialog@{StudentSide::settingsDialog}}
+\doxysubsubsection{\texorpdfstring{setWantedGameTime()}{setWantedGameTime()}}
+{\footnotesize\ttfamily void Student\+Side\+::settings\+Dialog\+::set\+Wanted\+Game\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Wanted\+Game\+Time saves the game duration chosen by the player. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Chosen game time duration setting has been saved. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/settingsdialog.\+h\item 
+Game/settingsdialog.\+cpp\end{DoxyCompactItemize}

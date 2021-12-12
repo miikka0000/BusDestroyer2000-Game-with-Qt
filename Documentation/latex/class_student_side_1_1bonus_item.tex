@@ -1,0 +1,90 @@
+\hypertarget{class_student_side_1_1bonus_item}{}\doxysection{Student\+Side\+::bonus\+Item Class Reference}
+\label{class_student_side_1_1bonus_item}\index{StudentSide::bonusItem@{StudentSide::bonusItem}}
+
+
+Defines a class for the other unique object in the game\+: \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}}\textquotesingle{}s (small red diamonds) that appear randomly in the game map every 4 seconds. If the player manages to collect these bonus items either by moving into their location or by shooting them, 10 points are added to the player score.  
+
+
+
+
+{\ttfamily \#include $<$bonusitem.\+h$>$}
+
+
+
+Inherits Q\+Object, and Q\+Graphics\+Pixmap\+Item.
+
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_student_side_1_1bonus_item_ae8366faac630e3ee6d32867a96c81614}{move}} ()
+\begin{DoxyCompactList}\small\item\em move function is responsible for moving the \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}}, that is the bonus diamond, downwards in the game map in a constant speed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1bonus_item_aabfabcd025d1242773f24af4a65a0027}{bonus\+Item}} (Q\+Graphics\+Item $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Default constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_a2ed8a00c175e378f8eb41521844cac08}\label{class_student_side_1_1bonus_item_a2ed8a00c175e378f8eb41521844cac08}} 
+int {\bfseries current\+Width} = 800
+\item 
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_a5506b78638a3bb8070c1a28a60f093a7}\label{class_student_side_1_1bonus_item_a5506b78638a3bb8070c1a28a60f093a7}} 
+int {\bfseries current\+Height} = 600
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_a167306d36fb6e933a0cc9742d3a6f763}\label{class_student_side_1_1bonus_item_a167306d36fb6e933a0cc9742d3a6f763}} 
+Q\+Timer $\ast$ {\bfseries \+\_\+bonus\+Timer}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_a37d095d9cd679d3207db83d2b0a3c81f}\label{class_student_side_1_1bonus_item_a37d095d9cd679d3207db83d2b0a3c81f}} 
+int {\bfseries \+\_\+bonus\+Interval} = 50
+\item 
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_a5ce328762fa0c30f61da59e6617d801f}\label{class_student_side_1_1bonus_item_a5ce328762fa0c30f61da59e6617d801f}} 
+const Q\+Pixmap {\bfseries \+\_\+gem\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/bonus\+Gem\+\_\+30x15.\+png\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a class for the other unique object in the game\+: \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}}\textquotesingle{}s (small red diamonds) that appear randomly in the game map every 4 seconds. If the player manages to collect these bonus items either by moving into their location or by shooting them, 10 points are added to the player score. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_aabfabcd025d1242773f24af4a65a0027}\label{class_student_side_1_1bonus_item_aabfabcd025d1242773f24af4a65a0027}} 
+\index{StudentSide::bonusItem@{StudentSide::bonusItem}!bonusItem@{bonusItem}}
+\index{bonusItem@{bonusItem}!StudentSide::bonusItem@{StudentSide::bonusItem}}
+\doxysubsubsection{\texorpdfstring{bonusItem()}{bonusItem()}}
+{\footnotesize\ttfamily Student\+Side\+::bonus\+Item\+::bonus\+Item (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Item $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Default constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1bonus_item_ae8366faac630e3ee6d32867a96c81614}\label{class_student_side_1_1bonus_item_ae8366faac630e3ee6d32867a96c81614}} 
+\index{StudentSide::bonusItem@{StudentSide::bonusItem}!move@{move}}
+\index{move@{move}!StudentSide::bonusItem@{StudentSide::bonusItem}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily void Student\+Side\+::bonus\+Item\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+move function is responsible for moving the \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}}, that is the bonus diamond, downwards in the game map in a constant speed. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}} has moved in the map and is deleted from the scene and the memory if it exits the game screen without being collected by the player. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/bonusitem.\+h\item 
+Game/bonusitem.\+cpp\end{DoxyCompactItemize}

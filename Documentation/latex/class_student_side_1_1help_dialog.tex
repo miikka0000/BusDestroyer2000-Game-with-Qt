@@ -1,0 +1,81 @@
+\hypertarget{class_student_side_1_1help_dialog}{}\doxysection{Student\+Side\+::help\+Dialog Class Reference}
+\label{class_student_side_1_1help_dialog}\index{StudentSide::helpDialog@{StudentSide::helpDialog}}
+
+
+Defines a Q\+Dialog which offers help to a new player who possibly isn\textquotesingle{}t aware of the game rules, settings or controls etc. The Dialog itself is accessible from Main\+Menu\textquotesingle{}s \char`\"{}\+Help\char`\"{} -\/button.  
+
+
+
+
+{\ttfamily \#include $<$helpdialog.\+h$>$}
+
+
+
+Inherits Q\+Dialog.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1help_dialog_a64cf98ffaf6939a116b4fc05ea285206}{help\+Dialog}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Widget. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_student_side_1_1help_dialog_aed7805e99c6c9f2d4103dca9632e550a}\label{class_student_side_1_1help_dialog_aed7805e99c6c9f2d4103dca9632e550a}} 
+\mbox{\hyperlink{class_student_side_1_1help_dialog_aed7805e99c6c9f2d4103dca9632e550a}{$\sim$help\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_student_side_1_1help_dialog}{help\+Dialog}} has a basic destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1help_dialog_a809790b2090d7b2b6d2cc34273b23904}{set\+Action\+Tips}} ()
+\begin{DoxyCompactList}\small\item\em set\+Action\+Tips sets tool tip in the \mbox{\hyperlink{class_student_side_1_1help_dialog}{help\+Dialog}}\textquotesingle{}s G\+UI to guide the player (shown when user hovers mouse on top of the red close button on the top right corner). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1help_dialog_a2d7e402d702bb68694fe153252eb3317}\label{class_student_side_1_1help_dialog_a2d7e402d702bb68694fe153252eb3317}} 
+void {\bfseries on\+\_\+close\+Help\+Button\+\_\+clicked} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1help_dialog_a9098d0651285983b38654b83bfdb7142}\label{class_student_side_1_1help_dialog_a9098d0651285983b38654b83bfdb7142}} 
+Ui\+::help\+Dialog $\ast$ {\bfseries ui}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a Q\+Dialog which offers help to a new player who possibly isn\textquotesingle{}t aware of the game rules, settings or controls etc. The Dialog itself is accessible from Main\+Menu\textquotesingle{}s \char`\"{}\+Help\char`\"{} -\/button. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1help_dialog_a64cf98ffaf6939a116b4fc05ea285206}\label{class_student_side_1_1help_dialog_a64cf98ffaf6939a116b4fc05ea285206}} 
+\index{StudentSide::helpDialog@{StudentSide::helpDialog}!helpDialog@{helpDialog}}
+\index{helpDialog@{helpDialog}!StudentSide::helpDialog@{StudentSide::helpDialog}}
+\doxysubsubsection{\texorpdfstring{helpDialog()}{helpDialog()}}
+{\footnotesize\ttfamily Student\+Side\+::help\+Dialog\+::help\+Dialog (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Widget. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1help_dialog}{help\+Dialog}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1help_dialog_a809790b2090d7b2b6d2cc34273b23904}\label{class_student_side_1_1help_dialog_a809790b2090d7b2b6d2cc34273b23904}} 
+\index{StudentSide::helpDialog@{StudentSide::helpDialog}!setActionTips@{setActionTips}}
+\index{setActionTips@{setActionTips}!StudentSide::helpDialog@{StudentSide::helpDialog}}
+\doxysubsubsection{\texorpdfstring{setActionTips()}{setActionTips()}}
+{\footnotesize\ttfamily void Student\+Side\+::help\+Dialog\+::set\+Action\+Tips (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Action\+Tips sets tool tip in the \mbox{\hyperlink{class_student_side_1_1help_dialog}{help\+Dialog}}\textquotesingle{}s G\+UI to guide the player (shown when user hovers mouse on top of the red close button on the top right corner). 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Tool\+Tip is shown to the user of the software when hovering mouse above G\+UI\textquotesingle{}s red close button. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/helpdialog.\+h\item 
+Game/helpdialog.\+cpp\end{DoxyCompactItemize}

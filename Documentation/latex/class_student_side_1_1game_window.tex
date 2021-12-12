@@ -1,0 +1,313 @@
+\hypertarget{class_student_side_1_1game_window}{}\doxysection{Student\+Side\+::game\+Window Class Reference}
+\label{class_student_side_1_1game_window}\index{StudentSide::gameWindow@{StudentSide::gameWindow}}
+
+
+Defines a class for the Main\+Window where the actual playing happens. It has a game map background which depicts Tampere City Center. Game Window also shows the chosen player which can be moved with arrow keys. Shooting happens by pressing space bar. Also the Course\+Side integration is visualized in the game window\+: Nysses and passengers move in real time on the map.  
+
+
+
+
+{\ttfamily \#include $<$gamewindow.\+h$>$}
+
+
+
+Inherits Q\+Main\+Window.
+
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_a3a578044ca764a70fb553873ba3c875f}{update\+Count\+Down}} ()
+\begin{DoxyCompactList}\small\item\em update\+Count\+Down substracts seconds from the game clock in 1000 ms intervals. Furthermore, it keeps track of time and shows \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}} when the clock is zero. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1game_window_a311f168b16a76c5377693cb8796cba7e}{game\+Window}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Widget. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a0224435f60860893d56a3595e5932028}\label{class_student_side_1_1game_window_a0224435f60860893d56a3595e5932028}} 
+\mbox{\hyperlink{class_student_side_1_1game_window_a0224435f60860893d56a3595e5932028}{$\sim$game\+Window}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} has a basic destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_ac16fef26f869ddfd4055ceba42df6206}{resize\+Event}} (Q\+Resize\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em resize\+Event is responsible for the resizing of the \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} and reacting to it appropriately. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_a7ec4746f650666d016c6e7cf08fc2e35}{set\+Picture}} (Q\+Image img)
+\begin{DoxyCompactList}\small\item\em set\+Picture sets the background picture for the game and scales it to the right dimensions if needed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_ad8d412c96cec4e368715631c4dab7ec3}{set\+L\+C\+D\+Style}} ()
+\begin{DoxyCompactList}\small\item\em set\+L\+C\+D\+Style styles the game\+Windows top-\/panel Q\+L\+C\+D\+Number widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_a12ae6d7e63f71314913b2428cf9df68b}{spawn\+Bonus\+Item}} ()
+\begin{DoxyCompactList}\small\item\em spawn\+Bonus\+Item creates a new raw pointer to the \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}} object and adds it to the Q\+Graphics\+Scene. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_acc01ee190b8f93713ac7e4f47d30717a}{add\+Data\+To\+L\+CD}} ()
+\begin{DoxyCompactList}\small\item\em add\+Data\+To\+L\+CD is responsible for showing and updating the time-\/left count-\/down clock and player points on the Q\+L\+C\+D\+Number widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_af7d11b1ce3df52ceb75d02bbebf63693}{set\+Game\+Time}} ()
+\begin{DoxyCompactList}\small\item\em set\+Game\+Time checks the player\textquotesingle{}s game duration setting set in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}} and sets the game duration according to that. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_a35d8a2899e90566fee30293ee976a0a2}{screen\+Frame\+Update}} ()
+\begin{DoxyCompactList}\small\item\em screen\+Frame\+Update update Q\+Graphics\+View\textquotesingle{}s viewport in predertimed timeout intervals. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_window_a7800d7427c13b157a6dda30e82882096}{stop\+Timers}} ()
+\begin{DoxyCompactList}\small\item\em stop\+Timers stops all the Q\+Timers used in \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} class. \end{DoxyCompactList}\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{class_student_side_1_1game_window_a32fab505c2e718d6eacb3332a418a590}{get\+Available\+Size}} ()
+\begin{DoxyCompactList}\small\item\em get\+Available\+Size returns player\textquotesingle{}s current available screen size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_ae87b104c457f15513b0c1ef4c1105a34}\label{class_student_side_1_1game_window_ae87b104c457f15513b0c1ef4c1105a34}} 
+int {\bfseries screen\+Width} = 800
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a854aed9a98789a8cfffe49750759b7c0}\label{class_student_side_1_1game_window_a854aed9a98789a8cfffe49750759b7c0}} 
+int {\bfseries screen\+Height} = 600
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a4aed4a9f18164d8a7ca2e9aa4e3b4bd5}\label{class_student_side_1_1game_window_a4aed4a9f18164d8a7ca2e9aa4e3b4bd5}} 
+Ui\+::game\+Window $\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a840bbe090556a1a7928d56d3b2bd6753}\label{class_student_side_1_1game_window_a840bbe090556a1a7928d56d3b2bd6753}} 
+Q\+Timer $\ast$ {\bfseries \+\_\+main\+Timer}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a455ff4aef02a6c8c9fe046b38b66d33f}\label{class_student_side_1_1game_window_a455ff4aef02a6c8c9fe046b38b66d33f}} 
+Q\+Timer $\ast$ {\bfseries \+\_\+bonus\+Timer}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a87e6f138e1945b14582601f62fa6a9a9}\label{class_student_side_1_1game_window_a87e6f138e1945b14582601f62fa6a9a9}} 
+Q\+Timer $\ast$ {\bfseries \+\_\+game\+Timer}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a0248366baa49c1f2487bb1933cf56c6a}\label{class_student_side_1_1game_window_a0248366baa49c1f2487bb1933cf56c6a}} 
+Q\+Timer $\ast$ {\bfseries \+\_\+label\+Timer}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_ac42bc2b1084c92d9c75b99511931b366}\label{class_student_side_1_1game_window_ac42bc2b1084c92d9c75b99511931b366}} 
+\mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}} $\ast$ {\bfseries \+\_\+main\+Menu}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a5f946c2731cd1f2c243d38edb5025801}\label{class_student_side_1_1game_window_a5f946c2731cd1f2c243d38edb5025801}} 
+Q\+Graphics\+Scene $\ast$ {\bfseries \+\_\+scene}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_adebfbfc9c668765aaa6b0f9a178a10c1}\label{class_student_side_1_1game_window_adebfbfc9c668765aaa6b0f9a178a10c1}} 
+\mbox{\hyperlink{class_student_side_1_1init_game}{init\+Game}} $\ast$ {\bfseries \+\_\+new\+Game}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a13fe810e4b7b99da9bdebad223c7029b}\label{class_student_side_1_1game_window_a13fe810e4b7b99da9bdebad223c7029b}} 
+\mbox{\hyperlink{class_student_side_1_1_player}{Player}} $\ast$ {\bfseries \+\_\+player}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_acb9324eeaf2ab998b335bda22ef25a6e}\label{class_student_side_1_1game_window_acb9324eeaf2ab998b335bda22ef25a6e}} 
+std\+::shared\+\_\+ptr$<$ Q\+Settings $>$ {\bfseries \+\_\+player\+Settings} = std\+::make\+\_\+shared$<$Q\+Settings$>$()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_aba683abb654b7943531ca7a61650aa0a}\label{class_student_side_1_1game_window_aba683abb654b7943531ca7a61650aa0a}} 
+bool {\bfseries \+\_\+large\+Mode} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a70964b96f715c9733d72095c19d28cf0}\label{class_student_side_1_1game_window_a70964b96f715c9733d72095c19d28cf0}} 
+int {\bfseries \+\_\+game\+Duration}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a49519441bf063e5db4ec0a0cf316e549}\label{class_student_side_1_1game_window_a49519441bf063e5db4ec0a0cf316e549}} 
+int {\bfseries \+\_\+frame\+Rate} = 20
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a8df296d56ee7748b7f9e6811f76f845f}\label{class_student_side_1_1game_window_a8df296d56ee7748b7f9e6811f76f845f}} 
+int {\bfseries \+\_\+interval} = 500
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_aa894e9ec85510d5ce2e54ca5dcd7d446}\label{class_student_side_1_1game_window_aa894e9ec85510d5ce2e54ca5dcd7d446}} 
+int {\bfseries \+\_\+count\+Down\+Interval} = 1000
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a02ce7b293ff2b57a91601cf2cf6cd472}\label{class_student_side_1_1game_window_a02ce7b293ff2b57a91601cf2cf6cd472}} 
+int {\bfseries \+\_\+spawn\+Bonus\+Interval} = 4000
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_af70ea55567f1181585848b38e246fd90}\label{class_student_side_1_1game_window_af70ea55567f1181585848b38e246fd90}} 
+const Q\+Image {\bfseries \+\_\+bkgnd\+Small} = Q\+Image(\char`\"{}\+:/offlinedata/offlinedata/kartta\+\_\+pieni\+\_\+500x500.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_window_a5eee689468dc7fc11e72f7f18753503a}\label{class_student_side_1_1game_window_a5eee689468dc7fc11e72f7f18753503a}} 
+const Q\+Image {\bfseries \+\_\+bkgnd\+Big} = Q\+Image(\char`\"{}\+:/offlinedata/offlinedata/kartta\+\_\+iso\+\_\+1095x592.\+png\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a class for the Main\+Window where the actual playing happens. It has a game map background which depicts Tampere City Center. Game Window also shows the chosen player which can be moved with arrow keys. Shooting happens by pressing space bar. Also the Course\+Side integration is visualized in the game window\+: Nysses and passengers move in real time on the map. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a311f168b16a76c5377693cb8796cba7e}\label{class_student_side_1_1game_window_a311f168b16a76c5377693cb8796cba7e}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!gameWindow@{gameWindow}}
+\index{gameWindow@{gameWindow}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{gameWindow()}{gameWindow()}}
+{\footnotesize\ttfamily Student\+Side\+::game\+Window\+::game\+Window (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Widget. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1game_window_acc01ee190b8f93713ac7e4f47d30717a}\label{class_student_side_1_1game_window_acc01ee190b8f93713ac7e4f47d30717a}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!addDataToLCD@{addDataToLCD}}
+\index{addDataToLCD@{addDataToLCD}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{addDataToLCD()}{addDataToLCD()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::add\+Data\+To\+L\+CD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+add\+Data\+To\+L\+CD is responsible for showing and updating the time-\/left count-\/down clock and player points on the Q\+L\+C\+D\+Number widgets. 
+
+\begin{DoxyPrecond}{Precondition}
+The Q\+L\+C\+D\+Number widgets exist. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The correct values have been updated to the \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} so that the player sees them. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a32fab505c2e718d6eacb3332a418a590}\label{class_student_side_1_1game_window_a32fab505c2e718d6eacb3332a418a590}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!getAvailableSize@{getAvailableSize}}
+\index{getAvailableSize@{getAvailableSize}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{getAvailableSize()}{getAvailableSize()}}
+{\footnotesize\ttfamily std\+::vector$<$ int $>$ Student\+Side\+::game\+Window\+::get\+Available\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Available\+Size returns player\textquotesingle{}s current available screen size. 
+
+\begin{DoxyPrecond}{Precondition}
+The game has started and \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} is active. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Vector containing the width (index 0) and the height (index 1) of the available screen. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_ac16fef26f869ddfd4055ceba42df6206}\label{class_student_side_1_1game_window_ac16fef26f869ddfd4055ceba42df6206}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!resizeEvent@{resizeEvent}}
+\index{resizeEvent@{resizeEvent}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{resizeEvent()}{resizeEvent()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::resize\+Event (\begin{DoxyParamCaption}\item[{Q\+Resize\+Event $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+resize\+Event is responsible for the resizing of the \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} and reacting to it appropriately. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Raw} & pointer to the Q\+Resize\+Event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+\mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}}\textquotesingle{}s size is is in initialization state (800x600 pixels). 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The new window size has been set and all the gamemap items scaled accordingly. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a35d8a2899e90566fee30293ee976a0a2}\label{class_student_side_1_1game_window_a35d8a2899e90566fee30293ee976a0a2}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!screenFrameUpdate@{screenFrameUpdate}}
+\index{screenFrameUpdate@{screenFrameUpdate}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{screenFrameUpdate()}{screenFrameUpdate()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::screen\+Frame\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+screen\+Frame\+Update update Q\+Graphics\+View\textquotesingle{}s viewport in predertimed timeout intervals. 
+
+\begin{DoxyPrecond}{Precondition}
+Q\+Graphics\+View has been created. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Cumulated changes in the Q\+Graphics\+View\textquotesingle{}s viewport have been updated. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_af7d11b1ce3df52ceb75d02bbebf63693}\label{class_student_side_1_1game_window_af7d11b1ce3df52ceb75d02bbebf63693}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!setGameTime@{setGameTime}}
+\index{setGameTime@{setGameTime}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{setGameTime()}{setGameTime()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::set\+Game\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Game\+Time checks the player\textquotesingle{}s game duration setting set in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}} and sets the game duration according to that. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The correct game duration has been set for the game according to the player\textquotesingle{}s choices. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_ad8d412c96cec4e368715631c4dab7ec3}\label{class_student_side_1_1game_window_ad8d412c96cec4e368715631c4dab7ec3}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!setLCDStyle@{setLCDStyle}}
+\index{setLCDStyle@{setLCDStyle}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{setLCDStyle()}{setLCDStyle()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::set\+L\+C\+D\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+L\+C\+D\+Style styles the game\+Windows top-\/panel Q\+L\+C\+D\+Number widgets. 
+
+\begin{DoxyPrecond}{Precondition}
+The Q\+L\+C\+D\+Number widgets exist. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The desired styles have been set. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a7ec4746f650666d016c6e7cf08fc2e35}\label{class_student_side_1_1game_window_a7ec4746f650666d016c6e7cf08fc2e35}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!setPicture@{setPicture}}
+\index{setPicture@{setPicture}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{setPicture()}{setPicture()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::set\+Picture (\begin{DoxyParamCaption}\item[{Q\+Image}]{img }\end{DoxyParamCaption})}
+
+
+
+set\+Picture sets the background picture for the game and scales it to the right dimensions if needed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Q\+Image} & picture of the big gamemap which is a courtesy from the Course Side. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The backround picture of Tampere City Center has been set. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a12ae6d7e63f71314913b2428cf9df68b}\label{class_student_side_1_1game_window_a12ae6d7e63f71314913b2428cf9df68b}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!spawnBonusItem@{spawnBonusItem}}
+\index{spawnBonusItem@{spawnBonusItem}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{spawnBonusItem()}{spawnBonusItem()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::spawn\+Bonus\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+spawn\+Bonus\+Item creates a new raw pointer to the \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}} object and adds it to the Q\+Graphics\+Scene. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A new \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}} has been created and added to the scene. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a7800d7427c13b157a6dda30e82882096}\label{class_student_side_1_1game_window_a7800d7427c13b157a6dda30e82882096}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!stopTimers@{stopTimers}}
+\index{stopTimers@{stopTimers}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{stopTimers()}{stopTimers()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::stop\+Timers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+stop\+Timers stops all the Q\+Timers used in \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}} class. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+All the Q\+Timers have been stopped. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_window_a3a578044ca764a70fb553873ba3c875f}\label{class_student_side_1_1game_window_a3a578044ca764a70fb553873ba3c875f}} 
+\index{StudentSide::gameWindow@{StudentSide::gameWindow}!updateCountDown@{updateCountDown}}
+\index{updateCountDown@{updateCountDown}!StudentSide::gameWindow@{StudentSide::gameWindow}}
+\doxysubsubsection{\texorpdfstring{updateCountDown}{updateCountDown}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Window\+::update\+Count\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+update\+Count\+Down substracts seconds from the game clock in 1000 ms intervals. Furthermore, it keeps track of time and shows \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}} when the clock is zero. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+One second has been substracted from game time and/or the game is stopped and \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}} is created and shown to the player. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/gamewindow.\+h\item 
+Game/gamewindow.\+cpp\end{DoxyCompactItemize}

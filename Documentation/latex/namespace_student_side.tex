@@ -1,0 +1,46 @@
+\hypertarget{namespace_student_side}{}\doxysection{Student\+Side Namespace Reference}
+\label{namespace_student_side}\index{StudentSide@{StudentSide}}
+
+
+All of the classes done by the student team are found in \mbox{\hyperlink{namespace_student_side}{Student\+Side}} namespace.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_student_side_1_1basic_projectile}{basic\+Projectile}}
+\begin{DoxyCompactList}\small\item\em Defines a class for the projectile that player shoots in the game by pressing space key. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}}
+\begin{DoxyCompactList}\small\item\em Defines a class for the other unique object in the game\+: \mbox{\hyperlink{class_student_side_1_1bonus_item}{bonus\+Item}}\textquotesingle{}s (small red diamonds) that appear randomly in the game map every 4 seconds. If the player manages to collect these bonus items either by moving into their location or by shooting them, 10 points are added to the player score. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1game_city}{game\+City}}
+\begin{DoxyCompactList}\small\item\em Defines a class that inherits from I\+City and implements its virtual functions. The class handles functionality regarding the actual city. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Defines a Q\+Dialog that is shown to the player when the game is over. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}}
+\begin{DoxyCompactList}\small\item\em Defines a class that inherits from I\+Statistics and implements its virtual functions. In addition class has some own functions and attributes. Class is responsible for the statistical bookkeeping for all the relevant statistics that the player generates ingame. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1game_window}{game\+Window}}
+\begin{DoxyCompactList}\small\item\em Defines a class for the Main\+Window where the actual playing happens. It has a game map background which depicts Tampere City Center. Game Window also shows the chosen player which can be moved with arrow keys. Shooting happens by pressing space bar. Also the Course\+Side integration is visualized in the game window\+: Nysses and passengers move in real time on the map. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1help_dialog}{help\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Defines a Q\+Dialog which offers help to a new player who possibly isn\textquotesingle{}t aware of the game rules, settings or controls etc. The Dialog itself is accessible from Main\+Menu\textquotesingle{}s \char`\"{}\+Help\char`\"{} -\/button. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1init_game}{init\+Game}}
+\begin{DoxyCompactList}\small\item\em Defines a Class in which the Course\+Side integration mostly happens. The class is also responsible for moving and showing all the actors offered by Course\+Side. Furthermore, Create\+Game -\/function is implemented here. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Defines a Q\+Dialog which is the first shown window to the user when the app is run. It is the main configuration dialog in which player sets a player nickname, chooses player and projectile type and possibly accesses settings or help. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1_player}{Player}}
+\begin{DoxyCompactList}\small\item\em Defines a class for the main player that the game\textquotesingle{}s user controls in the game. The player can be in interaction with bonus\+Items, Nysses and passengers shown on the game map. \mbox{\hyperlink{class_student_side_1_1_player}{Player}} movement happens via arrow key pressing, and shooting via space bar. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Defines a Q\+Dialog which offers a separate settings window where the player can set music on/off and alter the game duration. The Dialog itself is accessible from Main\+Menu\textquotesingle{}s \char`\"{}\+Settings\char`\"{} -\/button. If the player does not make any changes to the settings (which isn\textquotesingle{}t compulsory), the default settings are used\+: musics off and game duration 2 minutes. Beware that if you don\textquotesingle{}t press the \char`\"{}\+Save\char`\"{} -\/button in the \mbox{\hyperlink{class_student_side_1_1settings_dialog}{settings\+Dialog}}, your changes to the settings won\textquotesingle{}t come into effect and the program will use the default settings! \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1statistis_dialog}{statistis\+Dialog}}
+\begin{DoxyCompactList}\small\item\em Defines a Q\+Dialog which offers statisctics of the game played by the player. The Dialog itself is accessible from \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}}\textquotesingle{}s \char`\"{}\+Statistics\char`\"{} -\/button. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_student_side_1_1top_high_scores}{top\+High\+Scores}}
+\begin{DoxyCompactList}\small\item\em Defines a Class which is responsible for saving and reading player name and S\+C\+A\+L\+ED points to and from a top10highscores.\+txt file. The class also implements a top10-\/highscore feature which gives the player information about all-\/time best players when the metric is the highest scaled points count. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespace_student_side_abab0d1d2fa479a781f021ecefe338869}\label{namespace_student_side_abab0d1d2fa479a781f021ecefe338869}} 
+const Q\+String {\bfseries text\+File\+Path} = \char`\"{}top10highscores.\+txt\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All of the classes done by the student team are found in \mbox{\hyperlink{namespace_student_side}{Student\+Side}} namespace. 

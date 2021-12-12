@@ -1,0 +1,153 @@
+\hypertarget{class_student_side_1_1top_high_scores}{}\doxysection{Student\+Side\+::top\+High\+Scores Class Reference}
+\label{class_student_side_1_1top_high_scores}\index{StudentSide::topHighScores@{StudentSide::topHighScores}}
+
+
+Defines a Class which is responsible for saving and reading player name and S\+C\+A\+L\+ED points to and from a top10highscores.\+txt file. The class also implements a top10-\/highscore feature which gives the player information about all-\/time best players when the metric is the highest scaled points count.  
+
+
+
+
+{\ttfamily \#include $<$tophighscores.\+h$>$}
+
+
+
+Inherits Q\+Object.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1top_high_scores_aa8f1c4294e44ca27fc072e198be58a5c}{top\+High\+Scores}} (Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1top_high_scores_a5b555f9e639e6f86d8091550566dc68a}{read\+File}} (Q\+String filename=text\+File\+Path)
+\begin{DoxyCompactList}\small\item\em read\+File reads data from a textfile into map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1top_high_scores_aa97b516b45163a9babf3d458460a8728}{write\+File}} (Q\+String filename=text\+File\+Path)
+\begin{DoxyCompactList}\small\item\em write\+File writes data into a textfile (player name and his points scaled according to the chosen game duration). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1top_high_scores_ac534a5cbff91556a0c9080826bab3aa3}{sort\+And\+Display}} (std\+::map$<$ Q\+String, int $>$ map\+To\+Be\+Sorted)
+\begin{DoxyCompactList}\small\item\em sort\+And\+Display sorts the players according to their points into a top10 -\/subset and appends these top10 -\/players into a Q\+String which is shown to the player later in \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}}\textquotesingle{}s Q\+Text\+Browser. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_student_side_1_1top_high_scores_a99de043d8230c8b8f030f33813ea8b8f}{get\+Duration}} ()
+\begin{DoxyCompactList}\small\item\em get\+Duration reads the game duration setting saved before and returns it as an integer which represents game duration in minutes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_abd6bf385752fb69ad4dee11e03595e4c}\label{class_student_side_1_1top_high_scores_abd6bf385752fb69ad4dee11e03595e4c}} 
+std\+::map$<$ Q\+String, int $>$ {\bfseries scores}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_afd60772aabe653ac643726ca074c7796}\label{class_student_side_1_1top_high_scores_afd60772aabe653ac643726ca074c7796}} 
+Q\+String {\bfseries score\+Stream}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_ae26d0de4aab278027066fe39816214ba}\label{class_student_side_1_1top_high_scores_ae26d0de4aab278027066fe39816214ba}} 
+std\+::shared\+\_\+ptr$<$ Q\+Settings $>$ {\bfseries \+\_\+player\+Settings} = std\+::make\+\_\+shared$<$Q\+Settings$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a Class which is responsible for saving and reading player name and S\+C\+A\+L\+ED points to and from a top10highscores.\+txt file. The class also implements a top10-\/highscore feature which gives the player information about all-\/time best players when the metric is the highest scaled points count. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_aa8f1c4294e44ca27fc072e198be58a5c}\label{class_student_side_1_1top_high_scores_aa8f1c4294e44ca27fc072e198be58a5c}} 
+\index{StudentSide::topHighScores@{StudentSide::topHighScores}!topHighScores@{topHighScores}}
+\index{topHighScores@{topHighScores}!StudentSide::topHighScores@{StudentSide::topHighScores}}
+\doxysubsubsection{\texorpdfstring{topHighScores()}{topHighScores()}}
+{\footnotesize\ttfamily Student\+Side\+::top\+High\+Scores\+::top\+High\+Scores (\begin{DoxyParamCaption}\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1top_high_scores}{top\+High\+Scores}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_a99de043d8230c8b8f030f33813ea8b8f}\label{class_student_side_1_1top_high_scores_a99de043d8230c8b8f030f33813ea8b8f}} 
+\index{StudentSide::topHighScores@{StudentSide::topHighScores}!getDuration@{getDuration}}
+\index{getDuration@{getDuration}!StudentSide::topHighScores@{StudentSide::topHighScores}}
+\doxysubsubsection{\texorpdfstring{getDuration()}{getDuration()}}
+{\footnotesize\ttfamily int Student\+Side\+::top\+High\+Scores\+::get\+Duration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Duration reads the game duration setting saved before and returns it as an integer which represents game duration in minutes. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Chosen game duration as an integer which represents game duration in minutes. If the player has not chosen game durations, it is by default 2 minutes. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Game duration has been returned. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_a5b555f9e639e6f86d8091550566dc68a}\label{class_student_side_1_1top_high_scores_a5b555f9e639e6f86d8091550566dc68a}} 
+\index{StudentSide::topHighScores@{StudentSide::topHighScores}!readFile@{readFile}}
+\index{readFile@{readFile}!StudentSide::topHighScores@{StudentSide::topHighScores}}
+\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
+{\footnotesize\ttfamily void Student\+Side\+::top\+High\+Scores\+::read\+File (\begin{DoxyParamCaption}\item[{Q\+String}]{filename = {\ttfamily textFilePath} }\end{DoxyParamCaption})}
+
+
+
+read\+File reads data from a textfile into map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Default} & path to the top10highscores.\+txt -\/file where the data is ultimately stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The textfile exists in the path set. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Data from textfile (player\+Name\+: scaled\+Points) has been read into a map. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_ac534a5cbff91556a0c9080826bab3aa3}\label{class_student_side_1_1top_high_scores_ac534a5cbff91556a0c9080826bab3aa3}} 
+\index{StudentSide::topHighScores@{StudentSide::topHighScores}!sortAndDisplay@{sortAndDisplay}}
+\index{sortAndDisplay@{sortAndDisplay}!StudentSide::topHighScores@{StudentSide::topHighScores}}
+\doxysubsubsection{\texorpdfstring{sortAndDisplay()}{sortAndDisplay()}}
+{\footnotesize\ttfamily void Student\+Side\+::top\+High\+Scores\+::sort\+And\+Display (\begin{DoxyParamCaption}\item[{std\+::map$<$ Q\+String, int $>$}]{map\+To\+Be\+Sorted }\end{DoxyParamCaption})}
+
+
+
+sort\+And\+Display sorts the players according to their points into a top10 -\/subset and appends these top10 -\/players into a Q\+String which is shown to the player later in \mbox{\hyperlink{class_student_side_1_1_game_over_dialog}{Game\+Over\+Dialog}}\textquotesingle{}s Q\+Text\+Browser. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Unsorted} & map that contains all-\/time player data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Map is sorted and its contents are appended into a Q\+String. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1top_high_scores_aa97b516b45163a9babf3d458460a8728}\label{class_student_side_1_1top_high_scores_aa97b516b45163a9babf3d458460a8728}} 
+\index{StudentSide::topHighScores@{StudentSide::topHighScores}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!StudentSide::topHighScores@{StudentSide::topHighScores}}
+\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
+{\footnotesize\ttfamily void Student\+Side\+::top\+High\+Scores\+::write\+File (\begin{DoxyParamCaption}\item[{Q\+String}]{filename = {\ttfamily textFilePath} }\end{DoxyParamCaption})}
+
+
+
+write\+File writes data into a textfile (player name and his points scaled according to the chosen game duration). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Default} & path to the top10highscores.\+txt -\/file where the data is ultimately stored. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Data has been written to the textfile (player\+Name\+: scaled\+Points). Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/tophighscores.\+h\item 
+Game/tophighscores.\+cpp\end{DoxyCompactItemize}

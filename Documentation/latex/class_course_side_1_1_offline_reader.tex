@@ -1,0 +1,41 @@
+\hypertarget{class_course_side_1_1_offline_reader}{}\doxysection{Course\+Side\+::Offline\+Reader Class Reference}
+\label{class_course_side_1_1_offline_reader}\index{CourseSide::OfflineReader@{CourseSide::OfflineReader}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a95ab469154bf7738c300744c09951333}\label{class_course_side_1_1_offline_reader_a95ab469154bf7738c300744c09951333}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_course_side_1_1_offline_data}{Offline\+Data}} $>$ {\bfseries read\+Files} (const Q\+String \&busfile, const Q\+String \&stopfile)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a81ae249309b139f125ceece7f4ae6b25}\label{class_course_side_1_1_offline_reader_a81ae249309b139f125ceece7f4ae6b25}} 
+void {\bfseries read\+Bus\+File} (const Q\+String \&busfile)
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a74c973257f51c0e0c3799b6640ea09ab}\label{class_course_side_1_1_offline_reader_a74c973257f51c0e0c3799b6640ea09ab}} 
+void {\bfseries read\+Stop\+File} (const Q\+String \&stopfile)
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a45a3f7231e6acbc808c71a427510de75}\label{class_course_side_1_1_offline_reader_a45a3f7231e6acbc808c71a427510de75}} 
+void {\bfseries read\+Departure\+Times} (const Q\+Json\+Array \&timearray, \mbox{\hyperlink{struct_course_side_1_1_bus_data}{Bus\+Data}} $\ast$bus)
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a35cad04cec3c4a2d180a62fc5591120d}\label{class_course_side_1_1_offline_reader_a35cad04cec3c4a2d180a62fc5591120d}} 
+void {\bfseries read\+Route} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_course_side_1_1_bus_data}{Bus\+Data}} $>$ bus, Q\+Json\+Object \&o)
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a7a3ed490bd3850d4a4be012c8311810b}\label{class_course_side_1_1_offline_reader_a7a3ed490bd3850d4a4be012c8311810b}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_course_side_1_1_stop}{Stop}} $>$ {\bfseries find\+Stops} (int id)
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_aad79b748bae85fce8fbafdbf6b515da7}\label{class_course_side_1_1_offline_reader_aad79b748bae85fce8fbafdbf6b515da7}} 
+Q\+Time {\bfseries calculate\+Q\+Time} (int time)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_course_side_1_1_offline_reader_a48b4147af926864be1c0854e2742f2dd}\label{class_course_side_1_1_offline_reader_a48b4147af926864be1c0854e2742f2dd}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{struct_course_side_1_1_offline_data}{Offline\+Data}} $>$ {\bfseries offlinedata\+\_\+}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Course/\+Course\+Lib/offlinereader.\+hh\item 
+Course/\+Course\+Lib/offlinereader.\+cc\end{DoxyCompactItemize}

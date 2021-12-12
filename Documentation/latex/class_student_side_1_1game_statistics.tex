@@ -1,0 +1,378 @@
+\hypertarget{class_student_side_1_1game_statistics}{}\doxysection{Student\+Side\+::game\+Statistics Class Reference}
+\label{class_student_side_1_1game_statistics}\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+
+
+Defines a class that inherits from I\+Statistics and implements its virtual functions. In addition class has some own functions and attributes. Class is responsible for the statistical bookkeeping for all the relevant statistics that the player generates ingame.  
+
+
+
+
+{\ttfamily \#include $<$gamestatistics.\+h$>$}
+
+
+
+Inherits \mbox{\hyperlink{class_interface_1_1_i_statistics}{Interface\+::\+I\+Statistics}}.
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1game_statistics_a8661c8fc89111f9d58d94daef90dec4b}{game\+Statistics}} ()
+\begin{DoxyCompactList}\small\item\em Basic constructor for \mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}}. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_student_side_1_1game_statistics_a395a20871dfd945fdcd7f95d5e986b75}{give\+Points}} () const
+\begin{DoxyCompactList}\small\item\em give\+Points returns current score in the game. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_student_side_1_1game_statistics_abf64901d0188cfcf37d01322c8f0d165}{passenger\+Died}} (int num)
+\begin{DoxyCompactList}\small\item\em passenger\+Died notifies, that the passanger is dead. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_student_side_1_1game_statistics_aaef74c1adc4357ae58683233cf0b4105}{more\+Passengers}} (int num)
+\begin{DoxyCompactList}\small\item\em more\+Passengers notifies, that more passangers are added to the game. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_student_side_1_1game_statistics_a2ea085bdcb21022a29260ec4196af248}{nysse\+Removed}} ()
+\begin{DoxyCompactList}\small\item\em nysse\+Removed notifies, that the nysse is removed ingame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_student_side_1_1game_statistics_aa971ea965e08aabcfb59ca592cf51930}{new\+Nysse}} ()
+\begin{DoxyCompactList}\small\item\em new\+Nysse notifies, that a new nysse is added to the game. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_student_side_1_1game_statistics_a6d70913e510ee8124b88f9c114a637a8}{nysse\+Left}} ()
+\begin{DoxyCompactList}\small\item\em nysse\+Left notifies, that a nysse has left the game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_statistics_aab494983e2806f8a9a3701ca07177c6c}{add\+Points}} ()
+\begin{DoxyCompactList}\small\item\em add\+Points function increases the player points by 10. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_statistics_ab96ce4a8f3f0c65fc0bd0e4a5fa798d5}{add\+Collected\+Diamond}} ()
+\begin{DoxyCompactList}\small\item\em add\+Collected\+Diamond function increases the collected diamonds by 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_statistics_ac7840bc9d392f3e3be59401ff8627122}{passenger\+Left}} ()
+\begin{DoxyCompactList}\small\item\em passenger\+Left function increases passengers that left ingame count by 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_statistics_aa261851e3f173a0cc56d6cd709d49f5c}{actor\+Moved}} ()
+\begin{DoxyCompactList}\small\item\em actor\+Moved function increases the actors moved ingame count by 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1game_statistics_a4f3f926925b77570f80ebf92ccb8b5d9}{init\+All\+Values}} ()
+\begin{DoxyCompactList}\small\item\em init\+All\+Values function initializes all the \mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}} class public attributes to zero. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_student_side_1_1game_statistics_a5ae67c7ba03aa5437bec90c68d1f2e58}{give\+Collected\+Diamonds}} ()
+\begin{DoxyCompactList}\small\item\em give\+Collected\+Diamonds returns the amount of collected diamonds by the player at the time when the function is called. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_student_side_1_1game_statistics_aba1dd14ddbbc9849fc31887206c8497a}{give\+Destroyed\+Nysses}} ()
+\begin{DoxyCompactList}\small\item\em give\+Destroyed\+Nysses returns the amount of destroyed Nysse-\/buses by the player at the time when the function is called. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_student_side_1_1game_statistics_afcc217fa47907e31da45fb0db69cdeda}{give\+Destroyed\+Passengers}} ()
+\begin{DoxyCompactList}\small\item\em give\+Destroyed\+Passengers returns the amount of destroyed passengers by the player at the time when the function is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a00917e75035071ba4231b184c05149e9}\label{class_student_side_1_1game_statistics_a00917e75035071ba4231b184c05149e9}} 
+int {\bfseries player\+Points} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a33b4f191c1f85b033ad883e3d28874a4}\label{class_student_side_1_1game_statistics_a33b4f191c1f85b033ad883e3d28874a4}} 
+int {\bfseries passengers\+Dead} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_ab0fa7258a131d2764123c7ebf468e0ec}\label{class_student_side_1_1game_statistics_ab0fa7258a131d2764123c7ebf468e0ec}} 
+int {\bfseries removed\+Nysses} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_ae93594c11e648c48ee9f00658e46e563}\label{class_student_side_1_1game_statistics_ae93594c11e648c48ee9f00658e46e563}} 
+int {\bfseries total\+Passengers} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a64efe5a90479d2053d0ada46c8cb4b5d}\label{class_student_side_1_1game_statistics_a64efe5a90479d2053d0ada46c8cb4b5d}} 
+int {\bfseries total\+Nysses} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a0bdcd08be0fef3a71fe23c5a18ef2caa}\label{class_student_side_1_1game_statistics_a0bdcd08be0fef3a71fe23c5a18ef2caa}} 
+int {\bfseries left\+Nysses} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a5b8c08da92d4d0937c651be20919d0c8}\label{class_student_side_1_1game_statistics_a5b8c08da92d4d0937c651be20919d0c8}} 
+int {\bfseries left\+Passengers} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a07a83cb09b08bfb080728951d9061b95}\label{class_student_side_1_1game_statistics_a07a83cb09b08bfb080728951d9061b95}} 
+int {\bfseries collected\+Diamonds} = 0
+\item 
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a8cdafd5b4aabf44fc95fe5b28b80c973}\label{class_student_side_1_1game_statistics_a8cdafd5b4aabf44fc95fe5b28b80c973}} 
+int {\bfseries moved\+Actors\+Amount} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a class that inherits from I\+Statistics and implements its virtual functions. In addition class has some own functions and attributes. Class is responsible for the statistical bookkeeping for all the relevant statistics that the player generates ingame. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a8661c8fc89111f9d58d94daef90dec4b}\label{class_student_side_1_1game_statistics_a8661c8fc89111f9d58d94daef90dec4b}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!gameStatistics@{gameStatistics}}
+\index{gameStatistics@{gameStatistics}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{gameStatistics()}{gameStatistics()}}
+{\footnotesize\ttfamily Student\+Side\+::game\+Statistics\+::game\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Basic constructor for \mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}}. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_aa261851e3f173a0cc56d6cd709d49f5c}\label{class_student_side_1_1game_statistics_aa261851e3f173a0cc56d6cd709d49f5c}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!actorMoved@{actorMoved}}
+\index{actorMoved@{actorMoved}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{actorMoved()}{actorMoved()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::actor\+Moved (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+actor\+Moved function increases the actors moved ingame count by 1. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Actors moved ingame count has been increased by 1. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_ab96ce4a8f3f0c65fc0bd0e4a5fa798d5}\label{class_student_side_1_1game_statistics_ab96ce4a8f3f0c65fc0bd0e4a5fa798d5}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!addCollectedDiamond@{addCollectedDiamond}}
+\index{addCollectedDiamond@{addCollectedDiamond}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{addCollectedDiamond()}{addCollectedDiamond()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::add\+Collected\+Diamond (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+add\+Collected\+Diamond function increases the collected diamonds by 1. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1_player}{Player}}\textquotesingle{}s collected diamond count has been increased by 1. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_aab494983e2806f8a9a3701ca07177c6c}\label{class_student_side_1_1game_statistics_aab494983e2806f8a9a3701ca07177c6c}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!addPoints@{addPoints}}
+\index{addPoints@{addPoints}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{addPoints()}{addPoints()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::add\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+add\+Points function increases the player points by 10. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1_player}{Player}}\textquotesingle{}s points have been increased by 10. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a5ae67c7ba03aa5437bec90c68d1f2e58}\label{class_student_side_1_1game_statistics_a5ae67c7ba03aa5437bec90c68d1f2e58}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!giveCollectedDiamonds@{giveCollectedDiamonds}}
+\index{giveCollectedDiamonds@{giveCollectedDiamonds}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{giveCollectedDiamonds()}{giveCollectedDiamonds()}}
+{\footnotesize\ttfamily int Student\+Side\+::game\+Statistics\+::give\+Collected\+Diamonds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+give\+Collected\+Diamonds returns the amount of collected diamonds by the player at the time when the function is called. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Integer amount of collected diamonds by the player. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+The amount of collected diamonds has been returned. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_aba1dd14ddbbc9849fc31887206c8497a}\label{class_student_side_1_1game_statistics_aba1dd14ddbbc9849fc31887206c8497a}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!giveDestroyedNysses@{giveDestroyedNysses}}
+\index{giveDestroyedNysses@{giveDestroyedNysses}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{giveDestroyedNysses()}{giveDestroyedNysses()}}
+{\footnotesize\ttfamily int Student\+Side\+::game\+Statistics\+::give\+Destroyed\+Nysses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+give\+Destroyed\+Nysses returns the amount of destroyed Nysse-\/buses by the player at the time when the function is called. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Integer amount of destroyed Nysses by the player. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+The amount of destroyed Nysses has been returned. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_afcc217fa47907e31da45fb0db69cdeda}\label{class_student_side_1_1game_statistics_afcc217fa47907e31da45fb0db69cdeda}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!giveDestroyedPassengers@{giveDestroyedPassengers}}
+\index{giveDestroyedPassengers@{giveDestroyedPassengers}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{giveDestroyedPassengers()}{giveDestroyedPassengers()}}
+{\footnotesize\ttfamily int Student\+Side\+::game\+Statistics\+::give\+Destroyed\+Passengers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+give\+Destroyed\+Passengers returns the amount of destroyed passengers by the player at the time when the function is called. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Integer amount of destroyed passengers by the player. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+The amount of destroyed passengers has been returned. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a395a20871dfd945fdcd7f95d5e986b75}\label{class_student_side_1_1game_statistics_a395a20871dfd945fdcd7f95d5e986b75}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!givePoints@{givePoints}}
+\index{givePoints@{givePoints}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{givePoints()}{givePoints()}}
+{\footnotesize\ttfamily int Student\+Side\+::game\+Statistics\+::give\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+give\+Points returns current score in the game. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+score 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: nothrow 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a4f3f926925b77570f80ebf92ccb8b5d9}\label{class_student_side_1_1game_statistics_a4f3f926925b77570f80ebf92ccb8b5d9}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!initAllValues@{initAllValues}}
+\index{initAllValues@{initAllValues}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{initAllValues()}{initAllValues()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::init\+All\+Values (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+init\+All\+Values function initializes all the \mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}} class public attributes to zero. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1game_statistics}{game\+Statistics}} class public attributes have all been set to zero. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_aaef74c1adc4357ae58683233cf0b4105}\label{class_student_side_1_1game_statistics_aaef74c1adc4357ae58683233cf0b4105}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!morePassengers@{morePassengers}}
+\index{morePassengers@{morePassengers}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{morePassengers()}{morePassengers()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::more\+Passengers (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+more\+Passengers notifies, that more passangers are added to the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & how many new passangers are added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+num $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: strong 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Game\+Error} & number given as a paremeter is negative. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{class_interface_1_1_i_statistics_a791cf77cd9fdb8f37e64832952225584}{Interface\+::\+I\+Statistics}}.
+
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_aa971ea965e08aabcfb59ca592cf51930}\label{class_student_side_1_1game_statistics_aa971ea965e08aabcfb59ca592cf51930}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!newNysse@{newNysse}}
+\index{newNysse@{newNysse}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{newNysse()}{newNysse()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::new\+Nysse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+new\+Nysse notifies, that a new nysse is added to the game. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{class_interface_1_1_i_statistics_ac683e84583e624d355a77f255d465d3b}{Interface\+::\+I\+Statistics}}.
+
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a6d70913e510ee8124b88f9c114a637a8}\label{class_student_side_1_1game_statistics_a6d70913e510ee8124b88f9c114a637a8}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!nysseLeft@{nysseLeft}}
+\index{nysseLeft@{nysseLeft}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{nysseLeft()}{nysseLeft()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::nysse\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+nysse\+Left notifies, that a nysse has left the game. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{class_interface_1_1_i_statistics_a728b82296c14bcdd68e8dd362bf23429}{Interface\+::\+I\+Statistics}}.
+
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_a2ea085bdcb21022a29260ec4196af248}\label{class_student_side_1_1game_statistics_a2ea085bdcb21022a29260ec4196af248}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!nysseRemoved@{nysseRemoved}}
+\index{nysseRemoved@{nysseRemoved}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{nysseRemoved()}{nysseRemoved()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::nysse\+Removed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+nysse\+Removed notifies, that the nysse is removed ingame. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+Implements \mbox{\hyperlink{class_interface_1_1_i_statistics_ac1ef08da0ea42f4633ad86450449c56d}{Interface\+::\+I\+Statistics}}.
+
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_abf64901d0188cfcf37d01322c8f0d165}\label{class_student_side_1_1game_statistics_abf64901d0188cfcf37d01322c8f0d165}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!passengerDied@{passengerDied}}
+\index{passengerDied@{passengerDied}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{passengerDied()}{passengerDied()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::passenger\+Died (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+passenger\+Died notifies, that the passanger is dead. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & how many passangers eliminated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+num $>$ 0 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Exception guarantee\+: strong 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Game\+Error} & number given as a paremeter is negative. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_student_side_1_1game_statistics_ac7840bc9d392f3e3be59401ff8627122}\label{class_student_side_1_1game_statistics_ac7840bc9d392f3e3be59401ff8627122}} 
+\index{StudentSide::gameStatistics@{StudentSide::gameStatistics}!passengerLeft@{passengerLeft}}
+\index{passengerLeft@{passengerLeft}!StudentSide::gameStatistics@{StudentSide::gameStatistics}}
+\doxysubsubsection{\texorpdfstring{passengerLeft()}{passengerLeft()}}
+{\footnotesize\ttfamily void Student\+Side\+::game\+Statistics\+::passenger\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+passenger\+Left function increases passengers that left ingame count by 1. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Passenger left ingame count has been increased by 1. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/gamestatistics.\+h\item 
+Game/gamestatistics.\+cpp\end{DoxyCompactItemize}

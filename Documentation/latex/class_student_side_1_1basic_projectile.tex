@@ -1,0 +1,191 @@
+\hypertarget{class_student_side_1_1basic_projectile}{}\doxysection{Student\+Side\+::basic\+Projectile Class Reference}
+\label{class_student_side_1_1basic_projectile}\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+
+
+Defines a class for the projectile that player shoots in the game by pressing space key.  
+
+
+
+
+{\ttfamily \#include $<$basicprojectile.\+h$>$}
+
+
+
+Inherits Q\+Object, and Q\+Graphics\+Pixmap\+Item.
+
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_student_side_1_1basic_projectile_aed74caa287a283642f035d0d4303d43d}{move}} ()
+\begin{DoxyCompactList}\small\item\em move function is responsible for moving the bullet up in the game map. Also if the bullet encounters a bonus diamond, they both are deleted from the map and from the memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1basic_projectile_ab9ec2068f1d038fa1428b97f33eba9a5}{basic\+Projectile}} (Q\+Graphics\+Item $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_af92d6ca641bffdaddfbd550a7d1cce6a}\label{class_student_side_1_1basic_projectile_af92d6ca641bffdaddfbd550a7d1cce6a}} 
+\mbox{\hyperlink{class_student_side_1_1basic_projectile_af92d6ca641bffdaddfbd550a7d1cce6a}{$\sim$basic\+Projectile}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_student_side_1_1basic_projectile}{basic\+Projectile}} has a basic destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1basic_projectile_aa06a1abf7ce15f0599b3a7754028aaaf}{set\+Dimensions}} ()
+\begin{DoxyCompactList}\small\item\em set\+Dimensions sets the width and the height of a chosen projectile type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1basic_projectile_a2bd108e765905008f92d324d367fa3e1}{set\+Projectile\+Picture}} ()
+\begin{DoxyCompactList}\small\item\em set\+Projectile\+Picture sets the the chosen picture as the projectile icon in the game. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_student_side_1_1basic_projectile_a4225fda62adbf0201c854727c67798dd}{remove\+Shooted\+Actors}} ()
+\begin{DoxyCompactList}\small\item\em remove\+Shooted\+Actors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_student_side_1_1basic_projectile_a44c7ff82d8a0fa7ae2fe2c3ba6304850}{is\+Close}} (const \mbox{\hyperlink{class_interface_1_1_location}{Interface\+::\+Location}} \&loc, int limit, int x\+Coord, int y\+Coord)
+\begin{DoxyCompactList}\small\item\em is\+Close function is a courtesy from Course Side (core/logic) with slight modifications on parameters. It calculates the distance between two items given as a paremeters within specific limit which is also given as a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a57a9fd36b131e16ccd68b77dce2abbb0}\label{class_student_side_1_1basic_projectile_a57a9fd36b131e16ccd68b77dce2abbb0}} 
+bool {\bfseries \+\_\+fireball\+Chosen} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a6009e1a6c7e8ad1150a14f3b504e7761}\label{class_student_side_1_1basic_projectile_a6009e1a6c7e8ad1150a14f3b504e7761}} 
+bool {\bfseries \+\_\+missile\+Chosen} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a801a3037696270c6d7c1b87f738e01b9}\label{class_student_side_1_1basic_projectile_a801a3037696270c6d7c1b87f738e01b9}} 
+bool {\bfseries \+\_\+laser\+Chosen} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a222c9ca79277f6e932b7a55862cdec30}\label{class_student_side_1_1basic_projectile_a222c9ca79277f6e932b7a55862cdec30}} 
+int {\bfseries \+\_\+projectile\+Velocity} = 20
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a6f9b6ba97e17d6e73a68f07a9d9a647b}\label{class_student_side_1_1basic_projectile_a6f9b6ba97e17d6e73a68f07a9d9a647b}} 
+int {\bfseries \+\_\+projectile\+Height}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_ab3abc70eada7bcdd751045d47bd2f664}\label{class_student_side_1_1basic_projectile_ab3abc70eada7bcdd751045d47bd2f664}} 
+int {\bfseries \+\_\+projectile\+Width}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a0d6713616a5af7738490d02ec365dc65}\label{class_student_side_1_1basic_projectile_a0d6713616a5af7738490d02ec365dc65}} 
+Q\+Timer $\ast$ {\bfseries \+\_\+projectile\+Timer}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a4b26c98b8d7eeb1370b53b0b671e9471}\label{class_student_side_1_1basic_projectile_a4b26c98b8d7eeb1370b53b0b671e9471}} 
+int {\bfseries \+\_\+fire\+Rate} = 50
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_aa38c0d7ac3c53aa79e8bf5504b5415bb}\label{class_student_side_1_1basic_projectile_aa38c0d7ac3c53aa79e8bf5504b5415bb}} 
+std\+::shared\+\_\+ptr$<$ Q\+Settings $>$ {\bfseries \+\_\+player\+Settings} = std\+::make\+\_\+shared$<$Q\+Settings$>$()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a1a6c7a9c7c7eb9f51318c2e31b3746b0}\label{class_student_side_1_1basic_projectile_a1a6c7a9c7c7eb9f51318c2e31b3746b0}} 
+const Q\+Pixmap {\bfseries \+\_\+fireball\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/fireball\+\_\+16x16.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a4ed41f5f1ee5e61a6e23777a5e8c4251}\label{class_student_side_1_1basic_projectile_a4ed41f5f1ee5e61a6e23777a5e8c4251}} 
+const Q\+Pixmap {\bfseries \+\_\+missile\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/missile\+\_\+23x10.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a251e66d65972e3512957e9bceb186a77}\label{class_student_side_1_1basic_projectile_a251e66d65972e3512957e9bceb186a77}} 
+const Q\+Pixmap {\bfseries \+\_\+laser\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/laser\+\_\+32x32.\+png\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a class for the projectile that player shoots in the game by pressing space key. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_ab9ec2068f1d038fa1428b97f33eba9a5}\label{class_student_side_1_1basic_projectile_ab9ec2068f1d038fa1428b97f33eba9a5}} 
+\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}!basicProjectile@{basicProjectile}}
+\index{basicProjectile@{basicProjectile}!StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+\doxysubsubsection{\texorpdfstring{basicProjectile()}{basicProjectile()}}
+{\footnotesize\ttfamily Student\+Side\+::basic\+Projectile\+::basic\+Projectile (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Item $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Graphics\+Item. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1basic_projectile}{basic\+Projectile}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a44c7ff82d8a0fa7ae2fe2c3ba6304850}\label{class_student_side_1_1basic_projectile_a44c7ff82d8a0fa7ae2fe2c3ba6304850}} 
+\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}!isClose@{isClose}}
+\index{isClose@{isClose}!StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+\doxysubsubsection{\texorpdfstring{isClose()}{isClose()}}
+{\footnotesize\ttfamily bool Student\+Side\+::basic\+Projectile\+::is\+Close (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_interface_1_1_location}{Interface\+::\+Location}} \&}]{loc,  }\item[{int}]{limit,  }\item[{int}]{x\+Coord,  }\item[{int}]{y\+Coord }\end{DoxyParamCaption})}
+
+
+
+is\+Close function is a courtesy from Course Side (core/logic) with slight modifications on parameters. It calculates the distance between two items given as a paremeters within specific limit which is also given as a parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the location of map item 1, limit is the range in which the is\+Close boolean states true, and x\+Coord and y\+Coord are the coordinates of the second comparable item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+boolean statement that basically tells if the two items are in close range to each other 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+A boolean (true or false) is returned which tells if the two items are close to each other in the game map. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_aed74caa287a283642f035d0d4303d43d}\label{class_student_side_1_1basic_projectile_aed74caa287a283642f035d0d4303d43d}} 
+\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}!move@{move}}
+\index{move@{move}!StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+\doxysubsubsection{\texorpdfstring{move}{move}}
+{\footnotesize\ttfamily void Student\+Side\+::basic\+Projectile\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+move function is responsible for moving the bullet up in the game map. Also if the bullet encounters a bonus diamond, they both are deleted from the map and from the memory. 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Bullet has moved in the map and is deleted from the scene and the memory if it encounters an object in its way or exits the game screen. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a4225fda62adbf0201c854727c67798dd}\label{class_student_side_1_1basic_projectile_a4225fda62adbf0201c854727c67798dd}} 
+\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}!removeShootedActors@{removeShootedActors}}
+\index{removeShootedActors@{removeShootedActors}!StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+\doxysubsubsection{\texorpdfstring{removeShootedActors()}{removeShootedActors()}}
+{\footnotesize\ttfamily bool Student\+Side\+::basic\+Projectile\+::remove\+Shooted\+Actors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+remove\+Shooted\+Actors is responsible for removing the Nysses and passengers (actors), that are in contact with the bullet, from the scene and memory. 
+
+\begin{DoxyPrecond}{Precondition}
+Projectile comes in contact with a Nysse or a passenger. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Shooted Nysse or passenger is deleted from the game map and memory or nothing happens. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_aa06a1abf7ce15f0599b3a7754028aaaf}\label{class_student_side_1_1basic_projectile_aa06a1abf7ce15f0599b3a7754028aaaf}} 
+\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}!setDimensions@{setDimensions}}
+\index{setDimensions@{setDimensions}!StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+\doxysubsubsection{\texorpdfstring{setDimensions()}{setDimensions()}}
+{\footnotesize\ttfamily void Student\+Side\+::basic\+Projectile\+::set\+Dimensions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Dimensions sets the width and the height of a chosen projectile type. 
+
+\begin{DoxyPrecond}{Precondition}
+Chosen projectile type is existent and therefore has some kind of dimensions. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Dimensions for the chosen projectile type are successfully set. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1basic_projectile_a2bd108e765905008f92d324d367fa3e1}\label{class_student_side_1_1basic_projectile_a2bd108e765905008f92d324d367fa3e1}} 
+\index{StudentSide::basicProjectile@{StudentSide::basicProjectile}!setProjectilePicture@{setProjectilePicture}}
+\index{setProjectilePicture@{setProjectilePicture}!StudentSide::basicProjectile@{StudentSide::basicProjectile}}
+\doxysubsubsection{\texorpdfstring{setProjectilePicture()}{setProjectilePicture()}}
+{\footnotesize\ttfamily void Student\+Side\+::basic\+Projectile\+::set\+Projectile\+Picture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Projectile\+Picture sets the the chosen picture as the projectile icon in the game. 
+
+\begin{DoxyPrecond}{Precondition}
+Projectile pictures provided are valid and they exist. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Projectile picture for the chosen projectile type is set. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/basicprojectile.\+h\item 
+Game/basicprojectile.\+cpp\end{DoxyCompactItemize}

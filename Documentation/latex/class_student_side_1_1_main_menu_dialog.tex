@@ -1,0 +1,219 @@
+\hypertarget{class_student_side_1_1_main_menu_dialog}{}\doxysection{Student\+Side\+::Main\+Menu\+Dialog Class Reference}
+\label{class_student_side_1_1_main_menu_dialog}\index{StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}}
+
+
+Defines a Q\+Dialog which is the first shown window to the user when the app is run. It is the main configuration dialog in which player sets a player nickname, chooses player and projectile type and possibly accesses settings or help.  
+
+
+
+
+{\ttfamily \#include $<$mainmenudialog.\+h$>$}
+
+
+
+Inherits Q\+Dialog.
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_aa105ceefbdca16f62fb72d02db111bc6}\label{class_student_side_1_1_main_menu_dialog_aa105ceefbdca16f62fb72d02db111bc6}} 
+enum {\bfseries player\+Config} \{ \newline
+{\bfseries spaceship\+Option}, 
+{\bfseries tank\+Option}, 
+{\bfseries ufo\+Option}, 
+{\bfseries fireball\+Option}, 
+\newline
+{\bfseries missile\+Option}, 
+{\bfseries laser\+Option}, 
+{\bfseries music\+State\+On}, 
+{\bfseries music\+State\+Off}, 
+\newline
+{\bfseries fireball\+Sound}, 
+{\bfseries missile\+Sound}, 
+{\bfseries blaster\+Sound}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_student_side_1_1_main_menu_dialog_a3662d26e5e6034acbdb43ab7dc8ff05d}{Main\+Menu\+Dialog}} (Q\+Widget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Widget. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a5d8e06d6d73d27de5cb39501793b4199}\label{class_student_side_1_1_main_menu_dialog_a5d8e06d6d73d27de5cb39501793b4199}} 
+\mbox{\hyperlink{class_student_side_1_1_main_menu_dialog_a5d8e06d6d73d27de5cb39501793b4199}{$\sim$\+Main\+Menu\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}} has a basic destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog_aa4af4c9af3d8364f3d05e483e1c18da7}{set\+Tool\+Tips}} ()
+\begin{DoxyCompactList}\small\item\em set\+Tool\+Tips sets tool tips in the \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}}\textquotesingle{}s G\+UI to guide the player (shown when player hovers mouse on top of a button or a label etc.) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog_a9bac6264e350dd3371aab371404da2bd}{set\+Start\+Game\+Text}} (Q\+String text, Q\+String color=\char`\"{}red\char`\"{})
+\begin{DoxyCompactList}\small\item\em set\+Start\+Game\+Text sets a string to Q\+Label in desired color. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog_ae3b22afc84f3644245b68554622f91e9}{name\+Is\+Empty}} (const Q\+String player\+Name) const
+\begin{DoxyCompactList}\small\item\em name\+Is\+Empty checks and validates a Q\+String which is set in the \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a77036a4bfefb0508a222836b3c6c33b1}\label{class_student_side_1_1_main_menu_dialog_a77036a4bfefb0508a222836b3c6c33b1}} 
+void {\bfseries on\+\_\+start\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a3819531d6ae514d627447ccf5df5ce01}\label{class_student_side_1_1_main_menu_dialog_a3819531d6ae514d627447ccf5df5ce01}} 
+void {\bfseries on\+\_\+exit\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a648418d922c97b1986eb60c913e3939e}\label{class_student_side_1_1_main_menu_dialog_a648418d922c97b1986eb60c913e3939e}} 
+void {\bfseries on\+\_\+player\+Name\+Edit\+\_\+editing\+Finished} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a373cc4012c5d64513f1a9df720f9e2ba}\label{class_student_side_1_1_main_menu_dialog_a373cc4012c5d64513f1a9df720f9e2ba}} 
+void {\bfseries on\+\_\+spaceship\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_acc7b15b961d2f1545fb303b919a33a7a}\label{class_student_side_1_1_main_menu_dialog_acc7b15b961d2f1545fb303b919a33a7a}} 
+void {\bfseries on\+\_\+tank\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a1abc9925c77e44325e19faaf798710a0}\label{class_student_side_1_1_main_menu_dialog_a1abc9925c77e44325e19faaf798710a0}} 
+void {\bfseries on\+\_\+ufo\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a067ee6e29e64024a670bb01712e1f0be}\label{class_student_side_1_1_main_menu_dialog_a067ee6e29e64024a670bb01712e1f0be}} 
+void {\bfseries on\+\_\+fireball\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a553b0ba4ccdc7487e0364b47e7549dca}\label{class_student_side_1_1_main_menu_dialog_a553b0ba4ccdc7487e0364b47e7549dca}} 
+void {\bfseries on\+\_\+missile\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a5d89321114d7bd66c1b362f3ff38e927}\label{class_student_side_1_1_main_menu_dialog_a5d89321114d7bd66c1b362f3ff38e927}} 
+void {\bfseries on\+\_\+laser\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a6175437b4d94f3886f8b1705a1cc793d}\label{class_student_side_1_1_main_menu_dialog_a6175437b4d94f3886f8b1705a1cc793d}} 
+void {\bfseries on\+\_\+settings\+Button\+\_\+clicked} ()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a57911bdbf8f6439af822fbad6525e5fb}\label{class_student_side_1_1_main_menu_dialog_a57911bdbf8f6439af822fbad6525e5fb}} 
+void {\bfseries on\+\_\+help\+Button\+\_\+clicked} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a8b7998a807685b38a6cbef33281ef57f}\label{class_student_side_1_1_main_menu_dialog_a8b7998a807685b38a6cbef33281ef57f}} 
+Ui\+::\+Main\+Menu\+Dialog $\ast$ {\bfseries ui}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a60056aa39b667467c2ac2821ff66ef6b}\label{class_student_side_1_1_main_menu_dialog_a60056aa39b667467c2ac2821ff66ef6b}} 
+Q\+Size {\bfseries \+\_\+menu\+Dialog\+Size}
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a6cc969512bac9a12fcc5f4a27afcb0b6}\label{class_student_side_1_1_main_menu_dialog_a6cc969512bac9a12fcc5f4a27afcb0b6}} 
+const Q\+Pixmap {\bfseries \+\_\+fireball\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/fireball\+\_\+16x16.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_adf6bacc4da1796a18d3d9fd44a71b0f6}\label{class_student_side_1_1_main_menu_dialog_adf6bacc4da1796a18d3d9fd44a71b0f6}} 
+const Q\+Pixmap {\bfseries \+\_\+missile\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/missile\+\_\+23x10.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a2958caae15cde579e3cd144274c813e2}\label{class_student_side_1_1_main_menu_dialog_a2958caae15cde579e3cd144274c813e2}} 
+const Q\+Pixmap {\bfseries \+\_\+laser\+Pic} = Q\+Pixmap(\char`\"{}\+:/images/laser\+\_\+32x32.\+png\char`\"{})
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_af6fe6c62235cba95ec22f570a170274c}\label{class_student_side_1_1_main_menu_dialog_af6fe6c62235cba95ec22f570a170274c}} 
+std\+::shared\+\_\+ptr$<$ Q\+Settings $>$ {\bfseries \+\_\+player\+Settings} = std\+::make\+\_\+shared$<$Q\+Settings$>$()
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a637de2c979ffc0b064b6d19496007bdd}\label{class_student_side_1_1_main_menu_dialog_a637de2c979ffc0b064b6d19496007bdd}} 
+bool {\bfseries \+\_\+tank} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a5c002db04c3afd284919e12855e9b68b}\label{class_student_side_1_1_main_menu_dialog_a5c002db04c3afd284919e12855e9b68b}} 
+bool {\bfseries \+\_\+space\+Ship} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_accb1a39849313ad853f748432cf1a0c1}\label{class_student_side_1_1_main_menu_dialog_accb1a39849313ad853f748432cf1a0c1}} 
+bool {\bfseries \+\_\+ufo} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_adfbb65d6a05059d42dbabd6cc0f80bca}\label{class_student_side_1_1_main_menu_dialog_adfbb65d6a05059d42dbabd6cc0f80bca}} 
+bool {\bfseries \+\_\+fireball} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a75f9672e102b285c1728625fcda2e444}\label{class_student_side_1_1_main_menu_dialog_a75f9672e102b285c1728625fcda2e444}} 
+bool {\bfseries \+\_\+missile} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a37788fff8d1dff1cfbc0ba9f8fd1db79}\label{class_student_side_1_1_main_menu_dialog_a37788fff8d1dff1cfbc0ba9f8fd1db79}} 
+bool {\bfseries \+\_\+laser} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a6d56bec87ce8c169c33fb831d9fe2c03}\label{class_student_side_1_1_main_menu_dialog_a6d56bec87ce8c169c33fb831d9fe2c03}} 
+bool {\bfseries \+\_\+musics\+On} = false
+\item 
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a5730384b8c11c015f9b3adfcfb5d1d8c}\label{class_student_side_1_1_main_menu_dialog_a5730384b8c11c015f9b3adfcfb5d1d8c}} 
+Q\+String {\bfseries \+\_\+player\+Alias}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines a Q\+Dialog which is the first shown window to the user when the app is run. It is the main configuration dialog in which player sets a player nickname, chooses player and projectile type and possibly accesses settings or help. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a3662d26e5e6034acbdb43ab7dc8ff05d}\label{class_student_side_1_1_main_menu_dialog_a3662d26e5e6034acbdb43ab7dc8ff05d}} 
+\index{StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}!MainMenuDialog@{MainMenuDialog}}
+\index{MainMenuDialog@{MainMenuDialog}!StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}}
+\doxysubsubsection{\texorpdfstring{MainMenuDialog()}{MainMenuDialog()}}
+{\footnotesize\ttfamily Student\+Side\+::\+Main\+Menu\+Dialog\+::\+Main\+Menu\+Dialog (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Basic constructor of the class. As a default, parent is set to a nullpointer to Q\+Widget. 
+
+\begin{DoxyPostcond}{Postcondition}
+\mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}} is at initialization state. 
+\end{DoxyPostcond}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_ae3b22afc84f3644245b68554622f91e9}\label{class_student_side_1_1_main_menu_dialog_ae3b22afc84f3644245b68554622f91e9}} 
+\index{StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}!nameIsEmpty@{nameIsEmpty}}
+\index{nameIsEmpty@{nameIsEmpty}!StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}}
+\doxysubsubsection{\texorpdfstring{nameIsEmpty()}{nameIsEmpty()}}
+{\footnotesize\ttfamily bool Student\+Side\+::\+Main\+Menu\+Dialog\+::name\+Is\+Empty (\begin{DoxyParamCaption}\item[{const Q\+String}]{player\+Name }\end{DoxyParamCaption}) const}
+
+
+
+name\+Is\+Empty checks and validates a Q\+String which is set in the \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String} & in Q\+String format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+Returns true if the string given as a parameter contains O\+N\+LY whitespace characters, otherwise returns false. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+Boolean has been returned to tell if the string contains only whitespace or not. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_a9bac6264e350dd3371aab371404da2bd}\label{class_student_side_1_1_main_menu_dialog_a9bac6264e350dd3371aab371404da2bd}} 
+\index{StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}!setStartGameText@{setStartGameText}}
+\index{setStartGameText@{setStartGameText}!StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}}
+\doxysubsubsection{\texorpdfstring{setStartGameText()}{setStartGameText()}}
+{\footnotesize\ttfamily void Student\+Side\+::\+Main\+Menu\+Dialog\+::set\+Start\+Game\+Text (\begin{DoxyParamCaption}\item[{Q\+String}]{text,  }\item[{Q\+String}]{color = {\ttfamily \char`\"{}red\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+set\+Start\+Game\+Text sets a string to Q\+Label in desired color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em String} & to-\/be-\/shown in the Q\+Label and the color of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+The Q\+Label where the text is shown, exists. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Desired string is set to the Q\+Label. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{class_student_side_1_1_main_menu_dialog_aa4af4c9af3d8364f3d05e483e1c18da7}\label{class_student_side_1_1_main_menu_dialog_aa4af4c9af3d8364f3d05e483e1c18da7}} 
+\index{StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}!setToolTips@{setToolTips}}
+\index{setToolTips@{setToolTips}!StudentSide::MainMenuDialog@{StudentSide::MainMenuDialog}}
+\doxysubsubsection{\texorpdfstring{setToolTips()}{setToolTips()}}
+{\footnotesize\ttfamily void Student\+Side\+::\+Main\+Menu\+Dialog\+::set\+Tool\+Tips (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+set\+Tool\+Tips sets tool tips in the \mbox{\hyperlink{class_student_side_1_1_main_menu_dialog}{Main\+Menu\+Dialog}}\textquotesingle{}s G\+UI to guide the player (shown when player hovers mouse on top of a button or a label etc.) 
+
+\begin{DoxyPrecond}{Precondition}
+-\/ 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+Tool\+Tips are shown to the user of the software when hovering mouse above buttons, labels or other items of the G\+UI. Exception guarantee\+: nothrow. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Game/mainmenudialog.\+h\item 
+Game/mainmenudialog.\+cpp\end{DoxyCompactItemize}
