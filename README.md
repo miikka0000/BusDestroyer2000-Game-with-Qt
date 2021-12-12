@@ -1,7 +1,7 @@
 ## BUSDESTROYER 2000 (Programming 3 course project)
 A shooter game developed with Qt Creator (C++) under open-source license. BusDestroyer 2000 has a game map of Tampere City Center and Nysse-buses and Passengers moving on the map.
 
-The project was made by Miikka Mensio and Markus Mensio in fall 2020 as a school project. We have developed our work under the StudentSide namespace so that there would be less confusion about which part is from CourseSide and which made by us. The project is open-source and is not in any way commercialized.
+The project was made by Miikka Mensio and fellow student/project partner in fall 2020 as a school project. We have developed our work under the StudentSide namespace so that there would be less confusion about which part is from CourseSide and which made by us. The project is open-source and is not in any way commercialized.
 
 Doxygen documentation has been created inside the DoxygenDocumentation -folder (which can be found inside Documentation -folder) and inside there is index.html -file from which a documentation of this project can be viewed in a web browser.
 
