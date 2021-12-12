@@ -1,4 +1,4 @@
-./Documentation/latex/
+latex/
 /.qmake.cache
 /.qmake.stash
 *.pro.user
