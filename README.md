@@ -8,9 +8,12 @@ Doxygen documentation has been created inside the DoxygenDocumentation -folder (
 All the relevant documentation of our project can be found inside the Documentation -folder, which is located in our repo root.
 
 ## How to start the game
-1) First clone this project to your local machine
+1) First clone this project to your local machine with e.g. <em>git pull <repo_url> --recurse-submodules</em>
 2) Open Nysse.pro -file which is located in our repo root.
 3) Run the program (CTRL + R)
+
+## Executable file now available (tested in Windows10 environment)
+busDestroyer2000.exe file now available for download in the releases-section of this repository.
 
 ## DISCLAIMERS:
 - We, the project team, do not take any credits for the code in directory "./Course" nor all the resources in "./Game/resources".
